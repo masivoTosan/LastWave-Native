@@ -645,7 +645,7 @@ class ListeningStatsViewModel @Inject constructor(
         }
         val cal = Calendar.getInstance()
         val dayFmt = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-        val displayDayFmt = SimpleDateFormat("d MMM", Locale.getDefault())
+        val displayDayFmt = SimpleDateFormat(android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "MMMd"), Locale.getDefault())
         val monthFmt = SimpleDateFormat("yyyy-MM", Locale.US)
 
         val dayStats = mutableMapOf<String, Long>()

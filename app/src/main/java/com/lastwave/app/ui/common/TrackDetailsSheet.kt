@@ -585,8 +585,8 @@ class TrackDetailsViewModel @Inject constructor(
             days == 1L -> appText(com.lastwave.app.R.string.fr_time_yesterday)
             days < 7 -> appText(com.lastwave.app.R.string.ui_1_s_days_ago_4876e2, (days).toString())
             days < 30 -> appText(com.lastwave.app.R.string.ui_1_sw_ago_a33cab, (days / 7).toString())
-            days < 365 -> SimpleDateFormat("MMM d", Locale.getDefault()).format(Date(millis))
-            else -> SimpleDateFormat("MMM yyyy", Locale.getDefault()).format(Date(millis))
+            days < 365 -> SimpleDateFormat(android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "MMMd"), Locale.getDefault()).format(Date(millis))
+            else -> SimpleDateFormat(android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "yMMM"), Locale.getDefault()).format(Date(millis))
         }
     }
 
@@ -600,7 +600,7 @@ class TrackDetailsViewModel @Inject constructor(
         return try {
             val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US)
             val date = inputFormat.parse(isoDate) ?: return isoDate.take(4)
-            SimpleDateFormat("MMMM d, yyyy", Locale.getDefault()).format(date)
+            SimpleDateFormat(android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "yMMMMd"), Locale.getDefault()).format(date)
         } catch (_: Exception) {
             isoDate.take(4).takeIf { it.length == 4 }
         }

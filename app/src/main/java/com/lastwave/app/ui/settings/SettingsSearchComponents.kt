@@ -278,7 +278,7 @@ internal fun getTargetSectionIndex(settingId: String?): Int {
         SettingsTab.AUDIO -> if (entry.section == "Output & Loudness") 1 else 0
         SettingsTab.APPEARANCE -> when (entry.section) {
             "Accent Color" -> 1
-            appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a), "Experimental & Player" -> 2
+            "Experimental & Features", "Experimental & Player" -> 2
             "Canvas" -> 3
             else -> 0
         }
@@ -286,7 +286,7 @@ internal fun getTargetSectionIndex(settingId: String?): Int {
         SettingsTab.SPOTIFY -> 0
         SettingsTab.LIBRARY -> when (entry.section) {
             "Content" -> 1
-            appText(com.lastwave.app.R.string.ui_imports_e42328), appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc), "Modules & Addons" -> 2
+            "Imports", "Imports & Addons", "Modules & Addons" -> 2
             else -> 0
         }
         SettingsTab.DATA_BACKUP -> if (entry.section == "Data Management") 1 else 0
@@ -528,7 +528,7 @@ internal fun SearchResultCard(
                 color = MaterialTheme.colorScheme.surfaceContainerHighest,
             ) {
                 Text(
-                    text = "${result.entry.parentTab.title} › ${result.entry.section}",
+                    text = "${result.entry.parentTab.title} › ${localizedSettingsSection(result.entry.section)}",
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.Medium,
@@ -617,4 +617,26 @@ internal fun SettingsSearchEmptyState(query: String) {
             )
         }
     }
+}
+
+internal fun localizedSettingsSection(section: String): String = when (section) {
+    "About & Community" -> appText(com.lastwave.app.R.string.ui_section_3617617396)
+    "Accent Color" -> appText(com.lastwave.app.R.string.ui_section_2bef525f9f)
+    "Appearance" -> appText(com.lastwave.app.R.string.ui_section_41def7a0fe)
+    "Audio & Playback" -> appText(com.lastwave.app.R.string.ui_section_5f4061d023)
+    "Backup & Restore" -> appText(com.lastwave.app.R.string.ui_section_3bdd40706d)
+    "Canvas" -> appText(com.lastwave.app.R.string.ui_section_a3f80b87a4)
+    "Content" -> appText(com.lastwave.app.R.string.ui_section_4f9be057f0)
+    "Data Management" -> appText(com.lastwave.app.R.string.ui_section_d5d83b7638)
+    "Experimental & Features" -> appText(com.lastwave.app.R.string.ui_section_fbb63a79a6)
+    "Home & Organization" -> appText(com.lastwave.app.R.string.ui_section_1c7c463635)
+    "Imports & Addons" -> appText(com.lastwave.app.R.string.ui_section_68a3bcfe9c)
+    "Language" -> appText(com.lastwave.app.R.string.ui_section_89b86ab0e6)
+    "Output & Loudness" -> appText(com.lastwave.app.R.string.ui_section_7fd0256f17)
+    "Recommendations" -> appText(com.lastwave.app.R.string.ui_section_4faa65b556)
+    "Scrobblers" -> appText(com.lastwave.app.R.string.ui_section_4936318ca8)
+    "Session Token" -> appText(com.lastwave.app.R.string.ui_section_12f1f7631b)
+    "Spotify" -> appText(com.lastwave.app.R.string.ui_section_2a0cb6b42a)
+    "YouTube & Sync" -> appText(com.lastwave.app.R.string.ui_section_98212c246f)
+    else -> section
 }

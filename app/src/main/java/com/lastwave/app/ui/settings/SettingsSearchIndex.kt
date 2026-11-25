@@ -121,7 +121,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.ACTION,
                 )
             )
@@ -135,7 +135,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.ACTION,
                 )
             )
@@ -152,7 +152,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.ACTION,
                 )
             )
@@ -169,7 +169,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -187,7 +187,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -204,7 +204,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -221,7 +221,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -238,7 +238,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.SLIDER,
                 )
             )
@@ -255,7 +255,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -272,7 +272,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -289,7 +289,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -306,7 +306,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -323,7 +323,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.errorContainer },
                     iconTint = { MaterialTheme.colorScheme.onErrorContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.set_cat_audio),
+                    section = "Audio & Playback",
                     type = EntryType.ACTION,
                 )
             )
@@ -340,7 +340,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -357,7 +357,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -373,7 +373,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -390,7 +390,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.ACTION,
                 )
             )
@@ -407,7 +407,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.ACTION,
                 )
             )
@@ -424,7 +424,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.ACTION,
                 )
             )
@@ -441,7 +441,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -458,7 +458,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
+                    section = "Output & Loudness",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -479,7 +479,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.THEME_SELECTOR,
                 )
             )
@@ -495,7 +495,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.ACTION,
                 )
             )
@@ -512,7 +512,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -529,7 +529,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -546,7 +546,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -562,7 +562,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -579,7 +579,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -596,7 +596,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -613,7 +613,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -630,7 +630,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -647,7 +647,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -664,7 +664,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -681,7 +681,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
+                    section = "Appearance",
                     type = EntryType.ACTION,
                 )
             )
@@ -698,7 +698,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_accent_color_2bef52),
+                    section = "Accent Color",
                     type = EntryType.ACCENT_PICKER,
                 )
             )
@@ -715,7 +715,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.ACTION,
                 )
             )
@@ -732,7 +732,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.ACTION,
                 )
             )
@@ -749,7 +749,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -767,7 +767,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -784,7 +784,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -802,7 +802,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -819,7 +819,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.ACTION,
                 )
             )
@@ -836,7 +836,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.ACTION,
                 )
             )
@@ -853,7 +853,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.ACTION,
                 )
             )
@@ -870,7 +870,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.ACTION,
                 )
             )
@@ -887,7 +887,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
+                    section = "Experimental & Features",
                     type = EntryType.ACTION,
                 )
             )
@@ -904,7 +904,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.details_canvas_source),
+                    section = "Canvas",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -921,7 +921,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.details_canvas_source),
+                    section = "Canvas",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -938,7 +938,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.details_canvas_source),
+                    section = "Canvas",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -955,7 +955,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = appText(com.lastwave.app.R.string.details_canvas_source),
+                    section = "Canvas",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -976,7 +976,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = appText(com.lastwave.app.R.string.set_cat_yt),
+                    section = "YouTube & Sync",
                     type = EntryType.ACTION,
                 )
             )
@@ -993,7 +993,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = appText(com.lastwave.app.R.string.set_cat_yt),
+                    section = "YouTube & Sync",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -1010,7 +1010,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = appText(com.lastwave.app.R.string.set_cat_yt),
+                    section = "YouTube & Sync",
                     type = EntryType.ACTION,
                 )
             )
@@ -1027,7 +1027,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = appText(com.lastwave.app.R.string.set_cat_yt),
+                    section = "YouTube & Sync",
                     type = EntryType.ACTION,
                 )
             )
@@ -1044,7 +1044,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = appText(com.lastwave.app.R.string.set_cat_yt),
+                    section = "YouTube & Sync",
                     type = EntryType.ACTION,
                 )
             )
@@ -1061,7 +1061,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = appText(com.lastwave.app.R.string.set_cat_yt),
+                    section = "YouTube & Sync",
                     type = EntryType.ACTION,
                 )
             )
@@ -1078,7 +1078,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = appText(com.lastwave.app.R.string.set_cat_yt),
+                    section = "YouTube & Sync",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -1095,7 +1095,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.primary },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
+                    section = "Spotify",
                     type = EntryType.ACTION,
                 )
             )
@@ -1112,7 +1112,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
+                    section = "Spotify",
                     type = EntryType.ACTION,
                 )
             )
@@ -1128,7 +1128,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
+                    section = "Spotify",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -1144,7 +1144,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
+                    section = "Spotify",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -1161,7 +1161,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = appText(com.lastwave.app.R.string.settings_section_recommendations),
+                    section = "Recommendations",
                     type = EntryType.ACTION,
                 )
             )
@@ -1177,7 +1177,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = appText(com.lastwave.app.R.string.ui_session_token_12f1f7),
+                    section = "Session Token",
                     type = EntryType.ACTION,
                 )
             )
@@ -1199,7 +1199,7 @@ object SettingsSearchIndex {
                         iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                         iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                         parentTab = SettingsTab.SCROBBLERS,
-                        section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
+                        section = "Scrobblers",
                         type = EntryType.ACTION,
                     )
                 )
@@ -1217,7 +1217,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.SCROBBLERS,
-                    section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
+                    section = "Scrobblers",
                     type = EntryType.ACTION,
                 )
             )
@@ -1234,7 +1234,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SCROBBLERS,
-                    section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
+                    section = "Scrobblers",
                     type = EntryType.ACTION,
                 )
             )
@@ -1251,7 +1251,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SCROBBLERS,
-                    section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
+                    section = "Scrobblers",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -1277,7 +1277,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = appText(com.lastwave.app.R.string.ui_home_organization_1c7c46),
+                    section = "Home & Organization",
                     type = EntryType.ACTION,
                 )
             )
@@ -1294,7 +1294,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = appText(com.lastwave.app.R.string.ui_home_organization_1c7c46),
+                    section = "Home & Organization",
                     type = EntryType.ACTION,
                 )
             )
@@ -1311,7 +1311,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = appText(com.lastwave.app.R.string.settings_section_content),
+                    section = "Content",
                     type = EntryType.TOGGLE,
                 )
             )
@@ -1328,7 +1328,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
+                    section = "Imports & Addons",
                     type = EntryType.ACTION,
                 )
             )
@@ -1345,7 +1345,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
+                    section = "Imports & Addons",
                     type = EntryType.ACTION,
                 )
             )
@@ -1362,7 +1362,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
+                    section = "Imports & Addons",
                     type = EntryType.ACTION,
                 )
             )
@@ -1378,7 +1378,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
+                    section = "Imports & Addons",
                     type = EntryType.ACTION,
                 )
             )
@@ -1399,7 +1399,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.DATA_BACKUP,
-                    section = appText(com.lastwave.app.R.string.settings_section_backup),
+                    section = "Backup & Restore",
                     type = EntryType.ACTION,
                 )
             )
@@ -1416,7 +1416,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.DATA_BACKUP,
-                    section = appText(com.lastwave.app.R.string.settings_section_backup),
+                    section = "Backup & Restore",
                     type = EntryType.ACTION,
                 )
             )
@@ -1433,7 +1433,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.errorContainer },
                     iconTint = { MaterialTheme.colorScheme.onErrorContainer },
                     parentTab = SettingsTab.DATA_BACKUP,
-                    section = appText(com.lastwave.app.R.string.settings_section_data),
+                    section = "Data Management",
                     type = EntryType.ACTION,
                 )
             )
@@ -1454,7 +1454,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.ABOUT,
-                    section = appText(com.lastwave.app.R.string.settings_section_language),
+                    section = "Language",
                     type = EntryType.ACTION,
                 )
             )

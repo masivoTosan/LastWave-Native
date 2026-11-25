@@ -194,4 +194,4 @@ internal fun FormatOptionRow(title: String, description: String, selected: Boole
 }
 
 internal fun formatDate(millis: Long): String =
-    SimpleDateFormat("MMM d, yyyy", Locale.getDefault()).format(Date(millis))
+    SimpleDateFormat(android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "yMMMd"), Locale.getDefault()).format(Date(millis))

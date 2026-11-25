@@ -1116,4 +1116,22 @@
     <string name="ui_extra_d41ca6e21c">"艺人混音"</string>
     <string name="ui_extra_5a04520a88">"发现推荐"</string>
     <string name="ui_extra_f2071b8f29">"LASTWAVE  •  正在播放"</string>
+    <string name="ui_section_3617617396">"关于与社区"</string>
+    <string name="ui_section_2bef525f9f">"强调色"</string>
+    <string name="ui_section_41def7a0fe">"外观"</string>
+    <string name="ui_section_5f4061d023">"音频与播放"</string>
+    <string name="ui_section_3bdd40706d">"备份与恢复"</string>
+    <string name="ui_section_a3f80b87a4">"Canvas"</string>
+    <string name="ui_section_4f9be057f0">"内容"</string>
+    <string name="ui_section_d5d83b7638">"数据管理"</string>
+    <string name="ui_section_fbb63a79a6">"实验与功能"</string>
+    <string name="ui_section_1c7c463635">"首页与整理"</string>
+    <string name="ui_section_68a3bcfe9c">"导入与扩展"</string>
+    <string name="ui_section_89b86ab0e6">"语言"</string>
+    <string name="ui_section_7fd0256f17">"输出与响度"</string>
+    <string name="ui_section_4faa65b556">"推荐"</string>
+    <string name="ui_section_4936318ca8">"听歌记录同步服务"</string>
+    <string name="ui_section_12f1f7631b">"会话令牌"</string>
+    <string name="ui_section_2a0cb6b42a">"Spotify"</string>
+    <string name="ui_section_98212c246f">"YouTube 与同步"</string>
 </resources>

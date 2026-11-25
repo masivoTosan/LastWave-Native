@@ -1116,4 +1116,22 @@
     <string name="ui_extra_d41ca6e21c">"Artist Mix"</string>
     <string name="ui_extra_5a04520a88">"Discover Feed"</string>
     <string name="ui_extra_f2071b8f29">"LASTWAVE  •  NOW PLAYING"</string>
+    <string name="ui_section_3617617396">"About &amp; Community"</string>
+    <string name="ui_section_2bef525f9f">"Accent Color"</string>
+    <string name="ui_section_41def7a0fe">"Appearance"</string>
+    <string name="ui_section_5f4061d023">"Audio &amp; Playback"</string>
+    <string name="ui_section_3bdd40706d">"Backup &amp; Restore"</string>
+    <string name="ui_section_a3f80b87a4">"Canvas"</string>
+    <string name="ui_section_4f9be057f0">"Content"</string>
+    <string name="ui_section_d5d83b7638">"Data Management"</string>
+    <string name="ui_section_fbb63a79a6">"Experimental &amp; Features"</string>
+    <string name="ui_section_1c7c463635">"Home &amp; Organization"</string>
+    <string name="ui_section_68a3bcfe9c">"Imports &amp; Addons"</string>
+    <string name="ui_section_89b86ab0e6">"Language"</string>
+    <string name="ui_section_7fd0256f17">"Output &amp; Loudness"</string>
+    <string name="ui_section_4faa65b556">"Recommendations"</string>
+    <string name="ui_section_4936318ca8">"Scrobblers"</string>
+    <string name="ui_section_12f1f7631b">"Session Token"</string>
+    <string name="ui_section_2a0cb6b42a">"Spotify"</string>
+    <string name="ui_section_98212c246f">"YouTube &amp; Sync"</string>
 </resources>

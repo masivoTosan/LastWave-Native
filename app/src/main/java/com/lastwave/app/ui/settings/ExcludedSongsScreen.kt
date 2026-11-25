@@ -174,7 +174,7 @@ private fun ExcludedSongRow(
     val artist = exclusion.artistName.ifBlank {
         legacyParts.getOrNull(1).orEmpty().legacyDisplayName(appText(com.lastwave.app.R.string.ui_unknown_artist_9566f8))
     }
-    val date = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
+    val date = SimpleDateFormat(android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "yMMMd"), Locale.getDefault())
         .format(Date(exclusion.excludedAtMillis))
 
     LiquidGlassCard(

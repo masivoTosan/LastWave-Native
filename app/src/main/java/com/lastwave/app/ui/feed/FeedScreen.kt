@@ -319,7 +319,7 @@ fun FeedScreen(
     }
     val formattedDate = remember {
         try {
-            java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("EEEE, MMMM d"))
+            java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern(android.text.format.DateFormat.getBestDateTimePattern(java.util.Locale.getDefault(), "MMMMEEEEd")))
         } catch (_: Exception) { "" }
     }
     LaunchedEffect(state.error, hasFeedContent) {

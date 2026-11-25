@@ -1,7 +1,7 @@
 package com.lastwave.app.util
 
 import android.app.Application
-import android.content.res.Configuration
+import com.lastwave.app.data.local.AppLanguage
 import com.lastwave.app.ui.stats.StatsTimeRange
 import com.lastwave.app.ui.home.formatTimer
 import org.junit.Assert.assertEquals
@@ -10,16 +10,15 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
-import java.util.Locale
 
 @RunWith(RobolectricTestRunner::class)
 @Config(application = Application::class, sdk = [29])
 class AppTextTest {
     private fun language(tag: String) {
-        val application = RuntimeEnvironment.getApplication<Application>()
-        val configuration = Configuration(application.resources.configuration)
-        configuration.setLocale(Locale.forLanguageTag(tag))
-        AppText.install(application.createConfigurationContext(configuration))
+        val application = RuntimeEnvironment.getApplication()
+        application.getSharedPreferences(AppLanguage.SYNC_FILE, 0).edit()
+            .putString(AppLanguage.SYNC_KEY, tag).commit()
+        AppText.install(application)
     }
 
     @Test fun enumLabelsFollowLanguageChanges() {
