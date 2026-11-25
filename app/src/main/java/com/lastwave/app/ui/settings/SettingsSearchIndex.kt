@@ -103,8 +103,7 @@ data class SettingsEntry(
 object SettingsSearchIndex {
 
     val allEntries: List<SettingsEntry> get() {
-        return
-        buildList {
+        return buildList {
             // ==========================================
             // TAB: AUDIO & PLAYBACK
             // ==========================================
