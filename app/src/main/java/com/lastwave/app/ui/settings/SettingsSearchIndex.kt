@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.automirrored.rounded.VolumeOff
@@ -100,7 +102,8 @@ data class SettingsEntry(
  */
 object SettingsSearchIndex {
 
-    val allEntries: List<SettingsEntry> by lazy {
+    val allEntries: List<SettingsEntry> get() {
+        return
         buildList {
             // ==========================================
             // TAB: AUDIO & PLAYBACK
@@ -108,8 +111,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "audio.wifi_streaming_quality",
-                    title = "Wi-Fi Streaming Quality",
-                    subtitle = "Choose audio quality while connected to Wi-Fi",
+                    title = appText(com.lastwave.app.R.string.ui_wi_fi_streaming_quality_2f111e),
+                    subtitle = appText(com.lastwave.app.R.string.ui_choose_audio_quality_while_connected_to_wi_fi_2e0b85),
                     keywords = listOf(
                         "quality", "bitrate", "flac", "lossless", "hires", "hi-res", "dolby", "atmos",
                         "mp3", "aac", "opus", "streaming", "audio quality", "sound quality", "192khz",
@@ -119,29 +122,29 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.cellular_streaming_quality",
-                    title = "Cellular Streaming Quality",
-                    subtitle = "Choose audio quality while using mobile data",
+                    title = appText(com.lastwave.app.R.string.ui_cellular_streaming_quality_a24de0),
+                    subtitle = appText(com.lastwave.app.R.string.ui_choose_audio_quality_while_using_mobile_data_d9fa3f),
                     keywords = listOf("quality", "bitrate", "streaming", "cellular", "mobile data", "data usage", "audio", "auto", "adaptive"),
                     icon = Icons.Filled.HighQuality,
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.download_quality",
-                    title = "Download Quality",
-                    subtitle = "Offline download format & bitrate, Lossless FLAC or YouTube stream",
+                    title = appText(com.lastwave.app.R.string.settings_download_quality),
+                    subtitle = appText(com.lastwave.app.R.string.ui_offline_download_format_bitrate_lossless_flac_or_e00229),
                     keywords = listOf(
                         "download", "offline", "storage", "bitrate", "flac", "lossless", "cache",
                         "download quality", "save songs", "music downloads"
@@ -150,15 +153,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.auto_upgrade_hi_res",
-                    title = "Playback start",
-                    subtitle = "Fast start, best quality first, or never upgrade",
+                    title = appText(com.lastwave.app.R.string.ui_playback_start_c39d34),
+                    subtitle = appText(com.lastwave.app.R.string.ui_fast_start_best_quality_first_or_never_upgrade_8e582c),
                     keywords = listOf(
                         "auto upgrade", "hi-res", "hires", "lossless", "flac", "opus",
                         "upgrade", "streaming", "quality", "background upgrade", "start", "direct", "best quality"
@@ -167,15 +170,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.bit_perfect",
-                    title = "Bit-Perfect Mode",
-                    subtitle = "Bypass Android mixer & DSP; stream bit-exact audio to USB DAC",
+                    title = appText(com.lastwave.app.R.string.ui_bit_perfect_mode_552e9e),
+                    subtitle = appText(com.lastwave.app.R.string.ui_bypass_android_mixer_dsp_stream_bit_exact_audio__d66772),
                     keywords = listOf(
                         "bit-perfect", "bitperfect", "direct output", "bypass mixer", "dac", "usb dac",
                         "audiophile", "lossless", "exclusive", "sample rate match", "native playback",
@@ -185,15 +188,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.automix",
-                    title = "AutoMix",
-                    subtitle = "Beat-matched, key-locked seamless dual-deck mixing",
+                    title = appText(com.lastwave.app.R.string.ui_automix_b42afb),
+                    subtitle = appText(com.lastwave.app.R.string.ui_beat_matched_key_locked_seamless_dual_deck_mixin_44e0f3),
                     keywords = listOf(
                         "autodj", "automix", "camelot", "beat match", "dj blend",
                         "transition", "crossfade", "phrase loop"
@@ -202,15 +205,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.crossfade",
-                    title = "Crossfade",
-                    subtitle = "Blend the end of a track smoothly into the next one",
+                    title = appText(com.lastwave.app.R.string.sig_crossfade),
+                    subtitle = appText(com.lastwave.app.R.string.ui_blend_the_end_of_a_track_smoothly_into_the_next__18f697),
                     keywords = listOf(
                         "crossfade", "fade", "transition", "overlap", "gapless", "mix tracks",
                         "smooth playback", "dj fade"
@@ -219,15 +222,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.crossfade_duration",
-                    title = "Crossfade Duration",
-                    subtitle = "Adjust crossfade duration slider in seconds between songs",
+                    title = appText(com.lastwave.app.R.string.ui_crossfade_duration_820ce1),
+                    subtitle = appText(com.lastwave.app.R.string.ui_adjust_crossfade_duration_slider_in_seconds_betw_e91c67),
                     keywords = listOf(
                         "crossfade seconds", "crossfade duration", "fade length", "crossfade time",
                         "slider", "seconds", "transition time"
@@ -236,15 +239,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.SLIDER,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.keep_lyrics_screen_awake",
-                    title = "Keep Screen Awake on Lyrics",
-                    subtitle = "Prevent screen from turning off while viewing lyrics",
+                    title = appText(com.lastwave.app.R.string.settings_keep_lyrics_screen_awake),
+                    subtitle = appText(com.lastwave.app.R.string.settings_keep_lyrics_screen_awake_desc),
                     keywords = listOf(
                         "keep screen awake", "keep screen on", "lyrics sleep", "screen timeout",
                         "display awake", "lyrics screen"
@@ -253,15 +256,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.stop_on_recents",
-                    title = "Stop Playback When Swiped Away",
-                    subtitle = "Stop music when LastWave is removed from Recents",
+                    title = appText(com.lastwave.app.R.string.settings_stop_on_recents),
+                    subtitle = appText(com.lastwave.app.R.string.ui_stop_music_when_lastwave_is_removed_from_recents_873a05),
                     keywords = listOf(
                         "recents", "swipe", "swipe away", "stop playback", "background playback",
                         "continue playing", "task removed", "kill app", "close app"
@@ -270,15 +273,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.pause_on_zero_volume",
-                    title = "Pause Playback at Volume 0",
-                    subtitle = "Automatically pause playback when media volume reaches 0",
+                    title = appText(com.lastwave.app.R.string.settings_pause_on_zero_volume),
+                    subtitle = appText(com.lastwave.app.R.string.settings_pause_on_zero_volume_desc),
                     keywords = listOf(
                         "pause", "volume", "zero volume", "mute", "silent",
                         "auto pause", "media volume", "volume 0"
@@ -287,15 +290,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.download_lyrics",
-                    title = "Download Lyrics",
-                    subtitle = "Save .lrc companion files & embed lyrics in downloaded tracks",
+                    title = appText(com.lastwave.app.R.string.dl_lyrics_row),
+                    subtitle = appText(com.lastwave.app.R.string.ui_save_lrc_companion_files_embed_lyrics_in_downloa_03bad2),
                     keywords = listOf(
                         "lyrics", "lrc", "download lyrics", "embed lyrics", "karaoke offline",
                         "save lyrics", "text", "song words"
@@ -304,15 +307,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.battery_optimization",
-                    title = "Background Playback (Battery Optimization)",
-                    subtitle = "Exempt app from device battery restrictions, sleeping apps, and Samsung Device Care",
+                    title = appText(com.lastwave.app.R.string.settings_battery_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_exempt_app_from_device_battery_restrictions_slee_69fc80),
                     keywords = listOf(
                         "battery", "background", "sleep", "sleeping apps", "device care", "power saving",
                         "keep alive", "doze", "stop playing", "playback killed"
@@ -321,15 +324,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.errorContainer },
                     iconTint = { MaterialTheme.colorScheme.onErrorContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Audio & Playback",
+                    section = appText(com.lastwave.app.R.string.set_cat_audio),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.usb_exclusive",
-                    title = "USB Exclusive Output",
-                    subtitle = "Direct usbdevfs communication with external USB DACs (Android 10+)",
+                    title = appText(com.lastwave.app.R.string.set_usb_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_direct_usbdevfs_communication_with_external_usb__2064dd),
                     keywords = listOf(
                         "usb", "dac", "exclusive", "usb exclusive", "usbdevfs", "external dac",
                         "hardware volume", "headphone amp", "dongle dac"
@@ -338,15 +341,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.internal_direct",
-                    title = "Internal direct output",
-                    subtitle = "Bypass the Android mixer on the speaker / jack without a USB DAC",
+                    title = appText(com.lastwave.app.R.string.settings_internal_direct),
+                    subtitle = appText(com.lastwave.app.R.string.ui_bypass_the_android_mixer_on_the_speaker_jack_wit_954705),
                     keywords = listOf(
                         "direct", "mixer", "bypass", "hires direct", "uapp", "aaudio", "mmap",
                         "exclusive", "sortie directe", "interne", "contourner", "speaker", "jack",
@@ -355,15 +358,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.force_software_volume",
-                    title = "Software volume (USB DAC)",
-                    subtitle = "Scale volume in the app instead of the DAC's hardware volume",
+                    title = appText(com.lastwave.app.R.string.settings_force_sw_volume),
+                    subtitle = appText(com.lastwave.app.R.string.ui_scale_volume_in_the_app_instead_of_the_dac_s_har_037823),
                     keywords = listOf(
                         "volume", "software volume", "hardware volume", "dac", "logiciel", "matériel",
                     ),
@@ -371,15 +374,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.loudness_normalization",
-                    title = "Loudness Normalization",
-                    subtitle = "ReplayGain volume leveling: Track (-14 LUFS), Album dynamics, or Off",
+                    title = appText(com.lastwave.app.R.string.set_loud_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_replaygain_volume_leveling_track_14_lufs_album_d_1ca477),
                     keywords = listOf(
                         "loudness", "normalization", "volume", "replaygain", "lufs", "track volume",
                         "leveling", "equal volume", "album loudness", "gain"
@@ -388,15 +391,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.autoeq",
-                    title = "AutoEQ",
-                    subtitle = "Headphone correction from the AutoEQ database, parametric EQ, per-device profiles",
+                    title = appText(com.lastwave.app.R.string.signal_label_autoeq),
+                    subtitle = appText(com.lastwave.app.R.string.ui_headphone_correction_from_the_autoeq_database_pa_5e2e48),
                     keywords = listOf(
                         "autoeq", "auto eq", "headphone", "casque", "iem", "harman", "parametric",
                         "peq", "correction", "oratory1990", "crinacle", "target",
@@ -405,15 +408,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.equalizer",
-                    title = "Equalizer",
-                    subtitle = "Shape sound across 15 frequency bands with custom curves and presets",
+                    title = appText(com.lastwave.app.R.string.sig_eq),
+                    subtitle = appText(com.lastwave.app.R.string.ui_shape_sound_across_15_frequency_bands_with_custo_870d44),
                     keywords = listOf(
                         "equalizer", "eq", "15-band", "presets", "bass", "treble", "midrange",
                         "bass boost", "sound profile", "frequencies", "audio shape"
@@ -422,15 +425,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.system_audio_effects",
-                    title = "System Audio Effects",
-                    subtitle = "Allow external equalizers (Dolby Atmos, Wavelet) to process playback",
+                    title = appText(com.lastwave.app.R.string.set_sys_fx_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_allow_external_equalizers_dolby_atmos_wavelet_to_dc2666),
                     keywords = listOf(
                         "system audio effects", "wavelet", "dolby system", "external eq", "audio fx",
                         "dsp apps", "system equalizer", "sound enhancer"
@@ -439,15 +442,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "audio.studio_clarity",
-                    title = "Studio Master Clarity",
-                    subtitle = "Crystal-clear open sound, airy detail, and deep clean stereo separation",
+                    title = appText(com.lastwave.app.R.string.settings_studio_clarity),
+                    subtitle = appText(com.lastwave.app.R.string.ui_crystal_clear_open_sound_airy_detail_and_deep_cl_969e32),
                     keywords = listOf(
                         "clarity", "studio master", "master clarity", "separation", "detail", "crisp",
                         "highs", "vocal clarity", "soundstage", "dsp clarity"
@@ -456,7 +459,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.AUDIO,
-                    section = "Output & Loudness",
+                    section = appText(com.lastwave.app.R.string.ui_output_loudness_7fd025),
                     type = EntryType.TOGGLE,
                 )
             )
@@ -467,8 +470,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "appearance.theme_mode",
-                    title = "Theme Mode",
-                    subtitle = "Select System default, Light theme, or Dark theme",
+                    title = appText(com.lastwave.app.R.string.ui_theme_mode_bb6b0b),
+                    subtitle = appText(com.lastwave.app.R.string.ui_select_system_default_light_theme_or_dark_theme_f2f32a),
                     keywords = listOf(
                         "theme", "dark mode", "light mode", "system theme", "night mode", "day mode",
                         "appearance", "color scheme", "style"
@@ -477,15 +480,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.THEME_SELECTOR,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.app_icon",
-                    title = "App Icon",
-                    subtitle = "Choose your home screen & in-app logo",
+                    title = appText(com.lastwave.app.R.string.settings_section_app_icon),
+                    subtitle = appText(com.lastwave.app.R.string.settings_app_icon_sub),
                     keywords = listOf(
                         "app icon", "logo", "desktop logo", "white logo", "black logo", "launcher", "icon", "theme"
                     ),
@@ -493,15 +496,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.lastwave_theme",
-                    title = "LastWave Signature Theme",
-                    subtitle = "Bespoke logo palette with Electric Lime and Obsidian Teal",
+                    title = appText(com.lastwave.app.R.string.settings_lastwave_theme),
+                    subtitle = appText(com.lastwave.app.R.string.ui_bespoke_logo_palette_with_electric_lime_and_obsi_786921),
                     keywords = listOf(
                         "lastwave theme", "brand theme", "special theme", "logo theme", "lime",
                         "teal", "obsidian", "electric lime", "iconic theme", "brand colors"
@@ -510,15 +513,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.amoled",
-                    title = "Pure Black AMOLED",
-                    subtitle = "Pitch black surfaces for OLED and AMOLED screens to save battery",
+                    title = appText(com.lastwave.app.R.string.ui_pure_black_amoled_a303f6),
+                    subtitle = appText(com.lastwave.app.R.string.ui_pitch_black_surfaces_for_oled_and_amoled_screens_a73567),
                     keywords = listOf(
                         "amoled", "oled", "pure black", "pitch black", "true black", "battery saver",
                         "dark mode", "contrast"
@@ -527,15 +530,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.legacy_colors",
-                    title = "Use Legacy Colours",
-                    subtitle = "Use authentic Material You background and surface tones instead of deep obsidian surfaces",
+                    title = appText(com.lastwave.app.R.string.ui_use_legacy_colours_a2c942),
+                    subtitle = appText(com.lastwave.app.R.string.settings_legacy_colors_sub),
                     keywords = listOf(
                         "legacy colors", "legacy colours", "material you background", "base colour", "original background",
                         "bright background", "solid background", "monet"
@@ -544,15 +547,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.legacy_track_menu",
-                    title = "Use Classic Song Menu",
-                    subtitle = "Use the classic card-based song options menu instead of the redesigned sheet",
+                    title = appText(com.lastwave.app.R.string.ui_use_classic_song_menu_7fdaea),
+                    subtitle = appText(com.lastwave.app.R.string.settings_legacy_track_menu_sub),
                     keywords = listOf(
                         "classic song menu", "legacy track menu", "old song menu", "3 dots menu", "context menu", "track menu"
                     ),
@@ -560,15 +563,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.dynamic_color",
-                    title = "Dynamic Color (Material You)",
-                    subtitle = "Match UI accent colors to wallpaper and system palette",
+                    title = appText(com.lastwave.app.R.string.ui_dynamic_color_material_you_519ae0),
+                    subtitle = appText(com.lastwave.app.R.string.ui_match_ui_accent_colors_to_wallpaper_and_system_p_402840),
                     keywords = listOf(
                         "dynamic color", "material you", "monet", "wallpaper color", "system colors",
                         "adaptive color", "android 12 color"
@@ -577,15 +580,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.liquid_glass",
-                    title = "Liquid Glass",
-                    subtitle = "Dynamic translucent frosted glass backgrounds and blur effects",
+                    title = appText(com.lastwave.app.R.string.settings_liquid_glass),
+                    subtitle = appText(com.lastwave.app.R.string.ui_dynamic_translucent_frosted_glass_backgrounds_an_0081f8),
                     keywords = listOf(
                         "liquid glass", "glassmorphism", "blur", "frosted glass", "translucent",
                         "acrylic", "transparency", "visual effect"
@@ -594,15 +597,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.md3_nav_bar",
-                    title = "Material 3 Navigation Bar",
-                    subtitle = "Compact floating dock with a label beside the selected icon",
+                    title = appText(com.lastwave.app.R.string.settings_md3_nav_bar),
+                    subtitle = appText(com.lastwave.app.R.string.ui_compact_floating_dock_with_a_label_beside_the_se_af0dbf),
                     keywords = listOf(
                         "md3", "material 3", "navigation bar", "bottom bar", "nav bar",
                         "dock", "floating dock", "full width nav"
@@ -611,15 +614,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.dynamic_now_playing",
-                    title = "Dynamic Now Playing Screen",
-                    subtitle = "Adaptive color background on the now playing screen driven by album art",
+                    title = appText(com.lastwave.app.R.string.ui_dynamic_now_playing_screen_f464cd),
+                    subtitle = appText(com.lastwave.app.R.string.ui_adaptive_color_background_on_the_now_playing_scr_f07a71),
                     keywords = listOf(
                         "dynamic now playing", "player screen", "adaptive background", "album art color",
                         "gradient player", "now playing theme", "cover art color"
@@ -628,15 +631,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.app_font",
-                    title = "App Font",
-                    subtitle = "Toggle between system font and custom typography",
+                    title = appText(com.lastwave.app.R.string.ui_app_font_6a5c3e),
+                    subtitle = appText(com.lastwave.app.R.string.ui_toggle_between_system_font_and_custom_typography_a247ea),
                     keywords = listOf(
                         "font", "typeface", "typography", "text style", "custom font", "app font",
                         "lettering", "outfit font"
@@ -645,15 +648,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.ui_haptics",
-                    title = "Haptic Feedback",
-                    subtitle = "Vibrate on taps, buttons, toggles and gestures",
+                    title = appText(com.lastwave.app.R.string.settings_ui_haptics),
+                    subtitle = appText(com.lastwave.app.R.string.settings_ui_haptics_sub),
                     keywords = listOf(
                         "haptic", "haptics", "vibration", "vibrate", "touch feedback",
                         "tap feedback", "buzz", "tactile"
@@ -662,15 +665,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.home_sections",
-                    title = "Home Screen Sections",
-                    subtitle = "Reorder, show, or hide sections displayed on your Home screen",
+                    title = appText(com.lastwave.app.R.string.ui_home_screen_sections_dde164),
+                    subtitle = appText(com.lastwave.app.R.string.ui_reorder_show_or_hide_sections_displayed_on_your__812d2e),
                     keywords = listOf(
                         "home", "home sections", "feed", "customize home", "reorder home",
                         "layout", "hide sections", "shelves", "front page"
@@ -679,15 +682,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Appearance",
+                    section = appText(com.lastwave.app.R.string.settings_section_appearance),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.accent_preset",
-                    title = "Accent Color & Palette",
-                    subtitle = "Pick presets, monochrome palette, or custom color wheel",
+                    title = appText(com.lastwave.app.R.string.ui_accent_color_palette_cae508),
+                    subtitle = appText(com.lastwave.app.R.string.ui_pick_presets_monochrome_palette_or_custom_color__0107e5),
                     keywords = listOf(
                         "accent", "color", "palette", "monochrome", "color wheel", "hex",
                         "custom color", "theme color", "tint"
@@ -696,15 +699,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Accent Color",
+                    section = appText(com.lastwave.app.R.string.ui_accent_color_2bef52),
                     type = EntryType.ACCENT_PICKER,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.lyrics_animation",
-                    title = "Lyrics Animation Style",
-                    subtitle = "Karaoke glow, sliding, fade, bounce, or Modern full-screen UI",
+                    title = appText(com.lastwave.app.R.string.ui_lyrics_animation_style_e99055),
+                    subtitle = appText(com.lastwave.app.R.string.ui_karaoke_glow_sliding_fade_bounce_or_modern_full__6ebffc),
                     keywords = listOf(
                         "lyrics animation", "karaoke", "lyrics style", "modern lyrics", "lyrics ui",
                         "smooth scroll", "glow lyrics", "lyrics presentation"
@@ -713,15 +716,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.wavy_seekbar",
-                    title = "Seekbar Style",
-                    subtitle = "Choose between Default, Wavy, and Waveform slider styles",
+                    title = appText(com.lastwave.app.R.string.settings_seekbar_style),
+                    subtitle = appText(com.lastwave.app.R.string.ui_choose_between_default_wavy_and_waveform_slider__a22626),
                     keywords = listOf(
                         "wavy seekbar", "wave slider", "progress bar", "fluid seekbar", "waveform",
                         "scrubber", "timeline", "squiggly line", "slider style", "seekbar style"
@@ -730,15 +733,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.music_video",
-                    title = "Music Video",
-                    subtitle = "Watch exact-sync music video of currently playing song in player menu",
+                    title = appText(com.lastwave.app.R.string.settings_music_video),
+                    subtitle = appText(com.lastwave.app.R.string.ui_watch_exact_sync_music_video_of_currently_playin_5fc2c9),
                     keywords = listOf(
                         "video", "music video", "watch video", "mv", "synced video", "youtube video",
                         "fullscreen video", "exact ms sync", "now playing video"
@@ -747,15 +750,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.rotating_background",
-                    title = "Rotating Background",
-                    subtitle = "Animate fluid rotating artwork in player and lyrics view (disable for static background)",
+                    title = appText(com.lastwave.app.R.string.settings_rotating_background),
+                    subtitle = appText(com.lastwave.app.R.string.ui_animate_fluid_rotating_artwork_in_player_and_lyr_68d60d),
                     keywords = listOf(
                         "rotating background", "rotating artwork", "fluid background", "static background",
                         "disable rotation", "android 11", "spinning artwork", "player background",
@@ -765,15 +768,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.lyrics_rotating_background",
-                    title = "Lyrics Background Motion",
-                    subtitle = "Animate fluid rotating artwork in lyrics view (disable for static background)",
+                    title = appText(com.lastwave.app.R.string.settings_lyrics_rotating_background),
+                    subtitle = appText(com.lastwave.app.R.string.ui_animate_fluid_rotating_artwork_in_lyrics_view_di_20a453),
                     keywords = listOf(
                         "lyrics background motion", "lyrics rotating background", "lyrics fluid background",
                         "lyrics motion", "lyrics background"
@@ -782,15 +785,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.fluid_beat_sync",
-                    title = "Beat-Synced Fluid Motion",
-                    subtitle = "Fluid artwork pulses and swirls in sync with musical beats",
+                    title = appText(com.lastwave.app.R.string.settings_fluid_beat_sync),
+                    subtitle = appText(com.lastwave.app.R.string.settings_fluid_beat_sync_on),
                     keywords = listOf(
                         "beat synced fluid motion", "beat sync", "fluid motion", "beat pulse",
                         "fluid beat", "audio reactive", "fluid animation", "per beat",
@@ -800,15 +803,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.lyrics_provider",
-                    title = "Lyrics Provider",
-                    subtitle = "Choose preferred synced lyrics provider (LRCLIB, Musixmatch, etc.)",
+                    title = appText(com.lastwave.app.R.string.ly_source_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_choose_preferred_synced_lyrics_provider_lrclib_m_ff91c8),
                     keywords = listOf(
                         "lyrics provider", "lrclib", "musixmatch", "synced lyrics source",
                         "lyrics engine", "lyrics fetcher"
@@ -817,15 +820,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.lyrics_offset",
-                    title = "Lyrics Sync Offset",
-                    subtitle = "Adjust timing offset in milliseconds to match lyrics with vocals",
+                    title = appText(com.lastwave.app.R.string.ui_lyrics_sync_offset_26dba2),
+                    subtitle = appText(com.lastwave.app.R.string.ui_adjust_timing_offset_in_milliseconds_to_match_ly_9a860c),
                     keywords = listOf(
                         "lyrics offset", "lyrics sync", "delay lyrics", "early lyrics", "ms offset",
                         "timing", "sync adjustment", "vocals match"
@@ -834,15 +837,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.lyrics_size",
-                    title = "Lyrics Text Size",
-                    subtitle = "Scale and resize lyrics font size across the player and full-screen views",
+                    title = appText(com.lastwave.app.R.string.ui_lyrics_text_size_200aed),
+                    subtitle = appText(com.lastwave.app.R.string.ui_scale_and_resize_lyrics_font_size_across_the_pla_4885b2),
                     keywords = listOf(
                         "lyrics size", "lyrics font size", "font size", "text size", "resize lyrics",
                         "bigger lyrics", "smaller lyrics", "lyrics scale", "lyrics zoom"
@@ -851,15 +854,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.lyrics_autohide",
-                    title = "Hide Lyrics Buttons",
-                    subtitle = "Idle time before the floating lyrics buttons fade out (2-10 s or Never)",
+                    title = appText(com.lastwave.app.R.string.ui_hide_lyrics_buttons_0bfbb3),
+                    subtitle = appText(com.lastwave.app.R.string.ui_idle_time_before_the_floating_lyrics_buttons_fad_cffd99),
                     keywords = listOf(
                         "hide lyrics buttons", "auto hide", "idle", "fade out", "lyrics controls",
                         "font size button", "fullscreen button", "never", "seconds", "timeout"
@@ -868,15 +871,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.translation_language",
-                    title = "Translation Language",
-                    subtitle = "Language the lyrics translate button turns songs into (blank follows the app language)",
+                    title = appText(com.lastwave.app.R.string.ui_translation_language_15fff1),
+                    subtitle = appText(com.lastwave.app.R.string.ui_language_the_lyrics_translate_button_turns_songs_23e69f),
                     keywords = listOf(
                         "translation language", "translate lyrics", "lyrics language", "romanization",
                         "romanize", "language of lyrics", "translate to", "lyrics translate"
@@ -885,15 +888,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Experimental & Features",
+                    section = appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.canvas_enabled",
-                    title = "Canvas Video Backgrounds",
-                    subtitle = "Looping visual canvas videos during playback like Spotify Canvas",
+                    title = appText(com.lastwave.app.R.string.ui_canvas_video_backgrounds_11ae9f),
+                    subtitle = appText(com.lastwave.app.R.string.ui_looping_visual_canvas_videos_during_playback_lik_3ede51),
                     keywords = listOf(
                         "canvas", "video", "looping video", "spotify canvas", "video background",
                         "visualizer", "moving artwork"
@@ -902,15 +905,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Canvas",
+                    section = appText(com.lastwave.app.R.string.details_canvas_source),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.canvas_full_bleed",
-                    title = "Canvas Full Bleed",
-                    subtitle = "Expand canvas video to fill entire screen behind controls",
+                    title = appText(com.lastwave.app.R.string.ui_canvas_full_bleed_15374a),
+                    subtitle = appText(com.lastwave.app.R.string.ui_expand_canvas_video_to_fill_entire_screen_behind_06a904),
                     keywords = listOf(
                         "canvas full bleed", "full screen canvas", "edge to edge", "immersion",
                         "canvas size", "fit screen"
@@ -919,15 +922,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Canvas",
+                    section = appText(com.lastwave.app.R.string.details_canvas_source),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.canvas_gradient_blur",
-                    title = "Gradient Blur on Canvas",
-                    subtitle = "Blend canvas bottom into ambient background gradients",
+                    title = appText(com.lastwave.app.R.string.ui_gradient_blur_on_canvas_308953),
+                    subtitle = appText(com.lastwave.app.R.string.settings_canvas_gradient_blur_sub),
                     keywords = listOf(
                         "canvas gradient blur", "canvas blur", "gradient blur", "hero canvas",
                         "ambient blur", "canvas edge to edge"
@@ -936,15 +939,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Canvas",
+                    section = appText(com.lastwave.app.R.string.details_canvas_source),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "appearance.canvas_cellular",
-                    title = "Canvas on Cellular Data",
-                    subtitle = "Allow canvas video streaming over mobile and cellular networks",
+                    title = appText(com.lastwave.app.R.string.ui_canvas_on_cellular_data_d84c6d),
+                    subtitle = appText(com.lastwave.app.R.string.ui_allow_canvas_video_streaming_over_mobile_and_cel_f34d8a),
                     keywords = listOf(
                         "canvas cellular", "mobile data", "canvas data saver", "lte", "5g",
                         "stream canvas mobile", "data usage"
@@ -953,7 +956,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.APPEARANCE,
-                    section = "Canvas",
+                    section = appText(com.lastwave.app.R.string.details_canvas_source),
                     type = EntryType.TOGGLE,
                 )
             )
@@ -964,8 +967,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "youtube.account",
-                    title = "YouTube Account Connection",
-                    subtitle = "Connect or manage your Google / YouTube Music account",
+                    title = appText(com.lastwave.app.R.string.ui_youtube_account_connection_9e2425),
+                    subtitle = appText(com.lastwave.app.R.string.ui_connect_or_manage_your_google_youtube_music_acco_24889b),
                     keywords = listOf(
                         "youtube", "google account", "yt music", "login", "sign in", "oauth",
                         "connect youtube", "disconnect youtube", "account"
@@ -974,15 +977,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = "YouTube & Sync",
+                    section = appText(com.lastwave.app.R.string.set_cat_yt),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "youtube.sync",
-                    title = "24/7 Library Sync",
-                    subtitle = "Keep playlists and favorites continuously synced with YouTube Music",
+                    title = appText(com.lastwave.app.R.string.ui_24_7_library_sync_8cfb92),
+                    subtitle = appText(com.lastwave.app.R.string.ui_keep_playlists_and_favorites_continuously_synced_8d7523),
                     keywords = listOf(
                         "youtube sync", "library sync", "cloud sync", "auto sync", "mirror playlists",
                         "24/7 sync", "background sync", "sync interval"
@@ -991,15 +994,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = "YouTube & Sync",
+                    section = appText(com.lastwave.app.R.string.set_cat_yt),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "youtube.channel",
-                    title = "YouTube Channel",
-                    subtitle = "Switch between personal and brand channels linked to your account",
+                    title = appText(com.lastwave.app.R.string.set_yt_channel),
+                    subtitle = appText(com.lastwave.app.R.string.ui_switch_between_personal_and_brand_channels_linke_64ed53),
                     keywords = listOf(
                         "youtube channel", "brand account", "channel selector", "switch channel",
                         "yt profile", "sub channel"
@@ -1008,15 +1011,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = "YouTube & Sync",
+                    section = appText(com.lastwave.app.R.string.set_cat_yt),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "youtube.select_playlists",
-                    title = "Select Playlists to Sync",
-                    subtitle = "Choose specific playlists to mirror with your YouTube Music account",
+                    title = appText(com.lastwave.app.R.string.settings_select_playlists),
+                    subtitle = appText(com.lastwave.app.R.string.ui_choose_specific_playlists_to_mirror_with_your_yo_4726c7),
                     keywords = listOf(
                         "sync playlists", "playlist selection", "choose playlists", "mirror playlists",
                         "synced playlists", "filter sync"
@@ -1025,15 +1028,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = "YouTube & Sync",
+                    section = appText(com.lastwave.app.R.string.set_cat_yt),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "youtube.shown_playlists",
-                    title = "Show / Hide Account Playlists",
-                    subtitle = "Control which playlists from your YouTube account appear in LastWave",
+                    title = appText(com.lastwave.app.R.string.ui_show_hide_account_playlists_c81413),
+                    subtitle = appText(com.lastwave.app.R.string.ui_control_which_playlists_from_your_youtube_accoun_08491c),
                     keywords = listOf(
                         "show playlists", "hide playlists", "visibility", "account playlists",
                         "library visibility", "filter playlists"
@@ -1042,15 +1045,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = "YouTube & Sync",
+                    section = appText(com.lastwave.app.R.string.set_cat_yt),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "youtube.import",
-                    title = "Import from YouTube Music",
-                    subtitle = "Search, browse, or paste playlist links & IDs to import into library",
+                    title = appText(com.lastwave.app.R.string.set_import_yt),
+                    subtitle = appText(com.lastwave.app.R.string.ui_search_browse_or_paste_playlist_links_ids_to_imp_74feaf),
                     keywords = listOf(
                         "import youtube", "import playlist", "paste link", "yt import", "copy playlist",
                         "transfer youtube", "make local"
@@ -1059,15 +1062,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = "YouTube & Sync",
+                    section = appText(com.lastwave.app.R.string.set_cat_yt),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "youtube.history",
-                    title = "YouTube Music Listening History",
-                    subtitle = "Record plays and scrobbles in your official YouTube Music history",
+                    title = appText(com.lastwave.app.R.string.ui_youtube_music_listening_history_b5295b),
+                    subtitle = appText(com.lastwave.app.R.string.ui_record_plays_and_scrobbles_in_your_official_yout_26ab38),
                     keywords = listOf(
                         "youtube history", "watch history", "yt history sync", "scrobble to youtube",
                         "listening history", "sync plays"
@@ -1076,15 +1079,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.YOUTUBE,
-                    section = "YouTube & Sync",
+                    section = appText(com.lastwave.app.R.string.set_cat_yt),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "spotify.account",
-                    title = "Connect Spotify Account",
-                    subtitle = "Sign in to enable official Spotify Canvas video loops & library sync",
+                    title = appText(com.lastwave.app.R.string.ui_connect_spotify_account_e9e3f8),
+                    subtitle = appText(com.lastwave.app.R.string.ui_sign_in_to_enable_official_spotify_canvas_video__5e24f2),
                     keywords = listOf(
                         "spotify", "spotify account", "connect spotify", "sp_dc", "spotify login",
                         "canvas login", "disconnect spotify", "logout spotify", "sign out"
@@ -1093,15 +1096,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.primary },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = "Spotify",
+                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "spotify.import",
-                    title = "Your Spotify Playlists",
-                    subtitle = "Import your Spotify playlists and Liked Songs into this app's library",
+                    title = appText(com.lastwave.app.R.string.ui_your_spotify_playlists_ea794e),
+                    subtitle = appText(com.lastwave.app.R.string.ui_import_your_spotify_playlists_and_liked_songs_in_a0627e),
                     keywords = listOf(
                         "spotify playlist", "import playlist", "my playlists", "liked songs",
                         "spotify library", "import from spotify"
@@ -1110,15 +1113,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = "Spotify",
+                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "spotify.canvas",
-                    title = "Spotify Canvas (Looping background videos)",
-                    subtitle = "Fetch and play Spotify's looping visual videos in background",
+                    title = appText(com.lastwave.app.R.string.ui_spotify_canvas_looping_background_videos_bb0707),
+                    subtitle = appText(com.lastwave.app.R.string.ui_fetch_and_play_spotify_s_looping_visual_videos_i_9e469f),
                     keywords = listOf(
                         "spotify canvas", "canvas", "video loop", "looping video", "moving background"
                     ),
@@ -1126,15 +1129,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = "Spotify",
+                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "spotify.prefer_canvas",
-                    title = "Prefer Spotify Canvas",
-                    subtitle = "Ask Spotify first, before Apple Music, Tidal and community artwork",
+                    title = appText(com.lastwave.app.R.string.ui_prefer_spotify_canvas_033107),
+                    subtitle = appText(com.lastwave.app.R.string.ui_ask_spotify_first_before_apple_music_tidal_and_c_2a6e9d),
                     keywords = listOf(
                         "spotify canvas", "prefer", "priority", "first", "apple music", "tidal"
                     ),
@@ -1142,15 +1145,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = "Spotify",
+                    section = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "spotify.recommendations",
-                    title = "Recommendation provider",
-                    subtitle = "Seed recommendations from YouTube Music or Spotify",
+                    title = appText(com.lastwave.app.R.string.settings_recommendations_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_seed_recommendations_from_youtube_music_or_spoti_74afee),
                     keywords = listOf(
                         "recommendation", "recommendations", "algorithm", "provider", "radio",
                         "discover", "mix", "mixes", "spotify recommendations", "youtube recommendations"
@@ -1159,15 +1162,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = "Recommendations",
+                    section = appText(com.lastwave.app.R.string.settings_section_recommendations),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "spotify.token",
-                    title = "Import sp_dc token",
-                    subtitle = "Paste a session cookie from your browser instead of signing in here",
+                    title = appText(com.lastwave.app.R.string.ui_import_sp_dc_token_8f640f),
+                    subtitle = appText(com.lastwave.app.R.string.ui_paste_a_session_cookie_from_your_browser_instead_50b7ce),
                     keywords = listOf(
                         "sp_dc", "cookie", "token", "paste", "import", "session", "spotify login"
                     ),
@@ -1175,7 +1178,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.SPOTIFY,
-                    section = "Session Token",
+                    section = appText(com.lastwave.app.R.string.ui_session_token_12f1f7),
                     type = EntryType.ACTION,
                 )
             )
@@ -1190,14 +1193,14 @@ object SettingsSearchIndex {
                 add(
                     SettingsEntry(
                         id = id,
-                        title = "$name Account Connection",
+                        title = appText(com.lastwave.app.R.string.ui_1_s_account_connection_7ed024, (name).toString()),
                         subtitle = description,
                         keywords = terms.split(" ") + listOf("scrobblers", "scrobble", "scrobbling", "connect", "login"),
                         icon = Icons.Filled.Album,
                         iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                         iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                         parentTab = SettingsTab.SCROBBLERS,
-                        section = "Scrobblers",
+                        section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
                         type = EntryType.ACTION,
                     )
                 )
@@ -1205,8 +1208,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "lastfm.connect",
-                    title = "Last.fm Account Connection",
-                    subtitle = "Connect Last.fm account for global scrobbling, loved tracks, and listening stats",
+                    title = appText(com.lastwave.app.R.string.ui_last_fm_account_connection_50961e),
+                    subtitle = appText(com.lastwave.app.R.string.ui_connect_last_fm_account_for_global_scrobbling_lo_f6b684),
                     keywords = listOf(
                         "lastfm", "last.fm", "scrobble", "scrobbling", "login lastfm", "connect lastfm",
                         "auth", "stats", "loved tracks", "profile"
@@ -1215,15 +1218,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.SCROBBLERS,
-                    section = "Scrobblers",
+                    section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "lastfm.api_credentials",
-                    title = "Last.fm Custom API Credentials",
-                    subtitle = "Configure custom Last.fm API key and secret to bypass shared rate limits",
+                    title = appText(com.lastwave.app.R.string.ui_last_fm_custom_api_credentials_256bb5),
+                    subtitle = appText(com.lastwave.app.R.string.ui_configure_custom_last_fm_api_key_and_secret_to_b_149d72),
                     keywords = listOf(
                         "lastfm api key", "custom api", "api secret", "developer key", "credentials",
                         "rate limit", "last.fm token"
@@ -1232,15 +1235,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SCROBBLERS,
-                    section = "Scrobblers",
+                    section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "discord.presence",
-                    title = "Discord Rich Presence",
-                    subtitle = "Show the playing track, quality and cover on your Discord profile",
+                    title = appText(com.lastwave.app.R.string.set_discord_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_show_the_playing_track_quality_and_cover_on_your_3dcf00),
                     keywords = listOf(
                         "discord", "rich presence", "discord rpc", "now playing discord",
                         "discord status", "listening to", "presence", "show what im playing"
@@ -1249,7 +1252,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.SCROBBLERS,
-                    section = "Scrobblers",
+                    section = appText(com.lastwave.app.R.string.set_cat_scrobblers),
                     type = EntryType.TOGGLE,
                 )
             )
@@ -1265,8 +1268,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "library.home_sections",
-                    title = "Home Layout & Sections",
-                    subtitle = "Configure visible feeds, shelves, and quick access on the Home tab",
+                    title = appText(com.lastwave.app.R.string.ui_home_layout_sections_f71040),
+                    subtitle = appText(com.lastwave.app.R.string.ui_configure_visible_feeds_shelves_and_quick_access_0fe1be),
                     keywords = listOf(
                         "home layout", "home sections", "feed", "organize home", "shelves",
                         "customize library", "home screen layout"
@@ -1275,15 +1278,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = "Home & Organization",
+                    section = appText(com.lastwave.app.R.string.ui_home_organization_1c7c46),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "library.excluded_songs",
-                    title = "Recommendation Exclusions",
-                    subtitle = "Manage songs excluded from recommendations and smart mixes",
+                    title = appText(com.lastwave.app.R.string.ui_recommendation_exclusions_e52017),
+                    subtitle = appText(com.lastwave.app.R.string.ui_manage_songs_excluded_from_recommendations_and_s_b08a2e),
                     keywords = listOf(
                         "excluded songs", "recommendations", "blocked tracks", "hidden songs",
                         "don't recommend", "exclude from mixes", "reset exclusions"
@@ -1292,15 +1295,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = "Home & Organization",
+                    section = appText(com.lastwave.app.R.string.ui_home_organization_1c7c46),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "library.podcasts",
-                    title = "Podcasts",
-                    subtitle = "Show or hide podcast shelves, show pages and episode search",
+                    title = appText(com.lastwave.app.R.string.podcasts_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_show_or_hide_podcast_shelves_show_pages_and_epis_9a5540),
                     keywords = listOf(
                         "podcast", "podcasts", "shows", "episodes", "hide podcasts",
                         "youtube music podcasts", "episode search"
@@ -1309,15 +1312,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = "Content",
+                    section = appText(com.lastwave.app.R.string.settings_section_content),
                     type = EntryType.TOGGLE,
                 )
             )
             add(
                 SettingsEntry(
                     id = "library.import_yt",
-                    title = "Import from YouTube Music",
-                    subtitle = "Search, browse, or paste playlist links & IDs to import into library",
+                    title = appText(com.lastwave.app.R.string.set_import_yt),
+                    subtitle = appText(com.lastwave.app.R.string.ui_search_browse_or_paste_playlist_links_ids_to_imp_74feaf),
                     keywords = listOf(
                         "import youtube", "import playlist", "yt music import", "paste playlist url",
                         "transfer youtube playlists"
@@ -1326,15 +1329,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = "Imports & Addons",
+                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "library.import_external",
-                    title = "Import from Spotify / Apple Music",
-                    subtitle = "Paste a public playlist URL from Spotify or Apple Music to transfer tracks",
+                    title = appText(com.lastwave.app.R.string.set_import_spotify),
+                    subtitle = appText(com.lastwave.app.R.string.ui_paste_a_public_playlist_url_from_spotify_or_appl_44dbb6),
                     keywords = listOf(
                         "import spotify", "import apple music", "transfer playlist", "spotify to lastwave",
                         "apple to lastwave", "playlist converter", "public link"
@@ -1343,15 +1346,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = "Imports & Addons",
+                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "library.import_file",
-                    title = "Import Playlists from File (CSV / M3U)",
-                    subtitle = "Import playlist files, CSV listening logs, or M3U/M3U8 playlists from storage",
+                    title = appText(com.lastwave.app.R.string.ui_import_playlists_from_file_csv_m3u_993ebd),
+                    subtitle = appText(com.lastwave.app.R.string.ui_import_playlist_files_csv_listening_logs_or_m3u__7b9770),
                     keywords = listOf(
                         "import file", "csv", "m3u", "m3u8", "import local", "playlist file",
                         "local file import", "open playlist"
@@ -1360,15 +1363,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.tertiaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onTertiaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = "Imports & Addons",
+                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "library.modules",
-                    title = "Extensions & Modules",
-                    subtitle = "Browse and configure modular plugins and extra features",
+                    title = appText(com.lastwave.app.R.string.ui_extensions_modules_86c278),
+                    subtitle = appText(com.lastwave.app.R.string.ui_browse_and_configure_modular_plugins_and_extra_f_1cee66),
                     keywords = listOf(
                         "modules", "extensions", "plugins", "addons", "modularity", "extra features"
                     ),
@@ -1376,7 +1379,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.secondaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onSecondaryContainer },
                     parentTab = SettingsTab.LIBRARY,
-                    section = "Imports & Addons",
+                    section = appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc),
                     type = EntryType.ACTION,
                 )
             )
@@ -1387,8 +1390,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "backup.create",
-                    title = "Backup Settings & Playlists",
-                    subtitle = "Export your local playlists, credentials, and app preferences to a JSON file",
+                    title = appText(com.lastwave.app.R.string.ui_backup_settings_playlists_b7a92e),
+                    subtitle = appText(com.lastwave.app.R.string.ui_export_your_local_playlists_credentials_and_app__844f4c),
                     keywords = listOf(
                         "backup", "export data", "save backup", "export json", "backup playlists",
                         "backup settings", "save configuration"
@@ -1397,15 +1400,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.DATA_BACKUP,
-                    section = "Backup & Restore",
+                    section = appText(com.lastwave.app.R.string.settings_section_backup),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "backup.restore",
-                    title = "Restore from Backup",
-                    subtitle = "Import a previously saved LastWave backup file to restore settings & playlists",
+                    title = appText(com.lastwave.app.R.string.ui_restore_from_backup_5df7f0),
+                    subtitle = appText(com.lastwave.app.R.string.ui_import_a_previously_saved_lastwave_backup_file_t_554549),
                     keywords = listOf(
                         "restore", "import backup", "recover data", "load backup", "restore playlists",
                         "restore settings", "json restore"
@@ -1414,15 +1417,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.DATA_BACKUP,
-                    section = "Backup & Restore",
+                    section = appText(com.lastwave.app.R.string.settings_section_backup),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "backup.clear_all",
-                    title = "Reset App & Clear All Data",
-                    subtitle = "Remove credentials, playlists, cached audio, and reset all preferences",
+                    title = appText(com.lastwave.app.R.string.ui_reset_app_clear_all_data_02bdc9),
+                    subtitle = appText(com.lastwave.app.R.string.ui_remove_credentials_playlists_cached_audio_and_re_4676e3),
                     keywords = listOf(
                         "clear all", "reset", "erase", "wipe data", "delete everything", "factory reset",
                         "danger", "remove data", "clear cache"
@@ -1431,7 +1434,7 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.errorContainer },
                     iconTint = { MaterialTheme.colorScheme.onErrorContainer },
                     parentTab = SettingsTab.DATA_BACKUP,
-                    section = "Data Management",
+                    section = appText(com.lastwave.app.R.string.settings_section_data),
                     type = EntryType.ACTION,
                 )
             )
@@ -1442,8 +1445,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "about.language",
-                    title = "App Language",
-                    subtitle = "Change app language (English, Spanish, Russian, and more)",
+                    title = appText(com.lastwave.app.R.string.settings_language_title),
+                    subtitle = appText(com.lastwave.app.R.string.ui_change_app_language_english_spanish_russian_and__1ea784),
                     keywords = listOf(
                         "language", "locale", "translation", "english", "spanish", "russian",
                         "idioma", "sprache", "change language"
@@ -1452,15 +1455,15 @@ object SettingsSearchIndex {
                     iconContainer = { MaterialTheme.colorScheme.primaryContainer },
                     iconTint = { MaterialTheme.colorScheme.onPrimaryContainer },
                     parentTab = SettingsTab.ABOUT,
-                    section = "Language",
+                    section = appText(com.lastwave.app.R.string.settings_section_language),
                     type = EntryType.ACTION,
                 )
             )
             add(
                 SettingsEntry(
                     id = "about.telegram_support",
-                    title = "Telegram Updates & Support",
-                    subtitle = "Join @clashprojects on Telegram for app news, beta builds, and support",
+                    title = appText(com.lastwave.app.R.string.ui_telegram_updates_support_a730db),
+                    subtitle = appText(com.lastwave.app.R.string.ui_join_clashprojects_on_telegram_for_app_news_beta_f265cb),
                     keywords = listOf(
                         "telegram", "support", "community", "chat", "clashprojects", "help",
                         "updates channel", "news"
@@ -1476,8 +1479,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "about.discord_support",
-                    title = "Discord Support",
-                    subtitle = "Join our Discord community server for support and feedback",
+                    title = appText(com.lastwave.app.R.string.set_discord_support),
+                    subtitle = appText(com.lastwave.app.R.string.ui_join_our_discord_community_server_for_support_an_807953),
                     keywords = listOf(
                         "discord", "community", "chat", "support", "feedback", "server", "discussion"
                     ),
@@ -1492,8 +1495,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "about.more_apps",
-                    title = "More Apps from Clash Projects",
-                    subtitle = "Join @MaterialYouApp on Telegram to discover other applications",
+                    title = appText(com.lastwave.app.R.string.ui_more_apps_from_clash_projects_1a83d5),
+                    subtitle = appText(com.lastwave.app.R.string.ui_join_materialyouapp_on_telegram_to_discover_othe_2e5cbd),
                     keywords = listOf(
                         "more apps", "material you app", "other apps", "clash projects", "developer"
                     ),
@@ -1508,8 +1511,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "about.diagnostics",
-                    title = "Export Diagnostics & Logs",
-                    subtitle = "Export diagnostic report, crash logs, and hardware device info",
+                    title = appText(com.lastwave.app.R.string.ui_export_diagnostics_logs_afee25),
+                    subtitle = appText(com.lastwave.app.R.string.ui_export_diagnostic_report_crash_logs_and_hardware_657b0d),
                     keywords = listOf(
                         "diagnostics", "logs", "crash logs", "debug info", "report issue", "bug report",
                         "troubleshooting", "system info"
@@ -1525,8 +1528,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "about.check_updates",
-                    title = "Check for Updates",
-                    subtitle = "Check GitHub releases for the latest version and changelog",
+                    title = appText(com.lastwave.app.R.string.settings_check_updates),
+                    subtitle = appText(com.lastwave.app.R.string.ui_check_github_releases_for_the_latest_version_and_905e07),
                     keywords = listOf(
                         "update", "check updates", "new version", "github releases", "changelog",
                         "download update", "latest release", "upgrade"
@@ -1542,8 +1545,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "about.source_code",
-                    title = "Open Source Code",
-                    subtitle = "View repository at github.com/Clash-Projects/LastWave-native",
+                    title = appText(com.lastwave.app.R.string.ui_open_source_code_995802),
+                    subtitle = appText(com.lastwave.app.R.string.ui_view_repository_at_github_com_clash_projects_las_aa815a),
                     keywords = listOf(
                         "source code", "github", "open source", "repository", "gpl", "license",
                         "contribute", "git"
@@ -1559,8 +1562,8 @@ object SettingsSearchIndex {
             add(
                 SettingsEntry(
                     id = "about.desktop_app",
-                    title = "Download Desktop App",
-                    subtitle = "View repository at github.com/Clash-Projects/LastWave-Desktop",
+                    title = appText(com.lastwave.app.R.string.settings_desktop_app),
+                    subtitle = appText(com.lastwave.app.R.string.ui_view_repository_at_github_com_clash_projects_las_95c5fc),
                     keywords = listOf(
                         "desktop", "pc", "windows", "mac", "linux", "electron", "github", "clash-projects",
                         "download"

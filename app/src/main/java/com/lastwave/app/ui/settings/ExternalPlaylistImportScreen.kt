@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -126,8 +128,8 @@ fun ExternalPlaylistImportScreen(
             ExpressiveHeader(
                 modifier = headerModifier,
                 backdrop = headerBackdrop,
-                title = "Import Playlist",
-                subtitle = if (selectedTab == 0) "Spotify Account Library" else "Spotify & Apple Music link",
+                title = appText(com.lastwave.app.R.string.ytimp_title),
+                subtitle = if (selectedTab == 0) appText(com.lastwave.app.R.string.ui_spotify_account_library_30c9bb) else appText(com.lastwave.app.R.string.ui_spotify_apple_music_link_1bea1e),
                 onBack = onBack,
             )
             },
@@ -153,7 +155,7 @@ fun ExternalPlaylistImportScreen(
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        text = "Spotify Account",
+                        text = appText(com.lastwave.app.R.string.ui_spotify_account_56f3de),
                         fontWeight = FontWeight.Bold,
                         fontSize = 13.sp,
                         color = if (selectedTab == 0) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -169,7 +171,7 @@ fun ExternalPlaylistImportScreen(
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        text = "Import with Link",
+                        text = appText(com.lastwave.app.R.string.ui_import_with_link_ea4908),
                         fontWeight = FontWeight.Bold,
                         fontSize = 13.sp,
                         color = if (selectedTab == 1) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -208,13 +210,13 @@ fun ExternalPlaylistImportScreen(
                                 ) {
                                     Column(modifier = Modifier.weight(1f).padding(end = 14.dp)) {
                                         Text(
-                                            "Connect Spotify Account",
+                                            appText(com.lastwave.app.R.string.ui_connect_spotify_account_e9e3f8),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.Bold,
                                         )
                                         Spacer(Modifier.height(4.dp))
                                         Text(
-                                            "Sign in to access and import your personal playlists, Liked Songs, and enable Spotify Canvas.",
+                                            appText(com.lastwave.app.R.string.ui_sign_in_to_access_and_import_your_personal_playl_0a87de),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         )
@@ -224,7 +226,7 @@ fun ExternalPlaylistImportScreen(
                                         shape = CircleShape,
                                         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
                                     ) {
-                                        Text("Connect", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
+                                        Text(appText(com.lastwave.app.R.string.cookie_login_connect), style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
                                     }
                                 }
                             }
@@ -250,7 +252,7 @@ fun ExternalPlaylistImportScreen(
                                             modifier = Modifier.size(18.dp),
                                         )
                                         Spacer(Modifier.width(6.dp))
-                                        Text("Back to all playlists", fontWeight = FontWeight.Bold)
+                                        Text(appText(com.lastwave.app.R.string.ui_back_to_all_playlists_6a2b02), fontWeight = FontWeight.Bold)
                                     }
                                 }
                             }
@@ -291,7 +293,7 @@ fun ExternalPlaylistImportScreen(
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) {
                                     Text(
-                                        "Your Spotify Library",
+                                        appText(com.lastwave.app.R.string.ui_your_spotify_library_6b7aef),
                                         style = MaterialTheme.typography.titleMedium,
                                         fontWeight = FontWeight.Bold,
                                     )
@@ -299,7 +301,7 @@ fun ExternalPlaylistImportScreen(
                                         CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
                                     } else {
                                         IconButton(onClick = { viewModel.loadUserPlaylists() }, modifier = Modifier.size(28.dp)) {
-                                            Icon(Icons.Filled.Refresh, contentDescription = "Refresh", modifier = Modifier.size(18.dp))
+                                            Icon(Icons.Filled.Refresh, contentDescription = appText(com.lastwave.app.R.string.ytimp_refresh), modifier = Modifier.size(18.dp))
                                         }
                                     }
                                 }
@@ -344,14 +346,14 @@ fun ExternalPlaylistImportScreen(
                                             }
                                             Column {
                                                 Text(
-                                                    text = "Liked Songs",
+                                                    text = appText(com.lastwave.app.R.string.spotify_liked_songs_title),
                                                     style = MaterialTheme.typography.titleSmall,
                                                     fontWeight = FontWeight.Bold,
                                                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                                                 )
                                                 Spacer(Modifier.height(2.dp))
                                                 Text(
-                                                    text = "Your Spotify Favorites",
+                                                    text = appText(com.lastwave.app.R.string.ui_your_spotify_favorites_7e36b0),
                                                     style = MaterialTheme.typography.bodySmall,
                                                     color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f),
                                                 )
@@ -413,7 +415,7 @@ fun ExternalPlaylistImportScreen(
                                                     overflow = TextOverflow.Ellipsis,
                                                 )
                                                 Spacer(Modifier.height(2.dp))
-                                                val trackLabel = pl.trackCount?.let { "$it tracks" } ?: "Spotify Playlist"
+                                                val trackLabel = pl.trackCount?.let { appText(com.lastwave.app.R.string.ui_1_s_tracks_aece60, (it).toString()) } ?: appText(com.lastwave.app.R.string.ui_spotify_playlist_5fd60a)
                                                 Text(
                                                     text = trackLabel,
                                                     style = MaterialTheme.typography.bodySmall,
@@ -434,7 +436,7 @@ fun ExternalPlaylistImportScreen(
                             if (userPlaylists.isEmpty() && !loadingUserPlaylists) {
                                 item {
                                     Text(
-                                        text = "No custom playlists found in this Spotify account.",
+                                        text = appText(com.lastwave.app.R.string.ui_no_custom_playlists_found_in_this_spotify_accoun_6fcb36),
                                         style = MaterialTheme.typography.bodyMedium,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         textAlign = TextAlign.Center,
@@ -462,12 +464,12 @@ fun ExternalPlaylistImportScreen(
                                 verticalArrangement = Arrangement.spacedBy(14.dp),
                             ) {
                                 Text(
-                                    "Paste Playlist Link",
+                                    appText(com.lastwave.app.R.string.ui_paste_playlist_link_7943d7),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
                                 )
                                 Text(
-                                    "Paste any public Spotify or Apple Music playlist link. LastWave reads the tracks and matches them into your library.",
+                                    appText(com.lastwave.app.R.string.ui_paste_any_public_spotify_or_apple_music_playlist_9d4718),
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
@@ -624,7 +626,7 @@ fun ExternalPlaylistImportScreen(
                     )
                     Spacer(Modifier.width(10.dp))
                     Text(
-                        state.progress ?: "Importing Playlist...",
+                        state.progress ?: appText(com.lastwave.app.R.string.ui_importing_playlist_93bd12),
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Bold,
                     )
@@ -632,7 +634,7 @@ fun ExternalPlaylistImportScreen(
                     Icon(Icons.Filled.Download, contentDescription = null, modifier = Modifier.size(20.dp))
                     Spacer(Modifier.width(8.dp))
                     Text(
-                        if (rows.size == 1) "Import 1 track" else "Import ${rows.size} tracks",
+                        if (rows.size == 1) appText(com.lastwave.app.R.string.ui_import_1_track_1da8cc) else appText(com.lastwave.app.R.string.ui_import_1_s_tracks_141776, (rows.size).toString()),
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Bold,
                     )
@@ -693,7 +695,7 @@ private fun PreviewSummaryCard(
             }
 
             Text(
-                if (rows.size == 1) "1 track" else "${rows.size} tracks",
+                if (rows.size == 1) appText(com.lastwave.app.R.string.ui_1_track_5e9171) else appText(com.lastwave.app.R.string.ui_1_s_tracks_aece60, (rows.size).toString()),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

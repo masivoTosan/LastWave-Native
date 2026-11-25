@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
@@ -110,7 +112,7 @@ private fun CommunityPlaylistShelfItem(
     val preview = (state as? PlaylistPreviewState.Ready)?.preview
     val subtitle = listOfNotNull(
         item.playlist.author?.takeIf(String::isNotBlank), item.cardData?.viewsText,
-        preview?.songCount?.let { if (it == 1) "1 song" else "$it songs" },
+        preview?.songCount?.let { if (it == 1) appText(com.lastwave.app.R.string.ui_1_song_093990) else appText(com.lastwave.app.R.string.ui_1_s_songs_9b614d, (it).toString()) },
     ).joinToString(" • ")
     ShelfCommunityPlaylistCard(
         playlistId = item.playlist.id,

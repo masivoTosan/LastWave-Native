@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -91,7 +93,7 @@ fun GenerationProgressCard(message: String, modifier: Modifier = Modifier) {
             Text(stringResource(R.string.gen_progress_title), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
             Spacer(Modifier.height(4.dp))
             Text(
-                message.ifBlank { "Creating your personalized mix\u2026" },
+                message.ifBlank { appText(com.lastwave.app.R.string.ui_creating_your_personalized_mix_d7e4f2) },
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

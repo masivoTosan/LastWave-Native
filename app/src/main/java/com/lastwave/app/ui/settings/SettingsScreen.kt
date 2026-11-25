@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 import com.lastwave.app.data.scrobbler.ExtraService
 import com.lastwave.app.data.local.SeekbarStyle
@@ -312,70 +314,70 @@ enum class SettingsTab(
     AUDIO(
         titleRes = R.string.set_cat_audio,
         subtitleRes = R.string.set_cat_audio_sub,
-        title = "Audio",
-        subtitle = "Streaming quality, Audio engine, Equalizer, Output & Loudness",
+        title = appText(com.lastwave.app.R.string.ui_audio_acdac2),
+        subtitle = appText(com.lastwave.app.R.string.set_cat_audio_sub),
         icon = Icons.Filled.GraphicEq,
     ),
     APPEARANCE(
         titleRes = R.string.set_cat_appear,
         subtitleRes = R.string.set_cat_appear_sub,
-        title = "Appearance",
-        subtitle = "Themes, Colors, Artwork, Lyrics",
+        title = appText(com.lastwave.app.R.string.settings_section_appearance),
+        subtitle = appText(com.lastwave.app.R.string.set_cat_appear_sub),
         icon = Icons.Filled.Palette,
     ),
     YOUTUBE(
         titleRes = R.string.set_cat_yt,
         subtitleRes = R.string.set_cat_yt_sub,
-        title = "YouTube",
-        subtitle = "Account connection, 24/7 Library sync, Channels, History",
+        title = appText(com.lastwave.app.R.string.menu_quality_youtube),
+        subtitle = appText(com.lastwave.app.R.string.set_cat_yt_sub),
         icon = Icons.Filled.CloudSync,
     ),
     SPOTIFY(
         titleRes = R.string.set_cat_spotify,
         subtitleRes = R.string.set_cat_spotify_sub,
-        title = "Spotify",
-        subtitle = "Account connection, Canvas, Playlist imports & Liked Songs sync",
+        title = appText(com.lastwave.app.R.string.spotify_playlists_section_title),
+        subtitle = appText(com.lastwave.app.R.string.set_cat_spotify_sub),
         icon = QualityGlyphs.Spotify,
     ),
     SCROBBLERS(
         titleRes = R.string.set_cat_scrobblers,
         subtitleRes = R.string.set_cat_scrobblers_sub,
-        title = "Scrobblers",
-        subtitle = "ListenBrainz, Libre.fm & Last.fm",
+        title = appText(com.lastwave.app.R.string.set_cat_scrobblers),
+        subtitle = appText(com.lastwave.app.R.string.set_cat_scrobblers_sub),
         icon = Icons.Filled.Album,
     ),
     LIBRARY(
         titleRes = R.string.set_cat_lib,
         subtitleRes = R.string.set_cat_lib_sub,
-        title = "Library",
-        subtitle = "Home layout, Playlist imports, Downloads, Exclusions",
+        title = appText(com.lastwave.app.R.string.pl_title),
+        subtitle = appText(com.lastwave.app.R.string.set_cat_lib_sub),
         icon = Icons.Filled.QueueMusic,
     ),
     DATA_BACKUP(
         titleRes = R.string.set_cat_data,
         subtitleRes = R.string.set_cat_data_sub,
-        title = "Data",
-        subtitle = "Cache cleanup, Export & Import settings, Database tools",
+        title = appText(com.lastwave.app.R.string.ui_data_e5e429),
+        subtitle = appText(com.lastwave.app.R.string.ui_cache_cleanup_export_import_settings_database_to_c7f9b8),
         icon = Icons.Filled.Backup,
     ),
     ABOUT(
         titleRes = R.string.set_cat_about,
         subtitleRes = R.string.set_cat_about_sub,
-        title = "About",
-        subtitle = "Version info, Telegram community, GitHub repository",
+        title = appText(com.lastwave.app.R.string.art_about),
+        subtitle = appText(com.lastwave.app.R.string.ui_version_info_telegram_community_github_repositor_c557af),
         icon = Icons.Filled.Info,
     ),
 }
 
 private fun streamingQualityLabel(quality: Int): String = when (quality) {
-    CELLULAR_QUALITY_AUTO -> "Auto"
-    28 -> "Dolby Atmos"
-    27, 7 -> "Hi-Res Lossless"
-    6 -> "CD Lossless"
-    5 -> "Standard (320 kbps)"
-    4 -> "Data Saver"
-    -1 -> "YouTube Music"
-    else -> "Hi-Res Lossless"
+    CELLULAR_QUALITY_AUTO -> appText(com.lastwave.app.R.string.autoeq_preamp_auto)
+    28 -> appText(com.lastwave.app.R.string.menu_quality_atmos)
+    27, 7 -> appText(com.lastwave.app.R.string.ui_hi_res_lossless_13a296)
+    6 -> appText(com.lastwave.app.R.string.menu_quality_cd)
+    5 -> appText(com.lastwave.app.R.string.ui_standard_320_kbps_ae7375)
+    4 -> appText(com.lastwave.app.R.string.menu_quality_saver)
+    -1 -> appText(com.lastwave.app.R.string.recommendation_source_yt_music)
+    else -> appText(com.lastwave.app.R.string.ui_hi_res_lossless_13a296)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -657,7 +659,7 @@ fun SettingsScreen(
                     null -> {
                         item {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SectionLabel("Collaboration & Social")
+                                SectionLabel(appText(com.lastwave.app.R.string.ui_collaboration_social_482968))
                                 SettingsGroup(rowCount = 1) { _, position ->
                                     SettingsActionCard(
                                         icon = Icons.Filled.Group,
@@ -665,7 +667,7 @@ fun SettingsScreen(
                                         iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
                                         title = stringResource(R.string.settings_jam_title),
                                         subtitle = if (jamUiState.isConnected) {
-                                            "In Session: #${jamUiState.roomCode} \u2022 ${jamUiState.participants.size} listening together"
+                                            appText(com.lastwave.app.R.string.ui_in_session_1_s_2_s_listening_together_19841b, (jamUiState.roomCode).toString(), (jamUiState.participants.size).toString())
                                         } else {
                                             stringResource(R.string.settings_jam_sub)
                                         },
@@ -678,7 +680,7 @@ fun SettingsScreen(
 
                         item {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SectionLabel("Services & Add-ons")
+                                SectionLabel(appText(com.lastwave.app.R.string.ui_services_add_ons_efd5ed))
                                 SettingsGroup(rowCount = 4) { index, position ->
                                     when (index) {
                                         0 -> SettingsActionCard(
@@ -706,9 +708,9 @@ fun SettingsScreen(
                                             iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
                                             title = stringResource(R.string.set_cat_yt),
                                             subtitle = if (ytConnection.isConnected) {
-                                                "Connected as ${ytConnection.accountName} • 24/7 library sync"
+                                                appText(com.lastwave.app.R.string.ui_connected_as_1_s_24_7_library_sync_7d9e50, (ytConnection.accountName).toString())
                                             } else {
-                                                "YouTube Music account, channels, history & 24/7 sync"
+                                                appText(com.lastwave.app.R.string.ui_youtube_music_account_channels_history_24_7_sync_34972b)
                                             },
                                             onClick = { activeTab = SettingsTab.YOUTUBE },
                                             position = position,
@@ -719,9 +721,9 @@ fun SettingsScreen(
                                             iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
                                             title = stringResource(R.string.set_cat_spotify),
                                             subtitle = if (spotifyConnected) {
-                                                "Connected (sp_dc) • Canvas, playlist imports & Liked Songs sync"
+                                                appText(com.lastwave.app.R.string.ui_connected_sp_dc_canvas_playlist_imports_liked_so_5220c5)
                                             } else {
-                                                "Account connection, Canvas, playlist imports & Liked Songs sync"
+                                                appText(com.lastwave.app.R.string.ui_account_connection_canvas_playlist_imports_liked_2264c3)
                                             },
                                             onClick = { activeTab = SettingsTab.SPOTIFY },
                                             position = position,
@@ -733,7 +735,7 @@ fun SettingsScreen(
 
                         item {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SectionLabel("Playback & UI")
+                                SectionLabel(appText(com.lastwave.app.R.string.ui_playback_ui_b8b96f))
                                 SettingsGroup(rowCount = 3) { index, position ->
                                     when (index) {
                                         0 -> SettingsActionCard(
@@ -761,7 +763,7 @@ fun SettingsScreen(
                                             title = stringResource(R.string.set_cat_lib),
                                             subtitle = run {
                                                 val count = downloadCount
-                                                if (count > 0) "$count songs downloaded • Imports, Home layout" else "Home layout, Playlist imports, Downloads, Exclusions"
+                                                if (count > 0) "$count songs downloaded • Imports, Home layout" else appText(com.lastwave.app.R.string.set_cat_lib_sub)
                                             },
                                             onClick = { activeTab = SettingsTab.LIBRARY },
                                             position = position,
@@ -773,7 +775,7 @@ fun SettingsScreen(
 
                         item {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SectionLabel("System & About")
+                                SectionLabel(appText(com.lastwave.app.R.string.ui_system_about_178f7b))
                                 SettingsGroup(rowCount = 2) { index, position ->
                                     when (index) {
                                         0 -> SettingsActionCard(
@@ -790,7 +792,7 @@ fun SettingsScreen(
                                             iconContainer = MaterialTheme.colorScheme.primaryContainer,
                                             iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
                                             title = stringResource(R.string.set_cat_about),
-                                            subtitle = if (updateInfo.isUpdateAvailable) "Update Available (${updateInfo.latestVersion}) \u2022 v${appVersionName(context)}" else "v${appVersionName(context)} \u2022 Language, Community, Source code",
+                                            subtitle = if (updateInfo.isUpdateAvailable) appText(com.lastwave.app.R.string.ui_update_available_1_s_v_2_s_21d820, (updateInfo.latestVersion).toString(), (appVersionName(context)).toString()) else appText(com.lastwave.app.R.string.ui_v_1_s_language_community_source_code_15ae61, (appVersionName(context)).toString()),
                                             onClick = { activeTab = SettingsTab.ABOUT },
                                             position = position,
                                         )
@@ -807,14 +809,14 @@ fun SettingsScreen(
                     val wifiQualitySubtitle = streamingQualityLabel(misc.wifiStreamingQuality)
                     val cellularQualitySubtitle = streamingQualityLabel(misc.cellularStreamingQuality)
                     val downloadQualitySubtitle = when (misc.downloadQuality) {
-                        28 -> "Dolby Atmos (Spatial Immersive Audio)"
-                        27 -> "Hi-Res (24-bit / 192 kHz FLAC)"
-                        7 -> "Hi-Res (24-bit / 96 kHz FLAC)"
-                        6 -> "CD Lossless (16-bit / 44.1 kHz FLAC)"
-                        5 -> "Standard (320 kbps MP3)"
-                        4 -> "Data Saver (96 kbps HE-AAC)"
+                        28 -> appText(com.lastwave.app.R.string.ui_dolby_atmos_spatial_immersive_audio_2f5f0a)
+                        27 -> appText(com.lastwave.app.R.string.ui_hi_res_24_bit_192_khz_flac_ac7214)
+                        7 -> appText(com.lastwave.app.R.string.ui_hi_res_24_bit_96_khz_flac_16a8a0)
+                        6 -> appText(com.lastwave.app.R.string.ui_cd_lossless_16_bit_44_1_khz_flac_619436)
+                        5 -> appText(com.lastwave.app.R.string.ui_standard_320_kbps_mp3_641dd6)
+                        4 -> appText(com.lastwave.app.R.string.ui_data_saver_96_kbps_he_aac_d57fc0)
                         -1 -> "YouTube Music (AAC / Opus)"
-                        else -> "Hi-Res (24-bit / 192 kHz FLAC)"
+                        else -> appText(com.lastwave.app.R.string.ui_hi_res_24_bit_192_khz_flac_ac7214)
                     }
 
                     val isIgnored = BatteryOptimizationHelper.isIgnoringBatteryOptimizations(context)
@@ -824,7 +826,7 @@ fun SettingsScreen(
                                 icon = Icons.Filled.Wifi,
                                 iconContainer = MaterialTheme.colorScheme.primaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
-                                title = "Wi-Fi streaming quality",
+                                title = appText(com.lastwave.app.R.string.ui_wi_fi_streaming_quality_a32d59),
                                 subtitle = wifiQualitySubtitle,
                                 onClick = {
                                     editingCellularQuality = false
@@ -839,7 +841,7 @@ fun SettingsScreen(
                                 icon = Icons.Filled.SignalCellularAlt,
                                 iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                title = "Cellular streaming quality",
+                                title = appText(com.lastwave.app.R.string.ui_cellular_streaming_quality_5d5aaa),
                                 subtitle = cellularQualitySubtitle,
                                 onClick = {
                                     editingCellularQuality = true
@@ -855,7 +857,7 @@ fun SettingsScreen(
                                 iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
                                 title = stringResource(R.string.settings_download_quality),
-                                subtitle = "$downloadQualitySubtitle \u2022 Lossless & YouTube",
+                                subtitle = appText(com.lastwave.app.R.string.ui_1_s_lossless_youtube_e14ac2, (downloadQualitySubtitle).toString()),
                                 onClick = { showDownloadQualityDialog = true },
                                 position = position,
                                 isHighlighted = (highlightedSettingId == "audio.download_quality"),
@@ -866,7 +868,7 @@ fun SettingsScreen(
                                 icon = Icons.Filled.HighQuality,
                                 iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                title = "Playback start",
+                                title = appText(com.lastwave.app.R.string.ui_playback_start_c39d34),
                                 subtitle = misc.hiResStart.title,
                                 onClick = { showHiResStartDialog = true },
                                 position = position,
@@ -896,15 +898,15 @@ fun SettingsScreen(
                                 icon = QualityGlyphs.AutoMix,
                                 iconContainer = MaterialTheme.colorScheme.primaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
-                                title = "AutoMix",
+                                title = appText(com.lastwave.app.R.string.ui_automix_b42afb),
                                 subtitle = if (hfSettings.autoMixEnabled) {
                                     if (hfSettings.durationMode == com.lastwave.app.playback.automix.api.TransitionDurationMode.AUTO) {
-                                        "Active \u2022 Phrase-matched transition (Auto)"
+                                        appText(com.lastwave.app.R.string.ui_active_phrase_matched_transition_auto_c98cb5)
                                     } else {
-                                        "Active \u2022 Custom DJ blend (${hfSettings.targetDurationSeconds}s)"
+                                        appText(com.lastwave.app.R.string.ui_active_custom_dj_blend_1_ss_acad23, (hfSettings.targetDurationSeconds).toString())
                                     }
                                 } else {
-                                    "Beat-matched mixes when the songs allow, clean fades when not"
+                                    appText(com.lastwave.app.R.string.ui_beat_matched_mixes_when_the_songs_allow_clean_fa_6b4ef9)
                                 },
                                 checked = hfSettings.autoMixEnabled,
                                 onCheckedChange = viewModel::setAutoMixEnabled,
@@ -927,11 +929,11 @@ fun SettingsScreen(
                                 icon = QualityGlyphs.MusicHaptics,
                                 iconContainer = MaterialTheme.colorScheme.primaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
-                                title = "Music Haptics",
+                                title = appText(com.lastwave.app.R.string.ui_music_haptics_8787ab),
                                 subtitle = if (misc.musicHapticsEnabled) {
-                                    "Physical rhythm synchronization via phone's haptic motor (Active)"
+                                    appText(com.lastwave.app.R.string.ui_physical_rhythm_synchronization_via_phone_s_hapt_65e538)
                                 } else {
-                                    "Physical rhythm synchronization via phone's haptic motor"
+                                    appText(com.lastwave.app.R.string.ui_physical_rhythm_synchronization_via_phone_s_hapt_3c49e1)
                                 },
                                 checked = misc.musicHapticsEnabled,
                                 onCheckedChange = viewModel::setMusicHapticsEnabled,
@@ -944,11 +946,11 @@ fun SettingsScreen(
                                 icon = Icons.Filled.QueuePlayNext,
                                 iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                title = "Autoplay similar songs",
+                                title = appText(com.lastwave.app.R.string.ui_autoplay_similar_songs_bde9eb),
                                 subtitle = if (misc.autoplaySimilarEnabled) {
-                                    "When the queue ends, keep playing similar songs"
+                                    appText(com.lastwave.app.R.string.ui_when_the_queue_ends_keep_playing_similar_songs_0f8b69)
                                 } else {
-                                    "Stop when the queue ends; nothing is added automatically"
+                                    appText(com.lastwave.app.R.string.ui_stop_when_the_queue_ends_nothing_is_added_automa_2fadbb)
                                 } ,
                                 checked = misc.autoplaySimilarEnabled,
                                 onCheckedChange = viewModel::setAutoplaySimilarEnabled,
@@ -962,11 +964,11 @@ fun SettingsScreen(
                                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
                                 title = stringResource(R.string.settings_crossfade),
                                 subtitle = if (misc.crossfadeEnabled && misc.isBitPerfectEnabled) {
-                                    "Paused while Bit-Perfect is enabled"
+                                    appText(com.lastwave.app.R.string.ui_paused_while_bit_perfect_is_enabled_afc9b1)
                                 } else if (misc.crossfadeEnabled) {
-                                    "Smooth transition between tracks \u2022 ${misc.crossfadeSeconds} sec"
+                                    appText(com.lastwave.app.R.string.ui_smooth_transition_between_tracks_1_s_sec_39d1d4, (misc.crossfadeSeconds).toString())
                                 } else {
-                                    "Blend the end of a track into the next one"
+                                    appText(com.lastwave.app.R.string.settings_crossfade_sub)
                                 },
                                 checked = misc.crossfadeEnabled,
                                 onCheckedChange = viewModel::setCrossfadeEnabled,
@@ -1034,9 +1036,9 @@ fun SettingsScreen(
                                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
                                 title = stringResource(R.string.settings_download_lyrics),
                                 subtitle = if (misc.downloadLyrics) {
-                                    "Save .lrc companion files & embed lyrics in downloads"
+                                    appText(com.lastwave.app.R.string.settings_download_lyrics_on)
                                 } else {
-                                    "Do not fetch or save lyrics when downloading"
+                                    appText(com.lastwave.app.R.string.settings_download_lyrics_off)
                                 },
                                 checked = misc.downloadLyrics,
                                 onCheckedChange = viewModel::setDownloadLyrics,
@@ -1067,11 +1069,11 @@ fun SettingsScreen(
 
                         item {
                 Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    SectionLabel("Output & Loudness")
+                    SectionLabel(appText(com.lastwave.app.R.string.ui_output_loudness_7fd025))
                     val loudnessSubtitle = when (loudness.mode) {
-                        LoudnessMode.TRACK -> "Track \u2022 Match every track to -14 LUFS"
-                        LoudnessMode.ALBUM -> "Album \u2022 Keep intentional album dynamics"
-                        else -> "Off \u2022 Play tagged tracks at original level"
+                        LoudnessMode.TRACK -> appText(com.lastwave.app.R.string.set_loud_row_track)
+                        LoudnessMode.ALBUM -> appText(com.lastwave.app.R.string.set_loud_row_album)
+                        else -> appText(com.lastwave.app.R.string.set_loud_row_off)
                     }
                     SettingsGroup(rowCount = 9) { index, position ->
                         when (index) {
@@ -1154,7 +1156,7 @@ fun SettingsScreen(
                                 } else if (eq.enabled) {
                                     stringResource(R.string.set_eq_on_band, eq.presetName)
                                 } else {
-                                    "Shape your sound across 15 frequencies"
+                                    appText(com.lastwave.app.R.string.settings_equalizer_sub)
                                 },
                                 onClick = { showEqSheet = true },
                                 position = position,
@@ -1204,8 +1206,8 @@ fun SettingsScreen(
                                 icon = Icons.Filled.LinearScale,
                                 iconContainer = MaterialTheme.colorScheme.primaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
-                                title = "Show Auto EQ in volume panel",
-                                subtitle = "Show AutoEQ and Parametric EQ shortcut in Now Playing audio controls sheet",
+                                title = appText(com.lastwave.app.R.string.ui_show_auto_eq_in_volume_panel_2231d6),
+                                subtitle = appText(com.lastwave.app.R.string.ui_show_autoeq_and_parametric_eq_shortcut_in_now_pl_4b030b),
                                 checked = misc.showAutoEqInVolumePanel,
                                 onCheckedChange = viewModel::setShowAutoEqInVolumePanel,
                                 position = position,
@@ -1438,11 +1440,11 @@ fun SettingsScreen(
                                 icon = Icons.Filled.Subtitles,
                                 iconContainer = MaterialTheme.colorScheme.tertiaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onTertiaryContainer,
-                                title = "Word-by-word lyrics",
+                                title = appText(com.lastwave.app.R.string.set_lyrics_wbw),
                                 subtitle = if (misc.wordByWordLyrics) {
-                                    "Real-time syllable sync & karaoke highlight"
+                                    appText(com.lastwave.app.R.string.ui_real_time_syllable_sync_karaoke_highlight_9b7ae0)
                                 } else {
-                                    "Line-by-line synced lyrics"
+                                    appText(com.lastwave.app.R.string.ui_line_by_line_synced_lyrics_c63404)
                                 },
                                 checked = misc.wordByWordLyrics,
                                 onCheckedChange = viewModel::setWordByWordLyrics,
@@ -1555,11 +1557,11 @@ fun SettingsScreen(
                                 icon = Icons.Filled.PlayCircle,
                                 iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                title = "Button Now playing",
+                                title = appText(com.lastwave.app.R.string.ui_button_now_playing_505d89),
                                 subtitle = if (misc.buttonNowPlayingEnabled) {
-                                    "Floating button mode active • Card hidden"
+                                    appText(com.lastwave.app.R.string.ui_floating_button_mode_active_card_hidden_0c3553)
                                 } else {
-                                    "Classic bottom now playing card"
+                                    appText(com.lastwave.app.R.string.ui_classic_bottom_now_playing_card_308713)
                                 },
                                 checked = misc.buttonNowPlayingEnabled,
                                 onCheckedChange = viewModel::setButtonNowPlayingEnabled,
@@ -1635,15 +1637,15 @@ fun SettingsScreen(
                     val ytConnected = ytConnection.isConnected
                     val syncSubtitle = when (val sync = ytSyncState) {
                         is com.lastwave.app.data.ytmusic.YtSyncState.Running ->
-                            "Syncing ${sync.current}/${sync.total} \u2022 ${sync.label}"
+                            appText(com.lastwave.app.R.string.ui_syncing_1_s_2_s_3_s_8aa728, (sync.current).toString(), (sync.total).toString(), (sync.label).toString())
                         is com.lastwave.app.data.ytmusic.YtSyncState.Completed ->
-                            "Playlists mirror to your account \u2022 synced ${relativeTime(sync.atMillis)}"
+                            appText(com.lastwave.app.R.string.ui_playlists_mirror_to_your_account_synced_1_s_9af73f, (relativeTime(sync.atMillis)).toString())
                         is com.lastwave.app.data.ytmusic.YtSyncState.Failed ->
-                            "Last pass failed \u2014 will retry automatically"
+                            appText(com.lastwave.app.R.string.ui_last_pass_failed_will_retry_automatically_9bf960)
                         else ->
-                            if (!ytConnected) "Connect an account first"
-                            else if (ytSyncEnabled) "Selected playlists mirror to your account, 24/7" + lastSyncSuffix(ytLastSyncAt)
-                            else "Keep your YT Music library in sync with LastWave"
+                            if (!ytConnected) appText(com.lastwave.app.R.string.ui_connect_an_account_first_1e0e59)
+                            else if (ytSyncEnabled) appText(com.lastwave.app.R.string.ui_selected_playlists_mirror_to_your_account_24_7_e49395) + lastSyncSuffix(ytLastSyncAt)
+                            else appText(com.lastwave.app.R.string.ui_keep_your_yt_music_library_in_sync_with_lastwave_5654aa)
                     }
                     // Display name of the active channel: the picked entry when
                     // the channel list was loaded, otherwise the stored name.
@@ -1806,7 +1808,7 @@ fun SettingsScreen(
                     SettingsTab.SPOTIFY -> {
                         item {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SectionLabel("Spotify")
+                                SectionLabel(appText(com.lastwave.app.R.string.spotify_playlists_section_title))
                                 val spotifyCanvasEnabled by viewModel.spotifyCanvasEnabled.collectAsStateWithLifecycle()
                                 val spotifyPreferCanvas by viewModel.spotifyPreferCanvas.collectAsStateWithLifecycle()
                                 SettingsGroup(rowCount = if (spotifyConnected) 5 else 3) { index, position ->
@@ -1823,8 +1825,8 @@ fun SettingsScreen(
                                                 icon = QualityGlyphs.Spotify,
                                                 iconContainer = MaterialTheme.colorScheme.primaryContainer,
                                                 iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
-                                                title = "Connect Spotify Account",
-                                                subtitle = "Sign in to enable official Spotify Canvas video loops & library sync",
+                                                title = appText(com.lastwave.app.R.string.ui_connect_spotify_account_e9e3f8),
+                                                subtitle = appText(com.lastwave.app.R.string.ui_sign_in_to_enable_official_spotify_canvas_video__5e24f2),
                                                 onClick = onOpenSpotifyLogin,
                                                 position = position,
                                                 isHighlighted = (highlightedSettingId == "spotify.account"),
@@ -1834,8 +1836,8 @@ fun SettingsScreen(
                                             icon = Icons.Filled.QueueMusic,
                                             iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                                             iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                            title = "Your Spotify Playlists",
-                                            subtitle = "Import your Spotify playlists and Liked Songs into this app's library",
+                                            title = appText(com.lastwave.app.R.string.ui_your_spotify_playlists_ea794e),
+                                            subtitle = appText(com.lastwave.app.R.string.ui_import_your_spotify_playlists_and_liked_songs_in_a0627e),
                                             onClick = onOpenExternalImport,
                                             position = position,
                                             isHighlighted = (highlightedSettingId == "spotify.import"),
@@ -1844,8 +1846,8 @@ fun SettingsScreen(
                                             icon = Icons.Filled.VideoLibrary,
                                             iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                                             iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                            title = "Spotify Canvas (Looping background videos)",
-                                            subtitle = "Fetch and play Spotify's looping visual videos in background",
+                                            title = appText(com.lastwave.app.R.string.ui_spotify_canvas_looping_background_videos_bb0707),
+                                            subtitle = appText(com.lastwave.app.R.string.ui_fetch_and_play_spotify_s_looping_visual_videos_i_9e469f),
                                             checked = spotifyCanvasEnabled,
                                             onCheckedChange = viewModel::setSpotifyCanvasEnabled,
                                             position = position,
@@ -1855,8 +1857,8 @@ fun SettingsScreen(
                                             icon = Icons.Filled.Star,
                                             iconContainer = MaterialTheme.colorScheme.primaryContainer,
                                             iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
-                                            title = "Prefer Spotify Canvas",
-                                            subtitle = "Ask Spotify first, before Apple Music, Tidal and community artwork",
+                                            title = appText(com.lastwave.app.R.string.ui_prefer_spotify_canvas_033107),
+                                            subtitle = appText(com.lastwave.app.R.string.ui_ask_spotify_first_before_apple_music_tidal_and_c_2a6e9d),
                                             checked = spotifyPreferCanvas,
                                             onCheckedChange = viewModel::setSpotifyPreferCanvas,
                                             position = position,
@@ -1888,7 +1890,7 @@ fun SettingsScreen(
                                         iconTint = MaterialTheme.colorScheme.onTertiaryContainer,
                                         title = stringResource(R.string.settings_recommendations_title),
                                         subtitle = if (spotifyConnected) {
-                                            "${stringResource(misc.recommendationSource.titleRes)} • ${stringResource(misc.recommendationSource.subtitleRes)}"
+                                            appText(com.lastwave.app.R.string.ly_sync_badge, (stringResource(misc.recommendationSource.titleRes)).toString(), (stringResource(misc.recommendationSource.subtitleRes)).toString())
                                         } else {
                                             stringResource(R.string.settings_recommendations_sub_disconnected)
                                         },
@@ -1902,14 +1904,14 @@ fun SettingsScreen(
 
                         item {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SectionLabel("Session Token")
+                                SectionLabel(appText(com.lastwave.app.R.string.ui_session_token_12f1f7))
                                 SettingsGroup(rowCount = 1) { _, position ->
                                     SettingsActionCard(
                                         icon = Icons.Filled.Key,
                                         iconContainer = MaterialTheme.colorScheme.tertiaryContainer,
                                         iconTint = MaterialTheme.colorScheme.onTertiaryContainer,
-                                        title = "Import sp_dc token",
-                                        subtitle = "Paste a session cookie from your browser instead of signing in here",
+                                        title = appText(com.lastwave.app.R.string.ui_import_sp_dc_token_8f640f),
+                                        subtitle = appText(com.lastwave.app.R.string.ui_paste_a_session_cookie_from_your_browser_instead_50b7ce),
                                         onClick = onOpenSpotifyTokenImport,
                                         position = position,
                                         isHighlighted = (highlightedSettingId == "spotify.token"),
@@ -1992,7 +1994,7 @@ fun SettingsScreen(
                     SettingsTab.LIBRARY -> {
                         item {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                SectionLabel("Home & Organization")
+                                SectionLabel(appText(com.lastwave.app.R.string.ui_home_organization_1c7c46))
                                 SettingsGroup(rowCount = 2) { index, position ->
                                     when (index) {
                                         0 -> SettingsActionCard(
@@ -2286,13 +2288,13 @@ fun SettingsScreen(
                                 }
                                 Column(modifier = Modifier.weight(1f)) {
                                     Text(
-                                        text = "Update Available!",
+                                        text = appText(com.lastwave.app.R.string.ui_update_available_101090),
                                         style = MaterialTheme.typography.titleMedium,
                                         fontWeight = FontWeight.Bold,
                                         color = MaterialTheme.colorScheme.onPrimaryContainer,
                                     )
                                     Text(
-                                        text = "Version ${updateInfo.latestVersion} is ready to install",
+                                        text = appText(com.lastwave.app.R.string.ui_version_1_s_is_ready_to_install_3e7515, (updateInfo.latestVersion).toString()),
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.85f),
                                     )
@@ -2302,7 +2304,7 @@ fun SettingsScreen(
                                     color = MaterialTheme.colorScheme.primary,
                                 ) {
                                     Text(
-                                        text = "Update",
+                                        text = appText(com.lastwave.app.R.string.update),
                                         style = MaterialTheme.typography.labelMedium,
                                         fontWeight = FontWeight.Bold,
                                         color = MaterialTheme.colorScheme.onPrimary,
@@ -2325,15 +2327,15 @@ fun SettingsScreen(
                                 icon = Icons.Filled.CloudDownload,
                                 iconContainer = if (updateInfo.isUpdateAvailable) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.secondaryContainer,
                                 iconTint = if (updateInfo.isUpdateAvailable) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSecondaryContainer,
-                                title = if (updateInfo.isUpdateAvailable) "Update Ready (${updateInfo.latestVersion})" else "Check for Updates",
+                                title = if (updateInfo.isUpdateAvailable) appText(com.lastwave.app.R.string.ui_update_ready_1_s_d72b0e, (updateInfo.latestVersion).toString()) else appText(com.lastwave.app.R.string.settings_check_updates),
                                 subtitle = when {
-                                    updateInfo.isChecking -> "Checking GitHub releases..."
+                                    updateInfo.isChecking -> appText(com.lastwave.app.R.string.ui_checking_github_releases_3d176d)
                                     updateInfo.isUpdateAvailable -> {
                                         val fileName = updateInfo.downloadFileName
-                                        if (!fileName.isNullOrBlank()) "Tap to download $fileName" else "Tap to download new version"
+                                        if (!fileName.isNullOrBlank()) appText(com.lastwave.app.R.string.ui_tap_to_download_1_s_e9b304, (fileName).toString()) else appText(com.lastwave.app.R.string.ui_tap_to_download_new_version_fc6c54)
                                     }
                                     !updateInfo.message.isNullOrBlank() -> updateInfo.message.orEmpty()
-                                    else -> "Current version: ${appVersionName(context)}"
+                                    else -> appText(com.lastwave.app.R.string.ui_current_version_1_s_ce4652, (appVersionName(context)).toString())
                                 },
                                 onClick = {
                                     if (updateInfo.isUpdateAvailable) {
@@ -2379,7 +2381,7 @@ fun SettingsScreen(
                     }
 
                     Spacer(Modifier.height(14.dp))
-                    SectionLabel("More from us")
+                    SectionLabel(appText(com.lastwave.app.R.string.ui_more_from_us_146449))
                     Spacer(Modifier.height(8.dp))
                     MoreFromUsCard(
                         onOpenUrl = { url ->
@@ -2450,8 +2452,8 @@ fun SettingsScreen(
     if (showSpotifyDisconnectConfirm) {
         AlertDialog(
             onDismissRequest = { showSpotifyDisconnectConfirm = false },
-            title = { Text("Disconnect Spotify?") },
-            text = { Text("This will remove your Spotify session and log you out. Spotify Canvas loops and synced playlists will be disabled until you reconnect.") },
+            title = { Text(appText(com.lastwave.app.R.string.ui_disconnect_spotify_1b03fb)) },
+            text = { Text(appText(com.lastwave.app.R.string.ui_this_will_remove_your_spotify_session_and_log_yo_be18d8)) },
             confirmButton = {
                 TextButton(onClick = {
                     showSpotifyDisconnectConfirm = false
@@ -2492,13 +2494,13 @@ fun SettingsScreen(
     if (state.showRestoreConfirm) {        val isPlaylistMirror = state.pendingRestoreKind == PendingRestoreKind.PLAYLIST_MIRROR
         AlertDialog(
             onDismissRequest = viewModel::dismissRestoreConfirm,
-            title = { Text(if (isPlaylistMirror) "Sync playlist JSON?" else "Restore backup?") },
+            title = { Text(if (isPlaylistMirror) appText(com.lastwave.app.R.string.ui_sync_playlist_json_fe98e9) else appText(com.lastwave.app.R.string.ui_restore_backup_7da131)) },
             text = {
                 Text(
                     if (isPlaylistMirror) {
-                        "This will merge ${state.pendingRestorePlaylistCount ?: 0} playlist(s) from the local JSON file and reconnect automatic syncing."
+                        appText(com.lastwave.app.R.string.ui_this_will_merge_1_s_playlist_s_from_the_local_js_46185d, (state.pendingRestorePlaylistCount ?: 0).toString())
                     } else {
-                        "This will replace your current data with ${state.pendingRestorePlaylistCount ?: 0} playlist(s) and all settings from the backup file."
+                        appText(com.lastwave.app.R.string.ui_this_will_replace_your_current_data_with_1_s_pla_53debd, (state.pendingRestorePlaylistCount ?: 0).toString())
                     },
                 )
             },
@@ -2663,7 +2665,7 @@ fun SettingsScreen(
             text = {
                 Column {
                     Text(
-                        "Last.fm only allows scrobbling through a signed session, and the only way to get one without a browser is with your password. It's sent once, directly to Last.fm over HTTPS, and never stored.",
+                        appText(com.lastwave.app.R.string.ui_last_fm_only_allows_scrobbling_through_a_signed__577625),
                         style = MaterialTheme.typography.bodyMedium,
                     )
                     Spacer(Modifier.height(16.dp))
@@ -2748,7 +2750,7 @@ fun SettingsScreen(
                                 iconContainer = MaterialTheme.colorScheme.tertiaryContainer,
                                 iconTint = MaterialTheme.colorScheme.onTertiaryContainer,
                                 title = stringResource(R.string.settings_lyrics_provider),
-                                subtitle = "${misc.lyricsProvider.title} \u2022 ${misc.lyricsProvider.subtitle}",
+                                subtitle = appText(com.lastwave.app.R.string.ly_sync_badge, (misc.lyricsProvider.title).toString(), (misc.lyricsProvider.subtitle).toString()),
                                 onClick = { showLyricsSettingsSheet = false; showLyricsProviderDialog = true },
                                 position = position,
                                 isHighlighted = false,
@@ -2932,15 +2934,15 @@ fun SettingsScreen(
         val tiers = listOfNotNull(
             Triple(
                 CELLULAR_QUALITY_AUTO,
-                "Auto",
-                "Adapts to your connection • Up to your Wi-Fi quality" to "AUTO",
+                appText(com.lastwave.app.R.string.autoeq_preamp_auto),
+                appText(com.lastwave.app.R.string.ui_adapts_to_your_connection_up_to_your_wi_fi_quali_357711) to appText(com.lastwave.app.R.string.autoeq_preamp_auto),
             ).takeIf { editingCellularQuality },
-            Triple(28, "Dolby Atmos", "Spatial Immersive Audio • Master Audio" to "ATMOS"),
-            Triple(27, "Hi-Res Lossless", "Up to 24-bit / 192 kHz • Lossless FLAC" to "HI-RES"),
-            Triple(6, "CD Lossless", "16-bit / 44.1 kHz • Lossless FLAC" to "CD"),
-            Triple(5, "Standard Quality", "Up to 320 kbps • MP3 / AAC" to "320 kbps"),
-            Triple(-1, "YouTube Music", "128-256 kbps • YouTube Music AAC / Opus stream" to "YOUTUBE"),
-            Triple(4, "Data Saver", "Low-bitrate audio to reduce mobile data use" to "DATA SAVER"),
+            Triple(28, appText(com.lastwave.app.R.string.menu_quality_atmos), appText(com.lastwave.app.R.string.ui_spatial_immersive_audio_master_audio_9fcbc0) to "ATMOS"),
+            Triple(27, appText(com.lastwave.app.R.string.ui_hi_res_lossless_13a296), appText(com.lastwave.app.R.string.ui_up_to_24_bit_192_khz_lossless_flac_13f26d) to appText(com.lastwave.app.R.string.menu_quality_hires)),
+            Triple(6, appText(com.lastwave.app.R.string.menu_quality_cd), "16-bit / 44.1 kHz • Lossless FLAC" to "CD"),
+            Triple(5, appText(com.lastwave.app.R.string.ui_standard_quality_c8e06b), appText(com.lastwave.app.R.string.ui_up_to_320_kbps_mp3_aac_78ebf5) to "320 kbps"),
+            Triple(-1, appText(com.lastwave.app.R.string.recommendation_source_yt_music), "128-256 kbps • YouTube Music AAC / Opus stream" to appText(com.lastwave.app.R.string.menu_quality_youtube)),
+            Triple(4, appText(com.lastwave.app.R.string.menu_quality_saver), appText(com.lastwave.app.R.string.ui_low_bitrate_audio_to_reduce_mobile_data_use_aa2d0b) to appText(com.lastwave.app.R.string.menu_quality_saver)),
         )
         val selectedQuality = if (editingCellularQuality) misc.cellularStreamingQuality else misc.wifiStreamingQuality
         val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
@@ -2992,12 +2994,12 @@ fun SettingsScreen(
                     Spacer(Modifier.width(14.dp))
                     Column {
                         Text(
-                            if (editingCellularQuality) "Cellular streaming quality" else "Wi-Fi streaming quality",
+                            if (editingCellularQuality) appText(com.lastwave.app.R.string.ui_cellular_streaming_quality_5d5aaa) else appText(com.lastwave.app.R.string.ui_wi_fi_streaming_quality_a32d59),
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                         )
                         Text(
-                            "Choose the preferred quality for this connection",
+                            appText(com.lastwave.app.R.string.ui_choose_the_preferred_quality_for_this_connection_1dca05),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -3005,7 +3007,7 @@ fun SettingsScreen(
                 }
 
                 Text(
-                    "YouTube Music plays strictly as-is (never upgrades). Dolby Atmos plays only when selected — otherwise it never plays. Atmos falls back to Hi-Res → CD → 320 kbps → YouTube. Hi-Res steps down to lower lossless tiers, then YouTube last.",
+                    appText(com.lastwave.app.R.string.ui_youtube_music_plays_strictly_as_is_never_upgrade_4295f2),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.outline,
                 )
@@ -3091,7 +3093,7 @@ fun SettingsScreen(
     if (showHiResStartDialog) {
         AlertDialog(
             onDismissRequest = { showHiResStartDialog = false },
-            title = { Text("Playback start") },
+            title = { Text(appText(com.lastwave.app.R.string.ui_playback_start_c39d34)) },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     com.lastwave.app.data.local.HiResStart.entries.forEach { mode ->
@@ -3115,13 +3117,13 @@ fun SettingsScreen(
 
     if (showDownloadQualityDialog) {
         val downloadTiers = listOf(
-            Triple(28, "Dolby Atmos", "Spatial Immersive Audio • Master Audio" to "ATMOS"),
-            Triple(27, "Hi-Res Audio (Max)", "Up to 24-bit / 192 kHz • Studio Master FLAC" to "24-BIT / 192k"),
-            Triple(7, "Hi-Res Audio", "24-bit / 96 kHz • Studio FLAC" to "24-BIT / 96k"),
-            Triple(6, "CD Lossless", "16-bit / 44.1 kHz • Bit-Exact CD FLAC" to "16-BIT / 44.1k"),
-            Triple(5, "Standard Quality", "320 kbps • High-Bitrate MP3 / AAC" to "320 kbps"),
-            Triple(4, "Data Saver", "96 kbps • High Efficiency AAC" to "96 kbps"),
-            Triple(-1, "YouTube Music", "128-256 kbps • YouTube Music AAC / Opus stream" to "YOUTUBE"),
+            Triple(28, appText(com.lastwave.app.R.string.menu_quality_atmos), appText(com.lastwave.app.R.string.ui_spatial_immersive_audio_master_audio_9fcbc0) to "ATMOS"),
+            Triple(27, appText(com.lastwave.app.R.string.ui_hi_res_audio_max_800e03), appText(com.lastwave.app.R.string.ui_up_to_24_bit_192_khz_studio_master_flac_eb7ef4) to "24-BIT / 192k"),
+            Triple(7, appText(com.lastwave.app.R.string.ui_hi_res_audio_038fb9), "24-bit / 96 kHz • Studio FLAC" to "24-BIT / 96k"),
+            Triple(6, appText(com.lastwave.app.R.string.menu_quality_cd), "16-bit / 44.1 kHz • Bit-Exact CD FLAC" to "16-BIT / 44.1k"),
+            Triple(5, appText(com.lastwave.app.R.string.ui_standard_quality_c8e06b), "320 kbps • High-Bitrate MP3 / AAC" to "320 kbps"),
+            Triple(4, appText(com.lastwave.app.R.string.menu_quality_saver), "96 kbps • High Efficiency AAC" to "96 kbps"),
+            Triple(-1, appText(com.lastwave.app.R.string.recommendation_source_yt_music), "128-256 kbps • YouTube Music AAC / Opus stream" to appText(com.lastwave.app.R.string.menu_quality_youtube)),
         )
         val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
         val haptic = androidx.compose.ui.platform.LocalHapticFeedback.current
@@ -3172,12 +3174,12 @@ fun SettingsScreen(
                     Spacer(Modifier.width(14.dp))
                     Column {
                         Text(
-                            "Download Quality",
+                            appText(com.lastwave.app.R.string.settings_download_quality),
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                         )
                         Text(
-                            "Select offline audio resolution & bit depth",
+                            appText(com.lastwave.app.R.string.ui_select_offline_audio_resolution_bit_depth_175a33),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -3185,7 +3187,7 @@ fun SettingsScreen(
                 }
 
                 Text(
-                    "YouTube Music downloads strictly as-is (never upgrades). Dolby Atmos downloads only when selected — otherwise it never downloads. Atmos falls back to Hi-Res → CD → 320 kbps → YouTube. Hi-Res steps down to lower tiers, then YouTube last.",
+                    appText(com.lastwave.app.R.string.ui_youtube_music_downloads_strictly_as_is_never_upg_53f2ab),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.outline,
                 )
@@ -3361,7 +3363,7 @@ fun SettingsScreen(
                                 color = if (detail.checked) MaterialTheme.colorScheme.primary.copy(alpha = 0.15f) else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.25f),
                             ) {
                                 Text(
-                                    text = if (detail.checked) "Enabled" else "Disabled",
+                                    text = if (detail.checked) appText(com.lastwave.app.R.string.ui_enabled_df174a) else appText(com.lastwave.app.R.string.ui_disabled_f4f447),
                                     style = MaterialTheme.typography.labelMedium,
                                     fontWeight = FontWeight.Bold,
                                     color = if (detail.checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -3389,7 +3391,7 @@ fun SettingsScreen(
                             modifier = Modifier.align(Alignment.End),
                             shape = CircleShape,
                         ) {
-                            Text("Close", fontWeight = FontWeight.SemiBold)
+                            Text(appText(com.lastwave.app.R.string.recognize_close), fontWeight = FontWeight.SemiBold)
                         }
                     }
                 }

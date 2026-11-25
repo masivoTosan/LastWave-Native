@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import androidx.activity.compose.BackHandler
 import com.lastwave.app.playback.toPlayableTrack
 import androidx.compose.material.icons.filled.Download
@@ -254,7 +256,7 @@ internal fun HomeShelfCard(
         val displayTitle = remember(shelf.title) {
             val t = shelf.title.trim()
             if (t.contains("Fresh finds", ignoreCase = true) && t.contains("old favorite", ignoreCase = true)) {
-                "Fresh finds, old & favorites"
+                appText(com.lastwave.app.R.string.ui_fresh_finds_old_favorites_f6996c)
             } else {
                 t
             }
@@ -425,7 +427,7 @@ internal fun PodcastGuestEmptyState(
             modifier = Modifier.size(40.dp),
         )
         Text(
-            text = "Discover personalized podcasts and shows",
+            text = appText(com.lastwave.app.R.string.ui_discover_personalized_podcasts_and_shows_4b12d8),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = androidx.compose.ui.text.style.TextAlign.Center,
@@ -434,7 +436,7 @@ internal fun PodcastGuestEmptyState(
             onClick = onLoginClick,
             shape = RoundedCornerShape(20.dp),
         ) {
-            Text("Log in to YouTube Music")
+            Text(appText(com.lastwave.app.R.string.ui_log_in_to_youtube_music_95e278))
         }
     }
 }
@@ -559,7 +561,7 @@ internal fun SpotlightHeroCard(
                             modifier = Modifier.size(12.dp),
                         )
                         Text(
-                            "ARTIST SPOTLIGHT",
+                            appText(com.lastwave.app.R.string.ui_artist_spotlight_6a671f),
                             style = MaterialTheme.typography.labelSmall.copy(letterSpacing = 1.2.sp),
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.primary,
@@ -658,7 +660,7 @@ internal fun SpotlightHeroCard(
                     ) {
                         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                             Text(
-                                "View artist",
+                                appText(com.lastwave.app.R.string.ui_view_artist_16bfcc),
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onSurface,

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.newreleases
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
@@ -129,8 +131,8 @@ fun NewReleasesScreen(
                 subtitle = stringResource(R.string.nr_sub),
                 onBack = onBack,
                 actions = {
-                    HeaderActionIcon(Icons.Filled.Refresh, "Refresh", viewModel::refresh)
-                    HeaderActionIcon(Icons.Filled.Shuffle, "Shuffle all", viewModel::shuffle)
+                    HeaderActionIcon(Icons.Filled.Refresh, appText(com.lastwave.app.R.string.ytimp_refresh), viewModel::refresh)
+                    HeaderActionIcon(Icons.Filled.Shuffle, appText(com.lastwave.app.R.string.dl_shuffle_all_cd), viewModel::shuffle)
                 },
             )
             },
@@ -265,7 +267,7 @@ fun NewReleasesScreen(
                                     val subtitle = listOfNotNull(
                                         track.artist.takeIf(String::isNotBlank),
                                         track.album?.takeIf(String::isNotBlank),
-                                    ).joinToString(" \u2022 ").ifBlank { "New release" }
+                                    ).joinToString(" \u2022 ").ifBlank { appText(com.lastwave.app.R.string.ui_new_release_69a2ac) }
 
                                     ExpressiveGroupTrackRow(
                                         title = track.title,
@@ -356,7 +358,7 @@ fun NewReleasesScreen(
                                             contentAlignment = Alignment.Center,
                                         ) {
                                             Text(
-                                                "You're all caught up",
+                                                appText(com.lastwave.app.R.string.ui_you_re_all_caught_up_65a724),
                                                 style = MaterialTheme.typography.bodySmall,
                                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                             )
@@ -384,7 +386,7 @@ fun NewReleasesScreen(
                 artworkUrl = track.artworkUrl,
                 videoId = track.videoId.takeIf(String::isNotBlank),
             ),
-            playbackSourceLabel = "New Releases",
+            playbackSourceLabel = appText(com.lastwave.app.R.string.ui_new_releases_8b2fa9),
             onPlayInLastWave = {
                 if (trackIndex >= 0) viewModel.playTrack(trackIndex)
             },

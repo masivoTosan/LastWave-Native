@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -108,7 +110,7 @@ fun YouTubeImportSheet(
                     loadedPlaylist = result
                     selectedVideoIds = result.tracks.map { it.videoId }.toSet()
                 } else {
-                    errorMessage = "Couldn't find any songs in this playlist. Please ensure the link is public or unlisted."
+                    errorMessage = appText(com.lastwave.app.R.string.ui_couldn_t_find_any_songs_in_this_playlist_please__369330)
                 }
             } catch (e: Exception) {
                 errorMessage = e.localizedMessage ?: "Failed to load YouTube playlist"
@@ -131,7 +133,7 @@ fun YouTubeImportSheet(
                 onImportSuccess(saved)
                 onDismiss()
             } catch (e: Exception) {
-                errorMessage = e.localizedMessage ?: "Import failed"
+                errorMessage = e.localizedMessage ?: appText(com.lastwave.app.R.string.ui_import_failed_fbae89)
                 isImporting = false
             }
         }
@@ -180,12 +182,12 @@ fun YouTubeImportSheet(
                 Spacer(Modifier.width(12.dp))
                 Column {
                     Text(
-                        "Import YouTube Playlist",
+                        appText(com.lastwave.app.R.string.ui_import_youtube_playlist_a4ca7a),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                     )
                     Text(
-                        "Paste playlist link or browse ID",
+                        appText(com.lastwave.app.R.string.ui_paste_playlist_link_or_browse_id_32b619),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -285,7 +287,7 @@ fun YouTubeImportSheet(
                                 overflow = TextOverflow.Ellipsis,
                             )
                             Text(
-                                "${pl.author ?: "YouTube"} \u2022 ${pl.trackCount} tracks",
+                                appText(com.lastwave.app.R.string.ui_1_s_2_s_tracks_1525d0, (pl.author ?: appText(com.lastwave.app.R.string.menu_quality_youtube)).toString(), (pl.trackCount).toString()),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -293,7 +295,7 @@ fun YouTubeImportSheet(
                         TextButton(onClick = {
                             selectedVideoIds = if (selectedVideoIds.size == pl.tracks.size) emptySet() else pl.tracks.map { it.videoId }.toSet()
                         }) {
-                            Text(if (selectedVideoIds.size == pl.tracks.size) "Deselect All" else "Select All")
+                            Text(if (selectedVideoIds.size == pl.tracks.size) appText(com.lastwave.app.R.string.ytimp_deselect_all) else appText(com.lastwave.app.R.string.ytimp_select_all))
                         }
                     }
                 }

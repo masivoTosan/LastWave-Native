@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import androidx.activity.compose.BackHandler
 import com.lastwave.app.playback.toPlayableTrack
 import androidx.compose.material.icons.filled.Download
@@ -355,7 +357,7 @@ internal fun InfiniteRadioHero(
                                 modifier = Modifier.size(12.dp),
                             )
                             Text(
-                                "MADE FOR YOU",
+                                appText(com.lastwave.app.R.string.ui_made_for_you),
                                 style = MaterialTheme.typography.labelSmall.copy(letterSpacing = 1.1.sp),
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.primary,
@@ -364,7 +366,7 @@ internal fun InfiniteRadioHero(
                     }
                 }
                 Text(
-                    text = "Infinite Radio",
+                    text = appText(com.lastwave.app.R.string.ui_infinite_radio_839559),
                     style = MaterialTheme.typography.headlineSmall.copy(fontSize = 24.sp, letterSpacing = (-0.4).sp),
                     fontWeight = FontWeight.ExtraBold,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -373,7 +375,7 @@ internal fun InfiniteRadioHero(
                     modifier = Modifier.semantics { heading() },
                 )
                 Text(
-                    text = "An endless station shaped by your listening",
+                    text = appText(com.lastwave.app.R.string.ui_an_endless_station_shaped_by_your_listening_6f37ca),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 2,
@@ -520,7 +522,7 @@ internal fun PinnedChipsBar(
                             .padding(horizontal = 16.dp),
                     ) {
                         Text(
-                            text = "All",
+                            text = appText(com.lastwave.app.R.string.dl_filter_all),
                             style = MaterialTheme.typography.labelLarge,
                             fontWeight = if (isAllSelected) FontWeight.Bold else FontWeight.Medium,
                             color = textColor,
@@ -737,7 +739,7 @@ internal fun QuickTileCard(
                     overflow = TextOverflow.Ellipsis,
                     color = MaterialTheme.colorScheme.onSurface,
                 )
-                val finalSubtitle = if (isNewReleasesTile) "Fresh drops" else tile.subtitle ?: if (tile.actionVideoId != null) "Track" else "Playlist"
+                val finalSubtitle = if (isNewReleasesTile) appText(com.lastwave.app.R.string.ui_fresh_drops_29bc2e) else tile.subtitle ?: if (tile.actionVideoId != null) appText(com.lastwave.app.R.string.set_loud_track) else appText(com.lastwave.app.R.string.ui_playlist_cd95b4)
                 if (finalSubtitle.isNotEmpty()) {
                     Text(
                         text = finalSubtitle,

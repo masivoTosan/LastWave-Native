@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player.automix
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
@@ -56,7 +58,7 @@ fun AudioQualityMixBadge(
             BlendPhase.BLENDING -> {
                 val bpmText = telemetry.syncedBpm?.let { "${it.toInt()} BPM" } ?: ""
                 val mixingText = buildString {
-                    append("AutoMix")
+                    append(appText(com.lastwave.app.R.string.ui_automix_b42afb))
                     if (bpmText.isNotEmpty()) append(" \u2022 ").append(bpmText)
                 }
 
@@ -88,7 +90,7 @@ fun AudioQualityMixBadge(
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        text = "Mixed ✓$bpmText",
+                        text = appText(com.lastwave.app.R.string.ui_mixed_1_s_9751ac, (bpmText).toString()),
                         style = MaterialTheme.typography.labelSmall.copy(
                             fontSize = 10.sp,
                             fontWeight = FontWeight.SemiBold,

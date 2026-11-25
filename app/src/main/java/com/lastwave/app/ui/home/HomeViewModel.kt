@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lastwave.app.data.local.SessionPreferences
@@ -186,9 +188,9 @@ private fun dateLabelOf(millis: Long): String? {
     val yesterday = Calendar.getInstance().apply { add(Calendar.DAY_OF_YEAR, -1) }
     return when {
         isSameDay(target, today) -> null
-        isSameDay(target, yesterday) -> "Yesterday"
+        isSameDay(target, yesterday) -> appText(com.lastwave.app.R.string.fr_time_yesterday)
         else -> {
-            val months = arrayOf("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+            val months = arrayOf(appText(com.lastwave.app.R.string.fr_month_jan),appText(com.lastwave.app.R.string.fr_month_feb),appText(com.lastwave.app.R.string.fr_month_mar),appText(com.lastwave.app.R.string.fr_month_apr),appText(com.lastwave.app.R.string.fr_month_may),appText(com.lastwave.app.R.string.fr_month_jun),appText(com.lastwave.app.R.string.fr_month_jul),appText(com.lastwave.app.R.string.fr_month_aug),appText(com.lastwave.app.R.string.fr_month_sep),appText(com.lastwave.app.R.string.fr_month_oct),appText(com.lastwave.app.R.string.fr_month_nov),appText(com.lastwave.app.R.string.fr_month_dec))
             "${target.get(Calendar.DAY_OF_MONTH)} ${months[target.get(Calendar.MONTH)]} ${target.get(Calendar.YEAR)}"
         }
     }
@@ -478,7 +480,7 @@ class HomeViewModel @Inject constructor(
     /** Podium meta for a connected Last.fm account: top artists + albums for
      *  [username] (own or friend) plus own taste tags. Each fetch fails
      *  independently so one flaky call never clears the others. */
-    private fun preloadTopMeta(username: String, period: String = "overall") {
+    private fun preloadTopMeta(username: String, period: String = appText(com.lastwave.app.R.string.fr_period_all)) {
         viewModelScope.launch(Dispatchers.IO) {
             homeRepository.fetchTopArtistsForPeriod(period, 10, username = username)
                 .onSuccess { artists ->
@@ -663,7 +665,7 @@ class HomeViewModel @Inject constructor(
         val target = _uiState.value.viewingUsername
         
         val period = when (mode) {
-            HomeSortMode.RECENT, HomeSortMode.MOST_PLAYED, HomeSortMode.TOP_ALBUMS, HomeSortMode.TOP_ARTISTS -> "overall"
+            HomeSortMode.RECENT, HomeSortMode.MOST_PLAYED, HomeSortMode.TOP_ALBUMS, HomeSortMode.TOP_ARTISTS -> appText(com.lastwave.app.R.string.fr_period_all)
             HomeSortMode.LAST_7_DAYS -> "7day"
             HomeSortMode.LAST_30_DAYS -> "1month"
         }
@@ -753,7 +755,7 @@ class HomeViewModel @Inject constructor(
                             topTracksOverall = emptyList(),
                             isLocalStatsMode = true,
                             isLastFmConnected = connected,
-                            error = "Couldn't load local stats",
+                            error = appText(com.lastwave.app.R.string.ui_couldn_t_load_local_stats_9fcdc1),
                         )
                     }
                 }
@@ -781,11 +783,11 @@ class HomeViewModel @Inject constructor(
                     if (isOwnProfile) {
                         if (!tryLoadLocalStats(username, isConnected = connected)) {
                             _uiState.update {
-                                it.copy(isLoading = false, error = e.message ?: "Couldn't load that profile")
+                                it.copy(isLoading = false, error = e.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_that_profile_621d46))
                             }
                         }
                     } else {
-                        _uiState.update { it.copy(isLoading = false, error = e.message ?: "Couldn't load that profile") }
+                        _uiState.update { it.copy(isLoading = false, error = e.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_that_profile_621d46)) }
                     }
                 },
             )

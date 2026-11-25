@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.album
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
@@ -192,7 +194,7 @@ fun AlbumDetailScreen(
         when (val state = uiState) {
             is AlbumUiState.Loading -> {
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    ExpressiveLoadingIndicator(message = "Loading $albumTitle...")
+                    ExpressiveLoadingIndicator(message = appText(com.lastwave.app.R.string.ui_loading_1_s_e69943, (albumTitle).toString()))
                 }
             }
             is AlbumUiState.Error -> {
@@ -362,7 +364,7 @@ fun AlbumDetailScreen(
                                     ) {
                                         Icon(
                                             if (saveState.savedToLibrary) Icons.Filled.Check else Icons.Filled.BookmarkAdd,
-                                            contentDescription = if (saveState.savedToLibrary) "Saved to library" else "Save album to library",
+                                            contentDescription = if (saveState.savedToLibrary) appText(com.lastwave.app.R.string.ui_saved_to_library_8a3c7a) else appText(com.lastwave.app.R.string.ui_save_album_to_library_fa8aab),
                                             modifier = Modifier.size(22.dp),
                                             tint = if (saveState.savedToLibrary) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSecondaryContainer,
                                         )
@@ -458,7 +460,7 @@ fun AlbumDetailScreen(
                             ) {
                                 "${track.artist} \u2022 Track ${index + 1}"
                             } else {
-                                "Track ${index + 1}"
+                                appText(com.lastwave.app.R.string.ui_track_1_s_f4bf73, (index + 1).toString())
                             },
                             position = position,
                             isPlaying = isPlayingThis,
@@ -522,7 +524,7 @@ fun AlbumDetailScreen(
                             ) {
                                 Column(Modifier.padding(16.dp)) {
                                     Text(
-                                        text = "About this Album",
+                                        text = appText(com.lastwave.app.R.string.ui_about_this_album_8d7604),
                                         style = MaterialTheme.typography.titleSmall,
                                         fontWeight = FontWeight.Bold,
                                         color = MaterialTheme.colorScheme.primary,
@@ -543,7 +545,7 @@ fun AlbumDetailScreen(
                     if (data.otherAlbums.isNotEmpty()) {
                         item(key = "other_albums_header") {
                             Text(
-                                text = "More by ${data.artist}",
+                                text = appText(com.lastwave.app.R.string.ui_more_by_1_s_74556a, (data.artist).toString()),
                                 style = MaterialTheme.typography.titleLarge,
                                 fontWeight = FontWeight.Bold,
                                 modifier = Modifier.padding(top = 10.dp),
@@ -749,7 +751,7 @@ private fun AlbumCard(
                 overflow = TextOverflow.Ellipsis,
             )
             Text(
-                text = item.type ?: "Album",
+                text = item.type ?: appText(com.lastwave.app.R.string.art_type_album),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 maxLines = 1,

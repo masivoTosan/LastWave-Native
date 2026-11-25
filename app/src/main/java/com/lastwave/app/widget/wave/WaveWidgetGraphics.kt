@@ -1,5 +1,7 @@
 package com.lastwave.app.widget.wave
 
+import com.lastwave.app.util.appText
+
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -213,7 +215,7 @@ internal object WaveWidgetGraphics {
         }
     }
 
-    fun playButton(): Bitmap = cached("play") {
+    fun playButton(): Bitmap = cached(appText(com.lastwave.app.R.string.dl_play_cd)) {
         Bitmap.createBitmap(72, 72, Bitmap.Config.ARGB_8888).also {
             Canvas(it).drawCircle(36f, 36f, 35f, paint(0xFFF0E9FF.toInt()).apply {
                 shader = LinearGradient(0f, 0f, 72f, 72f,

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -152,7 +154,7 @@ fun VolumeSlider(
             ) {
                 Icon(
                     imageVector = if (displayFraction <= 0.001f) Icons.Filled.VolumeMute else Icons.Filled.VolumeDown,
-                    contentDescription = if (displayFraction <= 0.001f) "Unmute" else "Mute",
+                    contentDescription = if (displayFraction <= 0.001f) appText(com.lastwave.app.R.string.ui_unmute_7044c3) else appText(com.lastwave.app.R.string.ui_mute_0f0973),
                     tint = iconColor,
                     modifier = Modifier.size(20.dp),
                 )
@@ -262,7 +264,7 @@ fun VolumeSlider(
             ) {
                 Icon(
                     imageVector = Icons.Filled.VolumeUp,
-                    contentDescription = "Max volume",
+                    contentDescription = appText(com.lastwave.app.R.string.ui_max_volume_5bdfcc),
                     tint = iconColor,
                     modifier = Modifier.size(20.dp),
                 )

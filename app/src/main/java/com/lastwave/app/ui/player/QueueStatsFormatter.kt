@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.playback.PlayableTrack
 
 object QueueStatsFormatter {
@@ -15,8 +17,8 @@ object QueueStatsFormatter {
      */
     fun formatQueueStats(songs: List<PlayableTrack>): String {
         val totalCount = songs.size
-        val countStr = if (totalCount == 1) "1 song" else "$totalCount songs"
-        if (totalCount == 0) return "0 songs"
+        val countStr = if (totalCount == 1) appText(com.lastwave.app.R.string.ui_1_song_093990) else appText(com.lastwave.app.R.string.ui_1_s_songs_9b614d, (totalCount).toString())
+        if (totalCount == 0) return appText(com.lastwave.app.R.string.ui_0_songs_a35bbc)
 
         val knownDurations = songs.mapNotNull { it.durationMs }.filter { it > 0 }
         if (knownDurations.isEmpty()) {
@@ -32,11 +34,11 @@ object QueueStatsFormatter {
             "${hours}h ${minutes}m"
         } else {
             val mins = (totalSeconds / 60).coerceAtLeast(if (totalSeconds > 0) 1 else 0)
-            "${mins}m"
+            appText(com.lastwave.app.R.string.ui_extra_830877d1ed, (mins).toString())
         }
 
         val hasUnknown = knownDurations.size < totalCount
         val formattedDuration = if (hasUnknown) "$durationStr+" else durationStr
-        return "$countStr \u2022 $formattedDuration"
+        return appText(com.lastwave.app.R.string.ly_sync_badge, (countStr).toString(), (formattedDuration).toString())
     }
 }

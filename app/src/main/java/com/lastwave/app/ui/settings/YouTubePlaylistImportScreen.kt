@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -125,7 +127,7 @@ fun YouTubePlaylistImportScreen(
     val keyboard = LocalSoftwareKeyboardController.current
     val haptic = LocalHapticFeedback.current
 
-    val quickPills = listOf("Top Hits 2024", "Pop Classics", "Lofi Chill", "Hip Hop Gold", "Workout Energy", "Deep Focus")
+    val quickPills = listOf("Top Hits 2024", "Pop Classics", "Lofi Chill", "Hip Hop Gold", appText(com.lastwave.app.R.string.ui_workout_energy_d523b6), appText(com.lastwave.app.R.string.ui_deep_focus_b568dd))
 
     // CSV Document Picker Launcher
     val csvPickerLauncher = rememberLauncherForActivityResult(
@@ -261,7 +263,7 @@ fun YouTubePlaylistImportScreen(
                                 ) {
                                     CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
                                     Text(
-                                        "Loading ${state.ytAccountName}'s playlists...",
+                                        appText(com.lastwave.app.R.string.ui_loading_1_s_s_playlists_56ec09, (state.ytAccountName).toString()),
                                         style = MaterialTheme.typography.bodyMedium,
                                     )
                                 }
@@ -423,7 +425,7 @@ fun YouTubePlaylistImportScreen(
                     } else if (state.searchResults.isNotEmpty()) {
                         item {
                             Text(
-                                "Found ${state.searchResults.size} Playlists",
+                                appText(com.lastwave.app.R.string.ui_found_1_s_playlists_ea3fff, (state.searchResults.size).toString()),
                                 style = MaterialTheme.typography.titleSmall,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -468,12 +470,12 @@ fun YouTubePlaylistImportScreen(
                                 verticalArrangement = Arrangement.spacedBy(14.dp),
                             ) {
                                 Text(
-                                    "Paste Playlist Link",
+                                    appText(com.lastwave.app.R.string.ui_paste_playlist_link_7943d7),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
                                 )
                                 Text(
-                                    "Paste any YouTube or YouTube Music playlist URL. LastWave resolves every track — no 100-song cap, full playlists import completely.",
+                                    appText(com.lastwave.app.R.string.ui_paste_any_youtube_or_youtube_music_playlist_url__680293),
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
@@ -561,14 +563,14 @@ fun YouTubePlaylistImportScreen(
                                 }
 
                                 Text(
-                                    "Import from Playlist File",
+                                    appText(com.lastwave.app.R.string.ui_import_from_playlist_file_fc0836),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
                                     textAlign = TextAlign.Center,
                                 )
 
                                 Text(
-                                    "Import CSV, TSV, M3U/M3U8, or TXT files. For TXT, use Artist - Title, one song per line, or YouTube links. Only verified matches are imported; uncertain tracks are skipped.",
+                                    appText(com.lastwave.app.R.string.ui_import_csv_tsv_m3u_m3u8_or_txt_files_for_txt_use_d42557),
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     textAlign = TextAlign.Center,
@@ -671,7 +673,7 @@ fun YouTubePlaylistImportScreen(
                     Icon(Icons.Filled.Download, contentDescription = null, modifier = Modifier.size(20.dp))
                     Spacer(Modifier.width(8.dp))
                     Text(
-                        "Import ${state.selectedPlaylistIds.size} Selected Playlist(s)",
+                        appText(com.lastwave.app.R.string.ui_import_1_s_selected_playlist_s_b9baa9, (state.selectedPlaylistIds.size).toString()),
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Bold,
                     )
@@ -748,7 +750,7 @@ private fun YouTubePlaylistCard(
                 )
                 Spacer(Modifier.height(2.dp))
                 Text(
-                    text = "${playlist.author ?: "YouTube Music"} \u2022 ${playlist.trackCountText ?: "Playlist"}",
+                    text = appText(com.lastwave.app.R.string.ly_sync_badge, (playlist.author ?: appText(com.lastwave.app.R.string.recommendation_source_yt_music)).toString(), (playlist.trackCountText ?: appText(com.lastwave.app.R.string.ui_playlist_cd95b4)).toString()),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,
@@ -814,7 +816,7 @@ private fun PlaylistPreviewModal(
                         overflow = TextOverflow.Ellipsis,
                     )
                     Text(
-                        "${preview.author ?: "YouTube"} \u2022 ${preview.trackCount} tracks",
+                        appText(com.lastwave.app.R.string.ui_1_s_2_s_tracks_1525d0, (preview.author ?: appText(com.lastwave.app.R.string.menu_quality_youtube)).toString(), (preview.trackCount).toString()),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -822,7 +824,7 @@ private fun PlaylistPreviewModal(
             }
 
             Text(
-                "Tracklist Preview",
+                appText(com.lastwave.app.R.string.ui_tracklist_preview_d7e6f0),
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
             )

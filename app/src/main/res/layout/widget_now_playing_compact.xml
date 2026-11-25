@@ -97,7 +97,7 @@
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:text="Unknown track"
+                android:text="@string/ui_unknown_track_698495"
                 android:textColor="@color/widget_on_surface"
                 android:textSize="16sp" />
 
@@ -111,7 +111,7 @@
                 android:fontVariationSettings="'wght' 450, 'opsz' 13"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:text="Unknown artist"
+                android:text="@string/ui_unknown_artist_9566f8"
                 android:textColor="@color/widget_on_surface"
                 android:textSize="13sp" />
         </LinearLayout>

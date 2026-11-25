@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.album
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -157,9 +159,9 @@ class AlbumViewModel @Inject constructor(
                 val existing = runCatching { playlistRepository.findByTitle(data.title) }.getOrNull()
                 if (existing == null || !isAlbumCopy(existing, tracks)) {
                     playlistRepository.save(
-                        title = data.title.ifBlank { "Album" },
-                        subtitle = "${data.artist.ifBlank { "YouTube Music" }} • ${tracks.size} tracks",
-                        mode = "custom",
+                        title = data.title.ifBlank { appText(com.lastwave.app.R.string.art_type_album) },
+                        subtitle = appText(com.lastwave.app.R.string.ui_1_s_2_s_tracks_1525d0, (data.artist.ifBlank { appText(com.lastwave.app.R.string.recommendation_source_yt_music) }).toString(), (tracks.size).toString()),
+                        mode = appText(com.lastwave.app.R.string.autoeq_custom),
                         tracks = tracks,
                     )
                 }

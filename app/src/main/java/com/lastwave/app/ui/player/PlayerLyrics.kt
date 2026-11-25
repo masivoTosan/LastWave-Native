@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.animation.fadeIn
@@ -328,9 +330,9 @@ internal fun PlayerLyricsActions(
     var showSource by rememberSaveable { mutableStateOf(false) }
     var showShare by rememberSaveable { mutableStateOf(false) }
     Row(verticalAlignment = Alignment.CenterVertically) {
-        LyricsGlassButton(Icons.Filled.Fullscreen, "Fullscreen lyrics", onOpenFullLyrics)
+        LyricsGlassButton(Icons.Filled.Fullscreen, appText(com.lastwave.app.R.string.ui_fullscreen_lyrics_2f35af), onOpenFullLyrics)
         Spacer(Modifier.width(10.dp))
-        LyricsGlassButton(Icons.Filled.MoreVert, "Lyrics options") { showOptions = true }
+        LyricsGlassButton(Icons.Filled.MoreVert, appText(com.lastwave.app.R.string.ui_lyrics_options_5fa2b6)) { showOptions = true }
     }
     if (showOptions) {
         LyricsOptionsMenuDialog(

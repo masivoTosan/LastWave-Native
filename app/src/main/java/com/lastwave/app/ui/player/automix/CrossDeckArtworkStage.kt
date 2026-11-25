@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player.automix
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -90,7 +92,7 @@ fun CrossDeckArtworkStage(
                         .data(incomingArtworkUrl)
                         .crossfade(true)
                         .build(),
-                    contentDescription = "Incoming Track Artwork",
+                    contentDescription = appText(com.lastwave.app.R.string.ui_incoming_track_artwork_215061),
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize(),
                 )
@@ -114,7 +116,7 @@ fun CrossDeckArtworkStage(
                     .data(currentArtworkUrl)
                     .crossfade(true)
                     .build(),
-                contentDescription = "Current Track Artwork",
+                contentDescription = appText(com.lastwave.app.R.string.ui_current_track_artwork_f178f6),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize(),
             )

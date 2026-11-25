@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.podcast
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -183,4 +185,4 @@ fun PodcastEpisodeRow(
 internal fun episodeSubtitle(episode: PodcastEpisode): String = listOfNotNull(
     episode.publishedLabel?.takeIf { it.isNotBlank() },
     episode.showTitle?.takeIf { it.isNotBlank() },
-).joinToString(" • ").ifBlank { "Podcast" }
+).joinToString(" • ").ifBlank { appText(com.lastwave.app.R.string.ui_podcast_bafb6e) }

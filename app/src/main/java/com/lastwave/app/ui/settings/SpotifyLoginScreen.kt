@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import android.annotation.SuppressLint
 import android.content.ClipboardManager
 import android.content.Context
@@ -109,20 +111,20 @@ fun SpotifyLoginScreen(
             SpotifyLoginViewModel.Outcome.CONNECTED -> {
                 if (captured) return
                 captured = true
-                Toast.makeText(context, "Spotify Canvas connected!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, appText(com.lastwave.app.R.string.ui_spotify_canvas_connected_c598e8), Toast.LENGTH_SHORT).show()
                 onConnected()
             }
             SpotifyLoginViewModel.Outcome.SESSION_REFUSED -> {
                 Log.w(LOG_TAG, "Spotify refused the session cookie")
                 Toast.makeText(
                     context,
-                    "Signed in, but Spotify refused the session. Sign in again, or paste a fresh cookie.",
+                    appText(com.lastwave.app.R.string.ui_signed_in_but_spotify_refused_the_session_sign_i_98ff87),
                     Toast.LENGTH_LONG,
                 ).show()
             }
             SpotifyLoginViewModel.Outcome.FAILED -> {
                 Log.w(LOG_TAG, "Failed to store sp_dc")
-                Toast.makeText(context, "Couldn't save the Spotify session.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, appText(com.lastwave.app.R.string.ui_couldn_t_save_the_spotify_session_99498d), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -216,8 +218,8 @@ fun SpotifyLoginScreen(
                 .padding(bottom = with(density) { keyboardClearancePx.toDp() }),
         ) {
             ExpressiveHeader(
-                title = "Connect Spotify",
-                subtitle = "Sign in to unlock Spotify Canvas video loops",
+                title = appText(com.lastwave.app.R.string.ui_connect_spotify_098751),
+                subtitle = appText(com.lastwave.app.R.string.ui_sign_in_to_unlock_spotify_canvas_video_loops_c60d3f),
                 onBack = onBack,
                 actions = {
                     if (isConnected) {
@@ -240,7 +242,7 @@ fun SpotifyLoginScreen(
                                 captured = false
                                 capturedSpdc = null
                                 webViewRef?.loadUrl(SpotifyLoginUrls.LOGIN_URL)
-                                android.widget.Toast.makeText(context, "Spotify disconnected", android.widget.Toast.LENGTH_SHORT).show()
+                                android.widget.Toast.makeText(context, appText(com.lastwave.app.R.string.ui_spotify_disconnected_747420), android.widget.Toast.LENGTH_SHORT).show()
                             },
                             colors = IconButtonDefaults.filledTonalIconButtonColors(
                                 containerColor = MaterialTheme.colorScheme.errorContainer,
@@ -249,7 +251,7 @@ fun SpotifyLoginScreen(
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Logout,
-                                contentDescription = "Log out of Spotify",
+                                contentDescription = appText(com.lastwave.app.R.string.ui_log_out_of_spotify_d4b786),
                                 tint = MaterialTheme.colorScheme.onErrorContainer,
                             )
                         }
@@ -263,7 +265,7 @@ fun SpotifyLoginScreen(
                     ) {
                         Icon(
                             imageVector = Icons.Default.Key,
-                            contentDescription = "Manual sp_dc cookie entry",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_manual_sp_dc_cookie_entry_0fc582),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     }
@@ -416,14 +418,14 @@ fun SpotifyLoginScreen(
                             runCatching { createdWebView?.destroy() }
                             webViewRef = null
                             isLoading = false
-                            webViewError = "Android System WebView is unavailable. Install or enable a WebView provider to connect Spotify."
+                            webViewError = appText(com.lastwave.app.R.string.ui_android_system_webview_is_unavailable_install_or_608310)
                             Log.e(LOG_TAG, "WebView unavailable", error)
                             android.widget.FrameLayout(ctx)
                         } catch (error: LinkageError) {
                             runCatching { createdWebView?.destroy() }
                             webViewRef = null
                             isLoading = false
-                            webViewError = "This ROM's WebView implementation is incompatible. Spotify sign-in is disabled safely."
+                            webViewError = appText(com.lastwave.app.R.string.ui_this_rom_s_webview_implementation_is_incompatibl_ae1752)
                             Log.e(LOG_TAG, "WebView linkage error", error)
                             android.widget.FrameLayout(ctx)
                         }
@@ -471,13 +473,13 @@ fun SpotifyLoginScreen(
                             verticalArrangement = Arrangement.Center,
                         ) {
                             Text(
-                                "Unable to load Spotify login page directly.",
+                                appText(com.lastwave.app.R.string.ui_unable_to_load_spotify_login_page_directly_97a46a),
                                 style = MaterialTheme.typography.titleMedium,
                                 color = MaterialTheme.colorScheme.onSurface,
                             )
                             Spacer(Modifier.height(8.dp))
                             Text(
-                                "You can reload the page or paste your sp_dc cookie manually.",
+                                appText(com.lastwave.app.R.string.ui_you_can_reload_the_page_or_paste_your_sp_dc_cook_6a21b6),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -491,14 +493,14 @@ fun SpotifyLoginScreen(
                                 ) {
                                     Icon(Icons.Filled.Refresh, contentDescription = null, modifier = Modifier.size(18.dp))
                                     Spacer(Modifier.size(6.dp))
-                                    Text("Reload")
+                                    Text(appText(com.lastwave.app.R.string.ui_reload_cce715))
                                 }
                                 OutlinedButton(
                                     onClick = { showManualDialog = true },
                                 ) {
                                     Icon(Icons.Filled.Key, contentDescription = null, modifier = Modifier.size(18.dp))
                                     Spacer(Modifier.size(6.dp))
-                                    Text("Enter Cookie")
+                                    Text(appText(com.lastwave.app.R.string.ui_enter_cookie_82a2b3))
                                 }
                             }
                         }
@@ -528,13 +530,13 @@ fun SpotifyLoginScreen(
                             // post-login page has loaded.
                             val found = captureSpDc(lastUrl ?: webViewRef?.url)
                             if (!found) {
-                                Toast.makeText(context, "No Spotify session detected. Log in above first.", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, appText(com.lastwave.app.R.string.ui_no_spotify_session_detected_log_in_above_first_9bed6e), Toast.LENGTH_SHORT).show()
                             }
                         },
                     ) {
                         Icon(Icons.Filled.Check, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.size(6.dp))
-                        Text("Check Login")
+                        Text(appText(com.lastwave.app.R.string.ui_check_login_3277f9))
                     }
 
                     OutlinedButton(
@@ -551,7 +553,7 @@ fun SpotifyLoginScreen(
                     ) {
                         Icon(Icons.Filled.ContentPaste, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.size(6.dp))
-                        Text("Paste sp_dc")
+                        Text(appText(com.lastwave.app.R.string.ui_paste_sp_dc_7bd908))
                     }
 
                     FilledTonalIconButton(
@@ -562,7 +564,7 @@ fun SpotifyLoginScreen(
                             }
                         },
                     ) {
-                        Icon(Icons.AutoMirrored.Filled.OpenInNew, contentDescription = "Open in Browser")
+                        Icon(Icons.AutoMirrored.Filled.OpenInNew, contentDescription = appText(com.lastwave.app.R.string.ui_open_in_browser_56c8f9))
                     }
                 }
             }
@@ -571,11 +573,11 @@ fun SpotifyLoginScreen(
         if (showManualDialog) {
             AlertDialog(
                 onDismissRequest = { showManualDialog = false },
-                title = { Text("Manual sp_dc Entry") },
+                title = { Text(appText(com.lastwave.app.R.string.ui_manual_sp_dc_entry_b43590)) },
                 text = {
                     Column {
                         Text(
-                            "Paste your Spotify 'sp_dc' cookie value from your web browser developer tools:",
+                            appText(com.lastwave.app.R.string.ui_paste_your_spotify_sp_dc_cookie_value_from_your__60982c),
                             style = MaterialTheme.typography.bodyMedium,
                         )
                         Spacer(Modifier.height(12.dp))
@@ -604,12 +606,12 @@ fun SpotifyLoginScreen(
                             }
                         },
                     ) {
-                        Text("Save")
+                        Text(appText(com.lastwave.app.R.string.lyshare_action_save))
                     }
                 },
                 dismissButton = {
                     TextButton(onClick = { showManualDialog = false }) {
-                        Text("Cancel")
+                        Text(appText(com.lastwave.app.R.string.recognize_cancel))
                     }
                 },
             )

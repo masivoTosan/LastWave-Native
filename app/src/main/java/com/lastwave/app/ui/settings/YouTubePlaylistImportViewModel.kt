@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lastwave.app.data.music.InnerTubeMusicApi
@@ -189,7 +191,7 @@ class YouTubePlaylistImportViewModel @Inject constructor(
                     it.copy(
                         searchResults = results,
                         isSearching = false,
-                        errorMessage = if (results.isEmpty()) "No playlists found for \"$clean\"" else null,
+                        errorMessage = if (results.isEmpty()) appText(com.lastwave.app.R.string.ui_no_playlists_found_for_1_s_a5a39c, (clean).toString()) else null,
                     )
                 }
             } catch (e: Exception) {
@@ -232,9 +234,9 @@ class YouTubePlaylistImportViewModel @Inject constructor(
                         it.copy(
                             isPreviewLoading = false,
                             errorMessage = if (_uiState.value.ytConnected) {
-                                "Couldn't load this playlist. If it's not yours, check that sharing is enabled."
+                                appText(com.lastwave.app.R.string.ui_couldn_t_load_this_playlist_if_it_s_not_yours_ch_f3cf45)
                             } else {
-                                "Couldn't load playlist songs. Public/unlisted links work anonymously — connect a YouTube Music account in Settings to import your own."
+                                appText(com.lastwave.app.R.string.ui_couldn_t_load_playlist_songs_public_unlisted_lin_fd7fa3)
                             },
                         )
                     }
@@ -296,7 +298,7 @@ class YouTubePlaylistImportViewModel @Inject constructor(
         onSuccess: (List<SavedPlaylist>) -> Unit,
     ) {
         if (selectedIds.isEmpty() || _uiState.value.isImporting) return
-        _uiState.update { it.copy(isImporting = true, importProgress = "Starting import...") }
+        _uiState.update { it.copy(isImporting = true, importProgress = appText(com.lastwave.app.R.string.ui_starting_import_bf718a)) }
 
         viewModelScope.launch {
             val savedList = mutableListOf<SavedPlaylist>()
@@ -320,7 +322,7 @@ class YouTubePlaylistImportViewModel @Inject constructor(
                     var likedImported = false
                     for (id in selectedIds) {
                         count++
-                        _uiState.update { it.copy(importProgress = "Importing playlist $count of ${selectedIds.size}...") }
+                        _uiState.update { it.copy(importProgress = appText(com.lastwave.app.R.string.ui_importing_playlist_1_s_of_2_s_5f1a37, (count).toString(), (selectedIds.size).toString())) }
                         val playlistResult = innerTube.fetchPlaylist(id)
                         if (playlistResult != null && playlistResult.tracks.isNotEmpty()) {
                             val saved = if (PlaylistImportManager.isYtLikedId(playlistResult.id) ||
@@ -366,13 +368,13 @@ class YouTubePlaylistImportViewModel @Inject constructor(
         filename: String,
         onSuccess: (SavedPlaylist) -> Unit,
     ) {
-        val fileType = filename.substringAfterLast('.', "File").uppercase()
+        val fileType = filename.substringAfterLast('.', appText(com.lastwave.app.R.string.ui_file_2c3caf)).uppercase()
         viewModelScope.launch {
             _uiState.update {
                 it.copy(
                     isCsvImporting = true,
                     csvFilename = filename,
-                    importProgress = "Parsing & matching $fileType tracks...",
+                    importProgress = appText(com.lastwave.app.R.string.ui_parsing_matching_1_s_tracks_2ac556, (fileType).toString()),
                     errorMessage = null,
                 )
             }

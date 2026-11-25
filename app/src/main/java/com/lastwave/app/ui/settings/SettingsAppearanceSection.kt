@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 
 import androidx.activity.compose.BackHandler
@@ -267,12 +269,12 @@ import kotlin.math.roundToLong
 
 internal data class AccentPreset(val name: String, val hex: String)
 internal val ACCENT_PRESETS = listOf(
-    AccentPreset("Crimson", "#E03030"),
-    AccentPreset("Violet", "#7C4DFF"),
-    AccentPreset("Ocean", "#2196C6"),
-    AccentPreset("Sage", "#6B9E6B"),
-    AccentPreset("Amber", "#E0A030"),
-    AccentPreset("Rose", "#E0507A"),
+    AccentPreset(appText(com.lastwave.app.R.string.ui_crimson_b3f39a), "#E03030"),
+    AccentPreset(appText(com.lastwave.app.R.string.ui_violet_ddcd2f), "#7C4DFF"),
+    AccentPreset(appText(com.lastwave.app.R.string.ui_ocean_76022a), "#2196C6"),
+    AccentPreset(appText(com.lastwave.app.R.string.ui_sage_c3bd77), "#6B9E6B"),
+    AccentPreset(appText(com.lastwave.app.R.string.ui_amber_27a01d), "#E0A030"),
+    AccentPreset(appText(com.lastwave.app.R.string.ui_rose_51ad0e), "#E0507A"),
 )
 
 @Composable

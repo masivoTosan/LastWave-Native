@@ -1,5 +1,7 @@
 package com.lastwave.app.data.naming
 
+import com.lastwave.app.util.appText
+
 /**
  * Faithful port of app.js's playlist naming system (v4): every generated or
  * saved playlist gets a unique, premium-feeling 1-3 word name assembled from
@@ -95,18 +97,18 @@ object PlaylistNamer {
     fun subtitleFor(mode: String, tagInput: String? = null, seedTrackName: String? = null, seedArtistInput: String? = null): String =
         when (mode) {
             "tag" -> if (!tagInput.isNullOrBlank()) {
-                "Genre Mix \u2022 ${tagInput.split(" ").joinToString(" ") { w -> w.replaceFirstChar(Char::uppercase) }}"
+                appText(com.lastwave.app.R.string.ui_extra_0df3b0cedb, (tagInput.split(" ").joinToString(" ") { w -> w.replaceFirstChar(Char::uppercase) }).toString())
             } else {
-                "Genre Mix"
+                appText(com.lastwave.app.R.string.ui_extra_5eccba604f)
             }
-            "recent" -> "Recent Tracks"
-            "top", "library" -> "Top Tracks"
-            "mix" -> "My Mix"
-            "recommendations" -> "Recommendations"
-            "never-heard" -> "Never-Heard Mix"
-            "similar-tracks", "start-mix" -> if (!seedTrackName.isNullOrBlank()) "Track Mix \u2022 $seedTrackName" else "Track Mix"
-            "similar-artists" -> if (!seedArtistInput.isNullOrBlank()) "Artist Mix \u2022 $seedArtistInput" else "Artist Mix"
-            "discover" -> "Discover Feed"
-            else -> "Mix"
+            "recent" -> appText(com.lastwave.app.R.string.ui_extra_9817a18bb1)
+            "top", "library" -> appText(com.lastwave.app.R.string.ui_extra_a02eaabe46)
+            "mix" -> appText(com.lastwave.app.R.string.ui_extra_bc0994d6c7)
+            "recommendations" -> appText(com.lastwave.app.R.string.settings_section_recommendations)
+            "never-heard" -> appText(com.lastwave.app.R.string.ui_extra_e6f05b9c56)
+            "similar-tracks", "start-mix" -> if (!seedTrackName.isNullOrBlank()) appText(com.lastwave.app.R.string.ui_extra_fd1c6df309, (seedTrackName).toString()) else appText(com.lastwave.app.R.string.ui_extra_3f8302dec6)
+            "similar-artists" -> if (!seedArtistInput.isNullOrBlank()) appText(com.lastwave.app.R.string.ui_extra_84986fd7d9, (seedArtistInput).toString()) else appText(com.lastwave.app.R.string.ui_extra_d41ca6e21c)
+            "discover" -> appText(com.lastwave.app.R.string.ui_extra_5a04520a88)
+            else -> appText(com.lastwave.app.R.string.home_mix)
         }
 }

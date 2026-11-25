@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -78,7 +80,7 @@ fun PlaylistCover(
             }
             AsyncImage(
                 model = imageRequest,
-                contentDescription = "${playlist.title} cover",
+                contentDescription = appText(com.lastwave.app.R.string.ui_1_s_cover_7b0a7f, (playlist.title).toString()),
                 contentScale = ContentScale.Crop,
                 placeholder = lastSuccessfulPainter,
                 error = lastSuccessfulPainter,

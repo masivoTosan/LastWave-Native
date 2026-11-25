@@ -1,5 +1,7 @@
 package com.lastwave.app.widget
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 
 /**
@@ -33,9 +35,9 @@ data class WidgetSnapshot(
                 context.getSharedPreferences(STORE, Context.MODE_PRIVATE)
             }.getOrNull() ?: return WidgetSnapshot()
             return WidgetSnapshot(
-                title = prefs.getString("title", "").orEmpty(),
-                artist = prefs.getString("artist", "").orEmpty(),
-                album = prefs.getString("album", "").orEmpty(),
+                title = prefs.getString(appText(com.lastwave.app.R.string.local_sort_title), "").orEmpty(),
+                artist = prefs.getString(appText(com.lastwave.app.R.string.pd_sort_artist), "").orEmpty(),
+                album = prefs.getString(appText(com.lastwave.app.R.string.art_type_album), "").orEmpty(),
                 sourceApp = prefs.getString("source_app", "").orEmpty(),
                 sourcePackage = prefs.getString("source_package", "").orEmpty(),
                 artPath = prefs.getString("art_path", null),
@@ -48,9 +50,9 @@ data class WidgetSnapshot(
         fun write(context: Context, value: WidgetSnapshot) {
             runCatching {
                 context.getSharedPreferences(STORE, Context.MODE_PRIVATE).edit()
-                    .putString("title", value.title)
-                    .putString("artist", value.artist)
-                    .putString("album", value.album)
+                    .putString(appText(com.lastwave.app.R.string.local_sort_title), value.title)
+                    .putString(appText(com.lastwave.app.R.string.pd_sort_artist), value.artist)
+                    .putString(appText(com.lastwave.app.R.string.art_type_album), value.album)
                     .putString("source_app", value.sourceApp)
                     .putString("source_package", value.sourcePackage)
                     .putString("art_path", value.artPath)

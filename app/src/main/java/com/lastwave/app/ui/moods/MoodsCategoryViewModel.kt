@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.moods
 
+import com.lastwave.app.util.appText
+
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -26,7 +28,7 @@ internal class MoodsCategoryViewModel @Inject constructor(
 ) : ViewModel() {
     private val browseId = savedStateHandle.get<String>("browseId").orEmpty()
     private val params = savedStateHandle.get<String>("params").orEmpty()
-    val fallbackTitle = savedStateHandle.get<String>("title").orEmpty()
+    val fallbackTitle = savedStateHandle.get<String>(appText(com.lastwave.app.R.string.local_sort_title)).orEmpty()
     private val mutableState = MutableStateFlow(MoodCategoryUiState())
     val state = mutableState.asStateFlow()
     private var loadJob: Job? = null

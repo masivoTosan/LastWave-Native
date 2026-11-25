@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -51,6 +53,6 @@ fun OverflowMenuButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
             .width(26.dp)
             .height(32.dp),
     ) {
-        Icon(Icons.Filled.MoreVert, contentDescription = "More options", modifier = Modifier.size(18.dp))
+        Icon(Icons.Filled.MoreVert, contentDescription = appText(com.lastwave.app.R.string.ui_more_options_86c0a3), modifier = Modifier.size(18.dp))
     }
 }

@@ -1,5 +1,7 @@
 package com.lastwave.app.data.repository
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.data.local.db.DownloadedTrackDao
 import com.lastwave.app.data.playlist.PlaylistRepository
 import javax.inject.Inject
@@ -92,7 +94,7 @@ class LocalStatsRepository @Inject constructor(
             AlbumSeed(t.artist.trim(), album, t.artworkUrl)
         } + downloaded.mapNotNull { d ->
             val album = d.album.trim().takeIf(String::isNotBlank) ?: return@mapNotNull null
-            val cleanArtist = d.artist.trim().takeIf { !com.lastwave.app.util.ArtistHelper.isPlayCountOrStat(it) && it.isNotBlank() } ?: "Unknown artist"
+            val cleanArtist = d.artist.trim().takeIf { !com.lastwave.app.util.ArtistHelper.isPlayCountOrStat(it) && it.isNotBlank() } ?: appText(com.lastwave.app.R.string.ui_unknown_artist_9566f8)
             AlbumSeed(cleanArtist, album, d.artworkUrl)
         }
         val albumGroups = albumSeeds.groupBy { "${it.artist.lowercase()}|${it.title.lowercase()}" }

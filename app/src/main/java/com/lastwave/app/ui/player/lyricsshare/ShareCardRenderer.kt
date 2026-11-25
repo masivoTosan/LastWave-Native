@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player.lyricsshare
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -533,7 +535,7 @@ object ShareCardRenderer {
         drawLogoMark(canvas, context, x + (logoSize / 2f), centerY, logoSize, brandColor)
         // Baseline that centres the glyphs on the mark instead of a fixed guess.
         val textY = centerY - (textPaint.ascent() + textPaint.descent()) / 2f
-        canvas.drawText("LastWave", x + logoSize + gap, textY, textPaint)
+        canvas.drawText(appText(com.lastwave.app.R.string.set_about_title), x + logoSize + gap, textY, textPaint)
     }
 
     private fun drawLogoMark(

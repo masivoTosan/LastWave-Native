@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed.cards
 
+import com.lastwave.app.util.appText
+
 import android.animation.ValueAnimator
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearOutSlowInEasing
@@ -70,7 +72,7 @@ fun ShelfFeaturedCard(
         modifier.width(cardWidth).aspectRatio(1f).clip(RoundedCornerShape(8.dp))
             .background(MaterialTheme.colorScheme.surfaceContainerHigh)
             .cardPressable(onClick = onClick, onLongClick = onLongClick)
-            .semantics { contentDescription = "Play $title, $artist" },
+            .semantics { contentDescription = appText(com.lastwave.app.R.string.ui_play_1_s_2_s_4714b6, (title).toString(), (artist).toString()) },
     ) {
         Icon(fallbackIcon, null, Modifier.size(64.dp).align(Alignment.Center),
             tint = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -99,7 +101,7 @@ fun ShelfFeaturedCard(
                     maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
             if (onMenuClick != null) IconButton(onClick = onMenuClick, modifier = Modifier.size(48.dp)) {
-                Icon(Icons.Filled.MoreVert, "More options for $title", Modifier.size(23.dp), tint = Color.White)
+                Icon(Icons.Filled.MoreVert, appText(com.lastwave.app.R.string.feed_more_cd, (title).toString()), Modifier.size(23.dp), tint = Color.White)
             }
         }
         if (!caption.isNullOrBlank()) Text(

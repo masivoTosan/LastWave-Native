@@ -37,6 +37,8 @@ jobs:
           assert s.count(old) == 1
           p.write_text(s.replace(old, old.replace('else "com.lastwave.app"', 'else "com.lastwave.app.zhdebug"')))
           PY
+      - name: Verify Chinese localization
+        run: ./gradlew :app:testDebugUnitTest --tests com.lastwave.app.util.AppTextTest -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
       - name: Build standard Debug (arm64 for GT6)
         run: ./gradlew :app:assembleDebug -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
       - name: Stage standard APK
@@ -62,7 +64,7 @@ jobs:
             "$AAPT" dump badging "$apk" | head -1
           done
           (cd final_apk && sha256sum *.apk > SHA256SUMS.txt)
-          printf '%s\n' 'PR #747 source: ce80d2bdd4beeb6499b2f205b8d9a322c44dc0d9' 'Android 10+ arm64 only. Standard: com.lastwave.app.zhdebug. vivo-origin: com.tencent.qqmusic; conflicts with QQ Music.' 'Debug signed; no private signing/API secrets supplied. Fresh runs may use different debug certificates.' > final_apk/README.txt
+          printf '%s\n' "Build source: $GITHUB_SHA" 'Android 10+ arm64 only. Standard: com.lastwave.app.zhdebug. vivo-origin: com.tencent.qqmusic; conflicts with QQ Music.' 'Debug signed; no private signing/API secrets supplied. Fresh runs may use different debug certificates.' > final_apk/README.txt
           cat final_apk/README.txt >> "$GITHUB_STEP_SUMMARY"
       - name: Upload comparison APKs and checksums
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

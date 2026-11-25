@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 
 import androidx.activity.compose.BackHandler
@@ -272,12 +274,12 @@ internal const val EQ_MAX_DB = EQ_MAX_GAIN_DB
 
 internal fun eqBandCategory(hz: Int): String = when {
     hz <= 40 -> "SUB"
-    hz <= 100 -> "BASS"
+    hz <= 100 -> appText(com.lastwave.app.R.string.autoeq_bass)
     hz <= 250 -> "LOW-MID"
-    hz <= 1000 -> "MID"
+    hz <= 1000 -> appText(com.lastwave.app.R.string.ui_mid_9a6af7)
     hz <= 2500 -> "HIGH-MID"
     hz <= 6300 -> "PRES"
-    else -> "AIR"
+    else -> appText(com.lastwave.app.R.string.ui_air_ddd068)
 }
 
 @Composable
@@ -509,7 +511,7 @@ internal fun EqualizerSheet(
                     Spacer(Modifier.width(14.dp))
                     Column {
                         Text(
-                            "Equalizer",
+                            appText(com.lastwave.app.R.string.sig_eq),
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                         )
@@ -620,7 +622,7 @@ internal fun EqualizerSheet(
                     Column(Modifier.weight(1f)) {
                         Text(stringResource(R.string.set_eq_enable), style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
                         Text(
-                            if (eq.enabled) "Shaping your music in real-time" else "Off \u2014 original audio passes through",
+                            if (eq.enabled) appText(com.lastwave.app.R.string.ui_shaping_your_music_in_real_time_ca0874) else appText(com.lastwave.app.R.string.ui_off_original_audio_passes_through_0c8de7),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             maxLines = 2,
@@ -643,7 +645,7 @@ internal fun EqualizerSheet(
             )
 
             // Presets Horizontal Flow
-            SectionLabel("Presets")
+            SectionLabel(appText(com.lastwave.app.R.string.ui_presets_e709e7))
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp),
@@ -666,7 +668,7 @@ internal fun EqualizerSheet(
 
             // The listener's own named presets, usable on any output.
             val canSaveMore = eq.userPresets.size < com.lastwave.app.data.local.MAX_USER_EQ_PRESETS
-            SectionLabel("My presets  ${eq.userPresets.size}/${com.lastwave.app.data.local.MAX_USER_EQ_PRESETS}")
+            SectionLabel(appText(com.lastwave.app.R.string.ui_my_presets_1_s_2_s_a7160a, (eq.userPresets.size).toString(), (com.lastwave.app.data.local.MAX_USER_EQ_PRESETS).toString()))
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp),
@@ -694,7 +696,7 @@ internal fun EqualizerSheet(
                     },
                     label = {
                         Text(
-                            if (canSaveMore) "Save as preset" else "Limit of ${com.lastwave.app.data.local.MAX_USER_EQ_PRESETS} reached",
+                            if (canSaveMore) appText(com.lastwave.app.R.string.ui_save_as_preset_770ba1) else appText(com.lastwave.app.R.string.ui_limit_of_1_s_reached_2d4df1, (com.lastwave.app.data.local.MAX_USER_EQ_PRESETS).toString()),
                             style = MaterialTheme.typography.labelMedium,
                         )
                     },
@@ -703,14 +705,14 @@ internal fun EqualizerSheet(
             if (eq.isUserPreset(eq.presetName)) {
                 Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
                     Text(
-                        "Edits save into “${eq.presetName}” automatically",
+                        appText(com.lastwave.app.R.string.ui_edits_save_into_1_s_automatically_917540, (eq.presetName).toString()),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.weight(1f),
                     )
-                    androidx.compose.material3.TextButton(onClick = { nameDialogFor = eq.presetName }) { Text("Rename") }
+                    androidx.compose.material3.TextButton(onClick = { nameDialogFor = eq.presetName }) { Text(appText(com.lastwave.app.R.string.common_rename)) }
                     androidx.compose.material3.TextButton(onClick = { deleteConfirmFor = eq.presetName }) {
-                        Text("Delete", color = MaterialTheme.colorScheme.error)
+                        Text(appText(com.lastwave.app.R.string.player_delete_cd), color = MaterialTheme.colorScheme.error)
                     }
                 }
             }
@@ -729,16 +731,16 @@ internal fun EqualizerSheet(
             deleteConfirmFor?.let { name ->
                 androidx.compose.material3.AlertDialog(
                     onDismissRequest = { deleteConfirmFor = null },
-                    title = { Text("Delete “$name”?") },
-                    text = { Text("The sound keeps playing as Custom until you pick another preset.") },
+                    title = { Text(appText(com.lastwave.app.R.string.dl_delete_title, (name).toString())) },
+                    text = { Text(appText(com.lastwave.app.R.string.ui_the_sound_keeps_playing_as_custom_until_you_pick_1e2b21)) },
                     confirmButton = {
                         androidx.compose.material3.TextButton(onClick = {
                             onDeletePreset(name)
                             deleteConfirmFor = null
-                        }) { Text("Delete", color = MaterialTheme.colorScheme.error) }
+                        }) { Text(appText(com.lastwave.app.R.string.player_delete_cd), color = MaterialTheme.colorScheme.error) }
                     },
                     dismissButton = {
-                        androidx.compose.material3.TextButton(onClick = { deleteConfirmFor = null }) { Text("Cancel") }
+                        androidx.compose.material3.TextButton(onClick = { deleteConfirmFor = null }) { Text(appText(com.lastwave.app.R.string.recognize_cancel)) }
                     },
                 )
             }
@@ -813,8 +815,8 @@ internal fun EqualizerSheet(
 
             Text(
                 text = when {
-                    !eq.enabled -> "Turn on to apply equalization live"
-                    eq.presetName == EqualizerPresets.CUSTOM_NAME -> "Custom profile \u2022 touch and drag any bar up/down"
+                    !eq.enabled -> appText(com.lastwave.app.R.string.ui_turn_on_to_apply_equalization_live_88e0b5)
+                    eq.presetName == EqualizerPresets.CUSTOM_NAME -> appText(com.lastwave.app.R.string.ui_custom_profile_touch_and_drag_any_bar_up_down_6cd4a4)
                     else -> "${eq.presetName} preset active \u2022 touch any bar to customize"
                 },
                 style = MaterialTheme.typography.bodySmall,
@@ -847,13 +849,13 @@ private fun EqPresetNameDialog(
     val problem = com.lastwave.app.data.local.eqPresetNameProblem(name, eq, renaming)
     androidx.compose.material3.AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(if (renaming == null) "Save preset" else "Rename preset") },
+        title = { Text(if (renaming == null) appText(com.lastwave.app.R.string.ui_save_preset_828897) else appText(com.lastwave.app.R.string.ui_rename_preset_52abbe)) },
         text = {
             androidx.compose.material3.OutlinedTextField(
                 value = name,
                 onValueChange = { name = it.take(com.lastwave.app.data.local.MAX_EQ_PRESET_NAME_LENGTH + 5) },
                 singleLine = true,
-                label = { Text("Name") },
+                label = { Text(appText(com.lastwave.app.R.string.pd_sort_name)) },
                 isError = problem != null,
                 supportingText = { problem?.let { Text(it) } },
             )
@@ -862,10 +864,10 @@ private fun EqPresetNameDialog(
             androidx.compose.material3.TextButton(
                 enabled = problem == null,
                 onClick = { onConfirm(com.lastwave.app.data.local.cleanEqPresetName(name)) },
-            ) { Text(if (renaming == null) "Save" else "Rename") }
+            ) { Text(if (renaming == null) appText(com.lastwave.app.R.string.lyshare_action_save) else appText(com.lastwave.app.R.string.common_rename)) }
         },
         dismissButton = {
-            androidx.compose.material3.TextButton(onClick = onDismiss) { Text("Cancel") }
+            androidx.compose.material3.TextButton(onClick = onDismiss) { Text(appText(com.lastwave.app.R.string.recognize_cancel)) }
         },
     )
 }

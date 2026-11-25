@@ -42,7 +42,7 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/google_sans_flex"
                 android:maxLines="1"
-                android:text="Unknown track"
+                android:text="@string/ui_unknown_track_698495"
                 android:textColor="@color/widget_on_surface"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -55,7 +55,7 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/google_sans_flex"
                 android:maxLines="1"
-                android:text="Unknown artist"
+                android:text="@string/ui_unknown_artist_9566f8"
                 android:textColor="@color/widget_on_surface_variant"
                 android:textSize="16sp" />
 
@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/google_sans_flex"
-                        android:text="Play"
+                        android:text="@string/dl_play_cd"
                         android:textColor="@color/widget_on_primary"
                         android:textSize="16sp" />
                 </LinearLayout>

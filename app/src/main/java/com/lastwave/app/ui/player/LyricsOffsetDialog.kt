@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -44,7 +46,7 @@ fun LyricsOffsetDialog(
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text(
-                    "Nudges the highlight when a provider's timestamps run early or late. + shows lyrics early (fixes late lyrics), \u2212 delays them. Seekbar is unaffected.",
+                    appText(com.lastwave.app.R.string.ui_nudges_the_highlight_when_a_provider_s_timestamp_e220e6),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -137,12 +139,12 @@ fun LyricsOffsetDialog(
                     ) {
                         Icon(
                             imageVector = Icons.Filled.RestartAlt,
-                            contentDescription = "Reset",
+                            contentDescription = appText(com.lastwave.app.R.string.set_eq_reset),
                             modifier = Modifier.size(15.dp),
                         )
                         Spacer(Modifier.width(2.dp))
                         Text(
-                            "Reset",
+                            appText(com.lastwave.app.R.string.set_eq_reset),
                             maxLines = 1,
                             softWrap = false,
                             style = MaterialTheme.typography.labelSmall,

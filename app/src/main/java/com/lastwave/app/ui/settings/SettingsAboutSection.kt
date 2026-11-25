@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 
 import androidx.activity.compose.BackHandler
@@ -329,7 +331,7 @@ internal fun AppIconSelectorCard(
                 IconButton(onClick = { isExpanded = !isExpanded }) {
                     Icon(
                         imageVector = Icons.Filled.KeyboardArrowDown,
-                        contentDescription = if (isExpanded) "Collapse app icons" else "Expand app icons",
+                        contentDescription = if (isExpanded) appText(com.lastwave.app.R.string.ui_collapse_app_icons_094365) else appText(com.lastwave.app.R.string.ui_expand_app_icons_78df37),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.graphicsLayer { rotationZ = arrowRotation },
                     )
@@ -614,20 +616,20 @@ internal fun AboutCard(
             ) {
                 Icon(
                     painter = painterResource(appIcon.logoRes),
-                    contentDescription = "LastWave",
+                    contentDescription = appText(com.lastwave.app.R.string.set_about_title),
                     tint = Color.Unspecified,
                     modifier = Modifier.size(72.dp),
                 )
             }
             Spacer(Modifier.height(14.dp))
-            Text("LastWave", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+            Text(appText(com.lastwave.app.R.string.set_about_title), style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(8.dp))
             Surface(
                 shape = ExpressivePillShape,
                 color = MaterialTheme.colorScheme.primaryContainer,
             ) {
                 Text(
-                    "Version $versionName",
+                    appText(com.lastwave.app.R.string.ui_version_1_s_d2f210, (versionName).toString()),
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                     fontWeight = FontWeight.Medium,
@@ -645,7 +647,7 @@ internal fun AboutCard(
                 Spacer(Modifier.width(6.dp))
                 Image(
                     painter = painterResource(R.drawable.ic_flag_india),
-                    contentDescription = "India",
+                    contentDescription = appText(com.lastwave.app.R.string.ui_india_967ce3),
                 )
             }
             Spacer(Modifier.height(14.dp))

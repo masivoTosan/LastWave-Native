@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -77,11 +79,11 @@ data class DownloadedAlbum(
 )
 
 enum class SongSortOption(val id: String, val label: String) {
-    RECENT("recent", "Recently Added"),
-    OLDEST("oldest", "Oldest First"),
-    TITLE_AZ("title_az", "Title (A-Z)"),
-    ARTIST_AZ("artist_az", "Artist (A-Z)"),
-    SIZE_DESC("size_desc", "File Size");
+    RECENT(appText(com.lastwave.app.R.string.fr_tab_recent), appText(com.lastwave.app.R.string.ui_recently_added_66560f)),
+    OLDEST("oldest", appText(com.lastwave.app.R.string.ui_oldest_first_06dc81)),
+    TITLE_AZ("title_az", appText(com.lastwave.app.R.string.ui_title_a_z_fe7b7e)),
+    ARTIST_AZ("artist_az", appText(com.lastwave.app.R.string.ui_artist_a_z_3205a4)),
+    SIZE_DESC("size_desc", appText(com.lastwave.app.R.string.details_file_size));
 
     companion object {
         fun fromId(id: String?): SongSortOption = entries.firstOrNull { it.id == id } ?: RECENT
@@ -89,9 +91,9 @@ enum class SongSortOption(val id: String, val label: String) {
 }
 
 enum class ArtistSortOption(val id: String, val label: String) {
-    NAME_AZ("name_az", "Name (A-Z)"),
-    MOST_SONGS("most_songs", "Most Songs"),
-    STORAGE_SIZE("storage_size", "Storage Size");
+    NAME_AZ("name_az", appText(com.lastwave.app.R.string.ui_name_a_z_fd07da)),
+    MOST_SONGS("most_songs", appText(com.lastwave.app.R.string.ui_most_songs_99c0dd)),
+    STORAGE_SIZE("storage_size", appText(com.lastwave.app.R.string.ui_storage_size_ff8fec));
 
     companion object {
         fun fromId(id: String?): ArtistSortOption = entries.firstOrNull { it.id == id } ?: NAME_AZ
@@ -99,10 +101,10 @@ enum class ArtistSortOption(val id: String, val label: String) {
 }
 
 enum class AlbumSortOption(val id: String, val label: String) {
-    TITLE_AZ("title_az", "Title (A-Z)"),
-    ARTIST_AZ("artist_az", "Artist (A-Z)"),
-    MOST_TRACKS("most_tracks", "Most Tracks"),
-    RECENT("recent", "Recently Added");
+    TITLE_AZ("title_az", appText(com.lastwave.app.R.string.ui_title_a_z_fe7b7e)),
+    ARTIST_AZ("artist_az", appText(com.lastwave.app.R.string.ui_artist_a_z_3205a4)),
+    MOST_TRACKS("most_tracks", appText(com.lastwave.app.R.string.ui_most_tracks_ec4c8b)),
+    RECENT(appText(com.lastwave.app.R.string.fr_tab_recent), appText(com.lastwave.app.R.string.ui_recently_added_66560f));
 
     companion object {
         fun fromId(id: String?): AlbumSortOption = entries.firstOrNull { it.id == id } ?: TITLE_AZ
@@ -146,7 +148,7 @@ class DownloadsViewModel @Inject constructor(
         return if (trimmed.isBlank() ||
             com.lastwave.app.util.ArtistHelper.isPlayCountOrStat(trimmed)
         ) {
-            "Unknown Artist"
+            appText(com.lastwave.app.R.string.ui_unknown_artist_5bf8da)
         } else {
             trimmed
         }
@@ -290,7 +292,7 @@ class DownloadsViewModel @Inject constructor(
             )
 
     fun setDownloadFolder(name: String) {
-        launchDownloadAction("update download folder") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_download_folder_0fb79e)) {
             settingsPreferences.setDownloadFolder(name)
         }
     }
@@ -308,13 +310,13 @@ class DownloadsViewModel @Inject constructor(
             )
 
     fun setDownloadTreeUri(uriString: String) {
-        launchDownloadAction("update download location") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_download_location_a23633)) {
             settingsPreferences.setDownloadTreeUri(uriString)
         }
     }
 
     fun clearDownloadTreeUri() {
-        launchDownloadAction("reset download location") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_reset_download_location_c67fdb)) {
             com.lastwave.app.data.download.SafTreeFiles.releasePersistedAccess(
                 context,
                 downloadTreeUri.value,
@@ -361,50 +363,50 @@ class DownloadsViewModel @Inject constructor(
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), true)
 
     fun setDownloadStructure(structure: com.lastwave.app.data.local.DownloadFolderStructure) {
-        launchDownloadAction("update folder structure") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_folder_structure_ef62fa)) {
             settingsPreferences.setDownloadStructure(structure)
         }
     }
 
     fun setUseAlbumArtistForFolders(enabled: Boolean) {
-        launchDownloadAction("update album-artist folders") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_album_artist_folders_2df626)) {
             settingsPreferences.setUseAlbumArtistForFolders(enabled)
         }
     }
 
     fun setPrimaryArtistOnly(enabled: Boolean) {
-        launchDownloadAction("update primary-artist filter") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_primary_artist_filter_349d5b)) {
             settingsPreferences.setPrimaryArtistOnly(enabled)
         }
     }
 
     init {
-        launchDownloadAction("sync downloads from storage") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_sync_downloads_from_storage_ce9ce6)) {
             downloadManager.restoreDownloadsAfterReinstall()
             downloadManager.syncDownloadsFromStorage()
         }
     }
 
     fun setDownloadLyrics(enabled: Boolean) {
-        launchDownloadAction("toggle download lyrics") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_toggle_download_lyrics_274a85)) {
             settingsPreferences.setDownloadLyrics(enabled)
         }
     }
 
     fun setSongSort(option: SongSortOption) {
-        launchDownloadAction("update song sort") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_song_sort_08ca4f)) {
             settingsPreferences.setDownloadSongSort(option.id)
         }
     }
 
     fun setArtistSort(option: ArtistSortOption) {
-        launchDownloadAction("update artist sort") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_artist_sort_5068aa)) {
             settingsPreferences.setDownloadArtistSort(option.id)
         }
     }
 
     fun setAlbumSort(option: AlbumSortOption) {
-        launchDownloadAction("update album sort") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_update_album_sort_c0c80c)) {
             settingsPreferences.setDownloadAlbumSort(option.id)
         }
     }
@@ -443,7 +445,7 @@ class DownloadsViewModel @Inject constructor(
     }
 
     fun deleteTrack(track: DownloadedTrackEntity) {
-        launchDownloadAction("delete download") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_delete_download_a4ea09)) {
             when (val result = downloadManager.deleteDownloadedTrack(track)) {
                 TrackDownloadManager.DeleteDownloadResult.Deleted -> Unit
                 is TrackDownloadManager.DeleteDownloadResult.NeedsUserConsent ->
@@ -455,25 +457,25 @@ class DownloadsViewModel @Inject constructor(
 
     fun onDeleteConsentResult(track: DownloadedTrackEntity, approved: Boolean) {
         if (!approved) return
-        launchDownloadAction("finish delete") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_finish_delete_cf6ee4)) {
             if (!downloadManager.finishConsentedDelete(track)) _deleteEvents.emit(DeleteEvent.Failed)
         }
     }
 
     fun deleteHistoryRecordOnly(track: DownloadedTrackEntity) {
-        launchDownloadAction("delete download history") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_delete_download_history_a0130b)) {
             downloadManager.removeFromHistoryOnly(track)
         }
     }
 
     fun clearAll() {
-        launchDownloadAction("clear downloads") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_clear_downloads_dac07f)) {
             downloadManager.clearAllDownloads()
         }
     }
 
     fun clearHistoryOnly() {
-        launchDownloadAction("clear download history") {
+        launchDownloadAction(appText(com.lastwave.app.R.string.ui_clear_download_history_a53e13)) {
             downloadManager.clearHistoryOnly()
         }
     }
@@ -493,10 +495,10 @@ class DownloadsViewModel @Inject constructor(
                 musicPlayer.playQueue(
                     tracks = playables,
                     startIndex = startIndex,
-                    sourceLabel = "Downloads",
+                    sourceLabel = appText(com.lastwave.app.R.string.ui_downloads_a862c2),
                 )
             } else {
-                musicPlayer.play(track.toPlayableTrack(), sourceLabel = "Downloads")
+                musicPlayer.play(track.toPlayableTrack(), sourceLabel = appText(com.lastwave.app.R.string.ui_downloads_a862c2))
             }
         } catch (error: Exception) {
             android.util.Log.e("DownloadsViewModel", "Could not play download", error)
@@ -513,7 +515,7 @@ class DownloadsViewModel @Inject constructor(
             musicPlayer.playQueue(
                 tracks = playables,
                 startIndex = actualStartIndex,
-                sourceLabel = "Downloads",
+                sourceLabel = appText(com.lastwave.app.R.string.ui_downloads_a862c2),
                 startShuffled = startShuffled,
             )
         } catch (error: Exception) {

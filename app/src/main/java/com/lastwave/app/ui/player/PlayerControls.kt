@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
 import com.lastwave.app.data.playlist.isLikedIn
@@ -405,7 +407,7 @@ internal fun MainControls(state: MusicPlayerState, player: MusicPlayer, isTransl
                 },
         ) {
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Icon(Icons.Filled.SkipPrevious, "Previous", Modifier.size(if (isTranslucent) 28.dp else 31.dp))
+                Icon(Icons.Filled.SkipPrevious, appText(com.lastwave.app.R.string.desc_previous), Modifier.size(if (isTranslucent) 28.dp else 31.dp))
             }
         }
         val pillShape = RoundedCornerShape(100)
@@ -456,7 +458,7 @@ internal fun MainControls(state: MusicPlayerState, player: MusicPlayer, isTransl
                     AnimatedPlayPauseIcon(state.isPlaying, Modifier.size(if (isTranslucent) 28.dp else 30.dp))
                     Spacer(Modifier.width(8.dp))
                     Text(
-                        text = if (state.isPlaying) "Pause" else "Play",
+                        text = if (state.isPlaying) appText(com.lastwave.app.R.string.wave_widget_pause) else appText(com.lastwave.app.R.string.dl_play_cd),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = androidx.compose.material3.LocalContentColor.current
@@ -481,7 +483,7 @@ internal fun MainControls(state: MusicPlayerState, player: MusicPlayer, isTransl
                 },
         ) {
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Icon(Icons.Filled.SkipNext, "Next", Modifier.size(if (isTranslucent) 28.dp else 31.dp))
+                Icon(Icons.Filled.SkipNext, appText(com.lastwave.app.R.string.desc_next), Modifier.size(if (isTranslucent) 28.dp else 31.dp))
             }
         }
         }
@@ -585,7 +587,7 @@ internal fun PlayerUtilityControls(
     ) {
         PlayerModeButton(
             active = state.shuffleEnabled,
-            description = if (state.shuffleEnabled) "Shuffle on" else "Shuffle off",
+            description = if (state.shuffleEnabled) appText(com.lastwave.app.R.string.ui_shuffle_on_785728) else appText(com.lastwave.app.R.string.ui_shuffle_off_e59f97),
             icon = Icons.Filled.Shuffle,
             onClick = player::toggleShuffle,
             background = edgeButtonBackground,
@@ -610,7 +612,7 @@ internal fun PlayerUtilityControls(
         } else {
             PlayerModeButton(
                 active = isCustomAudio,
-                description = "Audio controls",
+                description = appText(com.lastwave.app.R.string.ui_audio_controls_6f8f4c),
                 icon = if (isCustomAudio) Icons.Filled.Tune else Icons.Filled.VolumeUp,
                 onClick = onOpenAudioControls,
                 background = edgeButtonBackground,
@@ -624,9 +626,9 @@ internal fun PlayerUtilityControls(
         PlayerModeButton(
             active = state.repeatMode != Player.REPEAT_MODE_OFF,
             description = when (state.repeatMode) {
-                Player.REPEAT_MODE_ONE -> "Repeat one"
-                Player.REPEAT_MODE_ALL -> "Repeat all"
-                else -> "Repeat off"
+                Player.REPEAT_MODE_ONE -> appText(com.lastwave.app.R.string.ui_repeat_one_05f3dd)
+                Player.REPEAT_MODE_ALL -> appText(com.lastwave.app.R.string.ui_repeat_all_7cce34)
+                else -> appText(com.lastwave.app.R.string.ui_repeat_off_c4d7b8)
             },
             icon = if (state.repeatMode == Player.REPEAT_MODE_ONE) Icons.Filled.RepeatOne else Icons.Filled.Repeat,
             onClick = player::cycleRepeatMode,
@@ -702,7 +704,7 @@ internal fun DividedUtilityPill(
             ) {
                 Icon(
                     imageVector = Icons.Filled.VolumeUp,
-                    contentDescription = "Audio Controls",
+                    contentDescription = appText(com.lastwave.app.R.string.ui_audio_controls_3590d9),
                     tint = if (isCustomAudio) MaterialTheme.colorScheme.primary else foreground,
                     modifier = Modifier
                         .size(if (isTranslucent) 18.dp else 19.dp)
@@ -744,7 +746,7 @@ internal fun DividedUtilityPill(
             ) {
                 Icon(
                     imageVector = Icons.Filled.SmartDisplay,
-                    contentDescription = if (isVideoActive) "Switch to album art" else "Watch music video",
+                    contentDescription = if (isVideoActive) appText(com.lastwave.app.R.string.ui_switch_to_album_art_556f48) else appText(com.lastwave.app.R.string.ui_watch_music_video_7fc7fa),
                     tint = if (isVideoActive) MaterialTheme.colorScheme.primary else foreground,
                     modifier = Modifier
                         .size(if (isTranslucent) 18.dp else 19.dp)
@@ -819,7 +821,7 @@ internal fun DeckWaveform(
                         )
                     }
                     Text(
-                        text = if (trackTitle.isNotBlank()) "$trackTitle \u2022 $trackArtist" else "Standby Deck Empty",
+                        text = if (trackTitle.isNotBlank()) appText(com.lastwave.app.R.string.ly_sync_badge, (trackTitle).toString(), (trackArtist).toString()) else appText(com.lastwave.app.R.string.ui_standby_deck_empty_20011d),
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -834,7 +836,7 @@ internal fun DeckWaveform(
                         color = Color(0xFFDDD6FE).copy(alpha = 0.25f),
                     ) {
                         Text(
-                            text = "ECHO FREEZE TAIL",
+                            text = appText(com.lastwave.app.R.string.ui_echo_freeze_tail_0f5576),
                             style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                             color = Color(0xFFDDD6FE),
                             modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.dp),
@@ -846,7 +848,7 @@ internal fun DeckWaveform(
                         color = Color(0xFFFDE68A).copy(alpha = 0.25f),
                     ) {
                         Text(
-                            text = "KICK CUE +${cueMs}ms",
+                            text = appText(com.lastwave.app.R.string.ui_kick_cue_1_sms_adcc14, (cueMs).toString()),
                             style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
                             color = Color(0xFFFDE68A),
                             modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.dp),
@@ -999,18 +1001,18 @@ internal fun DeckWaveform(
                         (30.0 * Math.pow(30.0, progress.toDouble())).roundToInt()
                     } else 30
                     Text(
-                        text = "HPF: ${hpfHz}Hz (Q=1.35)",
+                        text = appText(com.lastwave.app.R.string.ui_hpf_1_shz_q_1_35_eed9cc, (hpfHz).toString()),
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                     Text(
-                        text = if (isBlending && progress >= 0.50f) "Bass: -18dB Cut" else "Bass: 0dB Unity",
+                        text = if (isBlending && progress >= 0.50f) appText(com.lastwave.app.R.string.ui_bass_18db_cut_510d4e) else appText(com.lastwave.app.R.string.ui_bass_0db_unity_79c538),
                         style = MaterialTheme.typography.labelSmall,
                         color = if (isBlending && progress >= 0.50f) Color(0xFFF87171) else MaterialTheme.colorScheme.onSurfaceVariant,
                         fontWeight = if (isBlending && progress >= 0.50f) FontWeight.Bold else FontWeight.Normal,
                     )
                     Text(
-                        text = if (isBlending && progress >= 0.65f) "Tail: 55% Freeze" else "Tail: Dry",
+                        text = if (isBlending && progress >= 0.65f) appText(com.lastwave.app.R.string.ui_tail_55_freeze_31c31a) else appText(com.lastwave.app.R.string.ui_tail_dry_1ba926),
                         style = MaterialTheme.typography.labelSmall,
                         color = if (isBlending && progress >= 0.65f) Color(0xFFC084FC) else MaterialTheme.colorScheme.onSurfaceVariant,
                         fontWeight = if (isBlending && progress >= 0.65f) FontWeight.Bold else FontWeight.Normal,
@@ -1022,18 +1024,18 @@ internal fun DeckWaveform(
                         } else 20000
                     } else 20000
                     Text(
-                        text = if (isBlending && progress <= 0.40f) "LPF: ${lpfHz}Hz" else "LPF: 20kHz Open",
+                        text = if (isBlending && progress <= 0.40f) appText(com.lastwave.app.R.string.ui_lpf_1_shz_185e8d, (lpfHz).toString()) else appText(com.lastwave.app.R.string.ui_lpf_20khz_open_af687b),
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                     Text(
-                        text = if (isBlending) (if (progress < 0.50f) "Bass: -18dB Duck" else "Bass: 0dB Punch!") else "Bass: Ducked",
+                        text = if (isBlending) (if (progress < 0.50f) appText(com.lastwave.app.R.string.ui_bass_18db_duck_498bbe) else appText(com.lastwave.app.R.string.ui_bass_0db_punch_291cd6)) else appText(com.lastwave.app.R.string.ui_bass_ducked_2e22c1),
                         style = MaterialTheme.typography.labelSmall,
                         color = if (isBlending && progress >= 0.50f) Color(0xFF34D399) else MaterialTheme.colorScheme.onSurfaceVariant,
                         fontWeight = if (isBlending && progress >= 0.50f) FontWeight.Bold else FontWeight.Normal,
                     )
                     Text(
-                        text = if ((cueMs ?: 0L) > 0L) "Cue: +${cueMs}ms" else "Cue: Beat 1",
+                        text = if ((cueMs ?: 0L) > 0L) appText(com.lastwave.app.R.string.ui_cue_1_sms_d31490, (cueMs).toString()) else appText(com.lastwave.app.R.string.ui_cue_beat_1_aafedb),
                         style = MaterialTheme.typography.labelSmall,
                         color = Color(0xFFFDE68A),
                     )
@@ -1068,7 +1070,7 @@ internal fun YouTubeLikeButton(liked: Boolean?, onClick: () -> Unit, size: andro
             Icon(
                 if (liked) androidx.compose.material.icons.Icons.Filled.CheckCircle
                 else androidx.compose.material.icons.Icons.Outlined.AddCircleOutline,
-                contentDescription = if (liked) "Remove from YouTube Liked" else "Add to YouTube Liked",
+                contentDescription = if (liked) appText(com.lastwave.app.R.string.ui_remove_from_youtube_liked_387949) else appText(com.lastwave.app.R.string.ui_add_to_youtube_liked_b4c402),
                 modifier = Modifier.size(size * 0.5f),
             )
         }

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player.automix
 
+import com.lastwave.app.util.appText
+
 import android.net.Uri
 import android.os.Process
 import android.os.SystemClock
@@ -307,7 +309,7 @@ private fun previewSource(player: MusicPlayer, pair: WaveformPair, outgoing: Boo
     val uri = concreteUri ?: stream?.url?.let(Uri::parse)
         ?: binding.track?.playbackUrl?.let { if (it.startsWith("/")) Uri.fromFile(java.io.File(it)) else Uri.parse(it) }
         ?: return null
-    if (uri.scheme !in listOf("http", "https", "file", "content", "data")) return null
+    if (uri.scheme !in listOf("http", "https", appText(com.lastwave.app.R.string.ui_file_2c3caf), appText(com.lastwave.app.R.string.settings_section_content), appText(com.lastwave.app.R.string.ui_data_e5e429))) return null
     val sameTrack = binding.track?.let {
         (!it.videoId.isNullOrBlank() || !it.playbackUrl.isNullOrBlank()) && it.mediaIdKey() == other.track?.mediaIdKey()
     } == true

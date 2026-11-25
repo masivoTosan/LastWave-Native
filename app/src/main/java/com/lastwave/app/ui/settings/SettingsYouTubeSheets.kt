@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 
 import androidx.activity.compose.BackHandler
@@ -364,7 +366,7 @@ internal fun YouTubeChannelSheet(
 
                 else -> {
                     Text(
-                        "Each channel keeps its own sync mirrors — switching re-mirrors cleanly instead of mixing libraries.",
+                        appText(com.lastwave.app.R.string.ui_each_channel_keeps_its_own_sync_mirrors_switchin_16cb9f),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(bottom = 12.dp),
@@ -416,7 +418,7 @@ internal fun YouTubeChannelSheet(
                                     }
                                     if (isSelected) {
                                         Text(
-                                            "Active",
+                                            appText(com.lastwave.app.R.string.internal_reason_active),
                                             style = MaterialTheme.typography.labelMedium,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.primary,
@@ -473,7 +475,7 @@ internal fun YouTubeLibraryVisibilitySheet(
                 Column(Modifier.weight(1f)) {
                     Text(stringResource(R.string.set_yt_shown_title), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                     Text(
-                        "Choose which account playlists appear in LastWave",
+                        appText(com.lastwave.app.R.string.ui_choose_which_account_playlists_appear_in_lastwav_dfe359),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -484,7 +486,7 @@ internal fun YouTubeLibraryVisibilitySheet(
                         onSetAllVisible(!allShown)
                     },
                 ) {
-                    Text(if (allShown) "Hide All" else "Show All", fontWeight = FontWeight.Bold)
+                    Text(if (allShown) appText(com.lastwave.app.R.string.common_hide_all) else appText(com.lastwave.app.R.string.common_show_all), fontWeight = FontWeight.Bold)
                 }
             }
 
@@ -533,7 +535,7 @@ internal fun YouTubeLibraryVisibilitySheet(
                                 Column(Modifier.weight(1f)) {
                                     Text(playlist.title, fontWeight = FontWeight.SemiBold, maxLines = 1)
                                     Text(
-                                        playlist.trackCountText ?: playlist.author ?: "YouTube Music playlist",
+                                        playlist.trackCountText ?: playlist.author ?: appText(com.lastwave.app.R.string.ui_youtube_music_playlist_ccc4ea),
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         maxLines = 1,
@@ -603,12 +605,12 @@ internal fun SyncPlaylistsSheet(
             ) {
                 Column(Modifier.weight(1f)) {
                     Text(
-                        "Sync Playlists",
+                        appText(com.lastwave.app.R.string.ui_sync_playlists_4df049),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                     )
                     Text(
-                        "Choose which playlists mirror to YouTube Music",
+                        appText(com.lastwave.app.R.string.ui_choose_which_playlists_mirror_to_youtube_music_c971db),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -620,7 +622,7 @@ internal fun SyncPlaylistsSheet(
                         onSelectAll(!allSelected)
                     },
                 ) {
-                    Text(if (allSelected) "Deselect All" else "Select All", fontWeight = FontWeight.Bold)
+                    Text(if (allSelected) appText(com.lastwave.app.R.string.ytimp_deselect_all) else appText(com.lastwave.app.R.string.ytimp_select_all), fontWeight = FontWeight.Bold)
                 }
             }
 
@@ -630,7 +632,7 @@ internal fun SyncPlaylistsSheet(
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        "No playlists in your library yet",
+                        appText(com.lastwave.app.R.string.ui_no_playlists_in_your_library_yet_e995db),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -683,7 +685,7 @@ internal fun SyncPlaylistsSheet(
                                         maxLines = 1,
                                     )
                                     Text(
-                                        "${playlist.tracks.size} tracks",
+                                        appText(com.lastwave.app.R.string.ui_1_s_tracks_aece60, (playlist.tracks.size).toString()),
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     )

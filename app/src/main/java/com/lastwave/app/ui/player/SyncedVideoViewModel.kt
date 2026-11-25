@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.app.Activity
 import android.content.pm.ActivityInfo
 import android.os.SystemClock
@@ -170,7 +172,7 @@ sealed interface SyncedVideoUiState {
         val playbackMimeType: String?
             get() = if (usesAdaptive) MimeTypes.APPLICATION_MPD else activeStream.mimeType?.takeIf { it.isNotBlank() }
         val currentQualityLabel: String
-            get() = if (isAuto) "Auto" else activeStream.displayQuality
+            get() = if (isAuto) appText(com.lastwave.app.R.string.autoeq_preamp_auto) else activeStream.displayQuality
     }
     data class Error(val message: String, val noMatchingVideo: Boolean = false) : SyncedVideoUiState
 }
@@ -361,7 +363,7 @@ class SyncedVideoViewModel @Inject constructor(
                 }
                 .onFailure { error ->
                     _uiState.value = SyncedVideoUiState.Error(
-                        message = error.message ?: "Unable to resolve video stream",
+                        message = error.message ?: appText(com.lastwave.app.R.string.ui_unable_to_resolve_video_stream_57a9f7),
                         noMatchingVideo = error.message?.startsWith("No verified music video found") == true,
                     )
                 }
@@ -461,7 +463,7 @@ class SyncedVideoViewModel @Inject constructor(
                 videoRepository.searchVideoCandidates(title, artist, durationMs)
             }.getOrElse { error ->
                 if (videoPickerRequest == request) {
-                    _videoPickerState.value = VideoPickerUiState.Error(error.message ?: "Could not search videos")
+                    _videoPickerState.value = VideoPickerUiState.Error(error.message ?: appText(com.lastwave.app.R.string.ui_could_not_search_videos_6962bd))
                 }
                 return@launch
             }

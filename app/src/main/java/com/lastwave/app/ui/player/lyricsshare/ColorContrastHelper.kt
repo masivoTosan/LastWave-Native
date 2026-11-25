@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player.lyricsshare
 
+import com.lastwave.app.util.appText
+
 import android.graphics.Bitmap
 import android.graphics.Color as AndroidColor
 import androidx.palette.graphics.Palette
@@ -250,8 +252,8 @@ object ColorContrastHelper {
             ColorSwatch("song_pale", com.lastwave.app.R.string.lyshare_color_muted, shade(pale, { it.coerceIn(0.20f, 0.45f) }, { it.coerceIn(0.85f, 0.97f) })),
         )
         val presets = listOf(
-            ColorSwatch("white", com.lastwave.app.R.string.lyshare_color_white, PURE_WHITE, darkColor = 0xFFB2B2B2.toInt()),
-            ColorSwatch("black", com.lastwave.app.R.string.lyshare_color_black, PURE_BLACK, darkColor = 0xFF0F0F0F.toInt()),
+            ColorSwatch(appText(com.lastwave.app.R.string.lyshare_color_white), com.lastwave.app.R.string.lyshare_color_white, PURE_WHITE, darkColor = 0xFFB2B2B2.toInt()),
+            ColorSwatch(appText(com.lastwave.app.R.string.lyshare_color_black), com.lastwave.app.R.string.lyshare_color_black, PURE_BLACK, darkColor = 0xFF0F0F0F.toInt()),
             ColorSwatch("teal", 0, 0xFF06413F.toInt(), darkColor = 0xFF052D2C.toInt(), label = "Deep teal"),
             ColorSwatch("navy", 0, 0xFF073B86.toInt(), darkColor = 0xFF062A5E.toInt(), label = "Navy blue"),
             ColorSwatch("maroon", 0, 0xFFDD5851.toInt(), darkColor = 0xFF9B3E39.toInt(), label = "Maroon"),

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.provider.Settings
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedContentTransitionScope
@@ -243,7 +245,7 @@ internal fun LyricsSignatureCard(
             color = Color.White,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.signatureShared("title"),
+            modifier = Modifier.signatureShared(appText(com.lastwave.app.R.string.local_sort_title)),
         )
         if (signature.artist.isNotBlank()) {
             Spacer(Modifier.height(4.dp))
@@ -259,7 +261,7 @@ internal fun LyricsSignatureCard(
                 color = Color.White.copy(alpha = 0.72f),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                modifier = Modifier.signatureShared("artist"),
+                modifier = Modifier.signatureShared(appText(com.lastwave.app.R.string.pd_sort_artist)),
             )
         }
         Spacer(Modifier.height(22.dp))
@@ -337,7 +339,7 @@ private fun SignatureWordmark(
             label = "lwSignatureSweep",
         )
     } else null
-    val text = "LastWave"
+    val text = appText(com.lastwave.app.R.string.set_about_title)
     Box(modifier, contentAlignment = Alignment.Center) {
         // Glow: the same glyphs with a soft shadow under the wordmark. No
         // graphicsLayer here: a layer clips the blur to the text box and

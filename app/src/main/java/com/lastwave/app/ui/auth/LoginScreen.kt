@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.auth
 
+import com.lastwave.app.util.appText
+
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
@@ -79,13 +81,13 @@ fun LoginScreen(
         if (uri != null && onRestoreBackupAndSignIn != null) {
             val content = runCatching {
                 context.contentResolver.openInputStream(uri)?.bufferedReader()?.use { it.readText() }
-                    ?: error("Could not read this backup")
+                    ?: error(appText(com.lastwave.app.R.string.ui_could_not_read_this_backup_779200))
             }
             content.onSuccess {
                 restoreReadError = null
                 onRestoreBackupAndSignIn(it)
             }.onFailure {
-                restoreReadError = it.message ?: "Could not read this backup"
+                restoreReadError = it.message ?: appText(com.lastwave.app.R.string.ui_could_not_read_this_backup_779200)
             }
         }
     }

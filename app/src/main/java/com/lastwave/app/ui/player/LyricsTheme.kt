@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.Easing
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -11,9 +13,9 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 enum class LyricsStyle(val id: String, val displayName: String) {
-    DEFAULT("default", "Default"),
-    FLOW("flow", "Flow"),
-    HALO("halo", "Halo");
+    DEFAULT(appText(com.lastwave.app.R.string.settings_seekbar_style_default), appText(com.lastwave.app.R.string.settings_seekbar_style_default)),
+    FLOW(appText(com.lastwave.app.R.string.ui_flow_86eff8), appText(com.lastwave.app.R.string.ui_flow_86eff8)),
+    HALO(appText(com.lastwave.app.R.string.ui_halo_f3681d), appText(com.lastwave.app.R.string.ui_halo_f3681d));
 
     companion object {
         fun fromId(id: String?): LyricsStyle =

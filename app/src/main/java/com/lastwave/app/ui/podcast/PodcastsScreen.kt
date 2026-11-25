@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.podcast
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -70,7 +72,7 @@ fun PodcastsScreen(
             subtitle = stringResource(R.string.podcasts_subtitle),
             onBack = onBack,
             actions = {
-                HeaderActionIcon(Icons.Filled.Refresh, "Refresh", viewModel::refresh)
+                HeaderActionIcon(Icons.Filled.Refresh, appText(com.lastwave.app.R.string.ytimp_refresh), viewModel::refresh)
             },
         )
         },

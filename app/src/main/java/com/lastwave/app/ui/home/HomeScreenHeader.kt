@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.border
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.ui.graphics.graphicsLayer
@@ -230,9 +232,9 @@ internal fun formatTimer(totalSeconds: Long): String {
     val m = (totalSeconds % 3600) / 60
     val s = totalSeconds % 60
     return when {
-        d > 0 -> "${d}d ${h}h ${m}m"
-        h > 0 -> "${h}h ${m}m ${s}s"
-        else -> "${m}m ${s}s"
+        d > 0 -> appText(com.lastwave.app.R.string.ui_1_sd_2_sh_3_sm_0bde2a, (d).toString(), (h).toString(), (m).toString())
+        h > 0 -> appText(com.lastwave.app.R.string.ui_1_sh_2_sm_3_ss_b61806, (h).toString(), (m).toString(), (s).toString())
+        else -> appText(com.lastwave.app.R.string.ui_1_sm_2_ss_99d2fa, (m).toString(), (s).toString())
     }
 }
 
@@ -323,7 +325,7 @@ internal fun MixHeader(sortMode: HomeSortMode, onSortModeChange: (HomeSortMode) 
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
-            "List",
+            appText(com.lastwave.app.R.string.ui_list_a1fffa),
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.align(Alignment.CenterVertically),
@@ -384,27 +386,27 @@ internal fun MixHeader(sortMode: HomeSortMode, onSortModeChange: (HomeSortMode) 
                 shadowElevation = 3.dp,
                 modifier = Modifier.padding(vertical = 4.dp),
             ) {
-                SortOption(Icons.Filled.Schedule, "Recent", sortMode == HomeSortMode.RECENT) {
+                SortOption(Icons.Filled.Schedule, appText(com.lastwave.app.R.string.fr_tab_recent), sortMode == HomeSortMode.RECENT) {
                     haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
                     onSortModeChange(HomeSortMode.RECENT); menuOpen = false
                 }
-                SortOption(Icons.Filled.BarChart, "Most Played", sortMode == HomeSortMode.MOST_PLAYED) {
+                SortOption(Icons.Filled.BarChart, appText(com.lastwave.app.R.string.ui_most_played_e70fff), sortMode == HomeSortMode.MOST_PLAYED) {
                     haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
                     onSortModeChange(HomeSortMode.MOST_PLAYED); menuOpen = false
                 }
-                SortOption(Icons.Filled.DateRange, "Last 7 Days", sortMode == HomeSortMode.LAST_7_DAYS) {
+                SortOption(Icons.Filled.DateRange, appText(com.lastwave.app.R.string.ui_last_7_days_652292), sortMode == HomeSortMode.LAST_7_DAYS) {
                     haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
                     onSortModeChange(HomeSortMode.LAST_7_DAYS); menuOpen = false
                 }
-                SortOption(Icons.Filled.CalendarMonth, "Last 30 Days", sortMode == HomeSortMode.LAST_30_DAYS) {
+                SortOption(Icons.Filled.CalendarMonth, appText(com.lastwave.app.R.string.ui_last_30_days_611886), sortMode == HomeSortMode.LAST_30_DAYS) {
                     haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
                     onSortModeChange(HomeSortMode.LAST_30_DAYS); menuOpen = false
                 }
-                SortOption(Icons.Filled.People, "Top Artists", sortMode == HomeSortMode.TOP_ARTISTS) {
+                SortOption(Icons.Filled.People, appText(com.lastwave.app.R.string.fr_tab_artists), sortMode == HomeSortMode.TOP_ARTISTS) {
                     haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
                     onSortModeChange(HomeSortMode.TOP_ARTISTS); menuOpen = false
                 }
-                SortOption(Icons.Filled.Album, "Top Albums", sortMode == HomeSortMode.TOP_ALBUMS) {
+                SortOption(Icons.Filled.Album, appText(com.lastwave.app.R.string.ui_top_albums_0db744), sortMode == HomeSortMode.TOP_ALBUMS) {
                     haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
                     onSortModeChange(HomeSortMode.TOP_ALBUMS); menuOpen = false
                 }
@@ -423,12 +425,12 @@ internal fun iconForSortMode(mode: HomeSortMode): androidx.compose.ui.graphics.v
 }
 
 internal fun sortModeLabel(mode: HomeSortMode) = when (mode) {
-    HomeSortMode.RECENT -> "Recent"
-    HomeSortMode.MOST_PLAYED -> "Most Played"
-    HomeSortMode.TOP_ALBUMS -> "Top Albums"
-    HomeSortMode.TOP_ARTISTS -> "Top Artists"
-    HomeSortMode.LAST_7_DAYS -> "Last 7 Days"
-    HomeSortMode.LAST_30_DAYS -> "Last 30 Days"
+    HomeSortMode.RECENT -> appText(com.lastwave.app.R.string.fr_tab_recent)
+    HomeSortMode.MOST_PLAYED -> appText(com.lastwave.app.R.string.ui_most_played_e70fff)
+    HomeSortMode.TOP_ALBUMS -> appText(com.lastwave.app.R.string.ui_top_albums_0db744)
+    HomeSortMode.TOP_ARTISTS -> appText(com.lastwave.app.R.string.fr_tab_artists)
+    HomeSortMode.LAST_7_DAYS -> appText(com.lastwave.app.R.string.ui_last_7_days_652292)
+    HomeSortMode.LAST_30_DAYS -> appText(com.lastwave.app.R.string.ui_last_30_days_611886)
 }
 
 @Composable

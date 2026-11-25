@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.app.Activity
 import android.content.pm.ActivityInfo
 import android.os.SystemClock
@@ -267,7 +269,7 @@ fun SongVideoPillSwitcher(
                     )
                     Spacer(Modifier.width(4.dp))
                     Text(
-                        text = "Song",
+                        text = appText(com.lastwave.app.R.string.lyshare_mode_song),
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = if (!isVideoActive) FontWeight.Bold else FontWeight.Medium,
                         color = if (!isVideoActive) Color.White else Color.White.copy(alpha = 0.65f),
@@ -297,7 +299,7 @@ fun SongVideoPillSwitcher(
                     )
                     Spacer(Modifier.width(4.dp))
                     Text(
-                        text = "Video",
+                        text = appText(com.lastwave.app.R.string.ui_video_bc17c1),
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = if (isVideoActive) FontWeight.Bold else FontWeight.Medium,
                         color = if (isVideoActive) Color.White else Color.White.copy(alpha = 0.65f),
@@ -353,7 +355,7 @@ fun SyncedCoverVideoPlayer(
     val activeStream = (uiState as? SyncedVideoUiState.Ready)?.activeStream
     val requestHeaders = activeStream?.requestHeaders ?: mapOf(
         "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0",
-        "Origin" to "https://www.youtube.com",
+        appText(com.lastwave.app.R.string.ui_origin_44ab85) to "https://www.youtube.com",
         "Referer" to "https://www.youtube.com/watch?v=${activeStream?.videoId ?: track.videoId}",
     )
 
@@ -560,7 +562,7 @@ fun SyncedCoverVideoPlayer(
                         onClick = { viewModel.retry(track.title, track.artist, track.videoId, track.durationMs) },
                         contentPadding = ButtonDefaults.TextButtonContentPadding,
                     ) {
-                        Text("Retry", style = MaterialTheme.typography.labelSmall)
+                        Text(appText(com.lastwave.app.R.string.autoeq_retry), style = MaterialTheme.typography.labelSmall)
                     }
                 }
             }
@@ -610,7 +612,7 @@ fun SyncedCoverVideoPlayer(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(Icons.Filled.FastRewind, null, tint = Color.White, modifier = Modifier.size(26.dp))
                     Spacer(Modifier.height(4.dp))
-                    Text("-10s", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color.White)
+                    Text(appText(com.lastwave.app.R.string.ui_extra_ca89903230), style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color.White)
                 }
             }
         }
@@ -634,7 +636,7 @@ fun SyncedCoverVideoPlayer(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(Icons.Filled.FastForward, null, tint = Color.White, modifier = Modifier.size(26.dp))
                     Spacer(Modifier.height(4.dp))
-                    Text("+10s", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color.White)
+                    Text(appText(com.lastwave.app.R.string.ui_extra_5497f42be1), style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color.White)
                 }
             }
         }
@@ -702,7 +704,7 @@ fun SyncedCoverVideoPlayer(
                     ) {
                         Icon(Icons.Filled.Search, contentDescription = null, tint = Color.White, modifier = Modifier.size(15.dp))
                         Spacer(Modifier.width(5.dp))
-                        Text("Choose video", color = Color.White, style = MaterialTheme.typography.labelSmall, fontWeight = FontWeight.Bold)
+                        Text(appText(com.lastwave.app.R.string.ui_choose_video_547ac0), color = Color.White, style = MaterialTheme.typography.labelSmall, fontWeight = FontWeight.Bold)
                     }
                 }
 
@@ -770,7 +772,7 @@ fun SyncedCoverVideoPlayer(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             Icons.Filled.Close,
-                            contentDescription = "Close video, show album art",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_close_video_show_album_art_c8f833),
                             tint = Color.White,
                             modifier = Modifier.size(18.dp),
                         )
@@ -793,7 +795,7 @@ fun SyncedCoverVideoPlayer(
                 Box(contentAlignment = Alignment.Center) {
                     Icon(
                         Icons.Filled.PlayArrow,
-                        contentDescription = "Play music",
+                        contentDescription = appText(com.lastwave.app.R.string.ui_play_music_ec21b7),
                         tint = Color.White,
                         modifier = Modifier.size(30.dp),
                     )
@@ -862,7 +864,7 @@ fun FullscreenLandscapeVideoStage(
     val activeStream = (uiState as? SyncedVideoUiState.Ready)?.activeStream
     val requestHeaders = activeStream?.requestHeaders ?: mapOf(
         "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0",
-        "Origin" to "https://www.youtube.com",
+        appText(com.lastwave.app.R.string.ui_origin_44ab85) to "https://www.youtube.com",
         "Referer" to "https://www.youtube.com/watch?v=${activeStream?.videoId ?: track.videoId}",
     )
 
@@ -1064,7 +1066,7 @@ fun FullscreenLandscapeVideoStage(
                     FilledTonalButton(
                         onClick = { viewModel.retry(track.title, track.artist, track.videoId, track.durationMs) },
                     ) {
-                        Text("Retry")
+                        Text(appText(com.lastwave.app.R.string.autoeq_retry))
                     }
                 }
             }
@@ -1114,7 +1116,7 @@ fun FullscreenLandscapeVideoStage(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(Icons.Filled.FastRewind, null, tint = Color.White, modifier = Modifier.size(32.dp))
                     Spacer(Modifier.height(6.dp))
-                    Text("-10s", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
+                    Text(appText(com.lastwave.app.R.string.ui_extra_ca89903230), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
                 }
             }
         }
@@ -1138,7 +1140,7 @@ fun FullscreenLandscapeVideoStage(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(Icons.Filled.FastForward, null, tint = Color.White, modifier = Modifier.size(32.dp))
                     Spacer(Modifier.height(6.dp))
-                    Text("+10s", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
+                    Text(appText(com.lastwave.app.R.string.ui_extra_5497f42be1), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
                 }
             }
         }
@@ -1172,7 +1174,7 @@ fun FullscreenLandscapeVideoStage(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             imageVector = Icons.Filled.ExpandMore,
-                            contentDescription = "Minimize to Now Playing",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_minimize_to_now_playing_e59acc),
                             tint = Color.White,
                             modifier = Modifier.size(26.dp),
                         )
@@ -1240,7 +1242,7 @@ fun FullscreenLandscapeVideoStage(
                     modifier = Modifier.size(36.dp),
                 ) {
                     Box(contentAlignment = Alignment.Center) {
-                        Icon(Icons.Filled.Search, contentDescription = "Choose a different video", tint = Color.White, modifier = Modifier.size(18.dp))
+                        Icon(Icons.Filled.Search, contentDescription = appText(com.lastwave.app.R.string.ui_choose_a_different_video_6f0c50), tint = Color.White, modifier = Modifier.size(18.dp))
                     }
                 }
 
@@ -1287,7 +1289,7 @@ fun FullscreenLandscapeVideoStage(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             Icons.Filled.Close,
-                            contentDescription = "Close video",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_close_video_91e08c),
                             tint = Color.White,
                             modifier = Modifier.size(20.dp),
                         )
@@ -1322,7 +1324,7 @@ fun FullscreenLandscapeVideoStage(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             Icons.Filled.Replay10,
-                            contentDescription = "-10s",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_extra_ca89903230),
                             tint = Color.White,
                             modifier = Modifier.size(30.dp),
                         )
@@ -1340,7 +1342,7 @@ fun FullscreenLandscapeVideoStage(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             imageVector = if (playerState.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
-                            contentDescription = if (playerState.isPlaying) "Pause" else "Play",
+                            contentDescription = if (playerState.isPlaying) appText(com.lastwave.app.R.string.wave_widget_pause) else appText(com.lastwave.app.R.string.dl_play_cd),
                             tint = MaterialTheme.colorScheme.onPrimary,
                             modifier = Modifier.size(38.dp),
                         )
@@ -1362,7 +1364,7 @@ fun FullscreenLandscapeVideoStage(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             Icons.Filled.Forward10,
-                            contentDescription = "+10s",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_extra_5497f42be1),
                             tint = Color.White,
                             modifier = Modifier.size(30.dp),
                         )
@@ -1441,7 +1443,7 @@ fun FullscreenLandscapeVideoStage(
                         Box(contentAlignment = Alignment.Center) {
                             Icon(
                                 Icons.Filled.FullscreenExit,
-                                contentDescription = "Exit Fullscreen",
+                                contentDescription = appText(com.lastwave.app.R.string.ui_exit_fullscreen_f604d9),
                                 tint = Color.White,
                                 modifier = Modifier.size(20.dp),
                             )

@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
 import com.lastwave.app.data.playlist.isLikedIn
@@ -539,7 +541,7 @@ internal fun AddToPlaylistDialog(
                                             overflow = TextOverflow.Ellipsis,
                                         )
                                         Text(
-                                            if (canAddAnother) "Add another copy" else "Already liked",
+                                            if (canAddAnother) appText(com.lastwave.app.R.string.ui_add_another_copy_c68ce3) else appText(com.lastwave.app.R.string.ui_already_liked_71ab82),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                                         )
@@ -657,12 +659,12 @@ internal fun AddToPlaylistDialog(
                 }
                 Column(Modifier.weight(1f).padding(start = 14.dp)) {
                     Text(
-                        "Add to playlist",
+                        appText(com.lastwave.app.R.string.menu_quick_add_playlist),
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
                     )
                     Text(
-                        if (selectedPlaylistIds.isEmpty()) "Choose one or more playlists" else "${selectedPlaylistIds.size} selected",
+                        if (selectedPlaylistIds.isEmpty()) appText(com.lastwave.app.R.string.ui_choose_one_or_more_playlists_3355aa) else "${selectedPlaylistIds.size} selected",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.primary,
                     )
@@ -700,7 +702,7 @@ internal fun AddToPlaylistDialog(
 
             if (sanitizedPlaylists.isEmpty()) {
                 Text(
-                    "No playlists yet. Create your first playlist below.",
+                    appText(com.lastwave.app.R.string.ui_no_playlists_yet_create_your_first_playlist_belo_a528b1),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -728,9 +730,9 @@ internal fun AddToPlaylistDialog(
                         val trackCount = playlist.remoteTrackCount
                             ?: playlist.tracks.size.takeIf { playlist.remotePlaylistId == null }
                         val countLabel = when (trackCount) {
-                            null -> "Track count unavailable"
-                            1 -> "1 track"
-                            else -> "$trackCount tracks"
+                            null -> appText(com.lastwave.app.R.string.ui_track_count_unavailable_38d833)
+                            1 -> appText(com.lastwave.app.R.string.ui_1_track_5e9171)
+                            else -> appText(com.lastwave.app.R.string.ui_1_s_tracks_aece60, (trackCount).toString())
                         }
                         val rowColor by animateColorAsState(
                             targetValue = if (selected) {
@@ -816,9 +818,9 @@ internal fun AddToPlaylistDialog(
                     Spacer(Modifier.width(8.dp))
                     Text(
                         when {
-                            selectedPlaylistIds.isEmpty() -> "Add"
-                            isCheckingDuplicates -> "Checking"
-                            else -> "Add to ${selectedPlaylists.size}"
+                            selectedPlaylistIds.isEmpty() -> appText(com.lastwave.app.R.string.ui_add_61cc55)
+                            isCheckingDuplicates -> appText(com.lastwave.app.R.string.ui_checking_97876b)
+                            else -> appText(com.lastwave.app.R.string.ui_add_to_1_s_cd52e8, (selectedPlaylists.size).toString())
                         },
                     )
                 }
@@ -1018,7 +1020,7 @@ private fun AddToOfflinePlaylistDialog(
                                         overflow = TextOverflow.Ellipsis,
                                     )
                                     val count = playlist.trackUrls.size
-                                    val countText = if (count == 1) "1 track" else "$count tracks"
+                                    val countText = if (count == 1) appText(com.lastwave.app.R.string.ui_1_track_5e9171) else appText(com.lastwave.app.R.string.ui_1_s_tracks_aece60, (count).toString())
                                     Text(
                                         if (alreadyAdded) "$countText • Already added" else countText,
                                         style = MaterialTheme.typography.bodyMedium,
@@ -1047,7 +1049,7 @@ private fun AddToOfflinePlaylistDialog(
                 ) {
                     Icon(Icons.Filled.PlaylistAdd, contentDescription = null, modifier = Modifier.size(19.dp))
                     Spacer(Modifier.width(8.dp))
-                    Text(if (selectedIds.isEmpty()) "Add" else "Add to ${selectedIds.size}")
+                    Text(if (selectedIds.isEmpty()) appText(com.lastwave.app.R.string.ui_add_61cc55) else appText(com.lastwave.app.R.string.ui_add_to_1_s_cd52e8, (selectedIds.size).toString()))
                 }
             }
         }

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 
 import androidx.activity.compose.BackHandler
@@ -276,7 +278,7 @@ internal fun getTargetSectionIndex(settingId: String?): Int {
         SettingsTab.AUDIO -> if (entry.section == "Output & Loudness") 1 else 0
         SettingsTab.APPEARANCE -> when (entry.section) {
             "Accent Color" -> 1
-            "Experimental & Features", "Experimental & Player" -> 2
+            appText(com.lastwave.app.R.string.ui_experimental_features_fbb63a), "Experimental & Player" -> 2
             "Canvas" -> 3
             else -> 0
         }
@@ -284,7 +286,7 @@ internal fun getTargetSectionIndex(settingId: String?): Int {
         SettingsTab.SPOTIFY -> 0
         SettingsTab.LIBRARY -> when (entry.section) {
             "Content" -> 1
-            "Imports", "Imports & Addons", "Modules & Addons" -> 2
+            appText(com.lastwave.app.R.string.ui_imports_e42328), appText(com.lastwave.app.R.string.ui_imports_addons_68a3bc), "Modules & Addons" -> 2
             else -> 0
         }
         SettingsTab.DATA_BACKUP -> if (entry.section == "Data Management") 1 else 0
@@ -468,7 +470,7 @@ internal fun SettingsSearchResultsList(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        text = "${results.size} setting${if (results.size == 1) "" else "s"} found",
+                        text = appText(com.lastwave.app.R.string.ui_1_s_setting_2_s_found_1e2fcd, (results.size).toString(), (if (results.size == 1) "" else "s").toString()),
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.primary,

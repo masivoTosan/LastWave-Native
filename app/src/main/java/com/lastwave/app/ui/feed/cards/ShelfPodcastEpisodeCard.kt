@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed.cards
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -170,7 +172,7 @@ fun ShelfPodcastEpisodeCard(
                 ) {
                     Icon(
                         imageVector = Icons.Filled.MoreVert,
-                        contentDescription = "More options",
+                        contentDescription = appText(com.lastwave.app.R.string.ui_more_options_86c0a3),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
                         modifier = Modifier.size(20.dp),
                     )

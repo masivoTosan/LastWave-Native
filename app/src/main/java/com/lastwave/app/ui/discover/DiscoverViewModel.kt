@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.discover
 
+import com.lastwave.app.util.appText
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lastwave.app.data.artwork.ArtworkRepository
@@ -80,7 +82,7 @@ class DiscoverViewModel @Inject constructor(
                 artworkRepository.enrichBatch((cached + batch).take(INITIAL_BATCH_SIZE).map { it.name to it.artist })
             } catch (e: Exception) {
                 if (_uiState.value.tracks.isEmpty()) {
-                    _uiState.update { it.copy(isLoading = false, error = e.message ?: "Couldn't load recommendations") }
+                    _uiState.update { it.copy(isLoading = false, error = e.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_recommendations_de4b4e)) }
                 }
             }
         }
@@ -142,17 +144,17 @@ class DiscoverViewModel @Inject constructor(
                 val signature = playlistRepository.discoverSignature(tracks)
                 val existing = playlistRepository.findByDiscoverSignature(signature)
                 if (existing != null) {
-                    _uiState.update { it.copy(saveResultMessage = "Already saved as \"${existing.title}\"") }
+                    _uiState.update { it.copy(saveResultMessage = appText(com.lastwave.app.R.string.ui_already_saved_as_1_s_769f47, (existing.title).toString())) }
                     return@launch
                 }
                 val title = PlaylistNamer.generateUniqueName(playlistRepository.titles())
-                val subtitle = PlaylistNamer.subtitleFor("discover")
-                playlistRepository.save(title, subtitle, "discover", tracks, discoverSignature = signature)
-                _uiState.update { it.copy(saveResultMessage = "Saved as \"$title\"") }
+                val subtitle = PlaylistNamer.subtitleFor(appText(com.lastwave.app.R.string.ui_discover_4827ea))
+                playlistRepository.save(title, subtitle, appText(com.lastwave.app.R.string.ui_discover_4827ea), tracks, discoverSignature = signature)
+                _uiState.update { it.copy(saveResultMessage = appText(com.lastwave.app.R.string.ui_saved_as_1_s_1e0603, (title).toString())) }
             } catch (cancellation: CancellationException) {
                 throw cancellation
             } catch (e: Exception) {
-                _uiState.update { it.copy(saveResultMessage = "Couldn't save playlist. Try again.") }
+                _uiState.update { it.copy(saveResultMessage = appText(com.lastwave.app.R.string.ui_couldn_t_save_playlist_try_again_e5b7d9)) }
             }
         }
     }

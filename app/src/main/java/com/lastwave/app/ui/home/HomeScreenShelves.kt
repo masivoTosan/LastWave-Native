@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.border
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.ui.graphics.graphicsLayer
@@ -286,7 +288,7 @@ internal fun TrackRow(
                         )
                         Spacer(Modifier.width(6.dp))
                         Text(
-                            "Now Playing",
+                            appText(com.lastwave.app.R.string.ui_now_playing_084473),
                             style = MaterialTheme.typography.labelSmall,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onPrimary,
@@ -359,7 +361,7 @@ internal fun HomeNowPlayingBanner(
                         )
                         Spacer(Modifier.width(6.dp))
                         Text(
-                            "NOW PLAYING",
+                            appText(com.lastwave.app.R.string.ui_now_playing_084473),
                             style = MaterialTheme.typography.labelSmall,
                             fontWeight = FontWeight.ExtraBold,
                             color = MaterialTheme.colorScheme.onPrimary,

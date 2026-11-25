@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 
 import androidx.activity.compose.BackHandler
@@ -297,12 +299,12 @@ internal fun YouTubeAccountRow(
             Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f)) {
                 Text(
-                    "YouTube Music Account",
+                    appText(com.lastwave.app.R.string.ui_youtube_music_account_70902a),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
                 Text(
-                    accountName.ifBlank { "Connected" },
+                    accountName.ifBlank { appText(com.lastwave.app.R.string.ui_connected_c2f9b7) },
                     style = MaterialTheme.typography.bodyLarge,
                     fontWeight = FontWeight.Medium,
                     maxLines = 1,
@@ -362,19 +364,19 @@ internal fun SpotifyAccountRow(
             Spacer(Modifier.width(14.dp))
             Column(Modifier.weight(1f)) {
                 Text(
-                    "Spotify Account",
+                    appText(com.lastwave.app.R.string.ui_spotify_account_56f3de),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
                 Text(
-                    "Connected (sp_dc)",
+                    appText(com.lastwave.app.R.string.ui_connected_sp_dc_e98b27),
                     style = MaterialTheme.typography.bodyLarge,
                     fontWeight = FontWeight.Medium,
                     maxLines = 1,
                     overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
                 )
                 Text(
-                    "Tap to manage session",
+                    appText(com.lastwave.app.R.string.ui_tap_to_manage_session_1ef90b),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -399,14 +401,14 @@ internal fun lastSyncSuffix(lastSyncAtMillis: Long): String {
 }
 
 internal fun relativeTime(timestampMillis: Long): String {
-    if (timestampMillis <= 0L) return "never"
+    if (timestampMillis <= 0L) return appText(com.lastwave.app.R.string.set_lyrics_autohide_never)
     val delta = System.currentTimeMillis() - timestampMillis
     val minutes = delta / 60_000L
     return when {
-        minutes < 1 -> "just now"
-        minutes < 60 -> "${minutes}m ago"
-        minutes < 60 * 24 -> "${minutes / 60}h ago"
-        else -> "${minutes / (60 * 24)}d ago"
+        minutes < 1 -> appText(com.lastwave.app.R.string.ui_just_now_a7f8e7)
+        minutes < 60 -> appText(com.lastwave.app.R.string.ui_1_sm_ago_aa5898, (minutes).toString())
+        minutes < 60 * 24 -> appText(com.lastwave.app.R.string.ui_1_sh_ago_ea18cf, (minutes / 60).toString())
+        else -> appText(com.lastwave.app.R.string.ui_1_sd_ago_9f8393, (minutes / (60 * 24)).toString())
     }
 }
 
@@ -478,12 +480,12 @@ internal fun LastFmIntegrationCard(
                 Spacer(Modifier.width(14.dp))
                 Column(Modifier.weight(1f)) {
                     Text(
-                        "Last.fm",
+                        appText(com.lastwave.app.R.string.set_cat_lfm),
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                     Text(
-                        if (isConnected && username.isNotBlank()) username else "Not connected",
+                        if (isConnected && username.isNotBlank()) username else appText(com.lastwave.app.R.string.set_scrobbler_not_connected),
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Medium,
                         maxLines = 1,
@@ -491,7 +493,7 @@ internal fun LastFmIntegrationCard(
                     )
                     if (!isConnected) {
                         Text(
-                            "Optional • Stats use local listening when disconnected",
+                            appText(com.lastwave.app.R.string.ui_optional_stats_use_local_listening_when_disconne_a8a251),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -514,7 +516,7 @@ internal fun LastFmIntegrationCard(
                 when {
                     awaitingApproval || connecting -> {
                         com.lastwave.app.ui.common.ExpressiveLoadingIndicator(
-                            message = if (connecting) "Connecting to Last.fm…" else "Waiting for approval in the browser…",
+                            message = if (connecting) appText(com.lastwave.app.R.string.ui_connecting_to_last_fm_442d60) else appText(com.lastwave.app.R.string.ui_waiting_for_approval_in_the_browser_8fd5ea),
                         )
                         Spacer(Modifier.height(4.dp))
                         TextButton(onClick = onCancel) { Text(stringResource(R.string.common_cancel)) }
@@ -527,8 +529,8 @@ internal fun LastFmIntegrationCard(
                             modifier = Modifier.fillMaxWidth(),
                         ) { Text(stringResource(R.string.set_lfm_connect)) }
                         Text(
-                            if (hasApiKey) "Approve in your browser. You can disconnect anytime — Stats keep working locally."
-                            else "Add your API key below first, then connect.",
+                            if (hasApiKey) appText(com.lastwave.app.R.string.ui_approve_in_your_browser_you_can_disconnect_anyti_d76250)
+                            else appText(com.lastwave.app.R.string.ui_add_your_api_key_below_first_then_connect_3ddcdc),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -559,7 +561,7 @@ internal fun LastFmIntegrationCard(
                         )
                     }
                     TextButton(onClick = { showKeyForm = !showKeyForm }) {
-                        Text(if (showKeyForm) "Hide" else if (hasApiKey) "Change" else "Add key")
+                        Text(if (showKeyForm) appText(com.lastwave.app.R.string.ui_hide_34d8b6) else if (hasApiKey) appText(com.lastwave.app.R.string.ui_change_64fbd9) else appText(com.lastwave.app.R.string.ui_add_key_49e644))
                     }
                 }
                 if (showKeyForm) {

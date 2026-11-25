@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.SolidColor
@@ -50,7 +52,7 @@ internal object QualityGlyphs {
     }
 
     val Lossless: ImageVector by lazy {
-        ImageVector.Builder("Lossless", 24.dp, 24.dp, 24f, 24f).apply {
+        ImageVector.Builder(appText(com.lastwave.app.R.string.ui_lossless_f3b36f), 24.dp, 24.dp, 24f, 24f).apply {
             path(
                 fill = null,
                 stroke = ink,
@@ -71,7 +73,7 @@ internal object QualityGlyphs {
     }
 
     val Spatial: ImageVector by lazy {
-        ImageVector.Builder("Spatial", 24.dp, 24.dp, 24f, 24f).apply {
+        ImageVector.Builder(appText(com.lastwave.app.R.string.ui_spatial_729ac1), 24.dp, 24.dp, 24f, 24f).apply {
             path(fill = ink) {
                 moveTo(9.8f, 12f)
                 arcTo(2.2f, 2.2f, 0f, true, true, 14.2f, 12f)
@@ -100,7 +102,7 @@ internal object QualityGlyphs {
 
     /** Crossfade: one level fading out while the next fades in, in the frame. */
     val Crossfade: ImageVector by lazy {
-        ImageVector.Builder("Crossfade", 24.dp, 24.dp, 24f, 24f).apply {
+        ImageVector.Builder(appText(com.lastwave.app.R.string.sig_crossfade), 24.dp, 24.dp, 24f, 24f).apply {
             path(
                 fill = null,
                 stroke = ink,
@@ -125,7 +127,7 @@ internal object QualityGlyphs {
 
     /** AutoMix: two tracks blended into one, as interlocking rings in the frame. */
     val AutoMix: ImageVector by lazy {
-        ImageVector.Builder("AutoMix", 24.dp, 24.dp, 24f, 24f).apply {
+        ImageVector.Builder(appText(com.lastwave.app.R.string.ui_automix_b42afb), 24.dp, 24.dp, 24f, 24f).apply {
             path(
                 fill = null,
                 stroke = ink,
@@ -152,7 +154,7 @@ internal object QualityGlyphs {
     }
 
     val Standard: ImageVector by lazy {
-        ImageVector.Builder("Standard", 24.dp, 24.dp, 24f, 24f).apply {
+        ImageVector.Builder(appText(com.lastwave.app.R.string.set_size_standard), 24.dp, 24.dp, 24f, 24f).apply {
             path(fill = ink) { bars(floatArrayOf(6.6f, 10.2f, 13.8f, 17.4f)) }
         }.build()
     }
@@ -187,7 +189,7 @@ internal object QualityGlyphs {
 
     /** Official Spotify logo with soundwave curves. */
     val Spotify: ImageVector by lazy {
-        ImageVector.Builder("Spotify", 24.dp, 24.dp, 24f, 24f).apply {
+        ImageVector.Builder(appText(com.lastwave.app.R.string.spotify_playlists_section_title), 24.dp, 24.dp, 24f, 24f).apply {
             path(fill = ink) {
                 // Circle
                 moveTo(12f, 2f)

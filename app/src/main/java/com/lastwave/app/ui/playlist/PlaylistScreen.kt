@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.playlist
 
+import com.lastwave.app.util.appText
+
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -135,19 +137,20 @@ import java.util.Locale
  * capability set, matching the original's playlist.js menu exactly).
  */
 
-private enum class PlaylistFilter(val label: String) {
-    ALL("All"),
-    LIKED("Liked"),
-    GENERATED("Generated"),
-    YTMUSIC("YT Music"),
-    SPOTIFY("Spotify"),
-    IMPORTED("Imported"),
-    PINNED("Pinned"),
+private enum class PlaylistFilter(private val labelProvider: () -> String) {
+    ALL({ appText(com.lastwave.app.R.string.dl_filter_all) }),
+    LIKED({ appText(com.lastwave.app.R.string.wave_widget_playlist_liked) }),
+    GENERATED({ appText(com.lastwave.app.R.string.pl_filter_generated) }),
+    YTMUSIC({ appText(com.lastwave.app.R.string.pl_filter_ytmusic) }),
+    SPOTIFY({ appText(com.lastwave.app.R.string.spotify_playlists_section_title) }),
+    IMPORTED({ appText(com.lastwave.app.R.string.pl_filter_imported) }),
+    PINNED({ appText(com.lastwave.app.R.string.pl_pinned_cd) });
+    val label: String get() = labelProvider()
 }
 
 private val GENERATED_MODES = setOf(
-    "discover", "generate", "recommendations", "mix", "top", "recent",
-    "similar-tracks", "similar-artists", "tag", "never-heard", "library", "radio"
+    appText(com.lastwave.app.R.string.ui_discover_4827ea), "generate", appText(com.lastwave.app.R.string.settings_section_recommendations), appText(com.lastwave.app.R.string.home_mix), "top", appText(com.lastwave.app.R.string.fr_tab_recent),
+    "similar-tracks", "similar-artists", "tag", "never-heard", appText(com.lastwave.app.R.string.pl_title), "radio"
 )
 
 private fun heroPillShape(
@@ -366,18 +369,18 @@ fun PlaylistScreen(
                     onValueChange = { searchQuery = it },
                     placeholder = {
                         Text(
-                            "Search playlists...",
+                            appText(com.lastwave.app.R.string.ui_search_playlists_d8a78e),
                             style = MaterialTheme.typography.bodyMedium,
                             maxLines = 1,
                         )
                     },
                     leadingIcon = {
-                        Icon(Icons.Filled.Search, contentDescription = "Search", modifier = Modifier.size(20.dp))
+                        Icon(Icons.Filled.Search, contentDescription = appText(com.lastwave.app.R.string.search_cd), modifier = Modifier.size(20.dp))
                     },
                     trailingIcon = {
                         if (searchQuery.isNotEmpty()) {
                             IconButton(onClick = { searchQuery = "" }) {
-                                Icon(Icons.Filled.Clear, contentDescription = "Clear", modifier = Modifier.size(18.dp))
+                                Icon(Icons.Filled.Clear, contentDescription = appText(com.lastwave.app.R.string.ytimport_clear_cd), modifier = Modifier.size(18.dp))
                             }
                         }
                     },
@@ -402,13 +405,13 @@ fun PlaylistScreen(
                 ) {
                     Icon(
                         Icons.Filled.AutoAwesome,
-                        contentDescription = "Generator",
+                        contentDescription = appText(com.lastwave.app.R.string.nav_generator),
                         modifier = Modifier.size(20.dp),
                         tint = MaterialTheme.colorScheme.primary,
                     )
                     Spacer(Modifier.width(6.dp))
                     Text(
-                        "Generator",
+                        appText(com.lastwave.app.R.string.nav_generator),
                         style = MaterialTheme.typography.labelLarge,
                         fontWeight = FontWeight.Bold,
                     )
@@ -459,7 +462,7 @@ fun PlaylistScreen(
             // Downloads lives here now (it left the Home/Stats headers): always
             // shown, except while a search for something else is typed.
             val showDownloadsCard = (searchQuery.isBlank() ||
-                "downloads".contains(searchQuery.trim(), ignoreCase = true)) &&
+                appText(com.lastwave.app.R.string.ui_downloads_a862c2).contains(searchQuery.trim(), ignoreCase = true)) &&
                 (selectedFilter == PlaylistFilter.ALL || selectedFilter == PlaylistFilter.IMPORTED)
 
             val hasHeroRow = localSongsPlaylist != null || showDownloadsCard
@@ -550,7 +553,7 @@ fun PlaylistScreen(
                                     modifier = Modifier.fillMaxWidth(),
                                 ) {
                                     Text(
-                                        "Playlist saved!",
+                                        appText(com.lastwave.app.R.string.ui_playlist_saved_5b33dd),
                                         modifier = Modifier.padding(14.dp),
                                         color = MaterialTheme.colorScheme.onPrimaryContainer,
                                         fontWeight = FontWeight.Medium,
@@ -803,7 +806,7 @@ fun PlaylistScreen(
         TrackContextMenuSheet(
             target = TrackMenuTarget.Track(track.name, track.artist, track.url),
             capabilities = TrackMenuCapabilities(showDeleteScrobble = true),
-            playbackSourceLabel = state.playlists.firstOrNull { it.id == playlistId }?.title ?: "Playlists",
+            playbackSourceLabel = state.playlists.firstOrNull { it.id == playlistId }?.title ?: appText(com.lastwave.app.R.string.search_tab_playlists),
             onDismiss = { menuTarget = null },
             onDeleteScrobble = { name, artist -> viewModel.deleteScrobble(name, artist) },
             onRefreshArtwork = { viewModel.refreshArtwork(track.name, track.artist) },

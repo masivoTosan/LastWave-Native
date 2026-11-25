@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.app.Activity
 import android.content.pm.ActivityInfo
 import android.os.SystemClock
@@ -164,13 +166,13 @@ internal fun VideoCandidatePickerDialog(
         VideoPickerUiState.Hidden -> Unit
         VideoPickerUiState.Loading -> AlertDialog(
             onDismissRequest = viewModel::dismissVideoPicker,
-            title = { Text("Find the right video") },
+            title = { Text(appText(com.lastwave.app.R.string.ui_find_the_right_video_a3018c)) },
             text = {
                 Column {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         CircularProgressIndicator(modifier = Modifier.size(22.dp), strokeWidth = 2.dp)
                         Spacer(Modifier.width(12.dp))
-                        Text("Searching YouTube for ${track.title}…")
+                        Text(appText(com.lastwave.app.R.string.ui_searching_youtube_for_1_s_bf29c8, (track.title).toString()))
                     }
                     Spacer(Modifier.height(12.dp))
                     VideoLinkInput(
@@ -180,21 +182,21 @@ internal fun VideoCandidatePickerDialog(
                     )
                 }
             },
-            confirmButton = { TextButton(onClick = viewModel::dismissVideoPicker) { Text("Cancel") } },
+            confirmButton = { TextButton(onClick = viewModel::dismissVideoPicker) { Text(appText(com.lastwave.app.R.string.recognize_cancel)) } },
         )
         is VideoPickerUiState.Error -> AlertDialog(
             onDismissRequest = viewModel::dismissVideoPicker,
-            title = { Text("Video search failed") },
+            title = { Text(appText(com.lastwave.app.R.string.ui_video_search_failed_a31e57)) },
             text = { Text(picker.message) },
-            confirmButton = { TextButton(onClick = viewModel::dismissVideoPicker) { Text("OK") } },
+            confirmButton = { TextButton(onClick = viewModel::dismissVideoPicker) { Text(appText(com.lastwave.app.R.string.pl_scrobble_auth_ok)) } },
         )
         is VideoPickerUiState.Results -> AlertDialog(
             onDismissRequest = viewModel::dismissVideoPicker,
-            title = { Text("Choose a video") },
+            title = { Text(appText(com.lastwave.app.R.string.ui_choose_a_video_11124d)) },
             text = {
                 Column {
                     Text(
-                        "Pick the correct upload for ${track.title}. Your choice is saved for this song.",
+                        appText(com.lastwave.app.R.string.ui_pick_the_correct_upload_for_1_s_your_choice_is_s_78b954, (track.title).toString()),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -207,7 +209,7 @@ internal fun VideoCandidatePickerDialog(
                     Spacer(Modifier.height(4.dp))
                     if (picker.candidates.isEmpty()) {
                         Text(
-                            "No likely matches found. Paste the exact YouTube link above.",
+                            appText(com.lastwave.app.R.string.ui_no_likely_matches_found_paste_the_exact_youtube__724f3a),
                             style = MaterialTheme.typography.bodyMedium,
                         )
                     } else {
@@ -233,7 +235,7 @@ internal fun VideoCandidatePickerDialog(
                                             buildString {
                                                 append(candidate.channel)
                                                 candidate.durationSeconds?.let { append(" • ").append(formatTime(it * 1_000L)) }
-                                                append(" • likely match")
+                                                append(appText(com.lastwave.app.R.string.ui_likely_match_80eee9))
                                             },
                                             style = MaterialTheme.typography.bodySmall,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -249,8 +251,8 @@ internal fun VideoCandidatePickerDialog(
             },
             confirmButton = {
                 Row {
-                    TextButton(onClick = viewModel::clearVideoOverride) { Text("Use automatic") }
-                    TextButton(onClick = viewModel::dismissVideoPicker) { Text("Close") }
+                    TextButton(onClick = viewModel::clearVideoOverride) { Text(appText(com.lastwave.app.R.string.pl_use_automatic)) }
+                    TextButton(onClick = viewModel::dismissVideoPicker) { Text(appText(com.lastwave.app.R.string.recognize_close)) }
                 }
             },
         )
@@ -270,17 +272,17 @@ internal fun VideoLinkInput(
             onValueChange = onVideoLinkChange,
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
-            label = { Text("YouTube video link or ID") },
+            label = { Text(appText(com.lastwave.app.R.string.ui_youtube_video_link_or_id_df191e)) },
             placeholder = { Text("https://youtu.be/…") },
             supportingText = {
-                Text(if (pastedVideoId == null) "Paste a YouTube link or 11-character video ID" else "Video ID: $pastedVideoId")
+                Text(if (pastedVideoId == null) appText(com.lastwave.app.R.string.ui_paste_a_youtube_link_or_11_character_video_id_f94366) else appText(com.lastwave.app.R.string.ui_video_id_1_s_4b4f65, (pastedVideoId).toString()))
             },
         )
         TextButton(
             onClick = onUseLink,
             enabled = pastedVideoId != null,
             modifier = Modifier.align(Alignment.End),
-        ) { Text("Use this link") }
+        ) { Text(appText(com.lastwave.app.R.string.ui_use_this_link_92ec2b)) }
     }
 }
 
@@ -386,7 +388,7 @@ internal fun VideoQualityDialog(
                 val isAutoSelected = selectedHeight == null || selectedHeight <= 0
                 QualityOptionRow(
                     label = stringResource(R.string.video_quality_auto_recommended),
-                    subtitle = "${bundle.defaultStream.displayQuality} • Best for smooth sync",
+                    subtitle = appText(com.lastwave.app.R.string.ui_1_s_best_for_smooth_sync_2f02cb, (bundle.defaultStream.displayQuality).toString()),
                     isSelected = isAutoSelected,
                     onClick = {
                         onSelectQuality(null)
@@ -407,11 +409,11 @@ internal fun VideoQualityDialog(
                         val stream = bundle.availableStreams.firstOrNull { it.height == h }
                         val label = stream?.displayQuality ?: "${h}p"
                         val subtitle = when {
-                            h >= 2160 -> "Ultra HD 4K"
-                            h >= 1440 -> "Quad HD 2K"
-                            h >= 1080 -> "Full HD"
-                            h >= 720 -> "High Definition"
-                            else -> "Standard Definition"
+                            h >= 2160 -> appText(com.lastwave.app.R.string.ui_ultra_hd_4k_8141f1)
+                            h >= 1440 -> appText(com.lastwave.app.R.string.ui_quad_hd_2k_1d3242)
+                            h >= 1080 -> appText(com.lastwave.app.R.string.ui_full_hd_777e37)
+                            h >= 720 -> appText(com.lastwave.app.R.string.ui_high_definition_627ef7)
+                            else -> appText(com.lastwave.app.R.string.ui_standard_definition_a55bde)
                         }
                         QualityOptionRow(
                             label = label,

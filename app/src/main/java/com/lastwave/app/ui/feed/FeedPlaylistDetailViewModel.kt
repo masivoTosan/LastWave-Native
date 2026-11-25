@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -77,7 +79,7 @@ class FeedPlaylistDetailViewModel @Inject constructor(
 
     fun load(playlistId: String, force: Boolean = false) {
         if (playlistId.isBlank()) {
-            _uiState.value = FeedPlaylistDetailUiState.Error("This playlist is unavailable.")
+            _uiState.value = FeedPlaylistDetailUiState.Error(appText(com.lastwave.app.R.string.ui_this_playlist_is_unavailable_86533b))
             return
         }
         if (!force && playlistId == currentPlaylistId && _uiState.value !is FeedPlaylistDetailUiState.Error) return
@@ -91,15 +93,15 @@ class FeedPlaylistDetailViewModel @Inject constructor(
             val liked = playlistId == "yt_liked"
             val recent = playlistId == "yt_recent"
             val title = when {
-                isSpotifyLiked -> "Liked Songs"
-                liked -> "Liked on YouTube"
-                recent -> "Recently played"
-                else -> "Playlist"
+                isSpotifyLiked -> appText(com.lastwave.app.R.string.spotify_liked_songs_title)
+                liked -> appText(com.lastwave.app.R.string.ui_liked_on_youtube_b6ffe7)
+                recent -> appText(com.lastwave.app.R.string.wave_widget_recently_played)
+                else -> appText(com.lastwave.app.R.string.ui_playlist_cd95b4)
             }
             val author = when {
-                isSpotify -> "Spotify"
-                liked -> "Your favorites"
-                else -> "YouTube Music"
+                isSpotify -> appText(com.lastwave.app.R.string.spotify_playlists_section_title)
+                liked -> appText(com.lastwave.app.R.string.ui_your_favorites_e8a086)
+                else -> appText(com.lastwave.app.R.string.recommendation_source_yt_music)
             }
             fun showTracks(tracks: List<YouTubeMusicTrack>) {
                 coroutineContext.ensureActive()
@@ -194,7 +196,7 @@ class FeedPlaylistDetailViewModel @Inject constructor(
                 coroutineContext.ensureActive()
                 val current = _uiState.value as? FeedPlaylistDetailUiState.Success
                 if (result == null && current == null) {
-                    throw java.io.IOException("Couldn't finish loading this playlist. Tap Retry.")
+                    throw java.io.IOException(appText(com.lastwave.app.R.string.ui_couldn_t_finish_loading_this_playlist_tap_retry_b87805))
                 }
                 if (result != null) {
                     val distinctTracks = result.tracks.distinctPlaylistSongs()
@@ -206,19 +208,19 @@ class FeedPlaylistDetailViewModel @Inject constructor(
                         // an inline retry for the remainder (fixes logged-out
                         // playlists that previously collapsed to a dead Error).
                         isLoadingMore = false,
-                        loadError = if (result.isComplete) null else "Some tracks couldn't load. Retry.",
+                        loadError = if (result.isComplete) null else appText(com.lastwave.app.R.string.ui_some_tracks_couldn_t_load_retry_9d75b5),
                     )
                 } else {
                     _uiState.value = current?.copy(
                         isLoadingMore = false,
-                        loadError = "Couldn't refresh playlist. Tap Retry.",
-                    ) ?: FeedPlaylistDetailUiState.Error("Couldn't finish loading this playlist. Tap Retry.")
+                        loadError = appText(com.lastwave.app.R.string.ui_couldn_t_refresh_playlist_tap_retry_1353f1),
+                    ) ?: FeedPlaylistDetailUiState.Error(appText(com.lastwave.app.R.string.ui_couldn_t_finish_loading_this_playlist_tap_retry_b87805))
                 }
             } catch (error: CancellationException) {
                 throw error
             } catch (error: Exception) {
                 val state = _uiState.value as? FeedPlaylistDetailUiState.Success
-                val message = error.message ?: "Couldn't finish loading. Tap Retry."
+                val message = error.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_finish_loading_tap_retry_2175c5)
                 _uiState.value = state?.copy(isLoadingMore = false, loadError = message)
                     ?: FeedPlaylistDetailUiState.Error(message)
             }
@@ -229,7 +231,7 @@ class FeedPlaylistDetailViewModel @Inject constructor(
         val current = _uiState.value as? FeedPlaylistDetailUiState.Success ?: return
         if (current.isSaving || current.savedToLibrary) return
         if (current.isLoadingMore || current.loadError != null) {
-            _uiState.value = current.copy(saveError = "Finish loading the playlist before saving it.")
+            _uiState.value = current.copy(saveError = appText(com.lastwave.app.R.string.ui_finish_loading_the_playlist_before_saving_it_c38b7f))
             return
         }
         val playlistId = currentPlaylistId
@@ -237,18 +239,18 @@ class FeedPlaylistDetailViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val saved = importManager.importYouTubePlaylist(
-                    current.playlist.copy(title = current.playlist.title.ifBlank { "YouTube playlist" }),
+                    current.playlist.copy(title = current.playlist.title.ifBlank { appText(com.lastwave.app.R.string.ui_youtube_playlist_0559a4) }),
                 )
                 val persisted = runCatching { playlistRepository.getById(saved.id) }.getOrNull()
                 if (currentPlaylistId == playlistId) {
                     _uiState.value = if (persisted != null) current.copy(savedToLibrary = true)
-                    else current.copy(saveError = "Couldn't save playlist. Try again.")
+                    else current.copy(saveError = appText(com.lastwave.app.R.string.ui_couldn_t_save_playlist_try_again_e5b7d9))
                 }
             } catch (error: CancellationException) {
                 throw error
             } catch (_: Exception) {
                 if (currentPlaylistId == playlistId) {
-                    _uiState.value = current.copy(saveError = "Couldn't save playlist. Try again.")
+                    _uiState.value = current.copy(saveError = appText(com.lastwave.app.R.string.ui_couldn_t_save_playlist_try_again_e5b7d9))
                 }
             }
         }
@@ -260,7 +262,7 @@ class FeedPlaylistDetailViewModel @Inject constructor(
         musicPlayer.playQueue(
             tracks = tracks.map { it.toPlayableTrack() },
             startIndex = startIndex.coerceIn(0, tracks.lastIndex),
-            sourceLabel = playlist.title.ifBlank { "Feed mix" },
+            sourceLabel = playlist.title.ifBlank { appText(com.lastwave.app.R.string.ui_feed_mix_14261b) },
         )
     }
 
@@ -270,7 +272,7 @@ class FeedPlaylistDetailViewModel @Inject constructor(
         musicPlayer.playQueue(
             tracks = tracks.shuffled().map { it.toPlayableTrack() },
             startIndex = 0,
-            sourceLabel = playlist.title.ifBlank { "Feed mix" },
+            sourceLabel = playlist.title.ifBlank { appText(com.lastwave.app.R.string.ui_feed_mix_14261b) },
         )
     }
 

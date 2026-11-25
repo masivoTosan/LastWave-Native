@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings.autoeq
 
+import com.lastwave.app.util.appText
+
 import android.content.Intent
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -419,7 +421,7 @@ fun AutoEqScreen(
 @Composable
 private fun profileLabel(state: AutoEqState): String {
     val name = state.entry?.name ?: stringResource(R.string.autoeq_manual)
-    return if (state.isCustom) "$name \u2022 ${stringResource(R.string.autoeq_custom)}" else name
+    return if (state.isCustom) appText(com.lastwave.app.R.string.ly_sync_badge, (name).toString(), (stringResource(R.string.autoeq_custom)).toString()) else name
 }
 
 @Composable

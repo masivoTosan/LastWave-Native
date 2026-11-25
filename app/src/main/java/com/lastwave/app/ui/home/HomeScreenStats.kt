@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.border
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.ui.graphics.graphicsLayer
@@ -164,9 +166,9 @@ internal fun LocalStatsBanner(
         ) {
             Text(
                 if (isOfflineFallback) {
-                    "Last.fm unreachable \u2014 showing local plays \u00b7 Tap to retry"
+                    appText(com.lastwave.app.R.string.ui_last_fm_unreachable_showing_local_plays_tap_to_r_92681a)
                 } else {
-                    "Connect Last.fm in Settings to sync global scrobbles"
+                    appText(com.lastwave.app.R.string.ui_connect_last_fm_in_settings_to_sync_global_scrob_79e7c9)
                 },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
@@ -185,7 +187,7 @@ internal fun PodiumSection(
 ) {
     Column(modifier = modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         if (artists.isNotEmpty()) {
-            PodiumSectionTitle("Top Artists")
+            PodiumSectionTitle(appText(com.lastwave.app.R.string.fr_tab_artists))
             LazyRow(
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
                 contentPadding = PaddingValues(horizontal = 2.dp),
@@ -196,7 +198,7 @@ internal fun PodiumSection(
             }
         }
         if (albums.isNotEmpty()) {
-            PodiumSectionTitle("Top Albums")
+            PodiumSectionTitle(appText(com.lastwave.app.R.string.ui_top_albums_0db744))
             LazyRow(
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
                 contentPadding = PaddingValues(horizontal = 2.dp),
@@ -207,7 +209,7 @@ internal fun PodiumSection(
             }
         }
         if (tags.isNotEmpty()) {
-            PodiumSectionTitle("Genres")
+            PodiumSectionTitle(appText(com.lastwave.app.R.string.ui_genres_96817a))
             LazyRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 contentPadding = PaddingValues(horizontal = 2.dp),
@@ -242,7 +244,7 @@ internal fun PodiumSectionTitle(label: String) {
 }
 
 internal fun formatPlays(count: Long): String =
-    if (count >= 1000) "%.1fk plays".format(count / 1000.0) else "$count plays"
+    if (count >= 1000) "%.1fk plays".format(count / 1000.0) else appText(com.lastwave.app.R.string.details_plays_count, (count).toString())
 
 @Composable
 internal fun ArtistPodiumCard(artist: HomeArtistItem) {
@@ -329,7 +331,7 @@ internal fun StatsCard(
     albumCount: Long,
     onOpenGenres: () -> Unit,
     modifier: Modifier = Modifier,
-    headlineLabel: String = "Scrobbles",
+    headlineLabel: String = appText(com.lastwave.app.R.string.ui_scrobbles_66915b),
 ) {
     var visible by remember { mutableStateOf(false) }
     LaunchedEffect(Unit) { visible = true }
@@ -390,9 +392,9 @@ internal fun StatsCard(
                 Spacer(Modifier.height(12.dp))
 
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    StatPill("Tracks", trackCount, Modifier.weight(1f))
-                    StatPill("Artists", artistCount, Modifier.weight(1f))
-                    StatPill("Albums", albumCount, Modifier.weight(1f))
+                    StatPill(appText(com.lastwave.app.R.string.alb_tracks), trackCount, Modifier.weight(1f))
+                    StatPill(appText(com.lastwave.app.R.string.search_tab_artists), artistCount, Modifier.weight(1f))
+                    StatPill(appText(com.lastwave.app.R.string.art_albums), albumCount, Modifier.weight(1f))
                 }
             }
         }
@@ -488,9 +490,9 @@ internal fun StatsCompactRow(
                     )
                 }
             }
-            CompactStat("Tracks", trackCount, Modifier.weight(1f))
-            CompactStat("Artists", artistCount, Modifier.weight(1f))
-            CompactStat("Albums", albumCount, Modifier.weight(1f))
+            CompactStat(appText(com.lastwave.app.R.string.alb_tracks), trackCount, Modifier.weight(1f))
+            CompactStat(appText(com.lastwave.app.R.string.search_tab_artists), artistCount, Modifier.weight(1f))
+            CompactStat(appText(com.lastwave.app.R.string.art_albums), albumCount, Modifier.weight(1f))
             Surface(
                 shape = ExpressivePillShape,
                 color = MaterialTheme.colorScheme.primary,

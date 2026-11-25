@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lastwave.app.data.ytmusic.YtMusicAuthManager
@@ -42,7 +44,7 @@ class YouTubeLoginViewModel @Inject constructor(
             com.lastwave.app.data.ytmusic.CookieNormalizer.normalize(rawText)
         } catch (e: Exception) {
             _uiState.update {
-                it.copy(errorMessage = e.message ?: "Invalid cookies. Make sure SAPISID is present.")
+                it.copy(errorMessage = e.message ?: appText(com.lastwave.app.R.string.ui_invalid_cookies_make_sure_sapisid_is_present_1614de))
             }
             return
         }
@@ -66,7 +68,7 @@ class YouTubeLoginViewModel @Inject constructor(
         val hasSapisid = listOf("__Secure-3PAPISID=", "SAPISID=", "APISID=").any { it in cookies }
         if (!hasSapisid) {
             _uiState.update {
-                it.copy(errorMessage = "Sign-in incomplete — finish signing in, then tap \"I'm signed in\".")
+                it.copy(errorMessage = appText(com.lastwave.app.R.string.ui_sign_in_incomplete_finish_signing_in_then_tap_i__ecab81))
             }
             return
         }
@@ -105,13 +107,13 @@ class YouTubeLoginViewModel @Inject constructor(
                 // Best-effort identity (4.1.0 behavior): the session is already
                 // persisted, so an account_menu miss only means the display
                 // name falls back — it never rejects the sign-in.
-                val displayName = info?.accountName?.takeIf { it.isNotBlank() } ?: "Google account"
+                val displayName = info?.accountName?.takeIf { it.isNotBlank() } ?: appText(com.lastwave.app.R.string.ui_google_account_07030d)
                 if (info != null) {
                     ytAuthManager.updateAccountIdentity(info.accountName, info.channelHandle, info.photoUrl)
                 }
                 _uiState.update { it.copy(verifying = false, connectedName = displayName) }
                 viewModelScope.launch {
-                    runCatching { syncManager.syncNow("connected") }
+                    runCatching { syncManager.syncNow(appText(com.lastwave.app.R.string.ui_connected_c2f9b7)) }
                 }
             } catch (e: CancellationException) {
                 throw e
@@ -134,14 +136,14 @@ class YouTubeLoginViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         verifying = false,
-                        errorMessage = "Couldn't finish connecting: ${e.localizedMessage ?: e.message}",
+                        errorMessage = appText(com.lastwave.app.R.string.ui_couldn_t_finish_connecting_1_s_9be13a, (e.localizedMessage ?: e.message).toString()),
                     )
                 }
             } catch (error: LinkageError) {
                 _uiState.update {
                     it.copy(
                         verifying = false,
-                        errorMessage = "YouTube Music sign-in isn't supported by this ROM.",
+                        errorMessage = appText(com.lastwave.app.R.string.ui_youtube_music_sign_in_isn_t_supported_by_this_ro_cda9eb),
                     )
                 }
             }

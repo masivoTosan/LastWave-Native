@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.artist
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
@@ -312,7 +314,7 @@ fun ArtistDetailScreen(
         when (val state = uiState) {
             is ArtistUiState.Loading -> {
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    ExpressiveLoadingIndicator(message = "Loading $artistName...")
+                    ExpressiveLoadingIndicator(message = appText(com.lastwave.app.R.string.ui_loading_1_s_e69943, (artistName).toString()))
                 }
             }
             is ArtistUiState.Error -> {
@@ -593,7 +595,7 @@ fun ArtistDetailScreen(
                                 verticalAlignment = Alignment.CenterVertically,
                             ) {
                                 Text(
-                                    text = "Songs (${data.topSongs.size})",
+                                    text = appText(com.lastwave.app.R.string.ui_songs_1_s_bf2106, (data.topSongs.size).toString()),
                                     style = MaterialTheme.typography.titleLarge,
                                     fontWeight = FontWeight.Bold,
                                 )
@@ -612,15 +614,15 @@ fun ArtistDetailScreen(
                                         ) {
                                             Icon(
                                                 Icons.AutoMirrored.Filled.Sort,
-                                                contentDescription = "Sort songs",
+                                                contentDescription = appText(com.lastwave.app.R.string.ui_sort_songs_c870be),
                                                 modifier = Modifier.size(16.dp),
                                                 tint = MaterialTheme.colorScheme.primary,
                                             )
                                             Text(
                                                 text = when (songSortOption) {
-                                                    ArtistSongSortOption.MOST_PLAYED -> "Most played"
-                                                    ArtistSongSortOption.RECENT -> "Recent"
-                                                    ArtistSongSortOption.KNOWN -> "Known"
+                                                    ArtistSongSortOption.MOST_PLAYED -> appText(com.lastwave.app.R.string.artist_sort_most_played)
+                                                    ArtistSongSortOption.RECENT -> appText(com.lastwave.app.R.string.fr_tab_recent)
+                                                    ArtistSongSortOption.KNOWN -> appText(com.lastwave.app.R.string.ui_known_28d714)
                                                 },
                                                 style = MaterialTheme.typography.labelMedium,
                                                 fontWeight = FontWeight.SemiBold,
@@ -641,21 +643,21 @@ fun ArtistDetailScreen(
                                         containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
                                     ) {
                                         DropdownMenuItem(
-                                            text = { Text("Most played", fontWeight = if (songSortOption == ArtistSongSortOption.MOST_PLAYED) FontWeight.Bold else FontWeight.Normal) },
+                                            text = { Text(appText(com.lastwave.app.R.string.artist_sort_most_played), fontWeight = if (songSortOption == ArtistSongSortOption.MOST_PLAYED) FontWeight.Bold else FontWeight.Normal) },
                                             onClick = {
                                                 songSortOption = ArtistSongSortOption.MOST_PLAYED
                                                 sortMenuExpanded = false
                                             },
                                         )
                                         DropdownMenuItem(
-                                            text = { Text("Recent", fontWeight = if (songSortOption == ArtistSongSortOption.RECENT) FontWeight.Bold else FontWeight.Normal) },
+                                            text = { Text(appText(com.lastwave.app.R.string.fr_tab_recent), fontWeight = if (songSortOption == ArtistSongSortOption.RECENT) FontWeight.Bold else FontWeight.Normal) },
                                             onClick = {
                                                 songSortOption = ArtistSongSortOption.RECENT
                                                 sortMenuExpanded = false
                                             },
                                         )
                                         DropdownMenuItem(
-                                            text = { Text("Songs that I know", fontWeight = if (songSortOption == ArtistSongSortOption.KNOWN) FontWeight.Bold else FontWeight.Normal) },
+                                            text = { Text(appText(com.lastwave.app.R.string.artist_sort_known), fontWeight = if (songSortOption == ArtistSongSortOption.KNOWN) FontWeight.Bold else FontWeight.Normal) },
                                             onClick = {
                                                 songSortOption = ArtistSongSortOption.KNOWN
                                                 sortMenuExpanded = false
@@ -821,7 +823,7 @@ fun ArtistDetailScreen(
                     if (data.singles.isNotEmpty()) {
                         item(key = "singles_header") {
                             Text(
-                                text = "Singles & EPs",
+                                text = appText(com.lastwave.app.R.string.ui_singles_eps_6862eb),
                                 style = MaterialTheme.typography.titleLarge,
                                 fontWeight = FontWeight.Bold,
                                 modifier = Modifier
@@ -1017,7 +1019,7 @@ fun ArtistDetailScreen(
                                     ) {
                                         Icon(
                                             Icons.Filled.Fullscreen,
-                                            contentDescription = "Expand Fullscreen",
+                                            contentDescription = appText(com.lastwave.app.R.string.ui_expand_fullscreen_71ed3e),
                                             tint = if (showScrolledHeader) MaterialTheme.colorScheme.onSurface else Color.White,
                                             modifier = Modifier.size(22.dp),
                                         )
@@ -1032,7 +1034,7 @@ fun ArtistDetailScreen(
                                 ) {
                                     Icon(
                                         imageVector = if (showHeaderVideo) Icons.Filled.SmartDisplay else Icons.Filled.Image,
-                                        contentDescription = if (showHeaderVideo) "Show Photo" else "Show Motion Video",
+                                        contentDescription = if (showHeaderVideo) appText(com.lastwave.app.R.string.ui_show_photo_c1eb8b) else appText(com.lastwave.app.R.string.ui_show_motion_video_dd2dfa),
                                         tint = if (showHeaderVideo) MaterialTheme.colorScheme.primary else if (showScrolledHeader) MaterialTheme.colorScheme.onSurface else Color.White,
                                         modifier = Modifier.size(20.dp),
                                     )
@@ -1119,7 +1121,7 @@ fun ArtistDetailScreen(
                     ) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back",
+                            contentDescription = appText(com.lastwave.app.R.string.lyshare_back_cd),
                             tint = Color.White,
                             modifier = Modifier.size(24.dp),
                         )
@@ -1130,7 +1132,7 @@ fun ArtistDetailScreen(
                         color = Color.Black.copy(alpha = 0.45f),
                     ) {
                         Text(
-                            "Artist Motion",
+                            appText(com.lastwave.app.R.string.ui_artist_motion_51cecd),
                             style = MaterialTheme.typography.labelMedium,
                             fontWeight = FontWeight.Bold,
                             color = Color.White.copy(alpha = 0.9f),

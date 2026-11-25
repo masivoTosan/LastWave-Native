@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.generate
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -124,8 +126,8 @@ fun GenerateScreen(
         ExpressiveHeader(
             modifier = headerModifier,
             backdrop = headerBackdrop,
-            title = "Generator",
-            subtitle = "Choose a mode to generate a playlist",
+            title = appText(com.lastwave.app.R.string.nav_generator),
+            subtitle = appText(com.lastwave.app.R.string.ui_choose_a_mode_to_generate_a_playlist_2d7ee9),
             onBack = onBack,
         )
             },
@@ -164,7 +166,7 @@ fun GenerateScreen(
 
             state.selectedMode?.let { mode ->
                 if (!state.isGenerating) {
-                    item(key = "options") {
+                    item(key = appText(com.lastwave.app.R.string.dl_options_cd)) {
                         Card(
                             shape = GeneratorOuterCardShape,
                             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),

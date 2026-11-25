@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.ui.common.rememberAmbientFloat
 import androidx.activity.compose.BackHandler
 import com.lastwave.app.playback.toPlayableTrack
@@ -191,7 +193,7 @@ internal fun trackTray(track: YouTubeMusicTrack, shelfTitle: String, onPlayTrack
         album = track.album,
         artworkUrl = track.artworkUrl,
         videoId = track.videoId.takeIf(String::isNotBlank),
-        sourceLabel = "Home",
+        sourceLabel = appText(com.lastwave.app.R.string.feed_home),
         onPlay = { onPlayTrack(track, shelfTitle) },
     )
 
@@ -361,7 +363,7 @@ internal fun FeedEmptyState(
         }
         Spacer(Modifier.height(20.dp))
         Text(
-            text = "Find your next favorite",
+            text = appText(com.lastwave.app.R.string.ui_find_your_next_favorite_2175b3),
             style = MaterialTheme.typography.titleMedium.copy(fontSize = 18.sp),
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface,
@@ -407,7 +409,7 @@ internal fun FeedEmptyState(
                     )
                     Spacer(Modifier.width(6.dp))
                     Text(
-                        "Try again",
+                        appText(com.lastwave.app.R.string.recognize_retry),
                         style = MaterialTheme.typography.labelLarge,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,

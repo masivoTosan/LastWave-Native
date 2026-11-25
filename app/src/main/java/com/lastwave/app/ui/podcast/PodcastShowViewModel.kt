@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.podcast
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -60,7 +62,7 @@ class PodcastShowViewModel @Inject constructor(
                     _uiState.update {
                         it.copy(
                             isLoading = false,
-                            error = "Couldn't load this podcast right now.",
+                            error = appText(com.lastwave.app.R.string.ui_couldn_t_load_this_podcast_right_now_c8a421),
                         )
                     }
                     return@launch
@@ -81,7 +83,7 @@ class PodcastShowViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        error = error.message ?: "Couldn't load this podcast. Tap Retry.",
+                        error = error.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_this_podcast_tap_retry_204367),
                     )
                 }
             }
@@ -129,7 +131,7 @@ class PodcastShowViewModel @Inject constructor(
                 tracks = tracks,
                 startIndex = index,
                 startPositionMs = startPositionMs,
-                sourceLabel = _uiState.value.show?.title ?: "Podcasts",
+                sourceLabel = _uiState.value.show?.title ?: appText(com.lastwave.app.R.string.podcasts_title),
             )
         }
     }

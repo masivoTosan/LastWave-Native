@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.stats
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -77,13 +79,13 @@ fun ListeningStatsScreen(
                     IconButton(onClick = onBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back",
+                            contentDescription = appText(com.lastwave.app.R.string.lyshare_back_cd),
                             tint = MaterialTheme.colorScheme.onSurface,
                         )
                     }
                     Spacer(Modifier.width(8.dp))
                     Text(
-                        text = "Listening Stats",
+                        text = appText(com.lastwave.app.R.string.ui_listening_stats_9d8b97),
                         style = MaterialTheme.typography.headlineMedium.copy(fontSize = 24.sp),
                         fontWeight = FontWeight.Black,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -99,7 +101,7 @@ fun ListeningStatsScreen(
                         } else {
                             Icon(
                                 imageVector = Icons.Filled.Refresh,
-                                contentDescription = "Refresh",
+                                contentDescription = appText(com.lastwave.app.R.string.ytimp_refresh),
                                 tint = MaterialTheme.colorScheme.onSurface,
                             )
                         }
@@ -224,17 +226,17 @@ fun ListeningStatsScreen(
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
-                        text = "Listening timeline",
+                        text = appText(com.lastwave.app.R.string.ui_listening_timeline_88101f),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Black,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
                         text = when (uiState.selectedRange) {
-                            StatsTimeRange.WEEK -> "Total listening captured this week. Daily bars summarize your progression."
-                            StatsTimeRange.MONTH_TO_DATE -> "Total listening captured this month. Daily bars summarize your progression."
-                            StatsTimeRange.YEAR_TO_DATE -> "Total listening captured this year. Monthly bars summarize your progression."
-                            StatsTimeRange.ALL_TIME -> "Total listening captured in the selected range. Yearly bars summarize your full history."
+                            StatsTimeRange.WEEK -> appText(com.lastwave.app.R.string.ui_total_listening_captured_this_week_daily_bars_su_13cd5b)
+                            StatsTimeRange.MONTH_TO_DATE -> appText(com.lastwave.app.R.string.ui_total_listening_captured_this_month_daily_bars_s_9c9d5f)
+                            StatsTimeRange.YEAR_TO_DATE -> appText(com.lastwave.app.R.string.ui_total_listening_captured_this_year_monthly_bars__bfcbb5)
+                            StatsTimeRange.ALL_TIME -> appText(com.lastwave.app.R.string.ui_total_listening_captured_in_the_selected_range_y_800a1a)
                         },
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -269,10 +271,10 @@ fun ListeningStatsScreen(
                                 Column {
                                     Text(
                                         text = when (uiState.selectedRange) {
-                                            StatsTimeRange.WEEK -> "Current week progression"
-                                            StatsTimeRange.MONTH_TO_DATE -> "Current month progression"
-                                            StatsTimeRange.YEAR_TO_DATE -> "Year-to-date progression"
-                                            StatsTimeRange.ALL_TIME -> "All-time progression"
+                                            StatsTimeRange.WEEK -> appText(com.lastwave.app.R.string.ui_current_week_progression_5b1feb)
+                                            StatsTimeRange.MONTH_TO_DATE -> appText(com.lastwave.app.R.string.ui_current_month_progression_c0ed2d)
+                                            StatsTimeRange.YEAR_TO_DATE -> appText(com.lastwave.app.R.string.ui_year_to_date_progression_615e4c)
+                                            StatsTimeRange.ALL_TIME -> appText(com.lastwave.app.R.string.ui_all_time_progression_374f16)
                                         },
                                         style = MaterialTheme.typography.titleMedium,
                                         fontWeight = FontWeight.Bold,
@@ -280,10 +282,10 @@ fun ListeningStatsScreen(
                                     )
                                     Text(
                                         text = when (uiState.selectedRange) {
-                                            StatsTimeRange.WEEK -> "Grouped by day"
-                                            StatsTimeRange.MONTH_TO_DATE -> "Grouped by day"
-                                            StatsTimeRange.YEAR_TO_DATE -> "Grouped by month"
-                                            StatsTimeRange.ALL_TIME -> "Grouped by year"
+                                            StatsTimeRange.WEEK -> appText(com.lastwave.app.R.string.ui_grouped_by_day_61a54a)
+                                            StatsTimeRange.MONTH_TO_DATE -> appText(com.lastwave.app.R.string.ui_grouped_by_day_61a54a)
+                                            StatsTimeRange.YEAR_TO_DATE -> appText(com.lastwave.app.R.string.ui_grouped_by_month_56c352)
+                                            StatsTimeRange.ALL_TIME -> appText(com.lastwave.app.R.string.ui_grouped_by_year_ca6e28)
                                         },
                                         style = MaterialTheme.typography.labelSmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -343,7 +345,7 @@ fun ListeningStatsScreen(
                                 Spacer(Modifier.width(14.dp))
                                 Column {
                                     Text(
-                                        text = "Peak segment",
+                                        text = appText(com.lastwave.app.R.string.ui_peak_segment_3bcb9c),
                                         style = MaterialTheme.typography.labelSmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     )
@@ -369,13 +371,13 @@ fun ListeningStatsScreen(
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
-                        text = "Top categories",
+                        text = appText(com.lastwave.app.R.string.ui_top_categories_39960c),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Black,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
-                        text = "Compare how you listen across genres, artists, albums, and songs.",
+                        text = appText(com.lastwave.app.R.string.ui_compare_how_you_listen_across_genres_artists_alb_3b26bf),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -402,7 +404,7 @@ fun ListeningStatsScreen(
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
                             Text(
-                                text = "Listening by ${uiState.selectedCategory.label.lowercase()}",
+                                text = appText(com.lastwave.app.R.string.ui_listening_by_1_s_e96628, (uiState.selectedCategory.label.lowercase()).toString()),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSurface,
@@ -411,7 +413,7 @@ fun ListeningStatsScreen(
 
                             if (uiState.categoryItems.isEmpty()) {
                                 Text(
-                                    text = "No ${uiState.selectedCategory.label.lowercase()} plays captured in this range yet.",
+                                    text = appText(com.lastwave.app.R.string.ui_no_1_s_plays_captured_in_this_range_yet_4dce05, (uiState.selectedCategory.label.lowercase()).toString()),
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     modifier = Modifier.padding(vertical = 12.dp),
@@ -432,7 +434,7 @@ fun ListeningStatsScreen(
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
-                        text = "Listening habits",
+                        text = appText(com.lastwave.app.R.string.ui_listening_habits_a2c7a0),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Black,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -441,32 +443,32 @@ fun ListeningStatsScreen(
                     val habits = uiState.habits
                     if (habits != null) {
                         HabitItemRow(
-                            title = "Total sessions",
+                            title = appText(com.lastwave.app.R.string.ui_total_sessions_3d28aa),
                             value = habits.totalSessions.toString(),
                             icon = Icons.Filled.History,
                         )
                         HabitItemRow(
-                            title = "Avg session",
+                            title = appText(com.lastwave.app.R.string.ui_avg_session_87fc8c),
                             value = habits.avgSessionLabel,
                             icon = Icons.Filled.Timer,
                         )
                         HabitItemRow(
-                            title = "Longest session",
+                            title = appText(com.lastwave.app.R.string.ui_longest_session_d7c4b9),
                             value = habits.longestSessionLabel,
                             icon = Icons.Filled.Bolt,
                         )
                         HabitItemRow(
-                            title = "Sessions/day",
+                            title = appText(com.lastwave.app.R.string.ui_sessions_day_27c068),
                             value = habits.sessionsPerDay,
                             icon = Icons.Filled.AutoAwesome,
                         )
                         HabitItemRow(
-                            title = "Most active day",
+                            title = appText(com.lastwave.app.R.string.ui_most_active_day_e7f686),
                             value = habits.mostActiveDay,
                             icon = Icons.Filled.CalendarMonth,
                         )
                         HabitItemRow(
-                            title = "Peak timeline slot",
+                            title = appText(com.lastwave.app.R.string.ui_peak_timeline_slot_916cfb),
                             value = habits.peakTimelineSlot,
                             icon = Icons.Filled.TrendingUp,
                         )
@@ -478,13 +480,13 @@ fun ListeningStatsScreen(
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
-                        text = "Track concentration",
+                        text = appText(com.lastwave.app.R.string.ui_track_concentration_f93065),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Black,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
-                        text = "How your listening time is distributed across your top tracks.",
+                        text = appText(com.lastwave.app.R.string.ui_how_your_listening_time_is_distributed_across_yo_682196),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -509,14 +511,14 @@ fun ListeningStatsScreen(
                                 Spacer(Modifier.height(16.dp))
 
                                 Text(
-                                    text = "Listening concentration",
+                                    text = appText(com.lastwave.app.R.string.ui_listening_concentration_876069),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onSurface,
                                 )
                                 Spacer(Modifier.height(4.dp))
                                 Text(
-                                    text = "Top 3 tracks account for ${conc.top3SharePercent}% of your listening time.",
+                                    text = appText(com.lastwave.app.R.string.ui_top_3_tracks_account_for_1_s_of_your_listening_t_a311d7, (conc.top3SharePercent).toString()),
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
@@ -541,7 +543,7 @@ fun ListeningStatsScreen(
                                                 color = MaterialTheme.colorScheme.onSurface,
                                             )
                                             Text(
-                                                text = "Avg plays/track",
+                                                text = appText(com.lastwave.app.R.string.ui_avg_plays_track_667062),
                                                 style = MaterialTheme.typography.labelSmall,
                                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                             )
@@ -560,7 +562,7 @@ fun ListeningStatsScreen(
                                                 color = MaterialTheme.colorScheme.onSurface,
                                             )
                                             Text(
-                                                text = "Unique tracks",
+                                                text = appText(com.lastwave.app.R.string.ui_unique_tracks_f662be),
                                                 style = MaterialTheme.typography.labelSmall,
                                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                             )
@@ -601,20 +603,20 @@ fun ListeningStatsScreen(
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
-                        text = "Tracks in this range",
+                        text = appText(com.lastwave.app.R.string.ui_tracks_in_this_range_e4c07d),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Black,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
-                        text = "Most played tracks for the selected time range.",
+                        text = appText(com.lastwave.app.R.string.ui_most_played_tracks_for_the_selected_time_range_00942a),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
 
                     if (uiState.tracksInRange.isEmpty()) {
                         Text(
-                            text = "No track playback recorded for this range.",
+                            text = appText(com.lastwave.app.R.string.ui_no_track_playback_recorded_for_this_range_49970b),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )

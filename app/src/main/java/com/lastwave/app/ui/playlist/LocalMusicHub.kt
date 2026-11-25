@@ -5,6 +5,8 @@
 
 package com.lastwave.app.ui.playlist
 
+import com.lastwave.app.util.appText
+
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
@@ -1055,7 +1057,7 @@ fun LocalMusicHub(
                                 pair.forEach { album ->
                                     LocalSquareGridCard(
                                         title = album.title,
-                                        subtitle = "${album.artist} • ${pluralStringCountSongs(album.tracks.size)}",
+                                        subtitle = appText(com.lastwave.app.R.string.ly_sync_badge, (album.artist).toString(), (pluralStringCountSongs(album.tracks.size)).toString()),
                                         trackName = album.tracks.firstOrNull()?.name ?: album.title,
                                         trackArtist = album.artist,
                                         artworkUrl = album.artworkUrl,
@@ -1079,7 +1081,7 @@ fun LocalMusicHub(
                             val firstTrack = album.tracks.firstOrNull()
                             ExpressiveGroupTrackRow(
                                 title = album.title,
-                                subtitle = "${album.artist} • ${pluralStringCountSongs(album.tracks.size)}",
+                                subtitle = appText(com.lastwave.app.R.string.ly_sync_badge, (album.artist).toString(), (pluralStringCountSongs(album.tracks.size)).toString()),
                                 position = groupPositionFor(index, filteredAlbums.size),
                                 onClick = {
                                     detailRoute = LocalDetailRoute.Album(album.key, album.title, album.artist)
@@ -1124,7 +1126,7 @@ fun LocalMusicHub(
                                 pair.forEach { artist ->
                                     LocalSquareGridCard(
                                         title = artist.name,
-                                        subtitle = "${artist.albumCount} albums • ${pluralStringCountSongs(artist.tracks.size)}",
+                                        subtitle = appText(com.lastwave.app.R.string.ui_1_s_albums_2_s_07f02d, (artist.albumCount).toString(), (pluralStringCountSongs(artist.tracks.size)).toString()),
                                         trackName = artist.tracks.firstOrNull()?.name ?: artist.name,
                                         trackArtist = artist.name,
                                         artworkUrl = artist.artworkUrl,
@@ -1149,7 +1151,7 @@ fun LocalMusicHub(
                             val firstTrack = artist.tracks.firstOrNull()
                             ExpressiveGroupTrackRow(
                                 title = artist.name,
-                                subtitle = "${artist.albumCount} albums • ${pluralStringCountSongs(artist.tracks.size)}",
+                                subtitle = appText(com.lastwave.app.R.string.ui_1_s_albums_2_s_07f02d, (artist.albumCount).toString(), (pluralStringCountSongs(artist.tracks.size)).toString()),
                                 position = groupPositionFor(index, filteredArtists.size),
                                 onClick = {
                                     detailRoute = LocalDetailRoute.Artist(artist.key, artist.name)
@@ -1226,7 +1228,7 @@ fun LocalMusicHub(
                         ) { index, folder ->
                             ExpressiveGroupTrackRow(
                                 title = folder.title,
-                                subtitle = "${folder.subtitle} • ${pluralStringCountSongs(folder.tracks.size)}",
+                                subtitle = appText(com.lastwave.app.R.string.ly_sync_badge, (folder.subtitle).toString(), (pluralStringCountSongs(folder.tracks.size)).toString()),
                                 position = groupPositionFor(index, filteredFolders.size),
                                 onClick = {
                                     detailRoute = LocalDetailRoute.Folder(folder.key, folder.title)
@@ -1297,7 +1299,7 @@ fun LocalMusicHub(
                                         color = MaterialTheme.colorScheme.onPrimaryContainer,
                                     )
                                     Text(
-                                        "${pluralStringCountSongs(offlineLikedTracks.size)} • ${stringResource(R.string.local_offline_likes_sub)}",
+                                        appText(com.lastwave.app.R.string.ly_sync_badge, (pluralStringCountSongs(offlineLikedTracks.size)).toString(), (stringResource(R.string.local_offline_likes_sub)).toString()),
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f),
                                         maxLines = 1,
@@ -1536,7 +1538,7 @@ fun LocalMusicHub(
                         label = stringResource(R.string.local_play_next),
                         onClick = {
                             viewModel.playNext(selectedTracks)
-                            Toast.makeText(context, "${selectedTracks.size} queued next", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, appText(com.lastwave.app.R.string.ui_1_s_queued_next_bd1e22, (selectedTracks.size).toString()), Toast.LENGTH_SHORT).show()
                             selectedUrls = emptySet()
                         },
                     )
@@ -1633,7 +1635,7 @@ fun LocalMusicHub(
             onDismiss = { batchOfflinePlaylistTargetTracks = null },
             onPickPlaylist = { playlistId ->
                 viewModel.addTracksToOfflinePlaylist(playlistId, tracksToAdd)
-                Toast.makeText(context, "Added ${tracksToAdd.size} tracks", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, appText(com.lastwave.app.R.string.ui_added_1_s_tracks_79e02c, (tracksToAdd.size).toString()), Toast.LENGTH_SHORT).show()
                 batchOfflinePlaylistTargetTracks = null
                 selectedUrls = emptySet()
             },
@@ -1822,7 +1824,7 @@ private fun LocalHeroHeader(
                 val subtitleParts = buildList {
                     add(pluralStringCountSongs(tracks.size))
                     if (totalMs > 0L) add(formatTotalDuration(totalMs))
-                    if (detailRoute == null && safFolderCount > 0) add("$safFolderCount folders")
+                    if (detailRoute == null && safFolderCount > 0) add(appText(com.lastwave.app.R.string.ui_extra_643c518477, (safFolderCount).toString()))
                     if (detailRoute == null && storageBytes > 0L) add(formatBytes(storageBytes))
                 }
                 Text(
@@ -1880,7 +1882,7 @@ private fun LocalHeroHeader(
                 Icon(Icons.Filled.Shuffle, contentDescription = null, modifier = Modifier.size(20.dp))
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    "Shuffle",
+                    appText(com.lastwave.app.R.string.dl_shuffle_cd),
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.SemiBold,
                 )
@@ -2707,10 +2709,10 @@ private fun buildAlbumGroups(tracks: List<GeneratedTrack>): List<LocalAlbumGroup
                 { it.name.lowercase() },
             ),
         )
-        val displayTitle = sorted.firstNotNullOfOrNull { it.album?.trim()?.takeIf(String::isNotBlank) } ?: "Unknown Album"
+        val displayTitle = sorted.firstNotNullOfOrNull { it.album?.trim()?.takeIf(String::isNotBlank) } ?: appText(com.lastwave.app.R.string.ui_unknown_album_d46bfb)
         val displayArtist = sorted.firstNotNullOfOrNull {
             it.albumArtist?.trim()?.takeIf(String::isNotBlank) ?: it.artist.trim().takeIf(String::isNotBlank)
-        } ?: "Unknown Artist"
+        } ?: appText(com.lastwave.app.R.string.ui_unknown_artist_5bf8da)
         val art = sorted.firstNotNullOfOrNull { it.artworkUrl?.takeIf(String::isNotBlank) }
         LocalAlbumGroup(
             key = key,
@@ -2731,7 +2733,7 @@ private fun buildArtistGroups(tracks: List<GeneratedTrack>): List<LocalArtistGro
         val sorted = list.sortedBy { it.name.lowercase() }
         val displayName = sorted.firstNotNullOfOrNull {
             it.albumArtist?.trim()?.takeIf(String::isNotBlank) ?: it.artist.trim().takeIf(String::isNotBlank)
-        } ?: "Unknown Artist"
+        } ?: appText(com.lastwave.app.R.string.ui_unknown_artist_5bf8da)
         val albumCount = sorted.map { albumKeyOf(it) }.distinct().size
         val art = sorted.firstNotNullOfOrNull { it.artworkUrl?.takeIf(String::isNotBlank) }
         LocalArtistGroup(
@@ -2799,7 +2801,7 @@ private fun buildFolderGroups(
             }
             else -> LocalFolderGroup(
                 key = key,
-                title = "Device Audio",
+                title = appText(com.lastwave.app.R.string.ui_device_audio_3458df),
                 subtitle = "MediaStore",
                 safUri = null,
                 tracks = list,
@@ -2823,8 +2825,8 @@ private fun formatTotalDuration(totalMs: Long): String {
     val totalMinutes = (totalMs / 60_000L).coerceAtLeast(1L)
     val hours = totalMinutes / 60L
     val mins = totalMinutes % 60L
-    return if (hours > 0L) "${hours}h ${mins}m" else "$totalMinutes min"
+    return if (hours > 0L) "${hours}h ${mins}m" else appText(com.lastwave.app.R.string.ui_1_s_min_5c8f84, (totalMinutes).toString())
 }
 
 private fun pluralStringCountSongs(count: Int): String =
-    if (count == 1) "1 song" else "$count songs"
+    if (count == 1) appText(com.lastwave.app.R.string.ui_1_song_093990) else appText(com.lastwave.app.R.string.ui_1_s_songs_9b614d, (count).toString())

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -60,7 +62,7 @@ fun LyricsStyleDialog(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        text = "Lyrics style",
+                        text = appText(com.lastwave.app.R.string.ui_lyrics_style_635601),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -69,7 +71,7 @@ fun LyricsStyleDialog(
                     IconButton(onClick = onDismiss) {
                         Icon(
                             Icons.Filled.Close,
-                            contentDescription = "Close",
+                            contentDescription = appText(com.lastwave.app.R.string.recognize_close),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     }

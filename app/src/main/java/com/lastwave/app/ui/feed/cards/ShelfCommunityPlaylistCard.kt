@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed.cards
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.ui.common.rememberAmbientFloat
 import android.graphics.drawable.BitmapDrawable
 import android.util.LruCache
@@ -90,7 +92,7 @@ fun ShelfCommunityPlaylistCard(
         ))).padding(14.dp)) {
             Column(
                 Modifier.fillMaxWidth().cardPressable(onClick = onClick)
-                    .semantics { contentDescription = "Open playlist $title" },
+                    .semantics { contentDescription = appText(com.lastwave.app.R.string.ui_open_playlist_1_s_9f2945, (title).toString()) },
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 CollageCover(collageUrls, artworkUrl, Modifier.size(cardWidth * 0.37f))
@@ -100,7 +102,7 @@ fun ShelfCommunityPlaylistCard(
                 Text(
                     text = title,
                     modifier = Modifier.weight(1f).cardPressable(onClick = onClick)
-                        .semantics { contentDescription = "Open playlist $title" },
+                        .semantics { contentDescription = appText(com.lastwave.app.R.string.ui_open_playlist_1_s_9f2945, (title).toString()) },
                     fontSize = 24.sp, lineHeight = 30.sp, fontWeight = FontWeight.Bold,
                     maxLines = 1, overflow = TextOverflow.Ellipsis,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -111,7 +113,7 @@ fun ShelfCommunityPlaylistCard(
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.10f),
                 ) {
                     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Icon(Icons.Filled.PlayArrow, "Play playlist $title", Modifier.size(27.dp))
+                        Icon(Icons.Filled.PlayArrow, appText(com.lastwave.app.R.string.ui_play_playlist_1_s_290e6c, (title).toString()), Modifier.size(27.dp))
                     }
                 }
             }
@@ -221,7 +223,7 @@ internal fun PreviewArtwork(url: String?, fallbackIcon: ImageVector, modifier: M
 private fun CommunitySongRow(song: YouTubeMusicTrack, plays: String?, height: Dp, onClick: () -> Unit, onMenuClick: (() -> Unit)?) {
     Row(
         Modifier.fillMaxWidth().height(height).clip(RoundedCornerShape(CardTokens.coverCornerRadius))
-            .cardPressable(onClick = onClick).semantics { contentDescription = "Play ${song.title}, ${song.artist}" },
+            .cardPressable(onClick = onClick).semantics { contentDescription = appText(com.lastwave.app.R.string.ui_play_1_s_2_s_4714b6, (song.title).toString(), (song.artist).toString()) },
         verticalAlignment = Alignment.CenterVertically,
     ) {
         PreviewArtwork(song.artworkUrl, Icons.Filled.MusicNote,
@@ -235,7 +237,7 @@ private fun CommunitySongRow(song: YouTubeMusicTrack, plays: String?, height: Dp
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         if (onMenuClick != null) IconButton(onClick = onMenuClick, modifier = Modifier.size(48.dp)) {
-            Icon(Icons.Filled.MoreVert, "More options for ${song.title}", Modifier.size(21.dp),
+            Icon(Icons.Filled.MoreVert, appText(com.lastwave.app.R.string.feed_more_cd, (song.title).toString()), Modifier.size(21.dp),
                 tint = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
@@ -252,7 +254,7 @@ private fun CommunityLoadingRows(height: Dp) {
             val x = size.width * (phase.value * 2 - 0.5f)
             drawRect(Brush.linearGradient(listOf(Color.Transparent, Color.White.copy(alpha = 0.045f), Color.Transparent),
                 start = Offset(x - size.width / 2, 0f), end = Offset(x, size.height)))
-        }.semantics { contentDescription = "Loading playlist preview" }, verticalAlignment = Alignment.CenterVertically) {
+        }.semantics { contentDescription = appText(com.lastwave.app.R.string.ui_loading_playlist_preview_8c1568) }, verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.size(44.dp).clip(RoundedCornerShape(4.dp)).background(base))
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {

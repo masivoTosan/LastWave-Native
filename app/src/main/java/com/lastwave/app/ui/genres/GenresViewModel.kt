@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.genres
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -20,14 +22,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /** Exact period options from genres.html's dropdown. */
-val GENRE_PERIODS = listOf("7day" to "Past 7 Days", "1month" to "This Month", "12month" to "Last 12 Months", "overall" to "Overall")
+val GENRE_PERIODS = listOf("7day" to appText(com.lastwave.app.R.string.ui_past_7_days_8adf85), "1month" to appText(com.lastwave.app.R.string.ui_this_month_0f6cc3), "12month" to appText(com.lastwave.app.R.string.ui_last_12_months_842a51), appText(com.lastwave.app.R.string.fr_period_all) to appText(com.lastwave.app.R.string.fr_period_all))
 
 enum class GenreDetailSort { POPULAR, NEWEST, AZ }
 
 @Immutable
 data class GenresUiState(
     val isLoading: Boolean = true,
-    val period: String = "overall",
+    val period: String = appText(com.lastwave.app.R.string.fr_period_all),
     val stats: List<GenreStat> = emptyList(),
     val error: String? = null,
     // Detail sheet
@@ -84,7 +86,7 @@ class GenresViewModel @Inject constructor(
                 _uiState.update { it.copy(isLoading = false, stats = stats) }
             } catch (e: Exception) {
                 coroutineContext.ensureActive()
-                _uiState.update { it.copy(isLoading = false, error = e.message ?: "Couldn't load genres") }
+                _uiState.update { it.copy(isLoading = false, error = e.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_genres_aab8b4)) }
             }
         }
     }

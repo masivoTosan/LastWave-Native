@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
@@ -96,11 +98,11 @@ fun ModulesScreen(
     if (showAddonDialog) {
         AlertDialog(
             onDismissRequest = { showAddonDialog = false },
-            title = { Text(if (editingAddonId == null) "Add Streaming Addon" else "Edit Streaming Addon") },
+            title = { Text(if (editingAddonId == null) appText(com.lastwave.app.R.string.ui_add_streaming_addon_056a61) else appText(com.lastwave.app.R.string.ui_edit_streaming_addon_17e925)) },
             text = {
                 Column {
                     Text(
-                        "Enter the URL of your personal Addon service (e.g. http://10.0.2.2:8787/a/<token>/ or custom host):",
+                        appText(com.lastwave.app.R.string.ui_enter_the_url_of_your_personal_addon_service_e_g_887706),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -125,7 +127,7 @@ fun ModulesScreen(
                         }
                     },
                 ) {
-                    Text(if (editingAddonId == null) "Connect" else "Save")
+                    Text(if (editingAddonId == null) appText(com.lastwave.app.R.string.cookie_login_connect) else appText(com.lastwave.app.R.string.lyshare_action_save))
                 }
             },
             dismissButton = {
@@ -157,12 +159,12 @@ fun ModulesScreen(
             // --- Section 1: HTTP Addons ---
             item {
                 Text(
-                    "Streaming Addons",
+                    appText(com.lastwave.app.R.string.ui_streaming_addons_0af2dc),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                 )
                 Text(
-                    "Take requests directly from personal or community Addon services. Multiple enabled addons query concurrently for the best audio stream.",
+                    appText(com.lastwave.app.R.string.ui_take_requests_directly_from_personal_or_communit_333674),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -191,7 +193,7 @@ fun ModulesScreen(
                             Spacer(Modifier.width(14.dp))
                             Column(Modifier.weight(1f)) {
                                 Text(
-                                    addon.name.ifBlank { "HTTP Addon" },
+                                    addon.name.ifBlank { appText(com.lastwave.app.R.string.ui_http_addon_b91a5b) },
                                     fontWeight = FontWeight.Bold,
                                     style = MaterialTheme.typography.titleMedium,
                                 )
@@ -211,10 +213,10 @@ fun ModulesScreen(
                         Spacer(Modifier.height(8.dp))
 
                         val statusText = when (health) {
-                            is AddonHealth.Ok -> health.info ?: "Connected"
-                            is AddonHealth.Unreachable -> "Unreachable: ${health.reason}"
-                            is AddonHealth.Rejected -> "Rejected: ${health.reason}"
-                            null -> if (addon.enabled) "Enabled" else "Disabled"
+                            is AddonHealth.Ok -> health.info ?: appText(com.lastwave.app.R.string.ui_connected_c2f9b7)
+                            is AddonHealth.Unreachable -> appText(com.lastwave.app.R.string.ui_unreachable_1_s_87847a, (health.reason).toString())
+                            is AddonHealth.Rejected -> appText(com.lastwave.app.R.string.ui_rejected_1_s_a54c84, (health.reason).toString())
+                            null -> if (addon.enabled) appText(com.lastwave.app.R.string.ui_enabled_df174a) else appText(com.lastwave.app.R.string.ui_disabled_f4f447)
                         }
                         val statusColor = when (health) {
                             is AddonHealth.Ok -> MaterialTheme.colorScheme.primary
@@ -281,12 +283,12 @@ fun ModulesScreen(
                         Spacer(Modifier.width(16.dp))
                         Column(Modifier.weight(1f)) {
                             Text(
-                                "Add Streaming Addon",
+                                appText(com.lastwave.app.R.string.ui_add_streaming_addon_056a61),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold,
                             )
                             Text(
-                                if (httpAddons.isEmpty()) "Connect to your personal or custom Addon server URL" else "Add another concurrent streaming addon server",
+                                if (httpAddons.isEmpty()) appText(com.lastwave.app.R.string.ui_connect_to_your_personal_or_custom_addon_server__d35be0) else appText(com.lastwave.app.R.string.ui_add_another_concurrent_streaming_addon_server_e2a4f8),
                                 style = MaterialTheme.typography.bodySmall,
                             )
                         }
@@ -392,7 +394,7 @@ private fun ModuleRow(
             Column(Modifier.weight(1f)) {
                 Text(manifest.name.ifBlank { manifest.id }, fontWeight = FontWeight.Bold)
                 Text(
-                    "${manifest.version.ifBlank { "?" }} • ${manifest.capabilities.take(4).joinToString(", ")}",
+                    appText(com.lastwave.app.R.string.ly_sync_badge, (manifest.version.ifBlank { "?" }).toString(), (manifest.capabilities.take(4).joinToString(", ")).toString()),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

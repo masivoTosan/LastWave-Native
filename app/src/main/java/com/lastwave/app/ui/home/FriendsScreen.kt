@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Box
@@ -82,8 +84,8 @@ fun FriendsScreen(
         ExpressiveHeader(
             modifier = headerModifier,
             backdrop = headerBackdrop,
-            title = "Friends",
-            subtitle = if (friends.isNotEmpty()) "Long-press a friend to pin" else null,
+            title = appText(com.lastwave.app.R.string.ui_friends_c11d5e),
+            subtitle = if (friends.isNotEmpty()) appText(com.lastwave.app.R.string.ui_long_press_a_friend_to_pin_a3c79d) else null,
             onBack = onBack,
         )
             },
@@ -129,10 +131,10 @@ fun FriendsScreen(
             ) {
             when {
                 isLoading -> Box(Modifier.fillMaxWidth().padding(32.dp), contentAlignment = Alignment.Center) {
-                    com.lastwave.app.ui.common.ExpressiveLoadingIndicator(message = "Loading friends")
+                    com.lastwave.app.ui.common.ExpressiveLoadingIndicator(message = appText(com.lastwave.app.R.string.ui_loading_friends_0e28dc))
                 }
                 friends.isEmpty() -> Text(
-                    "No friends found on this Last.fm account.",
+                    appText(com.lastwave.app.R.string.ui_no_friends_found_on_this_last_fm_account_0509c0),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(16.dp),
@@ -142,8 +144,8 @@ fun FriendsScreen(
                     ExpressiveGroup(rowCount = rowCount) { index, position ->
                         if (isViewingFriend && index == 0) {
                             ExpressiveGroupTrackRow(
-                                title = "Back to my profile",
-                                subtitle = "View your own data again",
+                                title = appText(com.lastwave.app.R.string.ui_back_to_my_profile_333fa4),
+                                subtitle = appText(com.lastwave.app.R.string.ui_view_your_own_data_again_5d8724),
                                 position = position,
                                 onClick = {
                                     viewModel.returnToOwnProfile()
@@ -188,7 +190,7 @@ fun FriendsScreen(
                                     }
                                 },
                                 trailing = if (isPinned) {
-                                    { Icon(Icons.Filled.PushPin, contentDescription = "Pinned", tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(18.dp)) }
+                                    { Icon(Icons.Filled.PushPin, contentDescription = appText(com.lastwave.app.R.string.pl_pinned_cd), tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(18.dp)) }
                                 } else null,
                             )
                         }

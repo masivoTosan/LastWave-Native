@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.playlist
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -132,7 +134,7 @@ class PlaylistViewModel @Inject constructor(
                 throw cancellation
             } catch (e: Exception) {
                 android.util.Log.e("PlaylistViewModel", "Couldn't read playlists for sync toggle", e)
-                _uiState.update { it.copy(toastMessage = "Couldn't read playlists. Try again.") }
+                _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_couldn_t_read_playlists_try_again_8ca078)) }
                 return@launch
             }
             val current = ytMusicPreferences.syncedPlaylistIds.first() ?: allIds.toSet()
@@ -142,7 +144,7 @@ class PlaylistViewModel @Inject constructor(
                 runCatching { ytMusicSyncManager.syncNow("selection_change") }
             }
             _uiState.update {
-                it.copy(toastMessage = if (!isSynced) "Playlist added to YouTube Music sync" else "Playlist removed from YouTube Music sync")
+                it.copy(toastMessage = if (!isSynced) appText(com.lastwave.app.R.string.ui_playlist_added_to_youtube_music_sync_943caf) else appText(com.lastwave.app.R.string.ui_playlist_removed_from_youtube_music_sync_4f88ac))
             }
         }
     }
@@ -239,9 +241,9 @@ class PlaylistViewModel @Inject constructor(
                 playlistsDeferred.await() to likedCountDeferred.await()
             }
             val likedSummary = SpotifyUserPlaylist(
-                id = "liked",
-                name = "Liked Songs",
-                description = "Your Spotify likes",
+                id = appText(com.lastwave.app.R.string.wave_widget_playlist_liked),
+                name = appText(com.lastwave.app.R.string.spotify_liked_songs_title),
+                description = appText(com.lastwave.app.R.string.spotify_liked_songs_sub),
                 artworkUrl = null,
                 trackCount = likedCount,
             )
@@ -437,7 +439,7 @@ class PlaylistViewModel @Inject constructor(
                 it.copy(
                     createDialogVisible = false,
                     expandedIds = it.expandedIds + playlist.id,
-                    toastMessage = "Created ${playlist.title}",
+                    toastMessage = appText(com.lastwave.app.R.string.ui_created_1_s_196a9b, (playlist.title).toString()),
                 )
             }
             load()
@@ -452,7 +454,7 @@ class PlaylistViewModel @Inject constructor(
         if (title.isBlank()) return
         viewModelScope.launch {
             playlistRepository.rename(id, title)
-            _uiState.update { it.copy(renamePlaylistId = null, toastMessage = "Playlist renamed") }
+            _uiState.update { it.copy(renamePlaylistId = null, toastMessage = appText(com.lastwave.app.R.string.ui_playlist_renamed_839cfc)) }
             load()
         }
     }
@@ -469,7 +471,7 @@ class PlaylistViewModel @Inject constructor(
             }
             _uiState.update {
                 it.copy(
-                    toastMessage = if (saved != null) "${saved.title} is now available locally" else "Couldn't make playlist local",
+                    toastMessage = if (saved != null) "${saved.title} is now available locally" else appText(com.lastwave.app.R.string.ui_couldn_t_make_playlist_local_76c0c2),
                     detailPlaylist = saved ?: it.detailPlaylist,
                 )
             }
@@ -481,7 +483,7 @@ class PlaylistViewModel @Inject constructor(
         viewModelScope.launch {
             playlistRepository.setCustomCover(id, uri)
             _uiState.update {
-                it.copy(toastMessage = if (uri.isNullOrBlank()) "Using automatic playlist cover" else "Playlist cover updated")
+                it.copy(toastMessage = if (uri.isNullOrBlank()) appText(com.lastwave.app.R.string.ui_using_automatic_playlist_cover_0a9fbb) else appText(com.lastwave.app.R.string.ui_playlist_cover_updated_002f60))
             }
             load()
         }
@@ -504,7 +506,7 @@ class PlaylistViewModel @Inject constructor(
                 current.copy(
                     playlists = sorted,
                     detailPlaylist = if (current.detailPlaylist?.id == id) current.detailPlaylist?.copy(isPinned = willBePinned) else current.detailPlaylist,
-                    toastMessage = if (willBePinned) "Playlist pinned to top" else "Playlist unpinned",
+                    toastMessage = if (willBePinned) appText(com.lastwave.app.R.string.ui_playlist_pinned_to_top_068d4e) else appText(com.lastwave.app.R.string.ui_playlist_unpinned_606ba5),
                 )
             }
             if (id >= 0L) load()
@@ -533,7 +535,7 @@ class PlaylistViewModel @Inject constructor(
                 val removed = before != null && updated != null && updated.tracks.size < before.tracks.size
                 current.copy(
                     detailPlaylist = if (current.detailPlaylist?.id == playlistId) updated ?: before else current.detailPlaylist,
-                    toastMessage = if (removed || playlistId >= 0L) "Song removed from playlist" else "Couldn't remove song",
+                    toastMessage = if (removed || playlistId >= 0L) appText(com.lastwave.app.R.string.ui_song_removed_from_playlist_e05c9f) else appText(com.lastwave.app.R.string.ui_couldn_t_remove_song_85f483),
                 )
             }
             if (playlistId >= 0L) {
@@ -552,7 +554,7 @@ class PlaylistViewModel @Inject constructor(
     fun moveTrack(playlistId: Long, fromIndex: Int, toIndex: Int) {
         if (fromIndex == toIndex) return
         if (playlistId < 0L) {
-            _uiState.update { it.copy(toastMessage = "Reorder works for local playlists") }
+            _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_reorder_works_for_local_playlists_c73762)) }
             return
         }
         val current = _uiState.value.detailPlaylist?.takeIf { it.id == playlistId } ?: return
@@ -589,7 +591,7 @@ class PlaylistViewModel @Inject constructor(
                 } catch (error: Exception) {
                     currentCoroutineContext().ensureActive()
                     failed = true
-                    _uiState.update { it.copy(toastMessage = "Couldn't save new order") }
+                    _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_couldn_t_save_new_order_f6f221)) }
                 } finally {
                     val pending = (pendingTrackMoves[playlistId] ?: 1) - 1
                     if (pending == 0) pendingTrackMoves.remove(playlistId) else pendingTrackMoves[playlistId] = pending
@@ -614,7 +616,7 @@ class PlaylistViewModel @Inject constructor(
                         deleteConfirmForPlaylistId = null,
                         playlists = state.playlists.filterNot { it.id == id },
                         detailPlaylist = state.detailPlaylist?.takeUnless { it.id == id },
-                        toastMessage = "Playlist deleted",
+                        toastMessage = appText(com.lastwave.app.R.string.ui_playlist_deleted_3cd30e),
                     )
                 }
                 if (id >= 0L) load()
@@ -622,7 +624,7 @@ class PlaylistViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         deleteConfirmForPlaylistId = null,
-                        toastMessage = "Couldn't delete playlist. Try again.",
+                        toastMessage = appText(com.lastwave.app.R.string.ui_couldn_t_delete_playlist_try_again_8bb9df),
                     )
                 }
             }
@@ -657,8 +659,8 @@ class PlaylistViewModel @Inject constructor(
                     playlists = state.playlists.filterNot { it.id in deletedIds },
                     detailPlaylist = state.detailPlaylist?.takeUnless { it.id in deletedIds },
                     toastMessage = when {
-                        failed > 0 -> "Couldn't delete $failed playlist${if (failed == 1) "" else "s"}. Try again."
-                        deletedIds.isNotEmpty() -> "Deleted ${deletedIds.size} playlist${if (deletedIds.size == 1) "" else "s"}"
+                        failed > 0 -> appText(com.lastwave.app.R.string.ui_couldn_t_delete_1_s_playlist_2_s_try_again_1a0177, (failed).toString(), (if (failed == 1) "" else "s").toString())
+                        deletedIds.isNotEmpty() -> appText(com.lastwave.app.R.string.ui_deleted_1_s_playlist_2_s_7a0f68, (deletedIds.size).toString(), (if (deletedIds.size == 1) "" else "s").toString())
                         else -> state.toastMessage
                     },
                 )
@@ -675,7 +677,7 @@ class PlaylistViewModel @Inject constructor(
         val filename = exportFilename(playlist, format)
         val content = exportContent(playlist, format)
         fileExportHelper.saveToDocuments(filename, content)
-        _uiState.update { it.copy(exportSheetForPlaylistId = null, toastMessage = "Saved $filename") }
+        _uiState.update { it.copy(exportSheetForPlaylistId = null, toastMessage = appText(com.lastwave.app.R.string.ui_saved_1_s_52af3b, (filename).toString())) }
     }
 
     fun exportShare(id: Long, format: ExportFormat) {
@@ -714,7 +716,7 @@ class PlaylistViewModel @Inject constructor(
                 playlist = runCatching { ytMusicLibraryManager.loadDetail(playlistId) }.getOrNull()
             }
             if (playlist == null) {
-                _uiState.update { it.copy(toastMessage = "Playlist could not be loaded") }
+                _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_playlist_could_not_be_loaded_14a6ac)) }
                 return@launch
             }
             var tracks = playlist.tracks
@@ -733,7 +735,7 @@ class PlaylistViewModel @Inject constructor(
                 }
             }
             if (tracks.isEmpty()) {
-                _uiState.update { it.copy(toastMessage = "No songs to download in this playlist") }
+                _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_no_songs_to_download_in_this_playlist_8f6cf6)) }
                 return@launch
             }
             var queued = 0
@@ -761,9 +763,9 @@ class PlaylistViewModel @Inject constructor(
             _uiState.update {
                 it.copy(
                     toastMessage = when {
-                        queued > 0 && skipped > 0 -> "Downloading $queued songs ($skipped already saved)"
-                        queued > 0 -> if (queued == 1) "Downloading 1 song" else "Downloading $queued songs"
-                        else -> "All songs already downloaded"
+                        queued > 0 && skipped > 0 -> appText(com.lastwave.app.R.string.ui_downloading_1_s_songs_2_s_already_saved_2b71a6, (queued).toString(), (skipped).toString())
+                        queued > 0 -> if (queued == 1) appText(com.lastwave.app.R.string.ui_downloading_1_song_75e402) else appText(com.lastwave.app.R.string.ui_downloading_1_s_songs_f16c02, (queued).toString())
+                        else -> appText(com.lastwave.app.R.string.ui_all_songs_already_downloaded_0f7017)
                     },
                 )
             }
@@ -788,7 +790,7 @@ class PlaylistViewModel @Inject constructor(
             }
             _uiState.update {
                 it.copy(
-                    toastMessage = if (cancelled > 0) "Cancelled $cancelled downloads" else "No active downloads in playlist",
+                    toastMessage = if (cancelled > 0) appText(com.lastwave.app.R.string.ui_cancelled_1_s_downloads_442da3, (cancelled).toString()) else appText(com.lastwave.app.R.string.ui_no_active_downloads_in_playlist_77d454),
                 )
             }
         }
@@ -799,7 +801,7 @@ class PlaylistViewModel @Inject constructor(
     fun regenerate(id: Long, onRegenerated: ((Long) -> Unit)? = null) {
         if (_uiState.value.regeneratingId != null) return
         _uiState.update {
-            it.copy(regeneratingId = id, toastMessage = "Regenerating inspired mix\u2026")
+            it.copy(regeneratingId = id, toastMessage = appText(com.lastwave.app.R.string.ui_regenerating_inspired_mix_213fde))
         }
         viewModelScope.launch {
             val playlist = _uiState.value.playlists.firstOrNull { it.id == id }
@@ -807,7 +809,7 @@ class PlaylistViewModel @Inject constructor(
                 ?: try { playlistRepository.getById(id) } catch (_: Exception) { null }
             if (playlist == null) {
                 _uiState.update {
-                    it.copy(regeneratingId = null, toastMessage = "Playlist could not be loaded")
+                    it.copy(regeneratingId = null, toastMessage = appText(com.lastwave.app.R.string.ui_playlist_could_not_be_loaded_14a6ac))
                 }
                 return@launch
             }
@@ -823,7 +825,7 @@ class PlaylistViewModel @Inject constructor(
                     generateRepository.fetchTasteMixForPlaylist(playlist.tracks, candidateCount)
                 } else {
                     val raw = when (playlist.mode) {
-                        "top", "library" -> generateRepository.fetchTopTracks(candidateCount, "overall")
+                        "top", "library" -> generateRepository.fetchTopTracks(candidateCount, appText(com.lastwave.app.R.string.fr_period_all))
                         "recent" -> generateRepository.fetchRecentTracks(candidateCount)
                         "recommendations" -> generateRepository.fetchRecommendations(targetCount)
                         else -> generateRepository.fetchMix(candidateCount)
@@ -855,15 +857,15 @@ class PlaylistViewModel @Inject constructor(
                     counter++
                 }
 
-                val subtitle = "Inspired by ${playlist.title}"
+                val subtitle = appText(com.lastwave.app.R.string.ui_inspired_by_1_s_a29a72, (playlist.title).toString())
                 val saved = playlistRepository.save(title, subtitle, playlist.mode, finalTracks)
-                _uiState.update { it.copy(toastMessage = "Created \"$title\" (${finalTracks.size} tracks)") }
+                _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_created_1_s_2_s_tracks_ca8327, (title).toString(), (finalTracks.size).toString())) }
                 load(justGeneratedId = saved.id)
                 onRegenerated?.invoke(saved.id)
             } catch (error: CancellationException) {
                 throw error
             } catch (e: Exception) {
-                _uiState.update { it.copy(toastMessage = e.message ?: "Couldn't regenerate playlist") }
+                _uiState.update { it.copy(toastMessage = e.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_regenerate_playlist_55c400)) }
             } finally {
                 _uiState.update { current ->
                     if (current.regeneratingId == id) current.copy(regeneratingId = null) else current
@@ -876,13 +878,13 @@ class PlaylistViewModel @Inject constructor(
         viewModelScope.launch {
             when (val result = authRepository.deleteScrobble(trackName, artistName, timestampMillis = null)) {
                 is AuthRepository.DeleteScrobbleResult.Success -> {
-                    _uiState.update { it.copy(toastMessage = "Scrobble deleted") }
+                    _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_scrobble_deleted_295cbc)) }
                 }
                 is AuthRepository.DeleteScrobbleResult.AuthorizationRequired -> {
                     _uiState.update { it.copy(deleteScrobbleAuthRequired = true) }
                 }
                 is AuthRepository.DeleteScrobbleResult.NoTimestamp -> {
-                    _uiState.update { it.copy(toastMessage = "Cannot delete \u2014 scrobble has no timestamp") }
+                    _uiState.update { it.copy(toastMessage = appText(com.lastwave.app.R.string.ui_cannot_delete_scrobble_has_no_timestamp_9e5d0e)) }
                 }
                 is AuthRepository.DeleteScrobbleResult.Failed -> {
                     _uiState.update { it.copy(toastMessage = result.message) }

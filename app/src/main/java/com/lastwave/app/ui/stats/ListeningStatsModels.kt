@@ -1,25 +1,30 @@
 package com.lastwave.app.ui.stats
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 
-enum class StatsTimeRange(val label: String) {
-    ALL_TIME("All Time"),
-    WEEK("Week"),
-    MONTH_TO_DATE("Month"),
-    YEAR_TO_DATE("Year"),
+enum class StatsTimeRange(private val labelProvider: () -> String) {
+    ALL_TIME({ appText(com.lastwave.app.R.string.gen_period_all) }),
+    WEEK({ appText(com.lastwave.app.R.string.ui_week_f82be6) }),
+    MONTH_TO_DATE({ appText(com.lastwave.app.R.string.ui_month_082bc3) }),
+    YEAR_TO_DATE({ appText(com.lastwave.app.R.string.ui_year_879e32) });
+    val label: String get() = labelProvider()
 }
 
-enum class TimelineMetric(val label: String) {
-    LISTENING_TIME("Listening time"),
-    PLAY_COUNT("Play count"),
-    AVG_SESSION("Avg. session"),
+enum class TimelineMetric(private val labelProvider: () -> String) {
+    LISTENING_TIME({ appText(com.lastwave.app.R.string.ui_listening_time_f3c051) }),
+    PLAY_COUNT({ appText(com.lastwave.app.R.string.ui_play_count_50a957) }),
+    AVG_SESSION({ appText(com.lastwave.app.R.string.ui_avg_session_6d49c6) });
+    val label: String get() = labelProvider()
 }
 
-enum class CategoryFilter(val label: String) {
-    SONG("Song"),
-    ALBUM("Album"),
-    ARTIST("Artist"),
-    GENRE("Genre"),
+enum class CategoryFilter(private val labelProvider: () -> String) {
+    SONG({ appText(com.lastwave.app.R.string.lyshare_mode_song) }),
+    ALBUM({ appText(com.lastwave.app.R.string.art_type_album) }),
+    ARTIST({ appText(com.lastwave.app.R.string.pd_sort_artist) }),
+    GENRE({ appText(com.lastwave.app.R.string.details_genre) });
+    val label: String get() = labelProvider()
 }
 
 @Immutable

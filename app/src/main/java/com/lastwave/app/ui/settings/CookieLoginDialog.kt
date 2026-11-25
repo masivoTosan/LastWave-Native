@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -131,7 +133,7 @@ fun CookieLoginDialog(
                 onClick = {
                     val text = rawText.trim()
                     if (text.isEmpty()) {
-                        errorText = "Please enter cookie text."
+                        errorText = appText(com.lastwave.app.R.string.ui_please_enter_cookie_text_2d48f6)
                         return@Button
                     }
                     try {
@@ -139,7 +141,7 @@ fun CookieLoginDialog(
                         errorText = null
                         onConnect(normalized)
                     } catch (e: Exception) {
-                        errorText = e.message ?: "Invalid cookies. Make sure SAPISID is present."
+                        errorText = e.message ?: appText(com.lastwave.app.R.string.ui_invalid_cookies_make_sure_sapisid_is_present_1614de)
                     }
                 },
                 enabled = !isConnecting && rawText.isNotBlank(),

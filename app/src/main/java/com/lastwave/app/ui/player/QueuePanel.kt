@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
 import com.lastwave.app.data.playlist.isLikedIn
@@ -433,7 +435,7 @@ internal fun QueuePanel(
         ) {
             Column(Modifier.weight(1f)) {
                 Text(
-                    "Up next",
+                    appText(com.lastwave.app.R.string.wave_widget_up_next),
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
@@ -452,12 +454,12 @@ internal fun QueuePanel(
                     ) {
                         Icon(
                             imageVector = Icons.Filled.AllInclusive,
-                            contentDescription = "Unlimited queue",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_unlimited_queue_7c8e6b),
                             tint = Color.White.copy(alpha = 0.55f),
                             modifier = Modifier.size(13.dp),
                         )
                         Text(
-                            "Unlimited",
+                            appText(com.lastwave.app.R.string.ui_unlimited_b8bef3),
                             style = MaterialTheme.typography.bodySmall,
                             color = Color.White.copy(alpha = 0.55f),
                         )
@@ -477,7 +479,7 @@ internal fun QueuePanel(
             ) {
                 Icon(
                     Icons.Filled.Visibility,
-                    "Scroll to current song",
+                    appText(com.lastwave.app.R.string.ui_scroll_to_current_song_552966),
                     tint = Color.White.copy(alpha = 0.90f),
                 )
             }
@@ -495,7 +497,7 @@ internal fun QueuePanel(
             ) {
                 Icon(
                     imageVector = Icons.Filled.Delete,
-                    contentDescription = "Clear queue except playing song",
+                    contentDescription = appText(com.lastwave.app.R.string.ui_clear_queue_except_playing_song_5eed6e),
                     tint = if (state.queue.size > 1 && !isQueueLocked) Color.White.copy(alpha = 0.90f) else Color.White.copy(alpha = 0.35f),
                 )
             }
@@ -511,7 +513,7 @@ internal fun QueuePanel(
                 verticalArrangement = Arrangement.spacedBy(2.dp),
             ) {
                 Text(
-                    "Up next in shuffle order",
+                    appText(com.lastwave.app.R.string.ui_up_next_in_shuffle_order_1af35c),
                     style = MaterialTheme.typography.labelSmall,
                     color = Color.White.copy(alpha = 0.60f),
                     fontWeight = FontWeight.Bold,
@@ -825,7 +827,7 @@ internal fun QueuePanel(
                     horizontalArrangement = Arrangement.SpaceBetween,
                 ) {
                     Text(
-                        text = "\"${removed.first.title}\" removed",
+                        text = appText(com.lastwave.app.R.string.ui_1_s_removed_2ebeac, (removed.first.title).toString()),
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Medium,
                         maxLines = 1,
@@ -846,7 +848,7 @@ internal fun QueuePanel(
                         contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
                     ) {
                         Text(
-                            text = "Undo",
+                            text = appText(com.lastwave.app.R.string.ui_undo_39fc72),
                             style = MaterialTheme.typography.labelLarge,
                             fontWeight = FontWeight.Bold,
                         )

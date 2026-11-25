@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.jam
 
+import com.lastwave.app.util.appText
+
 import android.content.Intent
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -180,8 +182,8 @@ fun JamScreen(
                 ExpressiveHeader(
                     modifier = headerModifier,
                     backdrop = headerBackdrop,
-                    title = "Jam",
-                    subtitle = if (uiState.isConnected) (uiState.roomName.ifEmpty { "Room ${uiState.roomCode}" }) else "Listen together in real time",
+                    title = appText(com.lastwave.app.R.string.menu_quick_jam),
+                    subtitle = if (uiState.isConnected) (uiState.roomName.ifEmpty { appText(com.lastwave.app.R.string.ui_room_1_s_568eff, (uiState.roomCode).toString()) }) else appText(com.lastwave.app.R.string.ui_listen_together_in_real_time_0a2db5),
                     onBack = onBack,
                     actions = {
                         if (uiState.isConnected) {
@@ -211,7 +213,7 @@ fun JamScreen(
                                 )
                                 Spacer(modifier = Modifier.width(6.dp))
                                 Text(
-                                    text = "LIVE",
+                                    text = appText(com.lastwave.app.R.string.ui_extra_6990f01ad9),
                                     color = liveGreen,
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
@@ -220,7 +222,7 @@ fun JamScreen(
                         } else {
                             HeaderActionIcon(
                                 icon = Icons.Filled.Dns,
-                                contentDescription = "Server settings",
+                                contentDescription = appText(com.lastwave.app.R.string.ui_server_settings_28af3c),
                                 onClick = { showAdvancedServer = !showAdvancedServer },
                             )
                         }
@@ -264,7 +266,7 @@ fun JamScreen(
                                 contentAlignment = Alignment.Center,
                             ) {
                                 Text(
-                                    text = "Join Room",
+                                    text = appText(com.lastwave.app.R.string.ui_join_room_902fc2),
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 14.sp,
                                     color = if (setupModeIndex == 0) onJamAccent else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -280,7 +282,7 @@ fun JamScreen(
                                 contentAlignment = Alignment.Center,
                             ) {
                                 Text(
-                                    text = "Create Room",
+                                    text = appText(com.lastwave.app.R.string.ui_create_room_7a913e),
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 14.sp,
                                     color = if (setupModeIndex == 1) onJamAccent else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -292,7 +294,7 @@ fun JamScreen(
                         OutlinedTextField(
                             value = uiState.pendingDisplayName,
                             onValueChange = viewModel::setPendingDisplayName,
-                            label = { Text("Your Display Name") },
+                            label = { Text(appText(com.lastwave.app.R.string.ui_your_display_name_ade88f)) },
                             leadingIcon = {
                                 Icon(Icons.Filled.AccountCircle, contentDescription = null, tint = jamAccent)
                             },
@@ -326,8 +328,8 @@ fun JamScreen(
                                 OutlinedTextField(
                                     value = uiState.pendingInputCode,
                                     onValueChange = { viewModel.setPendingCode(it.take(8)) },
-                                    label = { Text("Room Code") },
-                                    placeholder = { Text("e.g. WAVE01") },
+                                    label = { Text(appText(com.lastwave.app.R.string.ui_room_code_a66508)) },
+                                    placeholder = { Text(appText(com.lastwave.app.R.string.ui_e_g_wave01_af8190)) },
                                     singleLine = true,
                                     shape = RoundedCornerShape(14.dp),
                                     modifier = Modifier.weight(1f),
@@ -355,7 +357,7 @@ fun JamScreen(
                                     shape = RoundedCornerShape(14.dp),
                                     modifier = Modifier.height(54.dp),
                                 ) {
-                                    Text("Paste")
+                                    Text(appText(com.lastwave.app.R.string.imp_paste_cd))
                                 }
                             }
 
@@ -374,9 +376,9 @@ fun JamScreen(
                                 if (uiState.isConnecting) {
                                     CircularProgressIndicator(modifier = Modifier.size(20.dp), color = onJamAccent, strokeWidth = 2.5.dp)
                                     Spacer(modifier = Modifier.width(10.dp))
-                                    Text("Connecting...", fontWeight = FontWeight.Bold)
+                                    Text(appText(com.lastwave.app.R.string.ui_connecting_b98e3f), fontWeight = FontWeight.Bold)
                                 } else {
-                                    Text("Join Jam Room", fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                                    Text(appText(com.lastwave.app.R.string.ui_join_jam_room_d6ece9), fontWeight = FontWeight.Bold, fontSize = 15.sp)
                                 }
                             }
                         } else {
@@ -399,7 +401,7 @@ fun JamScreen(
                                     contentAlignment = Alignment.Center,
                                 ) {
                                     Text(
-                                        text = "Collaborative",
+                                        text = appText(com.lastwave.app.R.string.ui_collaborative_67efce),
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 13.sp,
                                         color = if (isCollab) onJamAccent else MaterialTheme.colorScheme.onSurface,
@@ -415,7 +417,7 @@ fun JamScreen(
                                     contentAlignment = Alignment.Center,
                                 ) {
                                     Text(
-                                        text = "Host Only",
+                                        text = appText(com.lastwave.app.R.string.ui_host_only_b2a141),
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 13.sp,
                                         color = if (!isCollab) onJamAccent else MaterialTheme.colorScheme.onSurface,
@@ -438,11 +440,11 @@ fun JamScreen(
                                 if (uiState.isConnecting) {
                                     CircularProgressIndicator(modifier = Modifier.size(20.dp), color = onJamAccent, strokeWidth = 2.5.dp)
                                     Spacer(modifier = Modifier.width(10.dp))
-                                    Text("Creating...", fontWeight = FontWeight.Bold)
+                                    Text(appText(com.lastwave.app.R.string.ui_creating_28ea76), fontWeight = FontWeight.Bold)
                                 } else {
                                     Icon(Icons.Filled.Group, contentDescription = null, modifier = Modifier.size(18.dp))
                                     Spacer(modifier = Modifier.width(8.dp))
-                                    Text("Create Jam Room", fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                                    Text(appText(com.lastwave.app.R.string.ui_create_jam_room_85d438), fontWeight = FontWeight.Bold, fontSize = 15.sp)
                                 }
                             }
                         }
@@ -473,7 +475,7 @@ fun JamScreen(
                                 ),
                             ) {
                                 Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                    Text(text = "Sync Server Address", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                                    Text(text = appText(com.lastwave.app.R.string.ui_sync_server_address_26fe8f), fontWeight = FontWeight.Bold, fontSize = 13.sp)
                                     OutlinedTextField(
                                         value = customServerUrlInput,
                                         onValueChange = { customServerUrlInput = it },
@@ -485,7 +487,7 @@ fun JamScreen(
                                         Button(
                                             onClick = {
                                                 viewModel.setCustomServerUrl(customServerUrlInput)
-                                                Toast.makeText(context, "Server URL updated", Toast.LENGTH_SHORT).show()
+                                                Toast.makeText(context, appText(com.lastwave.app.R.string.ui_server_url_updated_1dc31f), Toast.LENGTH_SHORT).show()
                                             },
                                             shape = RoundedCornerShape(10.dp),
                                             colors = ButtonDefaults.buttonColors(
@@ -493,7 +495,7 @@ fun JamScreen(
                                                 contentColor = onJamAccent,
                                             ),
                                         ) {
-                                            Text("Save")
+                                            Text(appText(com.lastwave.app.R.string.lyshare_action_save))
                                         }
                                         TextButton(
                                             onClick = {
@@ -501,7 +503,7 @@ fun JamScreen(
                                                 customServerUrlInput = JamRepository.DEFAULT_JAM_SERVER_WS
                                             },
                                         ) {
-                                            Text("Reset")
+                                            Text(appText(com.lastwave.app.R.string.set_eq_reset))
                                         }
                                     }
                                 }
@@ -529,10 +531,10 @@ fun JamScreen(
                             horizontalArrangement = Arrangement.spacedBy(4.dp),
                         ) {
                             listOf(
-                                "Controls" to null,
-                                "Chat" to if (chatMessages.isNotEmpty()) chatMessages.size else null,
-                                "Share" to null,
-                                "Panel" to uiState.participants.size,
+                                appText(com.lastwave.app.R.string.ui_controls_bee75c) to null,
+                                appText(com.lastwave.app.R.string.ui_chat_2ced57) to if (chatMessages.isNotEmpty()) chatMessages.size else null,
+                                appText(com.lastwave.app.R.string.lyshare_action_share) to null,
+                                appText(com.lastwave.app.R.string.ui_panel_2f4bd7) to uiState.participants.size,
                             ).forEachIndexed { index, (label, count) ->
                                 val selected = selectedTabIndex == index
                                 Box(
@@ -599,7 +601,7 @@ fun JamScreen(
 
                                 // Song Title & Artist
                                 Text(
-                                    text = uiState.currentTrackTitle.ifBlank { "No track playing" },
+                                    text = uiState.currentTrackTitle.ifBlank { appText(com.lastwave.app.R.string.ui_no_track_playing_326cae) },
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 19.sp,
                                     color = MaterialTheme.colorScheme.onSurface,
@@ -612,7 +614,7 @@ fun JamScreen(
                                 )
                                 Spacer(modifier = Modifier.height(4.dp))
                                 Text(
-                                    text = uiState.currentTrackArtist.ifBlank { "Jam timeline" },
+                                    text = uiState.currentTrackArtist.ifBlank { appText(com.lastwave.app.R.string.ui_jam_timeline_1793dd) },
                                     fontSize = 14.sp,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     maxLines = 1,
@@ -689,7 +691,7 @@ fun JamScreen(
                                     ) {
                                         Icon(
                                             imageVector = Icons.Filled.SkipPrevious,
-                                            contentDescription = "Previous",
+                                            contentDescription = appText(com.lastwave.app.R.string.desc_previous),
                                             tint = if (canControl) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f),
                                             modifier = Modifier.size(32.dp),
                                         )
@@ -709,7 +711,7 @@ fun JamScreen(
                                         Box(contentAlignment = Alignment.Center) {
                                             Icon(
                                                 imageVector = if (uiState.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
-                                                contentDescription = if (uiState.isPlaying) "Pause" else "Play",
+                                                contentDescription = if (uiState.isPlaying) appText(com.lastwave.app.R.string.wave_widget_pause) else appText(com.lastwave.app.R.string.dl_play_cd),
                                                 tint = onJamAccent,
                                                 modifier = Modifier.size(34.dp),
                                             )
@@ -725,7 +727,7 @@ fun JamScreen(
                                     ) {
                                         Icon(
                                             imageVector = Icons.Filled.SkipNext,
-                                            contentDescription = "Next",
+                                            contentDescription = appText(com.lastwave.app.R.string.desc_next),
                                             tint = if (canControl) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f),
                                             modifier = Modifier.size(32.dp),
                                         )
@@ -761,10 +763,10 @@ fun JamScreen(
                                         )
                                         Text(
                                             text = when {
-                                                uiState.isRadio && uiState.stationAuto -> "Live station \u2022 Auto radio"
-                                                uiState.isRadio -> "Live station \u2022 Admin in control"
-                                                uiState.roomMode == JamProtocolConstants.MODE_COLLABORATIVE -> "Collaborative \u2022 Anyone can control"
-                                                else -> "Host Only \u2022 Only host controls"
+                                                uiState.isRadio && uiState.stationAuto -> appText(com.lastwave.app.R.string.ui_live_station_auto_radio_9a3b87)
+                                                uiState.isRadio -> appText(com.lastwave.app.R.string.ui_live_station_admin_in_control_f2df82)
+                                                uiState.roomMode == JamProtocolConstants.MODE_COLLABORATIVE -> appText(com.lastwave.app.R.string.ui_collaborative_anyone_can_control_2284c4)
+                                                else -> appText(com.lastwave.app.R.string.ui_host_only_only_host_controls_18744c)
                                             },
                                             fontSize = 12.sp,
                                             fontWeight = FontWeight.Medium,
@@ -810,7 +812,7 @@ fun JamScreen(
                                                 contentAlignment = Alignment.Center,
                                             ) {
                                                 Text(
-                                                    text = "No messages yet. Say hello!",
+                                                    text = appText(com.lastwave.app.R.string.ui_no_messages_yet_say_hello_639866),
                                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                                     fontSize = 13.sp,
                                                 )
@@ -828,14 +830,14 @@ fun JamScreen(
                                                     horizontalArrangement = Arrangement.spacedBy(4.dp),
                                                 ) {
                                                     Text(
-                                                        text = if (isMe) "You" else msg.userName,
+                                                        text = if (isMe) appText(com.lastwave.app.R.string.ui_you_905cb3) else msg.userName,
                                                         fontSize = 11.sp,
                                                         fontWeight = FontWeight.Bold,
                                                         color = if (msg.isHost) jamAccent else MaterialTheme.colorScheme.onSurfaceVariant,
                                                     )
                                                     if (msg.isHost) {
                                                         Text(
-                                                            text = "HOST",
+                                                            text = appText(com.lastwave.app.R.string.ui_extra_e645477f66),
                                                             fontSize = 9.sp,
                                                             fontWeight = FontWeight.ExtraBold,
                                                             color = jamAccent,
@@ -846,7 +848,7 @@ fun JamScreen(
                                                 Row(verticalAlignment = Alignment.CenterVertically) {
                                                     if (isMe) {
                                                         IconButton(onClick = { replyTo = msg }, modifier = Modifier.size(32.dp)) {
-                                                            Icon(Icons.AutoMirrored.Filled.Reply, contentDescription = "Reply", modifier = Modifier.size(16.dp))
+                                                            Icon(Icons.AutoMirrored.Filled.Reply, contentDescription = appText(com.lastwave.app.R.string.ui_reply_6c2bb7), modifier = Modifier.size(16.dp))
                                                         }
                                                     }
                                                     Surface(
@@ -870,7 +872,7 @@ fun JamScreen(
                                                     }
                                                     if (!isMe) {
                                                         IconButton(onClick = { replyTo = msg }, modifier = Modifier.size(32.dp)) {
-                                                            Icon(Icons.AutoMirrored.Filled.Reply, contentDescription = "Reply", modifier = Modifier.size(16.dp))
+                                                            Icon(Icons.AutoMirrored.Filled.Reply, contentDescription = appText(com.lastwave.app.R.string.ui_reply_6c2bb7), modifier = Modifier.size(16.dp))
                                                         }
                                                     }
                                                 }
@@ -903,7 +905,7 @@ fun JamScreen(
                                         OutlinedTextField(
                                             value = chatInputText,
                                             onValueChange = { chatInputText = it },
-                                            placeholder = { Text("Say something...", fontSize = 13.sp) },
+                                            placeholder = { Text(appText(com.lastwave.app.R.string.ui_say_something_b41a5d), fontSize = 13.sp) },
                                             singleLine = true,
                                             shape = RoundedCornerShape(24.dp),
                                             modifier = Modifier.weight(1f),
@@ -940,7 +942,7 @@ fun JamScreen(
                                             Box(contentAlignment = Alignment.Center) {
                                                 Icon(
                                                     imageVector = Icons.Filled.Send,
-                                                    contentDescription = "Send",
+                                                    contentDescription = appText(com.lastwave.app.R.string.ui_send_9bc257),
                                                     tint = onJamAccent,
                                                     modifier = Modifier.size(18.dp),
                                                 )
@@ -966,7 +968,7 @@ fun JamScreen(
                                 Spacer(modifier = Modifier.height(12.dp))
 
                                 Text(
-                                    text = if (uiState.roomName.isEmpty()) "ROOM CODE" else "${uiState.roomName.uppercase()} · ROOM CODE",
+                                    text = if (uiState.roomName.isEmpty()) appText(com.lastwave.app.R.string.ui_room_code_8572d5) else appText(com.lastwave.app.R.string.ui_1_s_room_code_bd8068, (uiState.roomName.uppercase()).toString()),
                                     fontSize = 12.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -982,12 +984,12 @@ fun JamScreen(
                                     letterSpacing = 4.sp,
                                     modifier = Modifier.clickable {
                                         clipboard.setText(AnnotatedString(uiState.roomCode))
-                                        Toast.makeText(context, "Room code copied", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(context, appText(com.lastwave.app.R.string.ui_room_code_copied_c28842), Toast.LENGTH_SHORT).show()
                                     },
                                 )
 
                                 Text(
-                                    text = "Friends can join with this code or invite link to listen synchronously.",
+                                    text = appText(com.lastwave.app.R.string.ui_friends_can_join_with_this_code_or_invite_link_t_350da3),
                                     fontSize = 13.sp,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     textAlign = TextAlign.Center,
@@ -1003,13 +1005,13 @@ fun JamScreen(
                                     OutlinedButton(
                                         onClick = {
                                             clipboard.setText(AnnotatedString(uiState.roomCode))
-                                            Toast.makeText(context, "Room code copied", Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(context, appText(com.lastwave.app.R.string.ui_room_code_copied_c28842), Toast.LENGTH_SHORT).show()
                                         },
                                         shape = RoundedCornerShape(12.dp),
                                     ) {
                                         Icon(Icons.Filled.ContentCopy, contentDescription = null, modifier = Modifier.size(16.dp))
                                         Spacer(modifier = Modifier.width(6.dp))
-                                        Text("Copy Code")
+                                        Text(appText(com.lastwave.app.R.string.ui_copy_code_1589b6))
                                     }
 
                                     Button(
@@ -1022,7 +1024,7 @@ fun JamScreen(
                                     ) {
                                         Icon(Icons.Filled.Share, contentDescription = null, modifier = Modifier.size(16.dp))
                                         Spacer(modifier = Modifier.width(6.dp))
-                                        Text("Share Invite")
+                                        Text(appText(com.lastwave.app.R.string.ui_share_invite_758c66))
                                     }
                                 }
                             }
@@ -1045,7 +1047,7 @@ fun JamScreen(
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) {
                                     Text(
-                                        text = "Listeners (${uiState.participants.size})",
+                                        text = appText(com.lastwave.app.R.string.ui_listeners_1_s_906cd4, (uiState.participants.size).toString()),
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 15.sp,
                                         color = MaterialTheme.colorScheme.onSurface,
@@ -1054,9 +1056,9 @@ fun JamScreen(
                                     if (uiState.isHost) {
                                         Text(
                                             text = when {
-                                                uiState.isRadio -> "You are the station admin"
-                                                uiState.isMainHost -> "You are Host"
-                                                else -> "You are Co-host"
+                                                uiState.isRadio -> appText(com.lastwave.app.R.string.ui_you_are_the_station_admin_14b403)
+                                                uiState.isMainHost -> appText(com.lastwave.app.R.string.ui_you_are_host_c45f09)
+                                                else -> appText(com.lastwave.app.R.string.ui_you_are_co_host_bff7a8)
                                             },
                                             fontSize = 12.sp,
                                             color = jamAccent,
@@ -1102,7 +1104,7 @@ fun JamScreen(
                                             Spacer(modifier = Modifier.width(12.dp))
 
                                             Text(
-                                                text = p.name + if (p.userId == uiState.myUserId) " (You)" else "",
+                                                text = p.name + if (p.userId == uiState.myUserId) appText(com.lastwave.app.R.string.ui_you_d38558) else "",
                                                 fontWeight = FontWeight.SemiBold,
                                                 fontSize = 14.sp,
                                                 modifier = Modifier.weight(1f),
@@ -1147,7 +1149,7 @@ fun JamScreen(
                                 ) {
                                     Icon(Icons.Filled.Close, contentDescription = null, modifier = Modifier.size(16.dp))
                                     Spacer(modifier = Modifier.width(6.dp))
-                                    Text(if (uiState.isHost) "End Jam Session" else "Leave Jam Session", fontWeight = FontWeight.Bold)
+                                    Text(if (uiState.isHost) appText(com.lastwave.app.R.string.ui_end_jam_session_26c6a5) else appText(com.lastwave.app.R.string.ui_leave_jam_session_0a7836), fontWeight = FontWeight.Bold)
                                 }
 
                                 Spacer(modifier = Modifier.height(4.dp))

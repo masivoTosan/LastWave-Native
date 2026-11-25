@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.app.Activity
 import android.content.pm.ActivityInfo
 import android.os.SystemClock
@@ -220,7 +222,7 @@ fun SyncedVideoPlayerDialog(
             .setDefaultRequestProperties(
                 mapOf(
                     "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-                    "Origin" to "https://www.youtube.com",
+                    appText(com.lastwave.app.R.string.ui_origin_44ab85) to "https://www.youtube.com",
                     "Referer" to "https://www.youtube.com",
                 )
             )
@@ -490,7 +492,7 @@ fun SyncedVideoPlayerDialog(
                                             text = if (uiState is SyncedVideoUiState.Ready) {
                                                 (uiState as SyncedVideoUiState.Ready).currentQualityLabel
                                             } else {
-                                                "Auto"
+                                                appText(com.lastwave.app.R.string.autoeq_preamp_auto)
                                             },
                                             style = MaterialTheme.typography.labelSmall,
                                             fontWeight = FontWeight.Bold,
@@ -505,7 +507,7 @@ fun SyncedVideoPlayerDialog(
                             ) {
                                 Icon(
                                     Icons.Filled.Search,
-                                    contentDescription = "Choose a different video",
+                                    contentDescription = appText(com.lastwave.app.R.string.ui_choose_a_different_video_6f0c50),
                                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
                             }
@@ -562,7 +564,7 @@ fun SyncedVideoPlayerDialog(
                                         .coerceIn(0L, progressState.durationMs.coerceAtLeast(1L))
                                     musicPlayer.seekTo(newPos)
                                     videoPlayer.seekTo(newPos)
-                                    doubleTapFeedback = if (isRightSide) "+10s" else "-10s"
+                                    doubleTapFeedback = if (isRightSide) appText(com.lastwave.app.R.string.ui_extra_5497f42be1) else appText(com.lastwave.app.R.string.ui_extra_ca89903230)
                                 },
                             ),
                         contentAlignment = Alignment.Center,
@@ -725,7 +727,7 @@ fun SyncedVideoPlayerDialog(
                                     IconButton(
                                         onClick = { viewModel.openVideoPicker(track.title, track.artist, track.videoId, track.durationMs) },
                                     ) {
-                                        Icon(Icons.Filled.Search, contentDescription = "Choose a different video", tint = Color.White)
+                                        Icon(Icons.Filled.Search, contentDescription = appText(com.lastwave.app.R.string.ui_choose_a_different_video_6f0c50), tint = Color.White)
                                     }
                                     Spacer(Modifier.width(4.dp))
                                     // Fullscreen Quality Pill
@@ -748,7 +750,7 @@ fun SyncedVideoPlayerDialog(
                                             text = if (uiState is SyncedVideoUiState.Ready) {
                                                 (uiState as SyncedVideoUiState.Ready).currentQualityLabel
                                             } else {
-                                                "Auto"
+                                                appText(com.lastwave.app.R.string.autoeq_preamp_auto)
                                             },
                                             style = MaterialTheme.typography.labelSmall,
                                             fontWeight = FontWeight.Bold,
@@ -792,7 +794,7 @@ fun SyncedVideoPlayerDialog(
                                 ) {
                                     Icon(
                                         Icons.Filled.Replay10,
-                                        contentDescription = "-10s",
+                                        contentDescription = appText(com.lastwave.app.R.string.ui_extra_ca89903230),
                                         tint = Color.White,
                                         modifier = Modifier.size(26.dp),
                                     )
@@ -808,7 +810,7 @@ fun SyncedVideoPlayerDialog(
                                 ) {
                                     Icon(
                                         imageVector = if (playerState.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
-                                        contentDescription = if (playerState.isPlaying) "Pause" else "Play",
+                                        contentDescription = if (playerState.isPlaying) appText(com.lastwave.app.R.string.wave_widget_pause) else appText(com.lastwave.app.R.string.dl_play_cd),
                                         tint = MaterialTheme.colorScheme.onPrimary,
                                         modifier = Modifier.size(36.dp),
                                     )
@@ -829,7 +831,7 @@ fun SyncedVideoPlayerDialog(
                                 ) {
                                     Icon(
                                         Icons.Filled.Forward10,
-                                        contentDescription = "+10s",
+                                        contentDescription = appText(com.lastwave.app.R.string.ui_extra_5497f42be1),
                                         tint = Color.White,
                                         modifier = Modifier.size(26.dp),
                                     )

@@ -1,5 +1,7 @@
 package com.lastwave.app.playback
 
+import com.lastwave.app.util.appText
+
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -303,7 +305,7 @@ internal fun MusicPlaybackService.toggleNotificationLike() {
 internal fun MusicPlaybackService.buildNotification(state: MusicPlayerState, art: Bitmap?): Notification {
         val isLiked = state.current?.let { trackLikeController.isLiked(it) } == true
         val likeIcon = if (isLiked) R.drawable.ic_wave_widget_favorite_filled else R.drawable.ic_wave_widget_favorite
-        val likeLabel = if (isLiked) "Unlike song" else "Like song"
+        val likeLabel = if (isLiked) appText(com.lastwave.app.R.string.ui_unlike_song_b50354) else appText(com.lastwave.app.R.string.ui_like_song_0d3fb3)
         val repeatState = NotificationRepeatAction.resolveRepeatState(state.repeatMode)
         val repeatIcon = repeatState.iconRes
         val repeatLabel = repeatState.contentDescription
@@ -329,11 +331,11 @@ internal fun MusicPlaybackService.buildNotification(state: MusicPlayerState, art
             // Hosts that can't render custom views (cars, watches, DeX text
             // rows) show these titles verbatim — "Play or pause" looked broken,
             // so the play action always reads the actual current state.
-            val playPauseLabel = if (state.isPlaying) "Pause" else "Play"
+            val playPauseLabel = if (state.isPlaying) appText(com.lastwave.app.R.string.wave_widget_pause) else appText(com.lastwave.app.R.string.dl_play_cd)
             return builder
                 .setSmallIcon(R.drawable.ic_launcher_logo)
-                .setContentTitle(state.current?.title ?: "LastWave")
-                .setContentText(state.current?.artist ?: "Music player")
+                .setContentTitle(state.current?.title ?: appText(com.lastwave.app.R.string.set_about_title))
+                .setContentText(state.current?.artist ?: appText(com.lastwave.app.R.string.ui_extra_ada1ad5126))
                 .setSubText(state.current?.album)
                 .setContentIntent(openAppPendingIntent())
                 .setLargeIcon(scaledBitmap(art, 384))
@@ -345,9 +347,9 @@ internal fun MusicPlaybackService.buildNotification(state: MusicPlayerState, art
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setStyle(mediaStyle)
                 .addAction(Notification.Action.Builder(likeIcon, likeLabel, serviceAction(ACTION_LIKE, 7)).build())
-                .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_previous, "Previous", serviceAction(ACTION_PREVIOUS, 1)).build())
+                .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_previous, appText(com.lastwave.app.R.string.desc_previous), serviceAction(ACTION_PREVIOUS, 1)).build())
                 .addAction(Notification.Action.Builder(if (state.isPlaying) R.drawable.ic_widget_pause else R.drawable.ic_widget_play, playPauseLabel, serviceAction(ACTION_TOGGLE, 2)).build())
-                .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_next, "Next", serviceAction(ACTION_NEXT, 3)).build())
+                .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_next, appText(com.lastwave.app.R.string.desc_next), serviceAction(ACTION_NEXT, 3)).build())
                 .addAction(Notification.Action.Builder(repeatIcon, repeatLabel, serviceAction(ACTION_TOGGLE_REPEAT, 6)).build())
                 .addAction(Notification.Action.Builder(android.R.drawable.ic_menu_close_clear_cancel, "Stop", serviceAction(ACTION_STOP, 4)).build())
                 .apply {
@@ -398,8 +400,8 @@ internal fun MusicPlaybackService.buildNotification(state: MusicPlayerState, art
 
         return builder
             .setSmallIcon(R.drawable.ic_launcher_logo)
-            .setContentTitle(state.current?.title ?: "LastWave")
-            .setContentText(state.current?.artist ?: "Music player")
+            .setContentTitle(state.current?.title ?: appText(com.lastwave.app.R.string.set_about_title))
+            .setContentText(state.current?.artist ?: appText(com.lastwave.app.R.string.ui_extra_ada1ad5126))
             .setSubText(state.current?.album)
             .setContentIntent(openAppPendingIntent())
             .setLargeIcon(scaledBitmap(art, 384))
@@ -414,9 +416,9 @@ internal fun MusicPlaybackService.buildNotification(state: MusicPlayerState, art
             .setCustomBigContentView(expanded)
             .setCustomHeadsUpContentView(compact)
             .addAction(Notification.Action.Builder(likeIcon, likeLabel, serviceAction(ACTION_LIKE, 7)).build())
-            .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_previous, "Previous", serviceAction(ACTION_PREVIOUS, 1)).build())
-            .addAction(Notification.Action.Builder(if (state.isPlaying) R.drawable.ic_widget_pause else R.drawable.ic_widget_play, if (state.isPlaying) "Pause" else "Play", serviceAction(ACTION_TOGGLE, 2)).build())
-            .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_next, "Next", serviceAction(ACTION_NEXT, 3)).build())
+            .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_previous, appText(com.lastwave.app.R.string.desc_previous), serviceAction(ACTION_PREVIOUS, 1)).build())
+            .addAction(Notification.Action.Builder(if (state.isPlaying) R.drawable.ic_widget_pause else R.drawable.ic_widget_play, if (state.isPlaying) appText(com.lastwave.app.R.string.wave_widget_pause) else appText(com.lastwave.app.R.string.dl_play_cd), serviceAction(ACTION_TOGGLE, 2)).build())
+            .addAction(Notification.Action.Builder(R.drawable.ic_widget_skip_next, appText(com.lastwave.app.R.string.desc_next), serviceAction(ACTION_NEXT, 3)).build())
             .addAction(Notification.Action.Builder(repeatIcon, repeatLabel, serviceAction(ACTION_TOGGLE_REPEAT, 6)).build())
             .addAction(Notification.Action.Builder(android.R.drawable.ic_menu_close_clear_cancel, "Stop", serviceAction(ACTION_STOP, 4)).build())
             .apply {
@@ -442,8 +444,8 @@ internal fun MusicPlaybackService.notificationRemoteViews(
         // 192px is already sharp. Two sizes keep the Binder parcel small.
         if (art != null) setImageViewBitmap(R.id.notification_artwork, scaledBitmap(art, if (expanded) 288 else 192))
         else setImageViewResource(R.id.notification_artwork, R.mipmap.ic_launcher)
-        setTextViewText(R.id.notification_title, state.current?.title ?: "LastWave")
-        setTextViewText(R.id.notification_artist, state.current?.artist ?: "Music player")
+        setTextViewText(R.id.notification_title, state.current?.title ?: appText(com.lastwave.app.R.string.set_about_title))
+        setTextViewText(R.id.notification_artist, state.current?.artist ?: appText(com.lastwave.app.R.string.ui_extra_ada1ad5126))
         setTextColor(R.id.notification_title, palette.onSurface)
         setTextColor(R.id.notification_artist, palette.onSurfaceVariant)
         setImageViewResource(
@@ -463,7 +465,7 @@ internal fun MusicPlaybackService.notificationRemoteViews(
             val liked = state.current?.let { trackLikeController.isLiked(it) } == true
             setImageViewResource(R.id.notification_like,
                 if (liked) R.drawable.ic_wave_widget_favorite_filled else R.drawable.ic_wave_widget_favorite)
-            setContentDescription(R.id.notification_like, if (liked) "Unlike song" else "Like song")
+            setContentDescription(R.id.notification_like, if (liked) appText(com.lastwave.app.R.string.ui_unlike_song_b50354) else appText(com.lastwave.app.R.string.ui_like_song_0d3fb3))
             setInt(R.id.notification_like, "setColorFilter", if (liked) palette.primary else palette.onSurface)
             val repeatState = NotificationRepeatAction.resolveRepeatState(state.repeatMode)
             setImageViewResource(R.id.notification_repeat, repeatState.iconRes)

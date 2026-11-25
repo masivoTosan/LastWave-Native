@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -67,7 +69,7 @@ fun LyricsSizeDialog(
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text(
-                    "Adjust the scale of lyrics in both modern karaoke and classic lyrics views.",
+                    appText(com.lastwave.app.R.string.ui_adjust_the_scale_of_lyrics_in_both_modern_karaok_0a9fa6),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -86,10 +88,10 @@ fun LyricsSizeDialog(
                     )
                     Text(
                         when {
-                            draftScale < 0.85f -> "Small"
-                            draftScale in 0.85f..1.15f -> "Standard"
-                            draftScale in 1.16f..1.35f -> "Large"
-                            else -> "Extra Large"
+                            draftScale < 0.85f -> appText(com.lastwave.app.R.string.set_size_small)
+                            draftScale in 0.85f..1.15f -> appText(com.lastwave.app.R.string.set_size_standard)
+                            draftScale in 1.16f..1.35f -> appText(com.lastwave.app.R.string.set_size_large)
+                            else -> appText(com.lastwave.app.R.string.set_size_xlarge)
                         },
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -109,7 +111,7 @@ fun LyricsSizeDialog(
                         verticalArrangement = Arrangement.spacedBy((6f * draftScale).dp),
                     ) {
                         Text(
-                            "Preview:",
+                            appText(com.lastwave.app.R.string.ui_preview_4bf306),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
                         )

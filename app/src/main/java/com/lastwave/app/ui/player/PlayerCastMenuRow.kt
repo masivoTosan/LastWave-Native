@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -73,7 +75,7 @@ internal fun PlayerCastMenuRow(player: MusicPlayer, modifier: Modifier = Modifie
                     factory = { viewContext ->
                         MediaRouteButton(viewContext).apply {
                             background = null
-                            contentDescription = "Chromecast"
+                            contentDescription = appText(com.lastwave.app.R.string.cast_title)
                             CastButtonFactory.setUpMediaRouteButton(viewContext, this)
                             routeButton = this
                         }

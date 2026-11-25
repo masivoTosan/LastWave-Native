@@ -1,5 +1,7 @@
 package com.lastwave.app.widget.wave
 
+import com.lastwave.app.util.appText
+
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -54,7 +56,7 @@ object WaveWidgetActions {
         val intent = Intent(context, WaveWidgetActionReceiver::class.java).apply {
             this.action = action
             data = Uri.Builder()
-                .scheme("lastwave")
+                .scheme(appText(com.lastwave.app.R.string.set_about_title))
                 .authority("wave-widget")
                 .appendPath(widgetId.toString())
                 .appendPath(action.substringAfterLast('.'))
@@ -85,7 +87,7 @@ object WaveWidgetActions {
         Intent(context, MainShellActivity::class.java)
             .setAction(Intent.ACTION_SEARCH)
             .setData(Uri.parse("lastwave://wave-widget/$appWidgetId/search"))
-            .putExtra("widget_navigation", "search")
+            .putExtra("widget_navigation", appText(com.lastwave.app.R.string.search_cd))
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),
         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
     )
@@ -245,7 +247,7 @@ class WaveWidgetActionReceiver : android.content.BroadcastReceiver() {
                 val track = musicPlayer.state.value.queue.firstOrNull { it.waveTrackId() == trackId }
                     ?: remembered.toPlayableTrack()
                 ensurePlaybackService(context)
-                musicPlayer.play(track, sourceLabel = "Recent", startRadio = false)
+                musicPlayer.play(track, sourceLabel = appText(com.lastwave.app.R.string.fr_tab_recent), startRadio = false)
             }
         }
         WaveActionExecutor(target).execute(request)
@@ -271,13 +273,13 @@ class WaveWidgetActionReceiver : android.content.BroadcastReceiver() {
                 val tracks = statsRepository.recentlyPlayed(50).map { stat ->
                     PlayableTrack(stat.title, stat.artist, artworkUrl = stat.artworkUrl, videoId = stat.videoId)
                 }
-                if (tracks.isNotEmpty()) musicPlayer.playQueue(tracks, sourceLabel = "Recent")
+                if (tracks.isNotEmpty()) musicPlayer.playQueue(tracks, sourceLabel = appText(com.lastwave.app.R.string.fr_tab_recent))
             }
             WaveWidgetActions.PLAYLIST_MOST_PLAYED -> {
                 val tracks = statsRepository.mostPlayedSince(days = 3650, limit = 50).map { stat ->
                     PlayableTrack(stat.title, stat.artist, artworkUrl = stat.artworkUrl, videoId = stat.videoId)
                 }
-                if (tracks.isNotEmpty()) musicPlayer.playQueue(tracks, sourceLabel = "Most played")
+                if (tracks.isNotEmpty()) musicPlayer.playQueue(tracks, sourceLabel = appText(com.lastwave.app.R.string.artist_sort_most_played))
             }
             else -> id.removePrefix(WaveWidgetActions.PLAYLIST_USER_PREFIX).toLongOrNull()?.let { playlistId ->
                 androidAutoLibrary.playMediaId("playlist:$playlistId", musicPlayer)

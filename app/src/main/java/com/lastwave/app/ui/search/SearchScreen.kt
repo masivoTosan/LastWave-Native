@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.search
 
+import com.lastwave.app.util.appText
+
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -129,9 +131,9 @@ import androidx.compose.ui.graphics.SolidColor
 private val SearchHeaderShape = RoundedCornerShape(bottomStart = 24.dp, bottomEnd = 24.dp)
 
 private val EXPLORE_GENRES = listOf(
-    "Pop", "Rock", "Hip-Hop", "Lo-Fi", "Electronic", "Indie",
-    "R&B", "Bollywood", "Jazz", "Metal", "Acoustic", "Chill",
-    "Anime", "Classical", "Synthwave",
+    appText(com.lastwave.app.R.string.ui_pop_267a64), appText(com.lastwave.app.R.string.ui_rock_468d79), appText(com.lastwave.app.R.string.ui_hip_hop_2c8b31), appText(com.lastwave.app.R.string.ui_lo_fi_3c8354), appText(com.lastwave.app.R.string.ui_electronic_622585), appText(com.lastwave.app.R.string.ui_indie_c43a74),
+    appText(com.lastwave.app.R.string.ui_r_b_fa9af5), appText(com.lastwave.app.R.string.ui_bollywood_e668a8), appText(com.lastwave.app.R.string.ui_jazz_0f940a), appText(com.lastwave.app.R.string.ui_metal_90acb4), appText(com.lastwave.app.R.string.ui_acoustic_b6e266), appText(com.lastwave.app.R.string.ui_chill_e31567),
+    appText(com.lastwave.app.R.string.ui_anime_f1b32a), appText(com.lastwave.app.R.string.ui_classical_1dd412), appText(com.lastwave.app.R.string.ui_synthwave_9afb31),
 )
 
 /**
@@ -207,7 +209,7 @@ fun SearchScreen(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    HeaderActionIcon(Icons.AutoMirrored.Filled.ArrowBack, "Back", onBack)
+                    HeaderActionIcon(Icons.AutoMirrored.Filled.ArrowBack, appText(com.lastwave.app.R.string.lyshare_back_cd), onBack)
                     Spacer(Modifier.width(10.dp))
 
                     val pillBg = MaterialTheme.colorScheme.surfaceContainerHighest
@@ -403,7 +405,7 @@ fun SearchScreen(
                                 )
                                 Spacer(Modifier.width(16.dp))
                                 Text(
-                                    text = "Search for \"${state.query.trim()}\"",
+                                    text = appText(com.lastwave.app.R.string.ui_search_for_1_s_3852f8, (state.query.trim()).toString()),
                                     style = MaterialTheme.typography.bodyLarge,
                                     color = MaterialTheme.colorScheme.primary,
                                     fontWeight = FontWeight.SemiBold,
@@ -657,7 +659,7 @@ fun SearchScreen(
             target = target,
             playableTrack = menuPlayableTrack,
             capabilities = TrackMenuCapabilities(showDeleteScrobble = state.tab != SearchTab.PODCASTS),
-            playbackSourceLabel = "Search",
+            playbackSourceLabel = appText(com.lastwave.app.R.string.search_cd),
             onRefreshArtwork = (target as? TrackMenuTarget.Track)?.let { trackTarget ->
                 { artworkViewModel.refresh(trackTarget.name, trackTarget.artist) }
             },
@@ -674,7 +676,7 @@ fun SearchScreen(
                 artworkUrl = item.artworkUrl,
                 videoId = item.videoId,
                 durationMs = item.durationMs,
-                sourceLabel = "Search",
+                sourceLabel = appText(com.lastwave.app.R.string.search_cd),
                 onPlay = { viewModel.playResult(item) },
             ),
             onDismiss = { miniTrayItem = null },
@@ -794,7 +796,7 @@ private fun TopResultCard(
                     SearchTab.PODCASTS -> listOfNotNull(item.artist, item.subtitle).distinct().joinToString(" • ")
                     SearchTab.ALBUMS -> item.artist.orEmpty()
                     SearchTab.PLAYLISTS -> item.subtitle.orEmpty()
-                    SearchTab.ARTISTS -> item.subtitle.orEmpty().ifBlank { "Artist" }
+                    SearchTab.ARTISTS -> item.subtitle.orEmpty().ifBlank { appText(com.lastwave.app.R.string.pd_sort_artist) }
                     SearchTab.USERS -> item.artist.orEmpty()
                 }
                 if (subtitle.isNotBlank()) {
@@ -819,7 +821,7 @@ private fun TopResultCard(
             ) {
                 Icon(
                     if (tab == SearchTab.PLAYLISTS) Icons.AutoMirrored.Filled.ArrowForward else Icons.Filled.PlayArrow,
-                    contentDescription = if (tab == SearchTab.PLAYLISTS) "Open playlist" else "Play top result",
+                    contentDescription = if (tab == SearchTab.PLAYLISTS) appText(com.lastwave.app.R.string.search_open_playlist_cd) else appText(com.lastwave.app.R.string.search_play_top_cd),
                     tint = MaterialTheme.colorScheme.onPrimary,
                     modifier = Modifier.size(26.dp),
                 )
@@ -1065,7 +1067,7 @@ private fun SearchResultRow(
                 SearchTab.ALBUMS -> item.subtitle ?: item.artist.orEmpty()
                 SearchTab.PLAYLISTS -> item.subtitle.orEmpty()
                 SearchTab.ARTISTS -> item.subtitle.orEmpty()
-                SearchTab.USERS -> listOfNotNull(item.artist, item.listeners?.let { "$it scrobbles" }).joinToString(" \u2022 ")
+                SearchTab.USERS -> listOfNotNull(item.artist, item.listeners?.let { appText(com.lastwave.app.R.string.ui_1_s_scrobbles_12e2b0, (it).toString()) }).joinToString(" \u2022 ")
             }
             if (subtitle.isNotBlank()) {
                 Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)

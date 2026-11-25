@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.shell
 
+import com.lastwave.app.util.appText
+
 import android.os.Build
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -334,7 +336,7 @@ fun MainShell(
             },
             title = {
                 Text(
-                    text = "Get better recommendations",
+                    text = appText(com.lastwave.app.R.string.ui_get_better_recommendations_a03e6e),
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
                 )
@@ -342,7 +344,7 @@ fun MainShell(
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
                     Text(
-                        text = "Log in to YouTube Music, or create a free account, to get personalized songs and queues.",
+                        text = appText(com.lastwave.app.R.string.ui_log_in_to_youtube_music_or_create_a_free_account_fb4572),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -359,7 +361,7 @@ fun MainShell(
                         )
                         Spacer(Modifier.width(8.dp))
                         Text(
-                            text = "Don't show again",
+                            text = appText(com.lastwave.app.R.string.ui_don_t_show_again_d9afd5),
                             style = MaterialTheme.typography.bodyMedium,
                         )
                     }
@@ -374,7 +376,7 @@ fun MainShell(
                     },
                     shape = RoundedCornerShape(20.dp),
                 ) {
-                    Text("Take me to YT Music login")
+                    Text(appText(com.lastwave.app.R.string.ui_take_me_to_yt_music_login_7e0c32))
                 }
             },
             dismissButton = {
@@ -384,7 +386,7 @@ fun MainShell(
                         promptDismissedThisSession = true
                     },
                 ) {
-                    Text("OK, thanks")
+                    Text(appText(com.lastwave.app.R.string.ui_ok_thanks_b3d641))
                 }
             },
         )
@@ -621,12 +623,12 @@ fun MainShell(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        text = "Quick Actions",
+                        text = appText(com.lastwave.app.R.string.ui_quick_actions_c40810),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                     )
                     IconButton(onClick = { showAccountMenu = false }) {
-                        Icon(Icons.Filled.Close, contentDescription = "Close")
+                        Icon(Icons.Filled.Close, contentDescription = appText(com.lastwave.app.R.string.recognize_close))
                     }
                 }
 
@@ -660,8 +662,8 @@ fun MainShell(
                         }
                         Spacer(Modifier.width(14.dp))
                         Column(Modifier.weight(1f)) {
-                            Text("Settings", style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
-                            Text("App preferences and audio options", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.settings), style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
+                            Text(appText(com.lastwave.app.R.string.ui_app_preferences_and_audio_options_eaac9b), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
@@ -696,8 +698,8 @@ fun MainShell(
                         }
                         Spacer(Modifier.width(14.dp))
                         Column(Modifier.weight(1f)) {
-                            Text("Jam", style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
-                            Text("Listen together in real time", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.menu_quick_jam), style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
+                            Text(appText(com.lastwave.app.R.string.ui_listen_together_in_real_time_0a2db5), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
@@ -732,8 +734,8 @@ fun MainShell(
                         }
                         Spacer(Modifier.width(14.dp))
                         Column(Modifier.weight(1f)) {
-                            Text("Listening stats", style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
-                            Text("Your top artists, tracks & recaps", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.ui_listening_stats_a760b2), style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
+                            Text(appText(com.lastwave.app.R.string.ui_your_top_artists_tracks_recaps_d01d70), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
@@ -784,8 +786,8 @@ fun MainShell(
                         }
                         Spacer(Modifier.width(14.dp))
                         Column(Modifier.weight(1f)) {
-                            Text("Cast", style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
-                            Text("Stream to TV or speaker", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.menu_cast_short), style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
+                            Text(appText(com.lastwave.app.R.string.ui_stream_to_tv_or_speaker_f06516), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
@@ -820,8 +822,8 @@ fun MainShell(
                         }
                         Spacer(Modifier.width(14.dp))
                         Column(Modifier.weight(1f)) {
-                            Text("Sleep timer", style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
-                            Text("Stop playback automatically", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.menu_sleep_timer), style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
+                            Text(appText(com.lastwave.app.R.string.ui_stop_playback_automatically_c2682d), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
@@ -845,7 +847,7 @@ fun MainShell(
                 Column(Modifier.padding(20.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            "Sleep timer",
+                            appText(com.lastwave.app.R.string.menu_sleep_timer),
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.weight(1f),
@@ -856,7 +858,7 @@ fun MainShell(
                                 showCustomTimerDialog = true
                             },
                         ) {
-                            Icon(Icons.Filled.Add, contentDescription = "Custom timer")
+                            Icon(Icons.Filled.Add, contentDescription = appText(com.lastwave.app.R.string.ui_custom_timer_9a3d60))
                         }
                     }
                     Spacer(Modifier.height(16.dp))
@@ -869,7 +871,7 @@ fun MainShell(
                             modifier = Modifier.fillMaxWidth(),
                         ) {
                             Text(
-                                if (minutes == 0) "Turn timer off" else "$minutes minutes",
+                                if (minutes == 0) appText(com.lastwave.app.R.string.ui_turn_timer_off_459464) else appText(com.lastwave.app.R.string.ui_1_s_minutes_e23e2d, (minutes).toString()),
                                 style = MaterialTheme.typography.bodyLarge,
                             )
                         }
@@ -882,12 +884,12 @@ fun MainShell(
     if (showCustomTimerDialog) {
         AlertDialog(
             onDismissRequest = { showCustomTimerDialog = false },
-            title = { Text("Set Custom Timer") },
+            title = { Text(appText(com.lastwave.app.R.string.ui_set_custom_timer_ae160f)) },
             text = {
                 OutlinedTextField(
                     value = customDurationText,
                     onValueChange = { customDurationText = it.filter(Char::isDigit).take(4) },
-                    label = { Text("Duration (minutes)") },
+                    label = { Text(appText(com.lastwave.app.R.string.ui_duration_minutes_10c3d1)) },
                     singleLine = true,
                     keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(
                         keyboardType = androidx.compose.ui.text.input.KeyboardType.Number,
@@ -903,11 +905,11 @@ fun MainShell(
                         if (mins > 0) musicPlayer.setSleepTimerMinutes(mins)
                         showCustomTimerDialog = false
                     },
-                ) { Text("Set timer") }
+                ) { Text(appText(com.lastwave.app.R.string.menu_set_timer)) }
             },
             dismissButton = {
                 TextButton(onClick = { showCustomTimerDialog = false }) {
-                    Text("Cancel")
+                    Text(appText(com.lastwave.app.R.string.recognize_cancel))
                 }
             },
         )
@@ -1276,12 +1278,12 @@ private fun JoinSupportDialog(
                     }
                     Column {
                         Text(
-                            text = "Join Support",
+                            text = appText(com.lastwave.app.R.string.ui_join_support_35b43b),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
                         )
                         Text(
-                            text = "Connect with us",
+                            text = appText(com.lastwave.app.R.string.ui_connect_with_us_65ac13),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.SemiBold,
@@ -1294,7 +1296,7 @@ private fun JoinSupportDialog(
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Close,
-                        contentDescription = "Close",
+                        contentDescription = appText(com.lastwave.app.R.string.recognize_close),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.size(18.dp),
                     )
@@ -1307,7 +1309,7 @@ private fun JoinSupportDialog(
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 Text(
-                    text = "Get real-time assistance, report bugs, discover new releases, and connect directly with the developer community.",
+                    text = appText(com.lastwave.app.R.string.ui_get_real_time_assistance_report_bugs_discover_ne_37aa89),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -1341,7 +1343,7 @@ private fun JoinSupportDialog(
                             Box(contentAlignment = Alignment.Center) {
                                 Icon(
                                     imageVector = Icons.AutoMirrored.Filled.Send,
-                                    contentDescription = "Material You Channel",
+                                    contentDescription = appText(com.lastwave.app.R.string.ui_material_you_channel_9c7649),
                                     tint = Color(0xFF24A1DE),
                                     modifier = Modifier.size(18.dp),
                                 )
@@ -1349,7 +1351,7 @@ private fun JoinSupportDialog(
                         }
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "Material You Apps",
+                                text = appText(com.lastwave.app.R.string.ui_material_you_apps_1673ab),
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onSurface,
@@ -1396,7 +1398,7 @@ private fun JoinSupportDialog(
                             Box(contentAlignment = Alignment.Center) {
                                 Icon(
                                     imageVector = Icons.AutoMirrored.Filled.Send,
-                                    contentDescription = "Telegram Support",
+                                    contentDescription = appText(com.lastwave.app.R.string.ui_telegram_support_a1c9e5),
                                     tint = Color(0xFF24A1DE),
                                     modifier = Modifier.size(18.dp),
                                 )
@@ -1404,13 +1406,13 @@ private fun JoinSupportDialog(
                         }
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "ClashProjects Support",
+                                text = appText(com.lastwave.app.R.string.ui_clashprojects_support_4613e1),
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onSurface,
                             )
                             Text(
-                                text = "@clashprojects on Telegram",
+                                text = appText(com.lastwave.app.R.string.ui_clashprojects_on_telegram_3047ea),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -1451,7 +1453,7 @@ private fun JoinSupportDialog(
                             Box(contentAlignment = Alignment.Center) {
                                 Icon(
                                     imageVector = Icons.Filled.Group,
-                                    contentDescription = "Discord Support",
+                                    contentDescription = appText(com.lastwave.app.R.string.set_discord_support),
                                     tint = Color(0xFF5865F2),
                                     modifier = Modifier.size(18.dp),
                                 )
@@ -1459,13 +1461,13 @@ private fun JoinSupportDialog(
                         }
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "LastWave Discord",
+                                text = appText(com.lastwave.app.R.string.ui_lastwave_discord_21ea25),
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onSurface,
                             )
                             Text(
-                                text = "Community & discussions",
+                                text = appText(com.lastwave.app.R.string.ui_community_discussions_c65821),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -1486,7 +1488,7 @@ private fun JoinSupportDialog(
                 shape = RoundedCornerShape(14.dp),
             ) {
                 Text(
-                    text = "Close",
+                    text = appText(com.lastwave.app.R.string.recognize_close),
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.SemiBold,
                 )
@@ -1510,7 +1512,7 @@ private fun openMaterialYouChannel(context: android.content.Context) {
         runCatching { context.startActivity(genericTgIntent); true }.getOrDefault(false) ||
         runCatching { context.startActivity(webIntent); true }.getOrDefault(false)
     if (!success) {
-        android.widget.Toast.makeText(context, "No browser or Telegram app available", android.widget.Toast.LENGTH_SHORT).show()
+        android.widget.Toast.makeText(context, appText(com.lastwave.app.R.string.ui_no_browser_or_telegram_app_available_524955), android.widget.Toast.LENGTH_SHORT).show()
     }
 }
 
@@ -1529,7 +1531,7 @@ private fun openTelegramSupport(context: android.content.Context) {
         runCatching { context.startActivity(genericTgIntent); true }.getOrDefault(false) ||
         runCatching { context.startActivity(webIntent); true }.getOrDefault(false)
     if (!success) {
-        android.widget.Toast.makeText(context, "No browser or Telegram app available", android.widget.Toast.LENGTH_SHORT).show()
+        android.widget.Toast.makeText(context, appText(com.lastwave.app.R.string.ui_no_browser_or_telegram_app_available_524955), android.widget.Toast.LENGTH_SHORT).show()
     }
 }
 
@@ -1539,6 +1541,6 @@ private fun openDiscordSupport(context: android.content.Context) {
     }
     val success = runCatching { context.startActivity(discordIntent); true }.getOrDefault(false)
     if (!success) {
-        android.widget.Toast.makeText(context, "No browser available to open link", android.widget.Toast.LENGTH_SHORT).show()
+        android.widget.Toast.makeText(context, appText(com.lastwave.app.R.string.ui_no_browser_available_to_open_link_2fd17a), android.widget.Toast.LENGTH_SHORT).show()
     }
 }

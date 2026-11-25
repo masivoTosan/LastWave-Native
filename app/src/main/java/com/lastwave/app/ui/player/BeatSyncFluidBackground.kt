@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 // Beat-synced fluid background, used only while Settings > beat sync is on.
 // A port of Lyra Player's flow renderer: its fragment shader (from
 // liblyra_runtime.so), its cover.frag tone pass and its shipped ui.toml
@@ -169,8 +171,8 @@ private class FlowRenderer {
         shader.setFloatUniform("lobes", lobe, lobe, lobe * sin(top - bottom))
         shader.setFloatUniform("morph", morph)
         shader.setFloatUniform("dim", dim)
-        shader.setFloatUniform("tone", RHYTHM_CONTRAST * glow, RHYTHM_SATURATION * glow)
-        shader.setFloatUniform("light", RHYTHM_BRIGHTNESS * glow, RHYTHM_HIGHLIGHTS * glow)
+        shader.setFloatUniform(appText(com.lastwave.app.R.string.sig_tone), RHYTHM_CONTRAST * glow, RHYTHM_SATURATION * glow)
+        shader.setFloatUniform(appText(com.lastwave.app.R.string.theme_mode_light), RHYTHM_BRIGHTNESS * glow, RHYTHM_HIGHLIGHTS * glow)
         canvas.drawRect(0f, 0f, w, h, paint)
     }
 

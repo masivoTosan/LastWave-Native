@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.border
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.Brush
@@ -197,10 +199,10 @@ fun HomeScreen(
         topBar = {
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                 ExpressiveHeader(
-                    title = "Statistics",
+                    title = appText(com.lastwave.app.R.string.ui_statistics_2086b2),
                     modifier = Modifier.adaptiveContentWidth(maxWidth = 860.dp),
                     actions = {
-                        HeaderActionIcon(Icons.Filled.Search, "Search", onOpenSearch)
+                        HeaderActionIcon(Icons.Filled.Search, appText(com.lastwave.app.R.string.search_cd), onOpenSearch)
                         IconButton(onClick = onOpenSettings) {
                             val displayAvatar = uiState.stats?.avatarUrl ?: avatarUrl
                             ProfileAvatar(avatarUrl = displayAvatar, modifier = Modifier.size(38.dp))
@@ -215,7 +217,7 @@ fun HomeScreen(
                 Modifier.fillMaxSize().padding(scaffoldPadding).safeHorizontalContentPadding(),
                 contentAlignment = Alignment.Center,
             ) {
-                com.lastwave.app.ui.common.ExpressiveLoadingIndicator(message = "Loading your listening history")
+                com.lastwave.app.ui.common.ExpressiveLoadingIndicator(message = appText(com.lastwave.app.R.string.ui_loading_your_listening_history_1518ad))
             }
             return@Scaffold
         }
@@ -239,7 +241,7 @@ fun HomeScreen(
                 displayUsername = when {
                     uiState.isViewingFriend -> uiState.viewingUsername
                     uiState.username.isNotBlank() -> uiState.username
-                    uiState.isLocalStatsMode -> "Guest"
+                    uiState.isLocalStatsMode -> appText(com.lastwave.app.R.string.ui_guest_face83)
                     else -> uiState.username
                 },
                 isViewingFriend = uiState.isViewingFriend,
@@ -262,7 +264,7 @@ fun HomeScreen(
                 if (showLocalBanner) localBanner()
             } else {
                 // Honest label: local Room aggregates are plays, not global scrobbles.
-                val headlineLabel = if (uiState.isLocalStatsMode && !uiState.isViewingFriend) "Plays" else "Scrobbles"
+                val headlineLabel = if (uiState.isLocalStatsMode && !uiState.isViewingFriend) appText(com.lastwave.app.R.string.ui_plays_a6bc73) else appText(com.lastwave.app.R.string.ui_scrobbles_66915b)
                 // Banner and card condense into one row as the list scrolls up,
                 // and open again when the list is scrolled back to its top.
                 CollapsingStatsHeader(
@@ -386,9 +388,9 @@ fun HomeScreen(
                             contentType = { _, row ->
                                 when (row) {
                                     is HomeRow.DateHeader -> "date"
-                                    is HomeRow.Track -> "track"
-                                    is HomeRow.Album -> "album"
-                                    is HomeRow.Artist -> "artist"
+                                    is HomeRow.Track -> appText(com.lastwave.app.R.string.set_loud_track)
+                                    is HomeRow.Album -> appText(com.lastwave.app.R.string.art_type_album)
+                                    is HomeRow.Artist -> appText(com.lastwave.app.R.string.pd_sort_artist)
                                 }
                             },
                         ) { rowIndex, row ->
@@ -402,7 +404,7 @@ fun HomeScreen(
                                             musicPlayer.playQueue(
                                                 tracks = playbackQueue,
                                                 startIndex = playbackIndexByRow.getOrElse(rowIndex) { 0 },
-                                                sourceLabel = "Home",
+                                                sourceLabel = appText(com.lastwave.app.R.string.feed_home),
                                             )
                                         },
                                         onLongClick = { miniTrayRowIndex = rowIndex },
@@ -452,12 +454,12 @@ fun HomeScreen(
                                     title = trayRow.track.name,
                                     artist = trayRow.track.artist,
                                     artworkUrl = trayRow.track.artworkUrl,
-                                    sourceLabel = "Home",
+                                    sourceLabel = appText(com.lastwave.app.R.string.feed_home),
                                     onPlay = {
                                         musicPlayer.playQueue(
                                             tracks = playbackQueue,
                                             startIndex = playbackIndexByRow.getOrElse(trayIndex) { 0 },
-                                            sourceLabel = "Home",
+                                            sourceLabel = appText(com.lastwave.app.R.string.feed_home),
                                         )
                                     },
                                 ),
@@ -475,7 +477,7 @@ fun HomeScreen(
         com.lastwave.app.ui.common.TrackContextMenuSheet(
             target = com.lastwave.app.ui.common.TrackMenuTarget.Track(track.name, track.artist, track.artworkUrl.orEmpty()),
             capabilities = com.lastwave.app.ui.common.TrackMenuCapabilities(showDeleteScrobble = true),
-            playbackSourceLabel = "Home",
+            playbackSourceLabel = appText(com.lastwave.app.R.string.feed_home),
             onDismiss = { menuTrack = null },
         )
     }

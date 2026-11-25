@@ -1,5 +1,7 @@
 package com.lastwave.app.widget
 
+import com.lastwave.app.util.appText
+
 import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.graphics.Bitmap
@@ -128,11 +130,11 @@ internal object WidgetViews {
             views.setImageViewResource(R.id.widget_empty_icon, R.drawable.widget_art_placeholder)
             if (resolved.hasAccess) {
                 views.setTextViewText(R.id.widget_empty_title, context.getString(R.string.widget_name))
-                views.setTextViewText(R.id.widget_empty_sub, "Start a song in any media app")
+                views.setTextViewText(R.id.widget_empty_sub, appText(com.lastwave.app.R.string.ui_start_a_song_in_any_media_app_c126c3))
                 views.setOnClickPendingIntent(R.id.widget_root, WidgetActions.openAppPending(context))
             } else {
-                views.setTextViewText(R.id.widget_empty_title, "Allow music access")
-                views.setTextViewText(R.id.widget_empty_sub, "Tap to detect every media app")
+                views.setTextViewText(R.id.widget_empty_title, appText(com.lastwave.app.R.string.ui_allow_music_access_4eaad3))
+                views.setTextViewText(R.id.widget_empty_sub, appText(com.lastwave.app.R.string.ui_tap_to_detect_every_media_app_b79dfd))
                 views.setOnClickPendingIntent(R.id.widget_root, WidgetActions.openAccessPending(context))
             }
             return
@@ -143,11 +145,11 @@ internal object WidgetViews {
 
         views.setTextViewText(
             R.id.widget_title,
-            snapshot.title.ifBlank { "Unknown track" },
+            snapshot.title.ifBlank { appText(com.lastwave.app.R.string.ui_unknown_track_698495) },
         )
         views.setTextViewText(
             R.id.widget_subtitle,
-            snapshot.artist.ifBlank { "Unknown artist" },
+            snapshot.artist.ifBlank { appText(com.lastwave.app.R.string.ui_unknown_artist_9566f8) },
         )
         val playing = snapshot.isPlaying
         views.setImageViewResource(

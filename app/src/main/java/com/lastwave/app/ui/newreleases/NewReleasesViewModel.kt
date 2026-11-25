@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.newreleases
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -55,12 +57,12 @@ class NewReleasesViewModel @Inject constructor(
                 val tracks = repository.fetchInitialBatch()
                 _uiState.update { it.copy(isLoading = false, isRefreshing = false,
                     tracks = tracks, endReached = !repository.hasMore,
-                    error = if (tracks.isEmpty()) "No new releases available right now." else null) }
+                    error = if (tracks.isEmpty()) appText(com.lastwave.app.R.string.ui_no_new_releases_available_right_now_ba89a8) else null) }
             } catch (error: CancellationException) {
                 throw error
             } catch (error: Exception) {
                 _uiState.update { it.copy(isLoading = false, isRefreshing = false,
-                    error = error.message ?: "Couldn't load new releases. Tap Retry.") }
+                    error = error.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_new_releases_tap_retry_d67bae)) }
             }
         }
     }
@@ -79,7 +81,7 @@ class NewReleasesViewModel @Inject constructor(
                 throw error
             } catch (error: Exception) {
                 _uiState.update { it.copy(isLoadingMore = false,
-                    error = error.message ?: "Couldn't load more releases. Tap Retry.") }
+                    error = error.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_more_releases_tap_retry_4daa6f)) }
             }
         }
     }
@@ -90,7 +92,7 @@ class NewReleasesViewModel @Inject constructor(
         musicPlayer.playQueue(
             tracks = tracks.map { it.toPlayableTrack() },
             startIndex = index,
-            sourceLabel = "New Releases",
+            sourceLabel = appText(com.lastwave.app.R.string.ui_new_releases_8b2fa9),
         )
     }
 
@@ -100,7 +102,7 @@ class NewReleasesViewModel @Inject constructor(
         musicPlayer.playQueue(
             tracks = tracks.map { it.toPlayableTrack() },
             startIndex = 0,
-            sourceLabel = "New Releases",
+            sourceLabel = appText(com.lastwave.app.R.string.ui_new_releases_8b2fa9),
         )
     }
 
@@ -110,7 +112,7 @@ class NewReleasesViewModel @Inject constructor(
         musicPlayer.playQueue(
             tracks = tracks.shuffled().map { it.toPlayableTrack() },
             startIndex = 0,
-            sourceLabel = "New Releases",
+            sourceLabel = appText(com.lastwave.app.R.string.ui_new_releases_8b2fa9),
         )
     }
 

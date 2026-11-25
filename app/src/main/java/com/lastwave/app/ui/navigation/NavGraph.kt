@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.navigation
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -364,7 +366,7 @@ fun LastWaveNavHost(
         composable(
             route = Screen.FriendProfile.route,
             arguments = listOf(
-                androidx.navigation.navArgument("username") { type = androidx.navigation.NavType.StringType },
+                androidx.navigation.navArgument(appText(com.lastwave.app.R.string.set_scrobbler_username)) { type = androidx.navigation.NavType.StringType },
                 androidx.navigation.navArgument("displayName") {
                     type = androidx.navigation.NavType.StringType
                     defaultValue = ""
@@ -375,7 +377,7 @@ fun LastWaveNavHost(
                 },
             ),
         ) { backStackEntry ->
-            val username = backStackEntry.arguments?.getString("username").orEmpty()
+            val username = backStackEntry.arguments?.getString(appText(com.lastwave.app.R.string.set_scrobbler_username)).orEmpty()
             val displayName = backStackEntry.arguments?.getString("displayName")?.takeIf(String::isNotBlank)
             val avatarUrl = backStackEntry.arguments?.getString("avatarUrl")?.takeIf(String::isNotBlank)
             PredictiveBackScreen(onBack = { navController.safePopBackStack(backStackEntry) }) {
@@ -563,7 +565,7 @@ fun LastWaveNavHost(
         composable(
             route = Screen.Search.route,
             arguments = listOf(
-                androidx.navigation.navArgument("q") {
+                androidx.navigation.navArgument(appText(com.lastwave.app.R.string.autoeq_q_label)) {
                     type = androidx.navigation.NavType.StringType
                     defaultValue = ""
                 },
@@ -609,7 +611,7 @@ fun LastWaveNavHost(
 
         composable(
             route = com.lastwave.app.ui.moods.MoodsRoutes.CATEGORY,
-            arguments = listOf("browseId", "params", "title").map { name ->
+            arguments = listOf("browseId", "params", appText(com.lastwave.app.R.string.local_sort_title)).map { name ->
                 androidx.navigation.navArgument(name) {
                     type = androidx.navigation.NavType.StringType
                     defaultValue = ""
@@ -774,9 +776,9 @@ private fun LaunchGate() {
                 )
             }
             Spacer(Modifier.height(18.dp))
-            Text("LastWave", style = MaterialTheme.typography.headlineSmall)
+            Text(appText(com.lastwave.app.R.string.set_about_title), style = MaterialTheme.typography.headlineSmall)
             Spacer(Modifier.height(20.dp))
-            ExpressiveLoadingIndicator(message = "Preparing your music")
+            ExpressiveLoadingIndicator(message = appText(com.lastwave.app.R.string.ui_preparing_your_music_d7187c))
         }
     }
 }

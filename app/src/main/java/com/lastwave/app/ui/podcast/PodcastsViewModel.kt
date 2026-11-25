@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.podcast
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -86,7 +88,7 @@ class PodcastsViewModel @Inject constructor(
                         isLoading = false,
                         isRefreshing = false,
                         shelves = shelves,
-                        error = if (shelves.isEmpty()) "No podcasts available right now." else null,
+                        error = if (shelves.isEmpty()) appText(com.lastwave.app.R.string.ui_no_podcasts_available_right_now_13f9e9) else null,
                     )
                 }
             } catch (cancellation: CancellationException) {
@@ -96,7 +98,7 @@ class PodcastsViewModel @Inject constructor(
                     it.copy(
                         isLoading = false,
                         isRefreshing = false,
-                        error = error.message ?: "Couldn't load podcasts. Tap Retry.",
+                        error = error.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_podcasts_tap_retry_f29b6f),
                     )
                 }
             }
@@ -140,7 +142,7 @@ class PodcastsViewModel @Inject constructor(
                 tracks = tracks,
                 startIndex = index,
                 startPositionMs = startPositionMs,
-                sourceLabel = episode.showTitle?.takeIf { it.isNotBlank() } ?: "Podcasts",
+                sourceLabel = episode.showTitle?.takeIf { it.isNotBlank() } ?: appText(com.lastwave.app.R.string.podcasts_title),
             )
         }
     }

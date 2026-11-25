@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lastwave.app.data.playlist.AppleMusicPlaylistImporter
@@ -130,7 +132,7 @@ class ExternalPlaylistImportViewModel @Inject constructor(
                         it.copy(
                             isLoading = false,
                             preview = null,
-                            errorMessage = "No liked songs found in your Spotify account.",
+                            errorMessage = appText(com.lastwave.app.R.string.ui_no_liked_songs_found_in_your_spotify_account_eaed6c),
                         )
                     }
                 } else {
@@ -150,7 +152,7 @@ class ExternalPlaylistImportViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        errorMessage = "Couldn't read Spotify liked songs: ${e.localizedMessage ?: e.message}",
+                        errorMessage = appText(com.lastwave.app.R.string.ui_couldn_t_read_spotify_liked_songs_1_s_11fc37, (e.localizedMessage ?: e.message).toString()),
                     )
                 }
             }
@@ -197,7 +199,7 @@ class ExternalPlaylistImportViewModel @Inject constructor(
         if (_uiState.value.isImporting) return
         val raw = _uiState.value.link
         if (raw.isBlank()) {
-            _uiState.update { it.copy(errorMessage = "Paste a Spotify or Apple Music playlist link.") }
+            _uiState.update { it.copy(errorMessage = appText(com.lastwave.app.R.string.ui_paste_a_spotify_or_apple_music_playlist_link_d5df31)) }
             return
         }
         if (ExternalPlaylistLink.isSpotifyLiked(raw)) {
@@ -206,7 +208,7 @@ class ExternalPlaylistImportViewModel @Inject constructor(
         }
         val source = ExternalPlaylistLink.detect(raw)
         if (source == null) {
-            _uiState.update { it.copy(errorMessage = "Paste a Spotify or Apple Music playlist link.") }
+            _uiState.update { it.copy(errorMessage = appText(com.lastwave.app.R.string.ui_paste_a_spotify_or_apple_music_playlist_link_d5df31)) }
             return
         }
 
@@ -226,7 +228,7 @@ class ExternalPlaylistImportViewModel @Inject constructor(
                         it.copy(
                             isLoading = false,
                             preview = null,
-                            errorMessage = "No tracks found in that playlist. Make sure it is public or your account is connected.",
+                            errorMessage = appText(com.lastwave.app.R.string.ui_no_tracks_found_in_that_playlist_make_sure_it_is_93f5c9),
                         )
                     }
                 } else {
@@ -249,7 +251,7 @@ class ExternalPlaylistImportViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        errorMessage = "Couldn't read that playlist: ${e.localizedMessage ?: e.message}",
+                        errorMessage = appText(com.lastwave.app.R.string.ui_couldn_t_read_that_playlist_1_s_f31ec1, (e.localizedMessage ?: e.message).toString()),
                     )
                 }
             }
@@ -264,13 +266,13 @@ class ExternalPlaylistImportViewModel @Inject constructor(
         if (_uiState.value.isImporting || _uiState.value.isLoading || _uiState.value.preview == null) return
         val raw = _uiState.value.link
         if (raw.isBlank()) {
-            _uiState.update { it.copy(errorMessage = "Paste a Spotify or Apple Music playlist link.") }
+            _uiState.update { it.copy(errorMessage = appText(com.lastwave.app.R.string.ui_paste_a_spotify_or_apple_music_playlist_link_d5df31)) }
             return
         }
 
         viewModelScope.launch {
             _uiState.update {
-                it.copy(isImporting = true, progress = "Importing playlist...", errorMessage = null)
+                it.copy(isImporting = true, progress = appText(com.lastwave.app.R.string.ui_importing_playlist_c994af), errorMessage = null)
             }
             try {
                 val isLiked = ExternalPlaylistLink.isSpotifyLiked(raw)
@@ -296,7 +298,7 @@ class ExternalPlaylistImportViewModel @Inject constructor(
                     it.copy(
                         isImporting = false,
                         progress = null,
-                        errorMessage = "Import failed: ${e.localizedMessage ?: e.message}",
+                        errorMessage = appText(com.lastwave.app.R.string.ytimp_fail, (e.localizedMessage ?: e.message).toString()),
                     )
                 }
             }

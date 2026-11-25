@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.animation.AnimatedVisibility
@@ -249,7 +251,7 @@ fun FriendProfileScreen(
                                                 )
                                                 Spacer(Modifier.width(6.dp))
                                                 Text(
-                                                    "Total Listen Duration: ${formatDuration(stats.timerBaseSeconds)}",
+                                                    appText(com.lastwave.app.R.string.ui_total_listen_duration_1_s_ae725d, (formatDuration(stats.timerBaseSeconds)).toString()),
                                                     style = MaterialTheme.typography.labelMedium,
                                                     fontWeight = FontWeight.SemiBold,
                                                     color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -495,7 +497,7 @@ private fun FriendHeroCard(
                                 )
                                 Spacer(Modifier.width(4.dp))
                                 Text(
-                                    "Pinned",
+                                    appText(com.lastwave.app.R.string.pl_pinned_cd),
                                     style = MaterialTheme.typography.labelSmall,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.primary,
@@ -676,7 +678,7 @@ private fun FriendStatsCard(
                             color = MaterialTheme.colorScheme.onPrimaryContainer,
                         )
                         Text(
-                            "Total Scrobbles",
+                            appText(com.lastwave.app.R.string.ui_total_scrobbles_45fd3f),
                             style = MaterialTheme.typography.labelMedium,
                             color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.75f),
                         )
@@ -687,9 +689,9 @@ private fun FriendStatsCard(
             Spacer(Modifier.height(10.dp))
 
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FriendStatPill("Tracks", trackCount, Modifier.weight(1f))
-                FriendStatPill("Artists", artistCount, Modifier.weight(1f))
-                FriendStatPill("Albums", albumCount, Modifier.weight(1f))
+                FriendStatPill(appText(com.lastwave.app.R.string.alb_tracks), trackCount, Modifier.weight(1f))
+                FriendStatPill(appText(com.lastwave.app.R.string.search_tab_artists), artistCount, Modifier.weight(1f))
+                FriendStatPill(appText(com.lastwave.app.R.string.art_albums), albumCount, Modifier.weight(1f))
             }
         }
     }
@@ -760,7 +762,7 @@ private fun PeriodFilterChips(
     selectedPeriod: String,
     onPeriodSelect: (String) -> Unit,
 ) {
-    val periods = listOf("overall" to R.string.fr_period_all, "7day" to R.string.fr_period_7d, "1month" to R.string.fr_period_30d)
+    val periods = listOf(appText(com.lastwave.app.R.string.fr_period_all) to R.string.fr_period_all, "7day" to R.string.fr_period_7d, "1month" to R.string.fr_period_30d)
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -956,7 +958,7 @@ private fun FriendArtistRow(
                 )
                 if (artist.playCount > 0) {
                     Text(
-                        text = "${formatCount(artist.playCount)} scrobbles",
+                        text = appText(com.lastwave.app.R.string.ui_1_s_scrobbles_12e2b0, (formatCount(artist.playCount)).toString()),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -1008,7 +1010,7 @@ private fun formatDuration(totalSeconds: Long): String {
     return when {
         d > 0 -> "${d}d ${h}h"
         h > 0 -> "${h}h ${m}m"
-        else -> "${m}m"
+        else -> appText(com.lastwave.app.R.string.ui_extra_830877d1ed, (m).toString())
     }
 }
 

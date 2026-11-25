@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_0_songs_a35bbc" formatted="false">"0 首歌曲"</string>
+    <string name="ui_0_tracks_5ab8a8" formatted="false">"0 首曲目"</string>
+    <string name="ui_1_hour_ago_ce7276" formatted="false">"1 小时前"</string>
+    <string name="ui_1_s_2_s_bit_edd157">"%1$s\n%2$s 位"</string>
+    <string name="ui_1_s_2_s_song_s_3_s_bd0b2b">"%1$s%2$s 首歌曲 • %3$s"</string>
+    <string name="ui_1_s_2_s_track_s_3_s_fb0a0a">"%1$s • %2$s 首曲目 • %3$s"</string>
+    <string name="ui_1_s_2_s_tracks_1525d0">"%1$s • %2$s 首曲目"</string>
+    <string name="ui_1_s_account_connection_7ed024">"连接 %1$s 账号"</string>
+    <string name="ui_1_s_albums_2_s_07f02d">"%1$s 张专辑 • %2$s"</string>
+    <string name="ui_1_s_best_for_smooth_sync_2f02cb">"%1$s • 适合流畅同步"</string>
+    <string name="ui_1_s_bit_f051aa">"%1$s 位"</string>
+    <string name="ui_1_s_cover_7b0a7f">"%1$s 封面"</string>
+    <string name="ui_1_s_day_listening_streak_active_034be0">"已连续收听 %1$s 天"</string>
+    <string name="ui_1_s_days_ago_4876e2">"%1$s 天前"</string>
+    <string name="ui_1_s_days_b2de92">"%1$s 天"</string>
+    <string name="ui_1_s_downloaded_song_s_2_s_album_s_3_s_46eec9">"已下载 %1$s 首歌曲 • %2$s 张专辑 • %3$s"</string>
+    <string name="ui_1_s_hrs_ago_356748">"%1$s 小时前"</string>
+    <string name="ui_1_s_listening_2_s_0b08da">"收听 %1$s · %2$s"</string>
+    <string name="ui_1_s_lossless_youtube_e14ac2">"%1$s • 无损与 YouTube"</string>
+    <string name="ui_1_s_min_5c8f84">"%1$s 分钟"</string>
+    <string name="ui_1_s_min_ago_e2de68">"%1$s 分钟前"</string>
+    <string name="ui_1_s_minutes_e23e2d">"%1$s 分钟"</string>
+    <string name="ui_1_s_more_c7228e">"另有 %1$s 项"</string>
+    <string name="ui_1_s_plays_2_s_e5ff95">"播放 %1$s 次 • %2$s"</string>
+    <string name="ui_1_s_queued_next_bd1e22">"已将 %1$s 设为下一首"</string>
+    <string name="ui_1_s_removed_2ebeac">"已移除“%1$s”"</string>
+    <string name="ui_1_s_room_code_bd8068">"%1$s · 房间码"</string>
+    <string name="ui_1_s_scrobbles_12e2b0">"%1$s 条听歌记录"</string>
+    <string name="ui_1_s_setting_2_s_found_1e2fcd">"找到 %1$s 项设置%2$.0s"</string>
+    <string name="ui_1_s_song_2_s_hidden_from_recommendations_e827c6">"已从推荐中隐藏 %1$s 首歌曲%2$.0s"</string>
+    <string name="ui_1_s_songs_9b614d">"%1$s 首歌曲"</string>
+    <string name="ui_1_s_tracks_2_s_3_s_3110b9">"%1$s 首曲目 • %2$s • %3$s"</string>
+    <string name="ui_1_s_tracks_aece60">"%1$s 首曲目"</string>
+    <string name="ui_1_sd_2_sh_3_sm_0bde2a">"%1$s 天 %2$s 小时 %3$s 分钟"</string>
+    <string name="ui_1_sd_ago_9f8393">"%1$s 天前"</string>
+    <string name="ui_1_sh_2_sm_3_ss_b61806">"%1$s 小时 %2$s 分钟 %3$s 秒"</string>
+    <string name="ui_1_sh_ago_ea18cf">"%1$s 小时前"</string>
+    <string name="ui_1_sm_2_ss_99d2fa">"%1$s 分钟 %2$s 秒"</string>
+    <string name="ui_1_sm_ago_aa5898">"%1$s 分钟前"</string>
+    <string name="ui_1_song_093990" formatted="false">"1 首歌曲"</string>
+    <string name="ui_1_sw_ago_a33cab">"%1$s 周前"</string>
+    <string name="ui_1_track_5e9171" formatted="false">"1 首曲目"</string>
+    <string name="ui_24_7_library_sync_8cfb92" formatted="false">"全天候资料库同步"</string>
+    <string name="ui_about_this_album_8d7604" formatted="false">"关于此专辑"</string>
+    <string name="ui_accent_color_2bef52" formatted="false">"强调色"</string>
+    <string name="ui_accent_color_palette_cae508" formatted="false">"强调色与配色"</string>
+    <string name="ui_account_connection_canvas_playlist_imports_liked_2264c3" formatted="false">"账号连接、Canvas、播放列表导入与喜欢的歌曲同步"</string>
+    <string name="ui_acoustic_b6e266" formatted="false">"原声"</string>
+    <string name="ui_acoustic_tuning_eq_f71aba" formatted="false">"声音调校与均衡器"</string>
+    <string name="ui_active_custom_dj_blend_1_ss_acad23">"已启用 • 自定义 DJ 混音（%1$s 秒）"</string>
+    <string name="ui_active_days_0ebfff" formatted="false">"活跃天数"</string>
+    <string name="ui_active_phrase_matched_transition_auto_c98cb5" formatted="false">"已启用 • 按乐句对齐过渡（自动）"</string>
+    <string name="ui_adaptive_color_background_on_the_now_playing_scr_f07a71" formatted="false">"根据专辑封面自动调整正在播放界面的背景颜色"</string>
+    <string name="ui_adapts_to_your_connection_up_to_your_wi_fi_quali_357711" formatted="false">"根据网络自动调整 • 最高使用 Wi-Fi 音质"</string>
+    <string name="ui_add_61cc55" formatted="false">"添加"</string>
+    <string name="ui_add_another_concurrent_streaming_addon_server_e2a4f8" formatted="false">"添加另一个可并行查询的流媒体扩展服务器"</string>
+    <string name="ui_add_another_copy_c68ce3" formatted="false">"再添加一份"</string>
+    <string name="ui_add_key_49e644" formatted="false">"添加密钥"</string>
+    <string name="ui_add_streaming_addon_056a61" formatted="false">"添加流媒体扩展"</string>
+    <string name="ui_add_to_1_s_cd52e8">"添加到 %1$s"</string>
+    <string name="ui_add_to_youtube_liked_b4c402" formatted="false">"添加到 YouTube 喜欢的歌曲"</string>
+    <string name="ui_add_your_api_key_below_first_then_connect_3ddcdc" formatted="false">"请先在下方添加 API 密钥，然后连接。"</string>
+    <string name="ui_add_your_last_fm_api_key_in_settings_integration_9eb276" formatted="false">"请先在“设置 → 集成服务”中添加 Last.fm API 密钥"</string>
+    <string name="ui_added_1_s_tracks_79e02c">"已添加 %1$s 首曲目"</string>
+    <string name="ui_added_to_liked_songs_3ca337" formatted="false">"已添加到喜欢的歌曲"</string>
+    <string name="ui_added_to_offline_playlist_556f70" formatted="false">"已添加到离线播放列表"</string>
+    <string name="ui_added_to_playlist_1edb4f" formatted="false">"已添加到播放列表"</string>
+    <string name="ui_addon_is_active_and_reachable_7e4df1" formatted="false">"扩展已启用且可连接"</string>
+    <string name="ui_addon_rejected_1_s_2cfdce">"扩展拒绝请求：%1$s"</string>
+    <string name="ui_addon_removed_262972" formatted="false">"已移除扩展"</string>
+    <string name="ui_addon_unreachable_1_s_d675ae">"无法连接扩展：%1$s"</string>
+    <string name="ui_addon_url_cannot_be_empty_380f6c" formatted="false">"扩展地址不能为空"</string>
+    <string name="ui_adjust_crossfade_duration_slider_in_seconds_betw_e91c67" formatted="false">"调整歌曲间交叉淡化的时长（秒）"</string>
+    <string name="ui_adjust_the_scale_of_lyrics_in_both_modern_karaok_0a9fa6" formatted="false">"调整现代卡拉 OK 与经典歌词界面中的歌词大小。"</string>
+    <string name="ui_adjust_timing_offset_in_milliseconds_to_match_ly_9a860c" formatted="false">"以毫秒为单位调整偏移，使歌词与人声同步"</string>
+    <string name="ui_after_signing_in_or_connecting_cookies_you_ll_be_bf6a31" formatted="false">"登录或连接 Cookie 后会自动返回此处。"</string>
+    <string name="ui_air_ddd068" formatted="false">"通透"</string>
+    <string name="ui_album_for_you_38dc4c" formatted="false">"为你推荐的专辑"</string>
+    <string name="ui_albums_in_rotation_4ebec8" formatted="false">"常听专辑"</string>
+    <string name="ui_alignment_7f8c51" formatted="false">"对齐方式"</string>
+    <string name="ui_all_home_sections_are_hidden_6de6e0" formatted="false">"所有首页栏目均已隐藏"</string>
+    <string name="ui_all_songs_already_downloaded_0f7017" formatted="false">"所有歌曲均已下载"</string>
+    <string name="ui_all_time_progression_374f16" formatted="false">"历史变化趋势"</string>
+    <string name="ui_allow_canvas_video_streaming_over_mobile_and_cel_f34d8a" formatted="false">"允许使用移动数据播放 Canvas 视频"</string>
+    <string name="ui_allow_external_equalizers_dolby_atmos_wavelet_to_dc2666" formatted="false">"允许外部均衡器（Dolby Atmos、Wavelet）处理播放音频"</string>
+    <string name="ui_allow_music_access_4eaad3" formatted="false">"允许访问音乐"</string>
+    <string name="ui_already_in_offline_playlist_7a3916" formatted="false">"已在离线播放列表中"</string>
+    <string name="ui_already_liked_71ab82" formatted="false">"已经喜欢"</string>
+    <string name="ui_already_saved_as_1_s_769f47">"已保存为“%1$s”"</string>
+    <string name="ui_alternative_3b74e9" formatted="false">"另类"</string>
+    <string name="ui_always_on_rooms_70423e" formatted="false">"常驻房间"</string>
+    <string name="ui_amber_27a01d" formatted="false">"琥珀"</string>
+    <string name="ui_an_endless_station_shaped_by_your_listening_6f37ca" formatted="false">"根据你的收听偏好持续播放的电台"</string>
+    <string name="ui_analyzing_7fb483" formatted="false">"正在分析…"</string>
+    <string name="ui_analyzing_taste_profile_6829ba" formatted="false">"正在分析音乐偏好…"</string>
+    <string name="ui_android_12_hardware_hapticgenerator_coupled_to_a_cbd1e5" formatted="false">"Android 12+ 硬件 HapticGenerator，与音频 HAL 联动"</string>
+    <string name="ui_android_default_output_f59518" formatted="false">"Android 默认输出"</string>
+    <string name="ui_android_native_haptics_b16753" formatted="false">"Android 原生触感"</string>
+    <string name="ui_android_system_webview_is_unavailable_install_or_608310" formatted="false">"Android System WebView 不可用。请安装或启用 WebView 组件以连接 Spotify。"</string>
+    <string name="ui_android_system_webview_is_unavailable_install_or_e99fba" formatted="false">"Android System WebView 不可用。请安装或启用 WebView 组件以连接 YouTube Music。"</string>
+    <string name="ui_animate_fluid_rotating_artwork_in_lyrics_view_di_20a453" formatted="false">"在歌词界面旋转背景封面（关闭后使用静态背景）"</string>
+    <string name="ui_animate_fluid_rotating_artwork_in_player_and_lyr_68d60d" formatted="false">"在播放器和歌词界面旋转背景封面（关闭后使用静态背景）"</string>
+    <string name="ui_anime_f1b32a" formatted="false">"动漫"</string>
+    <string name="ui_anyone_in_room_can_play_pause_seek_and_change_so_e64f25" formatted="false">"房间内所有人都可以播放、暂停、调整进度和切歌"</string>
+    <string name="ui_app_font_6a5c3e" formatted="false">"应用字体"</string>
+    <string name="ui_app_preferences_and_audio_options_eaac9b" formatted="false">"应用偏好与音频选项"</string>
+    <string name="ui_apply_the_equalizer_preset_88b1e8" formatted="false">"应用均衡器预设"</string>
+    <string name="ui_approve_in_your_browser_you_can_disconnect_anyti_d76250" formatted="false">"请在浏览器中授权。你可随时断开连接，断开后仍可使用本地统计。"</string>
+    <string name="ui_artist_a_z_3205a4" formatted="false">"艺人（A–Z）"</string>
+    <string name="ui_artist_motion_51cecd" formatted="false">"艺人动态"</string>
+    <string name="ui_artist_spotlight_6a671f" formatted="false">"艺人聚焦"</string>
+    <string name="ui_artists_1_s_50446e">"艺人（%1$s）"</string>
+    <string name="ui_ask_spotify_first_before_apple_music_tidal_and_c_2a6e9d" formatted="false">"优先从 Spotify 获取，其次为 Apple Music、Tidal 和社区封面"</string>
+    <string name="ui_audio_acdac2" formatted="false">"音频"</string>
+    <string name="ui_audio_controls_3590d9" formatted="false">"音频控制"</string>
+    <string name="ui_audio_controls_6f8f4c" formatted="false">"音频控制"</string>
+    <string name="ui_auto_phrase_matched_transition_9c409d" formatted="false">"自动 • 按乐句对齐过渡"</string>
+    <string name="ui_autoeq_correction_target_curves_peq_954c36" formatted="false">"AutoEQ 校正、目标曲线与参数均衡器"</string>
+    <string name="ui_automix_b42afb" formatted="false">"自动混音"</string>
+    <string name="ui_autoplay_similar_songs_bde9eb" formatted="false">"自动播放相似歌曲"</string>
+    <string name="ui_avg_plays_track_667062" formatted="false">"每首平均播放次数"</string>
+    <string name="ui_avg_session_48116e" formatted="false">"平均收听时长"</string>
+    <string name="ui_avg_session_6d49c6" formatted="false">"平均收听时长"</string>
+    <string name="ui_avg_session_87fc8c" formatted="false">"平均收听时长"</string>
+    <string name="ui_back_to_all_playlists_6a2b02" formatted="false">"返回所有播放列表"</string>
+    <string name="ui_back_to_my_profile_333fa4" formatted="false">"返回我的个人资料"</string>
+    <string name="ui_back_to_player_a153c9" formatted="false">"返回播放器"</string>
+    <string name="ui_backup_settings_playlists_b7a92e" formatted="false">"备份设置与播放列表"</string>
+    <string name="ui_balanced_65_pulse_tuned_for_standard_rhythm_a2604d" formatted="false">"65% 均衡脉冲，适合一般节奏"</string>
+    <string name="ui_balanced_background_listening_daily_rotation_9c6d22" formatted="false">"均衡的背景收听与日常循环"</string>
+    <string name="ui_balanced_pulses_for_everyday_listening_c5a27d" formatted="false">"适合日常收听的均衡脉冲。"</string>
+    <string name="ui_bass_0db_punch_291cd6" formatted="false">"低音：0 dB 冲击"</string>
+    <string name="ui_bass_0db_unity_79c538" formatted="false">"低音：0 dB 原始增益"</string>
+    <string name="ui_bass_18db_cut_510d4e" formatted="false">"低音：衰减 -18 dB"</string>
+    <string name="ui_bass_18db_duck_498bbe" formatted="false">"低音：压低 -18 dB"</string>
+    <string name="ui_bass_beats_bdd901" formatted="false">"低音与节拍"</string>
+    <string name="ui_bass_ducked_2e22c1" formatted="false">"低音：已压低"</string>
+    <string name="ui_bass_exchange_7e906b" formatted="false">"低音交接"</string>
+    <string name="ui_bass_swap_47eede" formatted="false">"低音交换"</string>
+    <string name="ui_beat_blend_3dab2f" formatted="false">"节拍混合"</string>
+    <string name="ui_beat_matched_key_locked_seamless_dual_deck_mixin_44e0f3" formatted="false">"节拍对齐、锁定调性，实现双轨无缝混音"</string>
+    <string name="ui_beat_matched_mixes_when_the_songs_allow_clean_fa_6b4ef9" formatted="false">"适合的歌曲按节拍混音，其余歌曲使用干净的淡化过渡"</string>
+    <string name="ui_bespoke_logo_palette_with_electric_lime_and_obsi_786921" formatted="false">"采用电光青柠与黑曜青的专属标志配色"</string>
+    <string name="ui_best_day_d62946" formatted="false">"单日最高"</string>
+    <string name="ui_best_month_54673a" formatted="false">"单月最高"</string>
+    <string name="ui_best_week_d74574" formatted="false">"单周最高"</string>
+    <string name="ui_bit_perfect_mode_552e9e" formatted="false">"Bit-Perfect 位完美模式"</string>
+    <string name="ui_blend_the_end_of_a_track_smoothly_into_the_next__18f697" formatted="false">"将当前歌曲结尾平滑混合到下一首"</string>
+    <string name="ui_blending_last_fm_and_youtube_music_6a4064" formatted="false">"正在融合 Last.fm 与 YouTube Music 推荐…"</string>
+    <string name="ui_bollywood_e668a8" formatted="false">"宝莱坞"</string>
+    <string name="ui_browse_and_configure_modular_plugins_and_extra_f_1cee66" formatted="false">"浏览并配置扩展模块和附加功能"</string>
+    <string name="ui_browse_by_mood_and_genre_a1f5ac" formatted="false">"按心情与流派浏览"</string>
+    <string name="ui_button_now_playing_505d89" formatted="false">"正在播放悬浮按钮"</string>
+    <string name="ui_by_1_s_893358">"由 %1$s 创建"</string>
+    <string name="ui_bypass_android_mixer_dsp_stream_bit_exact_audio__d66772" formatted="false">"绕过 Android 混音器与 DSP，将位精确音频直接输出到 USB DAC"</string>
+    <string name="ui_bypass_the_android_mixer_on_the_speaker_jack_wit_954705" formatted="false">"无需 USB DAC，使用扬声器或耳机插孔绕过 Android 混音器"</string>
+    <string name="ui_cache_cleanup_export_import_settings_database_to_c7f9b8" formatted="false">"清理缓存、导入导出设置与数据库工具"</string>
+    <string name="ui_cancel_1_s_fca5fb">"取消 %1$s%%"</string>
+    <string name="ui_cancel_reply_bd62d2" formatted="false">"取消回复"</string>
+    <string name="ui_cancel_sleep_timer_44e2c7" formatted="false">"取消睡眠定时"</string>
+    <string name="ui_cancelled_1_s_downloads_442da3">"已取消 %1$s 项下载"</string>
+    <string name="ui_cannot_delete_scrobble_has_no_timestamp_9e5d0e" formatted="false">"无法删除：听歌记录没有时间戳"</string>
+    <string name="ui_canvas_full_bleed_15374a" formatted="false">"Canvas 全屏铺满"</string>
+    <string name="ui_canvas_on_cellular_data_d84c6d" formatted="false">"通过移动数据播放 Canvas"</string>
+    <string name="ui_canvas_video_backgrounds_11ae9f" formatted="false">"Canvas 视频背景"</string>
+    <string name="ui_cd_lossless_16_bit_44_1_khz_flac_619436" formatted="false">"CD 无损（16 位 / 44.1 kHz FLAC）"</string>
+    <string name="ui_cellular_streaming_quality_5d5aaa" formatted="false">"移动数据播放音质"</string>
+    <string name="ui_cellular_streaming_quality_a24de0" formatted="false">"移动数据播放音质"</string>
+    <string name="ui_center_a23911" formatted="false">"居中"</string>
+    <string name="ui_change_64fbd9" formatted="false">"更改"</string>
+    <string name="ui_change_app_language_english_spanish_russian_and__1ea784" formatted="false">"更改应用语言（中文、英语、西班牙语等）"</string>
+    <string name="ui_chat_2ced57" formatted="false">"聊天"</string>
+    <string name="ui_check_github_releases_for_the_latest_version_and_905e07" formatted="false">"检查 GitHub 上的最新版本和更新说明"</string>
+    <string name="ui_check_login_3277f9" formatted="false">"检查登录状态"</string>
+    <string name="ui_checking_97876b" formatted="false">"正在检查"</string>
+    <string name="ui_checking_github_releases_3d176d" formatted="false">"正在检查 GitHub 版本…"</string>
+    <string name="ui_chill_e31567" formatted="false">"休闲"</string>
+    <string name="ui_choose_a_different_video_6f0c50" formatted="false">"选择其他视频"</string>
+    <string name="ui_choose_a_mode_to_generate_a_playlist_2d7ee9" formatted="false">"选择一种模式生成播放列表"</string>
+    <string name="ui_choose_a_video_11124d" formatted="false">"选择视频"</string>
+    <string name="ui_choose_audio_quality_while_connected_to_wi_fi_2e0b85" formatted="false">"选择连接 Wi-Fi 时的音质"</string>
+    <string name="ui_choose_audio_quality_while_using_mobile_data_d9fa3f" formatted="false">"选择使用移动数据时的音质"</string>
+    <string name="ui_choose_between_default_wavy_and_waveform_slider__a22626" formatted="false">"选择默认、波浪或波形进度条样式"</string>
+    <string name="ui_choose_one_or_more_playlists_3355aa" formatted="false">"选择一个或多个播放列表"</string>
+    <string name="ui_choose_preferred_synced_lyrics_provider_lrclib_m_ff91c8" formatted="false">"选择首选同步歌词来源（LRCLIB、Musixmatch 等）"</string>
+    <string name="ui_choose_specific_playlists_to_mirror_with_your_yo_4726c7" formatted="false">"选择要与 YouTube Music 账号同步的播放列表"</string>
+    <string name="ui_choose_the_preferred_quality_for_this_connection_1dca05" formatted="false">"选择此网络连接的首选音质"</string>
+    <string name="ui_choose_video_547ac0" formatted="false">"选择视频"</string>
+    <string name="ui_choose_which_account_playlists_appear_in_lastwav_dfe359" formatted="false">"选择在 LastWave 中显示的账号播放列表"</string>
+    <string name="ui_choose_which_playlists_mirror_to_youtube_music_c971db" formatted="false">"选择要同步到 YouTube Music 的播放列表"</string>
+    <string name="ui_clashprojects_on_telegram_3047ea" formatted="false">"Telegram 上的 @clashprojects"</string>
+    <string name="ui_clashprojects_support_4613e1" formatted="false">"ClashProjects 支持"</string>
+    <string name="ui_classic_bottom_now_playing_card_308713" formatted="false">"经典底部正在播放卡片"</string>
+    <string name="ui_classical_1dd412" formatted="false">"古典"</string>
+    <string name="ui_clear_download_history_a53e13" formatted="false">"清除下载历史"</string>
+    <string name="ui_clear_downloads_dac07f" formatted="false">"清除下载"</string>
+    <string name="ui_clear_exclusions_e3367a" formatted="false">"清除排除项"</string>
+    <string name="ui_clear_queue_except_playing_song_5eed6e" formatted="false">"清空队列，仅保留正在播放的歌曲"</string>
+    <string name="ui_clear_saved_data_f464ab" formatted="false">"清除已保存的数据"</string>
+    <string name="ui_clear_the_session_d6652d" formatted="false">"清除会话"</string>
+    <string name="ui_close_automix_716393" formatted="false">"关闭自动混音"</string>
+    <string name="ui_close_video_91e08c" formatted="false">"关闭视频"</string>
+    <string name="ui_close_video_show_album_art_c8f833" formatted="false">"关闭视频，显示专辑封面"</string>
+    <string name="ui_code_copied_1_s_d6fb47">"已复制房间码：%1$s"</string>
+    <string name="ui_collaboration_social_482968" formatted="false">"协作与社交"</string>
+    <string name="ui_collaborative_67efce" formatted="false">"共同控制"</string>
+    <string name="ui_collaborative_anyone_can_control_2284c4" formatted="false">"共同控制 • 任何人均可操作"</string>
+    <string name="ui_collaborative_default_2ecbc5" formatted="false">"共同控制（默认）"</string>
+    <string name="ui_collapse_app_icons_094365" formatted="false">"收起应用图标"</string>
+    <string name="ui_collapse_transition_duration_48d613" formatted="false">"收起过渡时长"</string>
+    <string name="ui_community_discussions_c65821" formatted="false">"社区与讨论"</string>
+    <string name="ui_commute_136980" formatted="false">"通勤"</string>
+    <string name="ui_compact_floating_dock_with_a_label_beside_the_se_af0dbf" formatted="false">"紧凑的悬浮导航栏，在选中图标旁显示名称"</string>
+    <string name="ui_compare_how_you_listen_across_genres_artists_alb_3b26bf" formatted="false">"比较不同流派、艺人、专辑和歌曲的收听情况。"</string>
+    <string name="ui_configure_custom_last_fm_api_key_and_secret_to_b_149d72" formatted="false">"配置自定义 Last.fm API 密钥，避开共享请求限额"</string>
+    <string name="ui_configure_visible_feeds_shelves_and_quick_access_0fe1be" formatted="false">"配置首页的信息流、栏目与快捷入口"</string>
+    <string name="ui_connect_an_account_first_1e0e59" formatted="false">"请先连接账号"</string>
+    <string name="ui_connect_last_fm_account_for_global_scrobbling_lo_f6b684" formatted="false">"连接 Last.fm 账号，同步听歌记录、喜爱曲目与收听统计"</string>
+    <string name="ui_connect_last_fm_in_settings_to_sync_global_scrob_79e7c9" formatted="false">"在设置中连接 Last.fm，以同步所有听歌记录"</string>
+    <string name="ui_connect_or_manage_your_google_youtube_music_acco_24889b" formatted="false">"连接或管理 Google / YouTube Music 账号"</string>
+    <string name="ui_connect_spotify_098751" formatted="false">"连接 Spotify"</string>
+    <string name="ui_connect_spotify_account_e9e3f8" formatted="false">"连接 Spotify 账号"</string>
+    <string name="ui_connect_to_your_personal_or_custom_addon_server__d35be0" formatted="false">"连接个人或自定义扩展服务器地址"</string>
+    <string name="ui_connect_with_us_65ac13" formatted="false">"联系我们"</string>
+    <string name="ui_connected_1_s_6c3de9">"已连接：%1$s"</string>
+    <string name="ui_connected_as_1_s_24_7_library_sync_7d9e50">"已以 %1$s 登录 • 全天候资料库同步"</string>
+    <string name="ui_connected_c2f9b7" formatted="false">"已连接"</string>
+    <string name="ui_connected_sp_dc_canvas_playlist_imports_liked_so_5220c5" formatted="false">"已连接（sp_dc）• Canvas、播放列表导入与喜欢的歌曲同步"</string>
+    <string name="ui_connected_sp_dc_e98b27" formatted="false">"已连接（sp_dc）"</string>
+    <string name="ui_connecting_48b998" formatted="false">"正在连接"</string>
+    <string name="ui_connecting_b98e3f" formatted="false">"正在连接…"</string>
+    <string name="ui_connecting_to_last_fm_442d60" formatted="false">"正在连接 Last.fm…"</string>
+    <string name="ui_connecting_to_room_b245a7" formatted="false">"正在连接房间…"</string>
+    <string name="ui_connection_failed_202caa" formatted="false">"连接失败"</string>
+    <string name="ui_consistent_daily_listening_sessions_c86d60" formatted="false">"规律的每日收听"</string>
+    <string name="ui_control_which_playlists_from_your_youtube_accoun_08491c" formatted="false">"控制 LastWave 中显示哪些 YouTube 账号播放列表"</string>
+    <string name="ui_controls_bee75c" formatted="false">"控制"</string>
+    <string name="ui_cookie_login_92f196" formatted="false">"Cookie 登录"</string>
+    <string name="ui_copy_code_1589b6" formatted="false">"复制房间码"</string>
+    <string name="ui_could_not_complete_last_fm_sign_in_3402e0" formatted="false">"无法完成 Last.fm 登录"</string>
+    <string name="ui_could_not_connect_last_fm_a767a8" formatted="false">"无法连接 Last.fm"</string>
+    <string name="ui_could_not_exclude_this_song_please_try_again_ef2c60" formatted="false">"无法排除此歌曲，请重试。"</string>
+    <string name="ui_could_not_find_related_tracks_2249e5" formatted="false">"未找到相关曲目"</string>
+    <string name="ui_could_not_read_this_backup_779200" formatted="false">"无法读取此备份"</string>
+    <string name="ui_could_not_search_videos_6962bd" formatted="false">"无法搜索视频"</string>
+    <string name="ui_couldn_t_add_to_playlist_2d5b31" formatted="false">"无法添加到播放列表"</string>
+    <string name="ui_couldn_t_delete_1_s_playlist_2_s_try_again_1a0177">"无法删除 %1$s 个播放列表%2$.0s，请重试。"</string>
+    <string name="ui_couldn_t_delete_playlist_try_again_8bb9df" formatted="false">"无法删除播放列表，请重试。"</string>
+    <string name="ui_couldn_t_find_any_songs_in_this_playlist_please__369330" formatted="false">"未在此播放列表中找到歌曲，请确认链接为公开或不公开列出。"</string>
+    <string name="ui_couldn_t_finish_connecting_1_s_9be13a">"无法完成连接：%1$s"</string>
+    <string name="ui_couldn_t_finish_loading_tap_retry_2175c5" formatted="false">"加载未完成，请点按重试。"</string>
+    <string name="ui_couldn_t_finish_loading_this_playlist_tap_retry_b87805" formatted="false">"播放列表加载未完成，请点按重试。"</string>
+    <string name="ui_couldn_t_generate_a_playlist_c17e2d" formatted="false">"无法生成播放列表"</string>
+    <string name="ui_couldn_t_load_genres_aab8b4" formatted="false">"无法加载流派"</string>
+    <string name="ui_couldn_t_load_local_stats_9fcdc1" formatted="false">"无法加载本地统计"</string>
+    <string name="ui_couldn_t_load_lyrics_360572" formatted="false">"无法加载歌词"</string>
+    <string name="ui_couldn_t_load_more_releases_tap_retry_4daa6f" formatted="false">"无法加载更多新发行内容，请点按重试。"</string>
+    <string name="ui_couldn_t_load_new_releases_tap_retry_d67bae" formatted="false">"无法加载新发行内容，请点按重试。"</string>
+    <string name="ui_couldn_t_load_playlist_songs_public_unlisted_lin_fd7fa3" formatted="false">"无法加载播放列表歌曲。公开或不公开列出的链接可匿名访问；请在设置中连接 YouTube Music 账号以导入自己的播放列表。"</string>
+    <string name="ui_couldn_t_load_podcasts_tap_retry_f29b6f" formatted="false">"无法加载播客，请点按重试。"</string>
+    <string name="ui_couldn_t_load_recommendations_de4b4e" formatted="false">"无法加载推荐"</string>
+    <string name="ui_couldn_t_load_that_profile_621d46" formatted="false">"无法加载此个人资料"</string>
+    <string name="ui_couldn_t_load_this_playlist_if_it_s_not_yours_ch_f3cf45" formatted="false">"无法加载此播放列表。如果不是你的，请确认已开启分享。"</string>
+    <string name="ui_couldn_t_load_this_podcast_right_now_c8a421" formatted="false">"暂时无法加载此播客。"</string>
+    <string name="ui_couldn_t_load_this_podcast_tap_retry_204367" formatted="false">"无法加载此播客，请点按重试。"</string>
+    <string name="ui_couldn_t_make_playlist_local_76c0c2" formatted="false">"无法将播放列表转为本地"</string>
+    <string name="ui_couldn_t_read_playlists_try_again_8ca078" formatted="false">"无法读取播放列表，请重试。"</string>
+    <string name="ui_couldn_t_read_spotify_liked_songs_1_s_11fc37">"无法读取 Spotify 喜欢的歌曲：%1$s"</string>
+    <string name="ui_couldn_t_read_that_playlist_1_s_f31ec1">"无法读取此播放列表：%1$s"</string>
+    <string name="ui_couldn_t_refresh_playlist_tap_retry_1353f1" formatted="false">"无法刷新播放列表，请点按重试。"</string>
+    <string name="ui_couldn_t_regenerate_playlist_55c400" formatted="false">"无法重新生成播放列表"</string>
+    <string name="ui_couldn_t_remove_song_85f483" formatted="false">"无法移除歌曲"</string>
+    <string name="ui_couldn_t_save_new_order_f6f221" formatted="false">"无法保存新顺序"</string>
+    <string name="ui_couldn_t_save_playlist_try_again_e5b7d9" formatted="false">"无法保存播放列表，请重试。"</string>
+    <string name="ui_couldn_t_save_the_spotify_session_99498d" formatted="false">"无法保存 Spotify 登录会话。"</string>
+    <string name="ui_couldn_t_update_liked_songs_90ae54" formatted="false">"无法更新喜欢的歌曲"</string>
+    <string name="ui_country_d523eb" formatted="false">"乡村"</string>
+    <string name="ui_cover_and_remixes_69c61e" formatted="false">"翻唱与混音"</string>
+    <string name="ui_create_jam_room_85d438" formatted="false">"创建一起听房间"</string>
+    <string name="ui_create_room_7a913e" formatted="false">"创建房间"</string>
+    <string name="ui_created_1_s_196a9b">"已创建 %1$s"</string>
+    <string name="ui_created_1_s_2_s_tracks_ca8327">"已创建“%1$s”（%2$s 首曲目）"</string>
+    <string name="ui_creating_28ea76" formatted="false">"正在创建…"</string>
+    <string name="ui_creating_room_47cdda" formatted="false">"正在创建房间…"</string>
+    <string name="ui_creating_your_personalized_mix_d7e4f2" formatted="false">"正在创建个性化混音…"</string>
+    <string name="ui_crimson_b3f39a" formatted="false">"绯红"</string>
+    <string name="ui_crossfade_duration_820ce1" formatted="false">"交叉淡化时长"</string>
+    <string name="ui_crystal_clear_open_sound_airy_detail_and_deep_cl_969e32" formatted="false">"清晰通透的声音、丰富细节与干净的立体声分离"</string>
+    <string name="ui_cue_1_sms_d31490">"起始点：+%1$s 毫秒"</string>
+    <string name="ui_cue_beat_1_aafedb" formatted="false">"起始点：第 1 拍"</string>
+    <string name="ui_current_month_progression_c0ed2d" formatted="false">"本月变化趋势"</string>
+    <string name="ui_current_track_artwork_f178f6" formatted="false">"当前曲目封面"</string>
+    <string name="ui_current_version_1_s_ce4652">"当前版本：%1$s"</string>
+    <string name="ui_current_week_progression_5b1feb" formatted="false">"本周变化趋势"</string>
+    <string name="ui_custom_profile_touch_and_drag_any_bar_up_down_6cd4a4" formatted="false">"自定义配置 • 触摸并上下拖动任意频段"</string>
+    <string name="ui_custom_server_settings_bff284" formatted="false">"自定义服务器设置"</string>
+    <string name="ui_custom_timer_9a3d60" formatted="false">"自定义定时"</string>
+    <string name="ui_customize_and_re_enable_sections_in_settings_lib_391186" formatted="false">"请前往“设置 → 资料库与内容 → 首页栏目”自定义并重新启用栏目。"</string>
+    <string name="ui_daily_listening_activity_across_the_past_3_month_54f929" formatted="false">"过去 3 个月的每日收听活动。"</string>
+    <string name="ui_data_e5e429" formatted="false">"数据"</string>
+    <string name="ui_data_saver_96_kbps_he_aac_d57fc0" formatted="false">"节省流量（96 kbps HE-AAC）"</string>
+    <string name="ui_deep_bass_drum_hits_40_130_hz_95e5be" formatted="false">"深沉低音与鼓点 · 40–130 Hz"</string>
+    <string name="ui_deep_focus_b568dd" formatted="false">"深度专注"</string>
+    <string name="ui_deep_focus_vs_daily_flow_vs_discovery_fe9ed7" formatted="false">"深度专注、日常收听与音乐探索"</string>
+    <string name="ui_delete_download_a4ea09" formatted="false">"删除下载"</string>
+    <string name="ui_delete_download_history_a0130b" formatted="false">"删除下载历史"</string>
+    <string name="ui_delete_the_equalizer_preset_7bb1f1" formatted="false">"删除均衡器预设"</string>
+    <string name="ui_deleted_1_s_playlist_2_s_7a0f68">"已删除 %1$s 个播放列表%2$.0s"</string>
+    <string name="ui_detecting_955260" formatted="false">"正在检测…"</string>
+    <string name="ui_device_audio_3458df" formatted="false">"设备音频"</string>
+    <string name="ui_direct_usbdevfs_communication_with_external_usb__2064dd" formatted="false">"通过 usbdevfs 直接与外部 USB DAC 通信（Android 10+）"</string>
+    <string name="ui_disabled_f4f447" formatted="false">"已停用"</string>
+    <string name="ui_disconnect_last_fm_d3bc8f" formatted="false">"断开 Last.fm 连接"</string>
+    <string name="ui_disconnect_spotify_1b03fb" formatted="false">"断开 Spotify 连接？"</string>
+    <string name="ui_disconnect_youtube_music_ec2b2c" formatted="false">"断开 YouTube Music 连接"</string>
+    <string name="ui_discover_4827ea" formatted="false">"发现"</string>
+    <string name="ui_discover_fresh_tracks_45e648" formatted="false">"发现新曲目"</string>
+    <string name="ui_discover_mix_4c87f5" formatted="false">"发现混音"</string>
+    <string name="ui_discover_personalized_podcasts_and_shows_4b12d8" formatted="false">"发现为你推荐的播客与节目"</string>
+    <string name="ui_discoveries_fresh_recommendations_56e74e" formatted="false">"音乐发现 • 全新推荐"</string>
+    <string name="ui_discovery_3b3290" formatted="false">"音乐探索"</string>
+    <string name="ui_dismiss_error_347aaa" formatted="false">"关闭错误提示"</string>
+    <string name="ui_dolby_atmos_e_ac_3_joc_spatial_0d9df0" formatted="false">"Dolby Atmos（E-AC-3 JOC 空间音频）"</string>
+    <string name="ui_dolby_atmos_spatial_immersive_audio_2f5f0a" formatted="false">"Dolby Atmos（沉浸式空间音频）"</string>
+    <string name="ui_don_t_show_again_d9afd5" formatted="false">"不再显示"</string>
+    <string name="ui_don_t_show_again_for_this_version_0f31ca" formatted="false">"此版本不再显示"</string>
+    <string name="ui_downloading_1_s_songs_2_s_already_saved_2b71a6">"正在下载 %1$s 首歌曲（已保存 %2$s 首）"</string>
+    <string name="ui_downloading_1_s_songs_f16c02">"正在下载 %1$s 首歌曲"</string>
+    <string name="ui_downloading_1_song_75e402" formatted="false">"正在下载 1 首歌曲"</string>
+    <string name="ui_downloading_now_1_s_493bbb">"正在下载（%1$s）"</string>
+    <string name="ui_downloads_a862c2" formatted="false">"下载"</string>
+    <string name="ui_downloads_in_progress_0ff031" formatted="false">"正在下载"</string>
+    <string name="ui_duration_minutes_10c3d1" formatted="false">"时长（分钟）"</string>
+    <string name="ui_dynamic_color_material_you_519ae0" formatted="false">"动态取色（Material You）"</string>
+    <string name="ui_dynamic_now_playing_screen_f464cd" formatted="false">"动态正在播放界面"</string>
+    <string name="ui_dynamic_translucent_frosted_glass_backgrounds_an_0081f8" formatted="false">"动态半透明毛玻璃背景与模糊效果"</string>
+    <string name="ui_e_g_l86nsd_711ef8" formatted="false">"例如 L86NSD"</string>
+    <string name="ui_e_g_wave01_af8190" formatted="false">"例如 WAVE01"</string>
+    <string name="ui_each_channel_keeps_its_own_sync_mirrors_switchin_16cb9f" formatted="false">"每个频道独立保存同步映射；切换频道时会重新同步，不会混合资料库。"</string>
+    <string name="ui_echo_freeze_tail_0f5576" formatted="false">"回声冻结尾音"</string>
+    <string name="ui_edit_streaming_addon_17e925" formatted="false">"编辑流媒体扩展"</string>
+    <string name="ui_edits_save_into_1_s_automatically_917540">"修改会自动保存到“%1$s”"</string>
+    <string name="ui_electronic_622585" formatted="false">"电子"</string>
+    <string name="ui_enable_scrobbling_4b061c" formatted="false">"启用听歌记录同步"</string>
+    <string name="ui_enabled_df174a" formatted="false">"已启用"</string>
+    <string name="ui_end_jam_session_26c6a5" formatted="false">"结束一起听"</string>
+    <string name="ui_energy_boosters_b65d22" formatted="false">"活力补给"</string>
+    <string name="ui_engine_routing_ec62b3" formatted="false">"引擎路由"</string>
+    <string name="ui_engine_routing_f7033f" formatted="false">"引擎路由"</string>
+    <string name="ui_enter_6_character_room_code_517686" formatted="false">"输入 6 位房间码"</string>
+    <string name="ui_enter_a_genre_tag_d3451b" formatted="false">"输入流派或标签"</string>
+    <string name="ui_enter_a_seed_artist_a0f1b0" formatted="false">"输入参考艺人"</string>
+    <string name="ui_enter_a_seed_track_and_artist_7f69b8" formatted="false">"输入参考曲目与艺人"</string>
+    <string name="ui_enter_cookie_82a2b3" formatted="false">"输入 Cookie"</string>
+    <string name="ui_enter_the_url_of_your_personal_addon_service_e_g_887706" formatted="false">"输入个人扩展服务的地址（例如 http://10.0.2.2:8787/a/&lt;token&gt;/ 或自定义主机）："</string>
+    <string name="ui_error_connecting_1_s_86a4c8">"连接出错：%1$s"</string>
+    <string name="ui_exempt_app_from_device_battery_restrictions_slee_69fc80" formatted="false">"解除设备电池限制、应用休眠及 Samsung Device Care 的限制"</string>
+    <string name="ui_exit_fullscreen_f604d9" formatted="false">"退出全屏"</string>
+    <string name="ui_exit_fullscreen_lyrics_d2e82d" formatted="false">"退出全屏歌词"</string>
+    <string name="ui_expand_app_icons_78df37" formatted="false">"展开应用图标"</string>
+    <string name="ui_expand_canvas_video_to_fill_entire_screen_behind_06a904" formatted="false">"将 Canvas 视频铺满整个屏幕，显示在控制按钮后方"</string>
+    <string name="ui_expand_fullscreen_71ed3e" formatted="false">"展开为全屏"</string>
+    <string name="ui_expand_transition_duration_c94036" formatted="false">"展开过渡时长"</string>
+    <string name="ui_experimental_features_fbb63a" formatted="false">"实验与功能"</string>
+    <string name="ui_exploring_new_tracks_genre_adventures_fc17af" formatted="false">"探索新曲目与流派"</string>
+    <string name="ui_export_diagnostic_report_crash_logs_and_hardware_657b0d" formatted="false">"导出诊断报告、崩溃日志和设备硬件信息"</string>
+    <string name="ui_export_diagnostics_89d278" formatted="false">"导出诊断"</string>
+    <string name="ui_export_diagnostics_logs_afee25" formatted="false">"导出诊断与日志"</string>
+    <string name="ui_export_your_local_playlists_credentials_and_app__844f4c" formatted="false">"将本地播放列表、登录凭据与应用偏好导出为 JSON 文件"</string>
+    <string name="ui_extended_cinematic_crossfade_892284" formatted="false">"悠长的电影感交叉淡化"</string>
+    <string name="ui_extended_listening_sessions_and_favorite_repeats_5669b6" formatted="false">"长时间收听与喜爱歌曲循环"</string>
+    <string name="ui_extensions_modules_86c278" formatted="false">"扩展与模块"</string>
+    <string name="ui_fast_start_best_quality_first_or_never_upgrade_8e582c" formatted="false">"快速开始、优先最高音质或从不升级音质"</string>
+    <string name="ui_favourite_to_revisit_90100b" formatted="false">"重温喜爱"</string>
+    <string name="ui_featured_playlist_for_you_04d50b" formatted="false">"为你精选的播放列表"</string>
+    <string name="ui_feed_mix_14261b" formatted="false">"首页混音"</string>
+    <string name="ui_feel_good_9c073f" formatted="false">"好心情"</string>
+    <string name="ui_fetch_and_play_spotify_s_looping_visual_videos_i_9e469f" formatted="false">"获取并在背景中播放 Spotify 循环视频"</string>
+    <string name="ui_fidelity_410d7d" formatted="false">"高保真"</string>
+    <string name="ui_file_2c3caf" formatted="false">"文件"</string>
+    <string name="ui_find_the_right_video_a3018c" formatted="false">"查找合适的视频"</string>
+    <string name="ui_find_your_next_favorite_2175b3" formatted="false">"发现下一首心头好"</string>
+    <string name="ui_finding_similar_songs_for_1_s_8ac296">"正在为 %1$s 查找相似歌曲…"</string>
+    <string name="ui_finding_similar_songs_with_youtube_music_a1047d" formatted="false">"正在通过 YouTube Music 查找相似歌曲…"</string>
+    <string name="ui_finish_delete_cf6ee4" formatted="false">"完成删除"</string>
+    <string name="ui_finish_loading_the_playlist_before_saving_it_c38b7f" formatted="false">"请等待播放列表加载完成后再保存。"</string>
+    <string name="ui_floating_button_mode_active_card_hidden_0c3553" formatted="false">"悬浮按钮模式已启用 • 卡片已隐藏"</string>
+    <string name="ui_flow_86eff8" formatted="false">"律动"</string>
+    <string name="ui_flow_state_8a1cee" formatted="false">"心流状态"</string>
+    <string name="ui_focus_fe7f55" formatted="false">"专注"</string>
+    <string name="ui_focus_mode_9a2af5" formatted="false">"专注模式"</string>
+    <string name="ui_forgotten_favorites_02761d" formatted="false">"遗忘的心头好"</string>
+    <string name="ui_found_1_s_playlists_ea3fff">"找到 %1$s 个播放列表"</string>
+    <string name="ui_free_75f527" formatted="false">"自由"</string>
+    <string name="ui_free_lossless_audio_codec_flac_c00d85" formatted="false">"自由无损音频编码（FLAC）"</string>
+    <string name="ui_fresh_drops_29bc2e" formatted="false">"最新发行"</string>
+    <string name="ui_fresh_finds_2838d0" formatted="false">"新鲜发现"</string>
+    <string name="ui_fresh_finds_old_favorites_5b3330" formatted="false">"新发现与旧时喜爱"</string>
+    <string name="ui_fresh_finds_old_favorites_f6996c" formatted="false">"新发现与旧时喜爱"</string>
+    <string name="ui_friends_activity_415888" formatted="false">"好友动态"</string>
+    <string name="ui_friends_c11d5e" formatted="false">"好友"</string>
+    <string name="ui_friends_can_join_with_this_code_or_invite_link_t_350da3" formatted="false">"好友可使用此房间码或邀请链接加入，同步收听。"</string>
+    <string name="ui_from_the_community_168a46" formatted="false">"来自社区"</string>
+    <string name="ui_from_your_library_5dd0dc" formatted="false">"来自你的资料库"</string>
+    <string name="ui_full_100_kick_for_heavy_bass_drops_transients_6a95e9" formatted="false">"100% 强劲脉冲，适合重低音与瞬态"</string>
+    <string name="ui_full_hd_777e37" formatted="false">"全高清"</string>
+    <string name="ui_full_range_taps_and_rhythmic_textures_5d149f" formatted="false">"全频段触感与节奏纹理"</string>
+    <string name="ui_full_strength_pulses_for_bass_drops_cf4d9c" formatted="false">"适合重低音的强劲脉冲。"</string>
+    <string name="ui_fullscreen_lyrics_2f35af" formatted="false">"全屏歌词"</string>
+    <string name="ui_genres_96817a" formatted="false">"流派"</string>
+    <string name="ui_get_better_recommendations_a03e6e" formatted="false">"获取更合适的推荐"</string>
+    <string name="ui_get_real_time_assistance_report_bugs_discover_ne_37aa89" formatted="false">"获取实时帮助、反馈问题、发现新版本，并直接与开发者社区交流。"</string>
+    <string name="ui_go_to_album_e2d3b3" formatted="false">"前往专辑"</string>
+    <string name="ui_go_to_artist_1_s_130128">"前往艺人（%1$s）"</string>
+    <string name="ui_google_account_07030d" formatted="false">"Google 账号"</string>
+    <string name="ui_gradient_blur_on_canvas_308953" formatted="false">"Canvas 渐变模糊"</string>
+    <string name="ui_grouped_by_day_61a54a" formatted="false">"按日分组"</string>
+    <string name="ui_grouped_by_month_56c352" formatted="false">"按月分组"</string>
+    <string name="ui_grouped_by_year_ca6e28" formatted="false">"按年分组"</string>
+    <string name="ui_guest_face83" formatted="false">"访客"</string>
+    <string name="ui_halo_f3681d" formatted="false">"光晕"</string>
+    <string name="ui_hands_the_low_end_over_on_the_beat_so_basslines__6950a4" formatted="false">"在节拍处交接低频，避免低音线叠加"</string>
+    <string name="ui_haptic_mode_770109" formatted="false">"触感模式"</string>
+    <string name="ui_haptics_suspended_while_bit_perfect_usb_dac_bypa_a9594c" formatted="false">"Bit-Perfect USB DAC 直通输出启用时暂停触感反馈"</string>
+    <string name="ui_hardware_b76ab6" formatted="false">"硬件"</string>
+    <string name="ui_hardware_hapticgenerator_for_whole_song_dsp_for__94fdcf" formatted="false">"整首使用硬件 HapticGenerator，滤波模式使用 DSP"</string>
+    <string name="ui_hardware_unavailable_using_dsp_0f6f6d" formatted="false">"硬件不可用 · 正在使用 DSP"</string>
+    <string name="ui_headphone_correction_from_the_autoeq_database_pa_5e2e48" formatted="false">"AutoEQ 数据库耳机校正、参数均衡器及设备专属配置"</string>
+    <string name="ui_heard_in_shorts_cf2967" formatted="false">"短视频中的音乐"</string>
+    <string name="ui_heavy_rotation_1e493f" formatted="false">"高频循环"</string>
+    <string name="ui_hi_res_24_bit_192_khz_flac_ac7214" formatted="false">"Hi-Res 高解析度（24 位 / 192 kHz FLAC）"</string>
+    <string name="ui_hi_res_24_bit_96_khz_flac_16a8a0" formatted="false">"Hi-Res 高解析度（24 位 / 96 kHz FLAC）"</string>
+    <string name="ui_hi_res_audio_038fb9" formatted="false">"Hi-Res 高解析度音频"</string>
+    <string name="ui_hi_res_audio_max_800e03" formatted="false">"Hi-Res 高解析度音频（最高）"</string>
+    <string name="ui_hi_res_lossless_13a296" formatted="false">"Hi-Res 高解析度无损"</string>
+    <string name="ui_hide_34d8b6" formatted="false">"隐藏"</string>
+    <string name="ui_hide_lyrics_buttons_0bfbb3" formatted="false">"隐藏歌词按钮"</string>
+    <string name="ui_hide_section_642f79" formatted="false">"隐藏栏目"</string>
+    <string name="ui_high_definition_627ef7" formatted="false">"高清"</string>
+    <string name="ui_hip_hop_2c8b31" formatted="false">"嘻哈"</string>
+    <string name="ui_home_layout_sections_f71040" formatted="false">"首页布局与栏目"</string>
+    <string name="ui_home_organization_1c7c46" formatted="false">"首页与整理"</string>
+    <string name="ui_home_screen_sections_dde164" formatted="false">"首页栏目"</string>
+    <string name="ui_host_3960ec" formatted="false">"房主"</string>
+    <string name="ui_host_only_b2a141" formatted="false">"仅房主控制"</string>
+    <string name="ui_host_only_broadcast_ed3937" formatted="false">"仅房主控制 / 广播"</string>
+    <string name="ui_host_only_only_host_controls_18744c" formatted="false">"仅房主控制 • 只有房主可以操作"</string>
+    <string name="ui_hourly_rhythm_2020b2" formatted="false">"每小时收听规律"</string>
+    <string name="ui_how_your_listening_time_is_distributed_across_yo_682196" formatted="false">"你在最常听曲目上的收听时间分布。"</string>
+    <string name="ui_hpf_1_shz_q_1_35_eed9cc">"高通：%1$s Hz（Q=1.35）"</string>
+    <string name="ui_http_addon_b91a5b" formatted="false">"HTTP 扩展"</string>
+    <string name="ui_idle_time_before_the_floating_lyrics_buttons_fad_cffd99" formatted="false">"歌词悬浮按钮淡出前的空闲时间（2–10 秒或从不）"</string>
+    <string name="ui_import_1_s_selected_playlist_s_b9baa9">"导入所选 %1$s 个播放列表"</string>
+    <string name="ui_import_1_s_tracks_141776">"导入 %1$s 首曲目"</string>
+    <string name="ui_import_1_track_1da8cc" formatted="false">"导入 1 首曲目"</string>
+    <string name="ui_import_a_previously_saved_lastwave_backup_file_t_554549" formatted="false">"导入已保存的 LastWave 备份，恢复设置与播放列表"</string>
+    <string name="ui_import_csv_tsv_m3u_m3u8_or_txt_files_for_txt_use_d42557" formatted="false">"导入 CSV、TSV、M3U/M3U8 或 TXT 文件。TXT 可每行填写“艺人 - 标题”或 YouTube 链接。仅导入已验证匹配的曲目，不确定的曲目将跳过。"</string>
+    <string name="ui_import_failed_fbae89" formatted="false">"导入失败"</string>
+    <string name="ui_import_from_playlist_file_fc0836" formatted="false">"从播放列表文件导入"</string>
+    <string name="ui_import_playlist_files_csv_listening_logs_or_m3u__7b9770" formatted="false">"从存储空间导入播放列表文件、CSV 听歌记录或 M3U/M3U8 播放列表"</string>
+    <string name="ui_import_playlists_from_file_csv_m3u_993ebd" formatted="false">"从文件导入播放列表（CSV / M3U）"</string>
+    <string name="ui_import_sp_dc_token_8f640f" formatted="false">"导入 sp_dc 令牌"</string>
+    <string name="ui_import_with_link_ea4908" formatted="false">"通过链接导入"</string>
+    <string name="ui_import_your_spotify_playlists_and_liked_songs_in_a0627e" formatted="false">"将 Spotify 播放列表与喜欢的歌曲导入本应用资料库"</string>
+    <string name="ui_import_youtube_playlist_a4ca7a" formatted="false">"导入 YouTube 播放列表"</string>
+    <string name="ui_importing_playlist_1_s_of_2_s_5f1a37">"正在导入第 %1$s/%2$s 个播放列表…"</string>
+    <string name="ui_importing_playlist_93bd12" formatted="false">"正在导入播放列表…"</string>
+    <string name="ui_importing_playlist_c994af" formatted="false">"正在导入播放列表…"</string>
+    <string name="ui_imports_addons_68a3bc" formatted="false">"导入与扩展"</string>
+    <string name="ui_imports_e42328" formatted="false">"导入"</string>
+    <string name="ui_in_app_volume_26ff7f" formatted="false">"应用内音量"</string>
+    <string name="ui_in_room_chat_is_ready_say_hello_957d23" formatted="false">"房间聊天已就绪，打个招呼吧！"</string>
+    <string name="ui_in_session_1_s_2_s_listening_together_19841b">"当前会话：#%1$s • %2$s 人一起听"</string>
+    <string name="ui_incoming_track_artwork_215061" formatted="false">"下一首曲目封面"</string>
+    <string name="ui_independent_tempo_and_pitch_stretch_ef2ec6" formatted="false">"独立调整速度与音高"</string>
+    <string name="ui_india_967ce3" formatted="false">"印度"</string>
+    <string name="ui_indie_c43a74" formatted="false">"独立音乐"</string>
+    <string name="ui_infinite_radio_839559" formatted="false">"无限电台"</string>
+    <string name="ui_inspired_by_1_s_a29a72">"灵感来自 %1$s"</string>
+    <string name="ui_install_fd6c3e" formatted="false">"安装"</string>
+    <string name="ui_installed_1_s_56a2b8">"已安装 %1$s"</string>
+    <string name="ui_installing_8d2788" formatted="false">"正在安装…"</string>
+    <string name="ui_intensity_0ad6e4" formatted="false">"强度"</string>
+    <string name="ui_internal_hi_res_dac_79d302" formatted="false">"内置 Hi-Res DAC"</string>
+    <string name="ui_invalid_cookies_make_sure_sapisid_is_present_1614de" formatted="false">"Cookie 无效，请确认包含 SAPISID。"</string>
+    <string name="ui_jam_sync_47885d" formatted="false">"一起听同步"</string>
+    <string name="ui_jam_timeline_1793dd" formatted="false">"一起听时间线"</string>
+    <string name="ui_jazz_0f940a" formatted="false">"爵士"</string>
+    <string name="ui_join_clashprojects_on_telegram_for_app_news_beta_f265cb" formatted="false">"在 Telegram 加入 @clashprojects，获取新闻、测试版本与支持"</string>
+    <string name="ui_join_e0d731" formatted="false">"加入"</string>
+    <string name="ui_join_jam_room_d6ece9" formatted="false">"加入一起听房间"</string>
+    <string name="ui_join_materialyouapp_on_telegram_to_discover_othe_2e5cbd" formatted="false">"在 Telegram 加入 @MaterialYouApp，发现更多应用"</string>
+    <string name="ui_join_my_lastwave_jam_session_a7f2c1" formatted="false">"加入我的 LastWave 一起听房间"</string>
+    <string name="ui_join_my_lastwave_jam_session_room_code_1_s_2_s_875df2">"加入我的 LastWave 一起听房间！房间码：%1$s\n%2$s"</string>
+    <string name="ui_join_our_discord_community_server_for_support_an_807953" formatted="false">"加入 Discord 社区服务器，获取支持并提供反馈"</string>
+    <string name="ui_join_room_902fc2" formatted="false">"加入房间"</string>
+    <string name="ui_join_support_35b43b" formatted="false">"加入支持社区"</string>
+    <string name="ui_jump_back_in_582e89" formatted="false">"继续收听"</string>
+    <string name="ui_just_now_a7f8e7" formatted="false">"刚刚"</string>
+    <string name="ui_karaoke_glow_sliding_fade_bounce_or_modern_full__6ebffc" formatted="false">"卡拉 OK 发光、滑动、淡入淡出、弹跳或现代全屏样式"</string>
+    <string name="ui_keep_playlists_and_favorites_continuously_synced_8d7523" formatted="false">"持续将播放列表与喜爱曲目同步到 YouTube Music"</string>
+    <string name="ui_keep_your_yt_music_library_in_sync_with_lastwave_5654aa" formatted="false">"让 YouTube Music 资料库与 LastWave 保持同步"</string>
+    <string name="ui_kick_cue_1_sms_adcc14">"底鼓起始点 +%1$s 毫秒"</string>
+    <string name="ui_known_28d714" formatted="false">"熟悉的歌曲"</string>
+    <string name="ui_language_the_lyrics_translate_button_turns_songs_23e69f" formatted="false">"歌词翻译的目标语言（留空则跟随应用语言）"</string>
+    <string name="ui_last_12_months_842a51" formatted="false">"过去 12 个月"</string>
+    <string name="ui_last_12_weeks_bded67" formatted="false">"过去 12 周"</string>
+    <string name="ui_last_30_days_611886" formatted="false">"过去 30 天"</string>
+    <string name="ui_last_7_days_652292" formatted="false">"过去 7 天"</string>
+    <string name="ui_last_fm_account_connection_50961e" formatted="false">"连接 Last.fm 账号"</string>
+    <string name="ui_last_fm_custom_api_credentials_256bb5" formatted="false">"自定义 Last.fm API 凭据"</string>
+    <string name="ui_last_fm_only_allows_scrobbling_through_a_signed__577625" formatted="false">"Last.fm 仅允许通过已签名的会话提交听歌记录；不使用浏览器时，需要密码获取会话。密码仅通过 HTTPS 直接发送给 Last.fm 一次，绝不会保存。"</string>
+    <string name="ui_last_fm_unreachable_showing_local_plays_tap_to_r_92681a" formatted="false">"无法连接 Last.fm，正在显示本地播放记录 · 点按重试"</string>
+    <string name="ui_last_month_9cce45" formatted="false">"上个月"</string>
+    <string name="ui_last_pass_failed_will_retry_automatically_9bf960" formatted="false">"上次同步失败，将自动重试"</string>
+    <string name="ui_lastwave_discord_21ea25" formatted="false">"LastWave Discord 社区"</string>
+    <string name="ui_lastwave_never_sees_your_password_sign_in_happen_575dd0" formatted="false">"LastWave 不会获取你的密码，登录过程完全在 Google 页面中进行。"</string>
+    <string name="ui_lead_vocal_phrasing_300_3_200_hz_453af1" formatted="false">"主唱乐句 · 300–3,200 Hz"</string>
+    <string name="ui_leave_end_jam_session_6fde9e" formatted="false">"离开 / 结束一起听"</string>
+    <string name="ui_leave_jam_session_0a7836" formatted="false">"离开一起听"</string>
+    <string name="ui_less_526cb7" formatted="false">"收起"</string>
+    <string name="ui_libre_fm_account_52ef25" formatted="false">"Libre.fm 账号"</string>
+    <string name="ui_light_rhythm_0e3b19" formatted="false">"轻柔节奏"</string>
+    <string name="ui_like_song_0d3fb3" formatted="false">"喜欢此歌曲"</string>
+    <string name="ui_liked_on_youtube_b6ffe7" formatted="false">"已在 YouTube 上喜欢"</string>
+    <string name="ui_likely_match_80eee9" formatted="false">" • 可能匹配"</string>
+    <string name="ui_limit_of_1_s_reached_2d4df1">"已达到 %1$s 项的上限"</string>
+    <string name="ui_line_by_line_synced_lyrics_c63404" formatted="false">"逐行同步歌词"</string>
+    <string name="ui_linked_a089f6" formatted="false">"已关联"</string>
+    <string name="ui_list_a1fffa" formatted="false">"列表"</string>
+    <string name="ui_listen_again_31d30b" formatted="false">"再次收听"</string>
+    <string name="ui_listen_together_7b3aef" formatted="false">"一起听"</string>
+    <string name="ui_listen_together_7c4268" formatted="false">"一起听"</string>
+    <string name="ui_listen_together_in_real_time_0a2db5" formatted="false">"与好友实时一起听"</string>
+    <string name="ui_listenbrainz_account_9b4963" formatted="false">"ListenBrainz 账号"</string>
+    <string name="ui_listener_37ea46" formatted="false">"听众"</string>
+    <string name="ui_listeners_1_s_906cd4">"听众（%1$s）"</string>
+    <string name="ui_listening_by_1_s_e96628">"按%1$s统计收听"</string>
+    <string name="ui_listening_concentration_876069" formatted="false">"收听集中度"</string>
+    <string name="ui_listening_frequency_by_hour_across_all_recorded__e1a93b" formatted="false">"所有已记录收听时段的每小时收听频率。"</string>
+    <string name="ui_listening_habits_a2c7a0" formatted="false">"收听习惯"</string>
+    <string name="ui_listening_stages_871a29" formatted="false">"收听阶段"</string>
+    <string name="ui_listening_stats_9d8b97" formatted="false">"收听统计"</string>
+    <string name="ui_listening_stats_a760b2" formatted="false">"收听统计"</string>
+    <string name="ui_listening_time_f3c051" formatted="false">"收听时间"</string>
+    <string name="ui_listening_timeline_88101f" formatted="false">"收听时间线"</string>
+    <string name="ui_live_1_s_3e2723">"实时 • %1$s"</string>
+    <string name="ui_live_performances_1dccf6" formatted="false">"现场演出"</string>
+    <string name="ui_live_station_admin_in_control_f2df82" formatted="false">"直播电台 • 管理员控制中"</string>
+    <string name="ui_live_station_auto_radio_9a3b87" formatted="false">"直播电台 • 自动电台"</string>
+    <string name="ui_live_sync_1_s_e868c3">"● 实时同步 • %1$s"</string>
+    <string name="ui_lo_fi_3c8354" formatted="false">"Lo-Fi 低保真"</string>
+    <string name="ui_loading_1_s_e69943">"正在加载 %1$s…"</string>
+    <string name="ui_loading_1_s_s_playlists_56ec09">"正在加载 %1$s 的播放列表…"</string>
+    <string name="ui_loading_friends_0e28dc" formatted="false">"正在加载好友"</string>
+    <string name="ui_loading_playlist_preview_8c1568" formatted="false">"正在加载播放列表预览"</string>
+    <string name="ui_loading_your_listening_history_1518ad" formatted="false">"正在加载收听历史"</string>
+    <string name="ui_local_search_6a4c6c" formatted="false">"本地搜索"</string>
+    <string name="ui_local_songs_350153" formatted="false">"本地歌曲"</string>
+    <string name="ui_lock_queue_f20e02" formatted="false">"锁定队列"</string>
+    <string name="ui_log_in_to_youtube_music_95e278" formatted="false">"登录 YouTube Music"</string>
+    <string name="ui_log_in_to_youtube_music_or_create_a_free_account_fb4572" formatted="false">"登录 YouTube Music 或免费创建账号，获取个性化歌曲与播放队列。"</string>
+    <string name="ui_log_out_eb3542" formatted="false">"退出登录"</string>
+    <string name="ui_log_out_of_spotify_d4b786" formatted="false">"退出 Spotify 登录"</string>
+    <string name="ui_long_musical_transition_5a3ca1" formatted="false">"悠长的音乐过渡"</string>
+    <string name="ui_long_press_a_friend_to_pin_a3c79d" formatted="false">"长按好友即可置顶"</string>
+    <string name="ui_longest_session_d7c4b9" formatted="false">"最长单次收听"</string>
+    <string name="ui_longest_streak_5800ff" formatted="false">"最长连续收听"</string>
+    <string name="ui_looping_visual_canvas_videos_during_playback_lik_3ede51" formatted="false">"播放时显示循环视频背景，例如 Spotify Canvas"</string>
+    <string name="ui_lossless_1_s_kbps_3823e4">"无损（%1$s kbps）"</string>
+    <string name="ui_lossless_f3b36f" formatted="false">"无损"</string>
+    <string name="ui_lossless_provider_module_f5e65e" formatted="false">"无损来源模块"</string>
+    <string name="ui_lossless_youtube_4d8d41" formatted="false">"无损 / YouTube"</string>
+    <string name="ui_low_bitrate_audio_to_reduce_mobile_data_use_aa2d0b" formatted="false">"使用较低比特率，减少移动数据消耗"</string>
+    <string name="ui_lpf_1_shz_185e8d">"低通：%1$s Hz"</string>
+    <string name="ui_lpf_20khz_open_af687b" formatted="false">"低通：20 kHz 开放"</string>
+    <string name="ui_lyrics_animation_style_e99055" formatted="false">"歌词动画样式"</string>
+    <string name="ui_lyrics_options_5fa2b6" formatted="false">"歌词选项"</string>
+    <string name="ui_lyrics_size_1_s_a1cb8a">"歌词大小：%1$s%%"</string>
+    <string name="ui_lyrics_style_635601" formatted="false">"歌词样式"</string>
+    <string name="ui_lyrics_sync_offset_26dba2" formatted="false">"歌词同步偏移"</string>
+    <string name="ui_lyrics_text_size_200aed" formatted="false">"歌词字号"</string>
+    <string name="ui_make_admin_84ec1c" formatted="false">"设为管理员"</string>
+    <string name="ui_make_host_105c99" formatted="false">"设为房主"</string>
+    <string name="ui_manage_songs_excluded_from_recommendations_and_s_b08a2e" formatted="false">"管理从推荐与智能混音中排除的歌曲"</string>
+    <string name="ui_manual_sp_dc_cookie_entry_0fc582" formatted="false">"手动输入 sp_dc Cookie"</string>
+    <string name="ui_manual_sp_dc_entry_b43590" formatted="false">"手动输入 sp_dc"</string>
+    <string name="ui_match_ui_accent_colors_to_wallpaper_and_system_p_402840" formatted="false">"让界面强调色与壁纸及系统配色保持一致"</string>
+    <string name="ui_material_you_apps_1673ab" formatted="false">"Material You 应用"</string>
+    <string name="ui_material_you_channel_9c7649" formatted="false">"Material You 频道"</string>
+    <string name="ui_max_volume_5bdfcc" formatted="false">"最大音量"</string>
+    <string name="ui_metal_90acb4" formatted="false">"金属"</string>
+    <string name="ui_mid_9a6af7" formatted="false">"中频"</string>
+    <string name="ui_minimize_player_a5a19f" formatted="false">"最小化播放器"</string>
+    <string name="ui_minimize_to_now_playing_e59acc" formatted="false">"最小化到正在播放"</string>
+    <string name="ui_mix_complete_f03488" formatted="false">"混音完成"</string>
+    <string name="ui_mixed_1_s_9751ac">"已混合 ✓%1$s"</string>
+    <string name="ui_mixed_for_you_3f2315" formatted="false">"为你混音"</string>
+    <string name="ui_mode_fbb6d6" formatted="false">"模式："</string>
+    <string name="ui_module_removed_a52241" formatted="false">"已移除模块"</string>
+    <string name="ui_month_082bc3" formatted="false">"月"</string>
+    <string name="ui_more_4bab2d" formatted="false">"更多"</string>
+    <string name="ui_more_apps_from_clash_projects_1a83d5" formatted="false">"Clash Projects 的更多应用"</string>
+    <string name="ui_more_by_1_s_74556a">"%1$s 的更多作品"</string>
+    <string name="ui_more_from_us_146449" formatted="false">"我们的更多项目"</string>
+    <string name="ui_more_options_86c0a3" formatted="false">"更多选项"</string>
+    <string name="ui_most_active_day_e7f686" formatted="false">"最活跃的一天"</string>
+    <string name="ui_most_played_e70fff" formatted="false">"播放最多"</string>
+    <string name="ui_most_played_tracks_for_the_selected_time_range_00942a" formatted="false">"所选时间范围内播放次数最多的曲目。"</string>
+    <string name="ui_most_songs_99c0dd" formatted="false">"歌曲数最多"</string>
+    <string name="ui_most_tracks_ec4c8b" formatted="false">"曲目数最多"</string>
+    <string name="ui_music_haptics_8787ab" formatted="false">"音乐触感"</string>
+    <string name="ui_music_video_for_you_41ef5e" formatted="false">"为你推荐的音乐视频"</string>
+    <string name="ui_mute_0f0973" formatted="false">"静音"</string>
+    <string name="ui_my_presets_1_s_2_s_a7160a">"我的预设  %1$s/%2$s"</string>
+    <string name="ui_name_a_z_fd07da" formatted="false">"名称（A–Z）"</string>
+    <string name="ui_native_for_whole_song_dsp_for_filters_c3b5b8" formatted="false">"整首使用原生引擎，滤波使用 DSP"</string>
+    <string name="ui_new_release_69a2ac" formatted="false">"新发行"</string>
+    <string name="ui_new_releases_8b2fa9" formatted="false">"新发行"</string>
+    <string name="ui_no_1_s_plays_captured_in_this_range_yet_4dce05">"此时间范围内尚未记录 %1$s 播放。"</string>
+    <string name="ui_no_active_downloads_in_playlist_77d454" formatted="false">"播放列表中没有正在下载的项目"</string>
+    <string name="ui_no_browser_available_to_open_link_2fd17a" formatted="false">"没有可用于打开链接的浏览器"</string>
+    <string name="ui_no_browser_or_telegram_app_available_524955" formatted="false">"未找到浏览器或 Telegram 应用"</string>
+    <string name="ui_no_cue_window_pcm_c32446" formatted="false">"没有起始窗口 PCM 数据"</string>
+    <string name="ui_no_custom_playlists_found_in_this_spotify_accoun_6fcb36" formatted="false">"此 Spotify 账号中没有自定义播放列表。"</string>
+    <string name="ui_no_downloaded_albums_found_e3281c" formatted="false">"未找到已下载的专辑"</string>
+    <string name="ui_no_downloaded_artists_found_5d3714" formatted="false">"未找到已下载的艺人"</string>
+    <string name="ui_no_excluded_songs_e4d528" formatted="false">"没有已排除的歌曲"</string>
+    <string name="ui_no_friends_found_on_this_last_fm_account_0509c0" formatted="false">"此 Last.fm 账号没有好友。"</string>
+    <string name="ui_no_liked_songs_found_in_your_spotify_account_eaed6c" formatted="false">"你的 Spotify 账号中没有喜欢的歌曲。"</string>
+    <string name="ui_no_likely_matches_found_paste_the_exact_youtube__724f3a" formatted="false">"未找到可能的匹配项，请在上方粘贴准确的 YouTube 链接。"</string>
+    <string name="ui_no_matching_downloaded_songs_f12941" formatted="false">"没有匹配的已下载歌曲"</string>
+    <string name="ui_no_messages_yet_say_hello_639866" formatted="false">"还没有消息，打个招呼吧！"</string>
+    <string name="ui_no_new_releases_available_right_now_ba89a8" formatted="false">"暂时没有新发行内容。"</string>
+    <string name="ui_no_playlists_found_for_1_s_a5a39c">"未找到与“%1$s”匹配的播放列表"</string>
+    <string name="ui_no_playlists_in_your_library_yet_e995db" formatted="false">"你的资料库中还没有播放列表"</string>
+    <string name="ui_no_playlists_yet_create_your_first_playlist_belo_a528b1" formatted="false">"还没有播放列表，在下方创建第一个吧。"</string>
+    <string name="ui_no_podcasts_available_right_now_13f9e9" formatted="false">"暂时没有可用播客。"</string>
+    <string name="ui_no_release_notes_were_published_for_this_version_e1ec6c" formatted="false">"此版本未提供更新说明。"</string>
+    <string name="ui_no_similar_artists_found_for_1_s_0e4b39">"未找到与“%1$s”相似的艺人。"</string>
+    <string name="ui_no_similar_songs_found_to_mix_for_1_s_d6ed13">"未找到可为“%1$s”混音的相似歌曲。"</string>
+    <string name="ui_no_songs_found_for_tag_1_s_a87759">"未找到标签“%1$s”下的歌曲。"</string>
+    <string name="ui_no_songs_found_to_create_this_mix_af6eba" formatted="false">"未找到可用于创建此混音的歌曲。"</string>
+    <string name="ui_no_songs_to_download_in_this_playlist_8f6cf6" formatted="false">"此播放列表没有可下载的歌曲"</string>
+    <string name="ui_no_spotify_session_detected_log_in_above_first_9bed6e" formatted="false">"未检测到 Spotify 登录会话，请先在上方登录。"</string>
+    <string name="ui_no_track_playback_recorded_for_this_range_49970b" formatted="false">"此时间范围内没有曲目播放记录。"</string>
+    <string name="ui_no_track_playing_326cae" formatted="false">"当前没有播放曲目"</string>
+    <string name="ui_no_tracks_found_in_that_playlist_make_sure_it_is_93f5c9" formatted="false">"此播放列表中没有曲目，请确认列表公开或已连接账号。"</string>
+    <string name="ui_nothing_queued_3ff488" formatted="false">"队列为空。"</string>
+    <string name="ui_now_playing_084473" formatted="false">"正在播放"</string>
+    <string name="ui_nudges_the_highlight_when_a_provider_s_timestamp_e220e6" formatted="false">"在歌词来源的时间戳提前或滞后时调整高亮。正值使歌词提前（修正歌词滞后），负值使歌词延后。不会改变播放进度。"</string>
+    <string name="ui_ocean_76022a" formatted="false">"海洋"</string>
+    <string name="ui_off_original_audio_passes_through_0c8de7" formatted="false">"关闭 — 保持原始音频"</string>
+    <string name="ui_offline_download_format_bitrate_lossless_flac_or_e00229" formatted="false">"离线下载格式与比特率：无损 FLAC 或 YouTube 音频流"</string>
+    <string name="ui_ok_thanks_b3d641" formatted="false">"好的，谢谢"</string>
+    <string name="ui_oldest_first_06dc81" formatted="false">"最早优先"</string>
+    <string name="ui_one_pause_or_change_per_minute_try_again_at_1_s_cce703">"每分钟仅允许暂停或更换一次，请于 %1$s 重试。"</string>
+    <string name="ui_only_you_control_playback_guests_listen_along_in_ab2d69" formatted="false">"仅你可控制播放；访客实时同步收听"</string>
+    <string name="ui_open_autoeq_parametric_eq_e14c26" formatted="false">"打开 AutoEQ / 参数均衡器"</string>
+    <string name="ui_open_in_browser_56c8f9" formatted="false">"在浏览器中打开"</string>
+    <string name="ui_open_playlist_1_s_9f2945">"打开播放列表 %1$s"</string>
+    <string name="ui_open_source_code_995802" formatted="false">"开源代码"</string>
+    <string name="ui_optimal_rhythm_7906af" formatted="false">"均衡节奏"</string>
+    <string name="ui_optional_stats_use_local_listening_when_disconne_a8a251" formatted="false">"可选 • 断开连接时使用本地收听统计"</string>
+    <string name="ui_origin_44ab85" formatted="false">"原始"</string>
+    <string name="ui_output_loudness_7fd025" formatted="false">"输出与响度"</string>
+    <string name="ui_panel_2f4bd7" formatted="false">"面板"</string>
+    <string name="ui_parsing_matching_1_s_tracks_2ac556">"正在解析与匹配 %1$s 首曲目…"</string>
+    <string name="ui_party_60b18f" formatted="false">"派对"</string>
+    <string name="ui_past_7_days_8adf85" formatted="false">"过去 7 天"</string>
+    <string name="ui_paste_a_public_playlist_url_from_spotify_or_appl_44dbb6" formatted="false">"粘贴 Spotify 或 Apple Music 公开播放列表链接以转移曲目"</string>
+    <string name="ui_paste_a_session_cookie_from_your_browser_instead_50b7ce" formatted="false">"从浏览器粘贴会话 Cookie，无需在此登录"</string>
+    <string name="ui_paste_a_spotify_or_apple_music_playlist_link_d5df31" formatted="false">"粘贴 Spotify 或 Apple Music 播放列表链接。"</string>
+    <string name="ui_paste_a_youtube_link_or_11_character_video_id_f94366" formatted="false">"粘贴 YouTube 链接或 11 位视频 ID"</string>
+    <string name="ui_paste_any_public_spotify_or_apple_music_playlist_9d4718" formatted="false">"粘贴任意 Spotify 或 Apple Music 公开播放列表链接。LastWave 会读取曲目并匹配到资料库。"</string>
+    <string name="ui_paste_any_youtube_or_youtube_music_playlist_url__680293" formatted="false">"粘贴任意 YouTube 或 YouTube Music 播放列表链接。LastWave 将解析全部曲目，不设 100 首限制，可完整导入。"</string>
+    <string name="ui_paste_playlist_link_7943d7" formatted="false">"粘贴播放列表链接"</string>
+    <string name="ui_paste_playlist_link_or_browse_id_32b619" formatted="false">"粘贴播放列表链接或浏览 ID"</string>
+    <string name="ui_paste_sp_dc_7bd908" formatted="false">"粘贴 sp_dc"</string>
+    <string name="ui_paste_your_spotify_sp_dc_cookie_value_from_your__60982c" formatted="false">"从浏览器开发者工具中复制 Spotify 的 sp_dc Cookie 值并粘贴到此处："</string>
+    <string name="ui_pause_on_battery_saver_7a7b95" formatted="false">"省电模式下暂停"</string>
+    <string name="ui_pause_on_battery_saver_f4cd6d" formatted="false">"省电模式下暂停"</string>
+    <string name="ui_pause_skip_locked_until_1_s_f09c17">"暂停和切歌已锁定，直至 %1$s"</string>
+    <string name="ui_paused_usb_dac_exclusive_active_0c7410" formatted="false">"已暂停（USB DAC 独占输出已启用）"</string>
+    <string name="ui_paused_while_bit_perfect_is_enabled_afc9b1" formatted="false">"Bit-Perfect 启用时暂停"</string>
+    <string name="ui_paused_while_bit_perfect_usb_dac_bypass_is_activ_d8ccd4" formatted="false">"Bit-Perfect USB DAC 直通输出启用时暂停"</string>
+    <string name="ui_peak_flow_87b95e" formatted="false">"巅峰心流"</string>
+    <string name="ui_peak_segment_3bcb9c" formatted="false">"收听高峰时段"</string>
+    <string name="ui_peak_timeline_slot_916cfb" formatted="false">"最高峰时间段"</string>
+    <string name="ui_personal_records_05223a" formatted="false">"个人纪录"</string>
+    <string name="ui_physical_rhythm_synchronization_via_haptic_motor_7d6725" formatted="false">"通过振动马达同步音乐节奏"</string>
+    <string name="ui_physical_rhythm_synchronization_via_phone_s_hapt_3c49e1" formatted="false">"通过手机振动马达同步音乐节奏"</string>
+    <string name="ui_physical_rhythm_synchronization_via_phone_s_hapt_65e538" formatted="false">"通过手机振动马达同步音乐节奏（已启用）"</string>
+    <string name="ui_pick_presets_monochrome_palette_or_custom_color__0107e5" formatted="false">"选择预设、单色配色或自定义色环"</string>
+    <string name="ui_pick_the_correct_upload_for_1_s_your_choice_is_s_78b954">"为 %1$s 选择正确的视频版本。你的选择会针对这首歌曲保存。"</string>
+    <string name="ui_pin_at_the_top_960e57" formatted="false">"置顶"</string>
+    <string name="ui_pitch_a6c2d0" formatted="false">"音高"</string>
+    <string name="ui_pitch_black_surfaces_for_oled_and_amoled_screens_a73567" formatted="false">"在 OLED 和 AMOLED 屏幕上使用纯黑背景以节省电量"</string>
+    <string name="ui_play_1_s_2_s_4714b6">"播放 %1$s，%2$s"</string>
+    <string name="ui_play_count_50a957" formatted="false">"播放次数"</string>
+    <string name="ui_play_music_ec21b7" formatted="false">"播放音乐"</string>
+    <string name="ui_play_playlist_1_s_290e6c">"播放播放列表 %1$s"</string>
+    <string name="ui_playback_speed_3c0668" formatted="false">"播放速度"</string>
+    <string name="ui_playback_start_c39d34" formatted="false">"播放起始方式"</string>
+    <string name="ui_playback_ui_b8b96f" formatted="false">"播放与界面"</string>
+    <string name="ui_playing_now_885700" formatted="false">"正在播放"</string>
+    <string name="ui_playlist_added_to_youtube_music_sync_943caf" formatted="false">"已将播放列表加入 YouTube Music 同步"</string>
+    <string name="ui_playlist_cd95b4" formatted="false">"播放列表"</string>
+    <string name="ui_playlist_could_not_be_loaded_14a6ac" formatted="false">"无法加载播放列表"</string>
+    <string name="ui_playlist_cover_updated_002f60" formatted="false">"已更新播放列表封面"</string>
+    <string name="ui_playlist_deleted_3cd30e" formatted="false">"已删除播放列表"</string>
+    <string name="ui_playlist_generation_timed_out_check_your_connect_40ad6e" formatted="false">"生成播放列表超时，请检查网络连接后重试。"</string>
+    <string name="ui_playlist_pinned_to_top_068d4e" formatted="false">"已置顶播放列表"</string>
+    <string name="ui_playlist_removed_from_youtube_music_sync_4f88ac" formatted="false">"已从 YouTube Music 同步中移除播放列表"</string>
+    <string name="ui_playlist_renamed_839cfc" formatted="false">"已重命名播放列表"</string>
+    <string name="ui_playlist_saved_5b33dd" formatted="false">"已保存播放列表！"</string>
+    <string name="ui_playlist_unpinned_606ba5" formatted="false">"已取消置顶播放列表"</string>
+    <string name="ui_playlists_mirror_to_your_account_synced_1_s_9af73f">"播放列表已同步到账号 • 同步于 %1$s"</string>
+    <string name="ui_plays_a6bc73" formatted="false">"播放次数"</string>
+    <string name="ui_please_enter_cookie_text_2d48f6" formatted="false">"请输入 Cookie 文本。"</string>
+    <string name="ui_podcast_bafb6e" formatted="false">"播客"</string>
+    <string name="ui_pop_267a64" formatted="false">"流行"</string>
+    <string name="ui_pre_checking_availability_ece3f4" formatted="false">"正在预检可用性…"</string>
+    <string name="ui_precision_dsp_active_38660c" formatted="false">"精密 DSP 已启用"</string>
+    <string name="ui_precision_media3_dsp_engine_active_6688d8" formatted="false">"精密 Media3 DSP 引擎已启用"</string>
+    <string name="ui_precision_media3_transient_analyzer_consistent_a_fdffeb" formatted="false">"精密 Media3 瞬态分析器（所有设备效果一致）"</string>
+    <string name="ui_prefer_spotify_canvas_033107" formatted="false">"优先使用 Spotify Canvas"</string>
+    <string name="ui_preparing_waveform_d78864" formatted="false">"正在准备波形…"</string>
+    <string name="ui_preparing_your_music_d7187c" formatted="false">"正在准备你的音乐"</string>
+    <string name="ui_preserves_battery_when_android_power_saver_is_ac_4a0187" formatted="false">"Android 省电模式启用时节省电量"</string>
+    <string name="ui_presets_e709e7" formatted="false">"预设"</string>
+    <string name="ui_preview_4bf306" formatted="false">"预览："</string>
+    <string name="ui_preview_queues_cffa81" formatted="false">"队列预览"</string>
+    <string name="ui_pure_black_amoled_a303f6" formatted="false">"AMOLED 纯黑"</string>
+    <string name="ui_quad_hd_2k_1d3242" formatted="false">"超清 2K"</string>
+    <string name="ui_queue_switched_to_a_mix_of_1_s_songs_3efa5e">"队列已切换为包含 %1$s 首歌曲的混音"</string>
+    <string name="ui_quick_actions_c40810" formatted="false">"快捷操作"</string>
+    <string name="ui_quick_dj_overlap_013691" formatted="false">"快速 DJ 重叠"</string>
+    <string name="ui_quick_picks_d09a9b" formatted="false">"快速精选"</string>
+    <string name="ui_r_b_fa9af5" formatted="false">"节奏布鲁斯"</string>
+    <string name="ui_real_time_syllable_sync_karaoke_highlight_9b7ae0" formatted="false">"逐字实时同步与卡拉 OK 高亮"</string>
+    <string name="ui_recaps_9b52ab" formatted="false">"收听回顾"</string>
+    <string name="ui_recently_added_66560f" formatted="false">"最近添加"</string>
+    <string name="ui_recommendation_exclusions_e52017" formatted="false">"推荐排除项"</string>
+    <string name="ui_recommended_music_videos_8a4469" formatted="false">"推荐音乐视频"</string>
+    <string name="ui_record_plays_and_scrobbles_in_your_official_yout_26ab38" formatted="false">"将播放与听歌记录同步到 YouTube Music 官方历史记录"</string>
+    <string name="ui_refresh_exclusions_9f7df7" formatted="false">"刷新排除项"</string>
+    <string name="ui_regenerating_inspired_mix_213fde" formatted="false">"正在重新生成灵感混音…"</string>
+    <string name="ui_rejected_1_s_a54c84">"请求被拒绝：%1$s"</string>
+    <string name="ui_relax_9704b9" formatted="false">"放松"</string>
+    <string name="ui_reload_cce715" formatted="false">"重新加载"</string>
+    <string name="ui_remind_me_later_bebc1c" formatted="false">"稍后提醒我"</string>
+    <string name="ui_remove_credentials_playlists_cached_audio_and_re_4676e3" formatted="false">"移除登录凭据、播放列表和音频缓存，并重置所有偏好"</string>
+    <string name="ui_remove_failed_debe01" formatted="false">"移除失败"</string>
+    <string name="ui_remove_from_youtube_liked_387949" formatted="false">"从 YouTube 喜欢的歌曲中移除"</string>
+    <string name="ui_remove_host_decfda" formatted="false">"移除房主权限"</string>
+    <string name="ui_remove_the_api_key_789f91" formatted="false">"移除 API 密钥"</string>
+    <string name="ui_removed_from_liked_songs_6950fe" formatted="false">"已从喜欢的歌曲中移除"</string>
+    <string name="ui_rename_preset_52abbe" formatted="false">"重命名预设"</string>
+    <string name="ui_rename_the_equalizer_preset_3fdae1" formatted="false">"重命名均衡器预设"</string>
+    <string name="ui_reorder_33d997" formatted="false">"调整顺序"</string>
+    <string name="ui_reorder_show_or_hide_sections_displayed_on_your__812d2e" formatted="false">"调整首页栏目的顺序、显示或隐藏状态"</string>
+    <string name="ui_reorder_works_for_local_playlists_c73762" formatted="false">"可调整本地播放列表的顺序"</string>
+    <string name="ui_repeat_all_7cce34" formatted="false">"列表循环"</string>
+    <string name="ui_repeat_off_c4d7b8" formatted="false">"关闭循环"</string>
+    <string name="ui_repeat_one_05f3dd" formatted="false">"单曲循环"</string>
+    <string name="ui_replaygain_volume_leveling_track_14_lufs_album_d_1ca477" formatted="false">"ReplayGain 音量均衡：单曲（-14 LUFS）、专辑动态或关闭"</string>
+    <string name="ui_reply_6c2bb7" formatted="false">"回复"</string>
+    <string name="ui_replying_to_1_s_510012">"正在回复 %1$s"</string>
+    <string name="ui_reset_app_clear_all_data_02bdc9" formatted="false">"重置应用并清除所有数据"</string>
+    <string name="ui_reset_default_c46b7a" formatted="false">"恢复默认"</string>
+    <string name="ui_reset_download_location_c67fdb" formatted="false">"重置下载位置"</string>
+    <string name="ui_reset_speed_and_pitch_ab05ae" formatted="false">"重置速度与音高"</string>
+    <string name="ui_reset_to_default_server_50b81d" formatted="false">"已恢复默认服务器"</string>
+    <string name="ui_resolving_3e4557" formatted="false">"正在解析…"</string>
+    <string name="ui_restore_backup_7da131" formatted="false">"恢复备份？"</string>
+    <string name="ui_restore_from_backup_5df7f0" formatted="false">"从备份恢复"</string>
+    <string name="ui_restore_the_backup_05f5e4" formatted="false">"恢复备份"</string>
+    <string name="ui_rhythm_consistency_c6492e" formatted="false">"规律与持续性"</string>
+    <string name="ui_rock_468d79" formatted="false">"摇滚"</string>
+    <string name="ui_romance_c6c050" formatted="false">"浪漫"</string>
+    <string name="ui_room_1_s_568eff">"房间 %1$s"</string>
+    <string name="ui_room_code_8572d5" formatted="false">"房间码"</string>
+    <string name="ui_room_code_a66508" formatted="false">"房间码"</string>
+    <string name="ui_room_code_copied_c28842" formatted="false">"已复制房间码"</string>
+    <string name="ui_room_permissions_control_27171b" formatted="false">"房间权限与控制"</string>
+    <string name="ui_rose_51ad0e" formatted="false">"玫瑰"</string>
+    <string name="ui_sage_c3bd77" formatted="false">"鼠尾草绿"</string>
+    <string name="ui_save_album_to_library_fa8aab" formatted="false">"将专辑保存到资料库"</string>
+    <string name="ui_save_api_credentials_2b9439" formatted="false">"保存 API 凭据"</string>
+    <string name="ui_save_as_playlist_995e4d" formatted="false">"保存为播放列表"</string>
+    <string name="ui_save_as_preset_770ba1" formatted="false">"保存为预设"</string>
+    <string name="ui_save_lrc_companion_files_embed_lyrics_in_downloa_03bad2" formatted="false">"保存配套 .lrc 文件，并将歌词嵌入下载曲目"</string>
+    <string name="ui_save_preset_828897" formatted="false">"保存预设"</string>
+    <string name="ui_save_server_465cac" formatted="false">"保存服务器"</string>
+    <string name="ui_save_the_equalizer_preset_ac21e1" formatted="false">"保存均衡器预设"</string>
+    <string name="ui_save_to_library_396649" formatted="false">"保存到资料库"</string>
+    <string name="ui_saved_1_s_52af3b">"已保存 %1$s"</string>
+    <string name="ui_saved_as_1_s_1e0603">"已保存为“%1$s”"</string>
+    <string name="ui_saved_to_library_8a3c7a" formatted="false">"已保存到资料库"</string>
+    <string name="ui_saving_56a228" formatted="false">"正在保存…"</string>
+    <string name="ui_saving_playlist_89bc51" formatted="false">"正在保存播放列表…"</string>
+    <string name="ui_say_something_b41a5d" formatted="false">"说点什么…"</string>
+    <string name="ui_scale_and_resize_lyrics_font_size_across_the_pla_4885b2" formatted="false">"调整播放器和全屏界面中的歌词字号"</string>
+    <string name="ui_scale_volume_in_the_app_instead_of_the_dac_s_har_037823" formatted="false">"在应用内调整音量，替代 DAC 硬件音量控制"</string>
+    <string name="ui_score_489f48" formatted="false">"评分"</string>
+    <string name="ui_scrobble_deleted_295cbc" formatted="false">"已删除听歌记录"</string>
+    <string name="ui_scrobbles_66915b" formatted="false">"听歌记录"</string>
+    <string name="ui_scroll_to_current_song_552966" formatted="false">"滚动到当前歌曲"</string>
+    <string name="ui_search_browse_or_paste_playlist_links_ids_to_imp_74feaf" formatted="false">"搜索、浏览或粘贴播放列表链接与 ID，导入到资料库"</string>
+    <string name="ui_search_downloaded_albums_1d92c6" formatted="false">"搜索已下载的专辑…"</string>
+    <string name="ui_search_downloaded_artists_cb16c9" formatted="false">"搜索已下载的艺人…"</string>
+    <string name="ui_search_for_1_s_3852f8">"搜索“%1$s”"</string>
+    <string name="ui_search_for_a_favorite_or_explore_something_new_y_7b9f8e" formatted="false">"搜索喜爱的音乐或探索新内容，从这里开启音乐之旅。"</string>
+    <string name="ui_search_playlists_d8a78e" formatted="false">"搜索播放列表…"</string>
+    <string name="ui_search_songs_artists_albums_54bb0c" formatted="false">"搜索歌曲、艺人、专辑…"</string>
+    <string name="ui_searching_youtube_for_1_s_bf29c8">"正在 YouTube 搜索 %1$s…"</string>
+    <string name="ui_seed_recommendations_from_youtube_music_or_spoti_74afee" formatted="false">"使用 YouTube Music 或 Spotify 作为推荐来源"</string>
+    <string name="ui_select_offline_audio_resolution_bit_depth_175a33" formatted="false">"选择离线音频的采样率与位深"</string>
+    <string name="ui_select_system_default_light_theme_or_dark_theme_f2f32a" formatted="false">"选择跟随系统、浅色或深色主题"</string>
+    <string name="ui_selected_playlists_mirror_to_your_account_24_7_e49395" formatted="false">"全天候将所选播放列表同步到账号"</string>
+    <string name="ui_send_9bc257" formatted="false">"发送"</string>
+    <string name="ui_server_settings_28af3c" formatted="false">"服务器设置"</string>
+    <string name="ui_server_url_saved_3d183e" formatted="false">"已保存服务器地址"</string>
+    <string name="ui_server_url_updated_1dc31f" formatted="false">"已更新服务器地址"</string>
+    <string name="ui_services_add_ons_efd5ed" formatted="false">"服务与扩展"</string>
+    <string name="ui_session_token_12f1f7" formatted="false">"会话令牌"</string>
+    <string name="ui_sessions_day_27c068" formatted="false">"每日收听次数"</string>
+    <string name="ui_set_custom_timer_ae160f" formatted="false">"设置自定义定时"</string>
+    <string name="ui_shape_sound_across_15_frequency_bands_with_custo_870d44" formatted="false">"使用自定义曲线与预设调整 15 个频段的声音"</string>
+    <string name="ui_shaping_your_music_in_real_time_ca0874" formatted="false">"实时塑造你的音乐"</string>
+    <string name="ui_share_invite_758c66" formatted="false">"分享邀请"</string>
+    <string name="ui_share_lastwave_jam_invite_c515a0" formatted="false">"分享 LastWave 一起听邀请"</string>
+    <string name="ui_show_auto_eq_in_volume_panel_2231d6" formatted="false">"在音量面板显示 AutoEQ"</string>
+    <string name="ui_show_autoeq_and_parametric_eq_shortcut_in_now_pl_4b030b" formatted="false">"在正在播放的音频控制面板中显示 AutoEQ 与参数均衡器入口"</string>
+    <string name="ui_show_hide_account_playlists_c81413" formatted="false">"显示 / 隐藏账号播放列表"</string>
+    <string name="ui_show_motion_video_dd2dfa" formatted="false">"显示动态视频"</string>
+    <string name="ui_show_or_hide_podcast_shelves_show_pages_and_epis_9a5540" formatted="false">"显示或隐藏播客栏目、节目页面和单集搜索"</string>
+    <string name="ui_show_photo_c1eb8b" formatted="false">"显示照片"</string>
+    <string name="ui_show_the_playing_track_quality_and_cover_on_your_3dcf00" formatted="false">"在 Discord 个人资料中显示当前曲目、音质与封面"</string>
+    <string name="ui_shuffle_off_e59f97" formatted="false">"关闭随机播放"</string>
+    <string name="ui_shuffle_on_785728" formatted="false">"开启随机播放"</string>
+    <string name="ui_shuffle_recommendations_d613c8" formatted="false">"随机播放推荐"</string>
+    <string name="ui_sign_in_failed_108b93" formatted="false">"登录失败"</string>
+    <string name="ui_sign_in_incomplete_finish_signing_in_then_tap_i__ecab81" formatted="false">"尚未完成登录；请先登录，然后点按“我已登录”。"</string>
+    <string name="ui_sign_in_to_access_and_import_your_personal_playl_0a87de" formatted="false">"登录以访问和导入个人播放列表、喜欢的歌曲，并启用 Spotify Canvas。"</string>
+    <string name="ui_sign_in_to_enable_official_spotify_canvas_video__5e24f2" formatted="false">"登录以启用 Spotify Canvas 循环视频与资料库同步"</string>
+    <string name="ui_sign_in_to_unlock_spotify_canvas_video_loops_c60d3f" formatted="false">"登录以启用 Spotify Canvas 循环视频"</string>
+    <string name="ui_sign_in_with_your_google_account_6049f9" formatted="false">"使用 Google 账号登录"</string>
+    <string name="ui_signed_in_but_spotify_refused_the_session_sign_i_98ff87" formatted="false">"已登录，但 Spotify 拒绝此会话。请重新登录或粘贴新的 Cookie。"</string>
+    <string name="ui_similar_to_0939c3" formatted="false">"相似推荐"</string>
+    <string name="ui_single_album_fb7bdc" formatted="false">"单曲 / 专辑"</string>
+    <string name="ui_singles_eps_6862eb" formatted="false">"单曲与 EP"</string>
+    <string name="ui_skip_3da474" formatted="false">"跳过"</string>
+    <string name="ui_sleep_3cac34" formatted="false">"睡眠"</string>
+    <string name="ui_sleep_timer_ef2998" formatted="false">"睡眠定时"</string>
+    <string name="ui_sleep_tracker_inspired_flow_analysis_e10c92" formatted="false">"借鉴睡眠追踪的收听节奏分析"</string>
+    <string name="ui_smooth_fade_5c3aaa" formatted="false">"平滑淡化"</string>
+    <string name="ui_smooth_transition_between_tracks_1_s_sec_39d1d4">"曲目间平滑过渡 • %1$s 秒"</string>
+    <string name="ui_some_tracks_couldn_t_load_retry_9d75b5" formatted="false">"部分曲目无法加载，请重试。"</string>
+    <string name="ui_song_excluded_from_recommendations_f0969b" formatted="false">"已从推荐中排除此歌曲"</string>
+    <string name="ui_song_excluded_here_and_on_youtube_music_21c886" formatted="false">"已在本应用与 YouTube Music 中排除此歌曲"</string>
+    <string name="ui_song_excluded_here_could_not_update_youtube_musi_ed4f44" formatted="false">"已在本应用中排除此歌曲，但无法更新 YouTube Music，请重试。"</string>
+    <string name="ui_song_excluded_here_youtube_music_could_not_confi_af4481" formatted="false">"已在本应用中排除此歌曲，YouTube Music 未能确认此更改。"</string>
+    <string name="ui_song_removed_from_playlist_e05c9f" formatted="false">"已从播放列表中移除歌曲"</string>
+    <string name="ui_songs_1_s_bf2106">"歌曲（%1$s）"</string>
+    <string name="ui_songs_you_mark_don_t_recommend_again_will_appear_f982ef" formatted="false">"标记为“不再推荐”的歌曲会显示在此处，可逐一恢复。"</string>
+    <string name="ui_sort_songs_c870be" formatted="false">"排序歌曲"</string>
+    <string name="ui_spatial_729ac1" formatted="false">"空间音频"</string>
+    <string name="ui_spatial_immersive_audio_master_audio_9fcbc0" formatted="false">"沉浸式空间音频 • 母带音频"</string>
+    <string name="ui_speed_pitch_bdf451" formatted="false">"速度与音高"</string>
+    <string name="ui_spotify_account_56f3de" formatted="false">"Spotify 账号"</string>
+    <string name="ui_spotify_account_library_30c9bb" formatted="false">"Spotify 账号资料库"</string>
+    <string name="ui_spotify_apple_music_link_1bea1e" formatted="false">"Spotify 与 Apple Music 链接"</string>
+    <string name="ui_spotify_canvas_connected_c598e8" formatted="false">"已连接 Spotify Canvas！"</string>
+    <string name="ui_spotify_canvas_looping_background_videos_bb0707" formatted="false">"Spotify Canvas（循环视频背景）"</string>
+    <string name="ui_spotify_disconnected_747420" formatted="false">"已断开 Spotify 连接"</string>
+    <string name="ui_spotify_playlist_5fd60a" formatted="false">"Spotify 播放列表"</string>
+    <string name="ui_stage_the_restore_ffe7fb" formatted="false">"准备恢复"</string>
+    <string name="ui_standard_320_kbps_ae7375" formatted="false">"标准（320 kbps）"</string>
+    <string name="ui_standard_320_kbps_mp3_641dd6" formatted="false">"标准（320 kbps MP3）"</string>
+    <string name="ui_standard_definition_a55bde" formatted="false">"标清"</string>
+    <string name="ui_standard_quality_c8e06b" formatted="false">"标准音质"</string>
+    <string name="ui_standard_smooth_blend_18f183" formatted="false">"标准平滑混合"</string>
+    <string name="ui_standby_deck_empty_20011d" formatted="false">"待播轨道为空"</string>
+    <string name="ui_start_a_song_in_any_media_app_c126c3" formatted="false">"在任意媒体应用中开始播放歌曲"</string>
+    <string name="ui_start_jam_session_cb8d60" formatted="false">"开始一起听"</string>
+    <string name="ui_starting_import_bf718a" formatted="false">"正在开始导入…"</string>
+    <string name="ui_statistics_2086b2" formatted="false">"统计"</string>
+    <string name="ui_steady_cadence_a0efb7" formatted="false">"稳定节奏"</string>
+    <string name="ui_stop_music_when_lastwave_is_removed_from_recents_873a05" formatted="false">"从最近任务移除 LastWave 时停止音乐"</string>
+    <string name="ui_stop_playback_automatically_c2682d" formatted="false">"自动停止播放"</string>
+    <string name="ui_stop_when_the_queue_ends_nothing_is_added_automa_2fadbb" formatted="false">"队列结束后停止，不自动添加歌曲"</string>
+    <string name="ui_storage_size_ff8fec" formatted="false">"存储占用"</string>
+    <string name="ui_streak_ac4792" formatted="false">"连续收听"</string>
+    <string name="ui_stream_to_tv_or_speaker_f06516" formatted="false">"投放到电视或音箱"</string>
+    <string name="ui_streaming_addons_0af2dc" formatted="false">"流媒体扩展"</string>
+    <string name="ui_subtle_35_pulse_for_relaxed_listening_a0db04" formatted="false">"35% 轻柔脉冲，适合放松收听"</string>
+    <string name="ui_subtle_pulses_for_relaxed_listening_558b38" formatted="false">"适合放松收听的轻柔脉冲。"</string>
+    <string name="ui_suspend_haptics_to_save_power_c6d508" formatted="false">"暂停触感以节省电量"</string>
+    <string name="ui_switch_between_personal_and_brand_channels_linke_64ed53" formatted="false">"切换账号关联的个人频道与品牌频道"</string>
+    <string name="ui_switch_to_album_art_556f48" formatted="false">"切换到专辑封面"</string>
+    <string name="ui_switch_youtube_channel_32cf57" formatted="false">"切换 YouTube 频道"</string>
+    <string name="ui_switching_to_bd8bc6" formatted="false">"正在切换到"</string>
+    <string name="ui_sync_downloads_from_storage_ce9ce6" formatted="false">"从存储空间同步下载"</string>
+    <string name="ui_sync_offset_dd9f6f" formatted="false">"同步偏移"</string>
+    <string name="ui_sync_playlist_json_fe98e9" formatted="false">"同步播放列表 JSON？"</string>
+    <string name="ui_sync_playlists_4df049" formatted="false">"同步播放列表"</string>
+    <string name="ui_sync_server_address_26fe8f" formatted="false">"同步服务器地址"</string>
+    <string name="ui_sync_youtube_music_79ba85" formatted="false">"同步 YouTube Music"</string>
+    <string name="ui_syncing_1_s_2_s_3_s_8aa728">"正在同步 %1$s/%2$s • %3$s"</string>
+    <string name="ui_synthwave_9afb31" formatted="false">"合成器浪潮"</string>
+    <string name="ui_system_about_178f7b" formatted="false">"系统与关于"</string>
+    <string name="ui_tail_55_freeze_31c31a" formatted="false">"尾音：55% 冻结"</string>
+    <string name="ui_tail_dry_1ba926" formatted="false">"尾音：干声"</string>
+    <string name="ui_take_me_to_yt_music_login_7e0c32" formatted="false">"前往 YouTube Music 登录"</string>
+    <string name="ui_take_requests_directly_from_personal_or_communit_333674" formatted="false">"直接从个人或社区扩展服务获取音频。多个启用的扩展会并行查询，以获取最佳音频流。"</string>
+    <string name="ui_tap_to_detect_every_media_app_b79dfd" formatted="false">"点按以识别所有媒体应用"</string>
+    <string name="ui_tap_to_download_1_s_e9b304">"点按下载 %1$s"</string>
+    <string name="ui_tap_to_download_new_version_fc6c54" formatted="false">"点按下载新版本"</string>
+    <string name="ui_tap_to_manage_session_1ef90b" formatted="false">"点按管理会话"</string>
+    <string name="ui_tap_to_retry_4f95ef" formatted="false">"点按重试"</string>
+    <string name="ui_telegram_support_a1c9e5" formatted="false">"Telegram 支持"</string>
+    <string name="ui_telegram_updates_support_a730db" formatted="false">"Telegram 更新与支持"</string>
+    <string name="ui_tempo_pitch_linked_b69fb2" formatted="false">"速度与音高联动"</string>
+    <string name="ui_text_size_3cc6e1" formatted="false">"文字大小"</string>
+    <string name="ui_that_file_is_not_a_valid_lastwave_backup_55e9a8" formatted="false">"此文件不是有效的 LastWave 备份"</string>
+    <string name="ui_the_sound_keeps_playing_as_custom_until_you_pick_1e2b21" formatted="false">"声音将继续使用自定义设置，直到你选择其他预设。"</string>
+    <string name="ui_theme_mode_bb6b0b" formatted="false">"主题模式"</string>
+    <string name="ui_this_backup_was_created_by_a_newer_lastwave_vers_06a6c7" formatted="false">"此备份由更新版本的 LastWave 创建"</string>
+    <string name="ui_this_month_0f6cc3" formatted="false">"本月"</string>
+    <string name="ui_this_month_1b4785" formatted="false">"本月"</string>
+    <string name="ui_this_month_vs_last_6b0f1d" formatted="false">"本月与上月对比"</string>
+    <string name="ui_this_playlist_is_unavailable_86533b" formatted="false">"此播放列表不可用。"</string>
+    <string name="ui_this_rom_s_webview_implementation_is_incompatibl_ae1752" formatted="false">"此系统的 WebView 实现不兼容，Spotify 登录已安全停用。"</string>
+    <string name="ui_this_rom_s_webview_implementation_is_incompatibl_c5b427" formatted="false">"此系统的 WebView 实现不兼容，YouTube Music 登录已安全停用。"</string>
+    <string name="ui_this_will_merge_1_s_playlist_s_from_the_local_js_46185d">"这会从本地 JSON 文件合并 %1$s 个播放列表，并重新连接自动同步。"</string>
+    <string name="ui_this_will_remove_your_spotify_session_and_log_yo_be18d8" formatted="false">"这会移除 Spotify 会话并退出登录。重新连接前，Spotify Canvas 循环视频和播放列表同步将停用。"</string>
+    <string name="ui_this_will_replace_your_current_data_with_1_s_pla_53debd">"这会使用备份中的 %1$s 个播放列表和全部设置替换当前数据。"</string>
+    <string name="ui_title_a_z_fe7b7e" formatted="false">"标题（A–Z）"</string>
+    <string name="ui_today_24345a" formatted="false">"今天"</string>
+    <string name="ui_toggle_between_system_font_and_custom_typography_a247ea" formatted="false">"切换系统字体与自定义字体"</string>
+    <string name="ui_toggle_download_lyrics_274a85" formatted="false">"切换歌词下载"</string>
+    <string name="ui_top_3_share_c44458" formatted="false">"前三首占比"</string>
+    <string name="ui_top_3_tracks_account_for_1_s_of_your_listening_t_a311d7">"前三首曲目占收听时间的 %1$s%%。"</string>
+    <string name="ui_top_albums_0db744" formatted="false">"热门专辑"</string>
+    <string name="ui_top_categories_39960c" formatted="false">"热门分类"</string>
+    <string name="ui_top_charts_a6764c" formatted="false">"热门榜单"</string>
+    <string name="ui_total_listen_duration_1_s_ae725d">"总收听时长：%1$s"</string>
+    <string name="ui_total_listening_captured_in_the_selected_range_y_800a1a" formatted="false">"所选范围内的总收听时长。年度柱状图汇总完整历史。"</string>
+    <string name="ui_total_listening_captured_this_month_daily_bars_s_9c9d5f" formatted="false">"本月记录的总收听时长。每日柱状图显示变化趋势。"</string>
+    <string name="ui_total_listening_captured_this_week_daily_bars_su_13cd5b" formatted="false">"本周记录的总收听时长。每日柱状图显示变化趋势。"</string>
+    <string name="ui_total_listening_captured_this_year_monthly_bars__bfcbb5" formatted="false">"本年记录的总收听时长。每月柱状图显示变化趋势。"</string>
+    <string name="ui_total_scrobbles_45fd3f" formatted="false">"听歌记录总数"</string>
+    <string name="ui_total_sessions_3d28aa" formatted="false">"收听总次数"</string>
+    <string name="ui_track_1_s_f4bf73">"曲目 %1$s"</string>
+    <string name="ui_track_concentration_f93065" formatted="false">"曲目集中度"</string>
+    <string name="ui_track_count_unavailable_38d833" formatted="false">"曲目数量不可用"</string>
+    <string name="ui_tracklist_preview_d7e6f0" formatted="false">"曲目列表预览"</string>
+    <string name="ui_tracks_1_s_443edb">"曲目（%1$s）"</string>
+    <string name="ui_tracks_1_s_7c2f32">"曲目（%1$s）"</string>
+    <string name="ui_tracks_in_this_range_e4c07d" formatted="false">"此时间范围内的曲目"</string>
+    <string name="ui_transition_duration_8fb051" formatted="false">"过渡时长"</string>
+    <string name="ui_transition_waveform_1_s_into_2_s_eb9507">"过渡波形：从 %1$s 到 %2$s"</string>
+    <string name="ui_translation_language_15fff1" formatted="false">"翻译语言"</string>
+    <string name="ui_trending_charts_1b54e7" formatted="false">"趋势榜单"</string>
+    <string name="ui_trending_songs_for_you_2e0b8f" formatted="false">"为你推荐的热门歌曲"</string>
+    <string name="ui_turn_on_to_apply_equalization_live_88e0b5" formatted="false">"开启后实时应用均衡器"</string>
+    <string name="ui_turn_timer_off_459464" formatted="false">"关闭定时"</string>
+    <string name="ui_type_a_message_09bdff" formatted="false">"输入消息…"</string>
+    <string name="ui_ultra_hd_4k_8141f1" formatted="false">"超高清 4K"</string>
+    <string name="ui_unable_to_load_spotify_login_page_directly_97a46a" formatted="false">"无法直接加载 Spotify 登录页面。"</string>
+    <string name="ui_unable_to_resolve_video_stream_57a9f7" formatted="false">"无法解析视频流"</string>
+    <string name="ui_unavailable_on_this_hardware_falling_back_to_dsp_4d5bae" formatted="false">"此硬件不支持（回退到 DSP）"</string>
+    <string name="ui_undo_39fc72" formatted="false">"撤销"</string>
+    <string name="ui_unique_tracks_f662be" formatted="false">"不同曲目数"</string>
+    <string name="ui_unknown_album_d46bfb" formatted="false">"未知专辑"</string>
+    <string name="ui_unknown_artist_5bf8da" formatted="false">"未知艺人"</string>
+    <string name="ui_unknown_artist_9566f8" formatted="false">"未知艺人"</string>
+    <string name="ui_unknown_song_840fc7" formatted="false">"未知歌曲"</string>
+    <string name="ui_unknown_title_58dfae" formatted="false">"未知标题"</string>
+    <string name="ui_unknown_track_698495" formatted="false">"未知曲目"</string>
+    <string name="ui_unlike_song_b50354" formatted="false">"取消喜欢此歌曲"</string>
+    <string name="ui_unlimited_b8bef3" formatted="false">"无限制"</string>
+    <string name="ui_unlimited_queue_7c8e6b" formatted="false">"无限队列"</string>
+    <string name="ui_unlock_queue_7da814" formatted="false">"解锁队列"</string>
+    <string name="ui_unmute_7044c3" formatted="false">"取消静音"</string>
+    <string name="ui_unpin_from_top_9427d8" formatted="false">"取消置顶"</string>
+    <string name="ui_unreachable_1_s_87847a">"无法连接：%1$s"</string>
+    <string name="ui_up_next_admin_queue_3b66a7" formatted="false">"接下来播放 · 管理员队列"</string>
+    <string name="ui_up_next_in_shuffle_order_1af35c" formatted="false">"按随机顺序接着播放"</string>
+    <string name="ui_up_next_your_queue_is_shared_31c476" formatted="false">"接下来播放 · 你的队列已共享"</string>
+    <string name="ui_up_to_24_bit_192_khz_lossless_flac_13f26d" formatted="false">"最高 24 位 / 192 kHz • 无损 FLAC"</string>
+    <string name="ui_up_to_24_bit_192_khz_studio_master_flac_eb7ef4" formatted="false">"最高 24 位 / 192 kHz • 录音室母带 FLAC"</string>
+    <string name="ui_up_to_320_kbps_mp3_aac_78ebf5" formatted="false">"最高 320 kbps • MP3 / AAC"</string>
+    <string name="ui_update_album_artist_folders_2df626" formatted="false">"更新专辑与艺人文件夹"</string>
+    <string name="ui_update_album_sort_c0c80c" formatted="false">"更新专辑排序"</string>
+    <string name="ui_update_arrived_6c8cda" formatted="false">"新版本已到来"</string>
+    <string name="ui_update_artist_sort_5068aa" formatted="false">"更新艺人排序"</string>
+    <string name="ui_update_automix_mode_e3f3cb" formatted="false">"更新自动混音模式"</string>
+    <string name="ui_update_automix_thermal_profile_48b1eb" formatted="false">"更新自动混音性能配置"</string>
+    <string name="ui_update_available_101090" formatted="false">"有可用更新！"</string>
+    <string name="ui_update_available_1_s_v_2_s_21d820">"有可用更新（%1$s）• v%2$s"</string>
+    <string name="ui_update_bit_perfect_mode_f7ef8a" formatted="false">"更新 Bit-Perfect 模式"</string>
+    <string name="ui_update_discord_presence_80b46e" formatted="false">"更新 Discord 动态"</string>
+    <string name="ui_update_download_folder_0fb79e" formatted="false">"更新下载文件夹"</string>
+    <string name="ui_update_download_location_a23633" formatted="false">"更新下载位置"</string>
+    <string name="ui_update_folder_structure_ef62fa" formatted="false">"更新文件夹结构"</string>
+    <string name="ui_update_loudness_mode_02a87d" formatted="false">"更新响度模式"</string>
+    <string name="ui_update_loudness_preamp_f30f48" formatted="false">"更新响度前级增益"</string>
+    <string name="ui_update_now_c4cbac" formatted="false">"立即更新"</string>
+    <string name="ui_update_pause_on_zero_volume_setting_21b138" formatted="false">"更新零音量暂停设置"</string>
+    <string name="ui_update_playlist_sync_472fa8" formatted="false">"更新播放列表同步"</string>
+    <string name="ui_update_primary_artist_filter_349d5b" formatted="false">"更新主要艺人筛选"</string>
+    <string name="ui_update_ready_1_s_d72b0e">"更新已就绪（%1$s）"</string>
+    <string name="ui_update_scrobbling_e011a6" formatted="false">"更新听歌记录同步"</string>
+    <string name="ui_update_song_sort_08ca4f" formatted="false">"更新歌曲排序"</string>
+    <string name="ui_update_stop_playback_on_recents_setting_4f6831" formatted="false">"更新划走应用时停止播放设置"</string>
+    <string name="ui_update_studio_master_clarity_e02db5" formatted="false">"更新录音室母带清晰度"</string>
+    <string name="ui_update_the_equalizer_6c08c4" formatted="false">"更新均衡器"</string>
+    <string name="ui_update_the_equalizer_band_1c9025" formatted="false">"更新均衡器频段"</string>
+    <string name="ui_update_youtube_history_sync_27c51b" formatted="false">"更新 YouTube 历史同步"</string>
+    <string name="ui_update_youtube_playlist_visibility_cd7374" formatted="false">"更新 YouTube 播放列表可见性"</string>
+    <string name="ui_update_youtube_sync_9291a1" formatted="false">"更新 YouTube 同步"</string>
+    <string name="ui_upgrading_to_cf1be2" formatted="false">"正在升级到"</string>
+    <string name="ui_usb_exclusive_output_23b130" formatted="false">"USB 独占输出"</string>
+    <string name="ui_use_classic_song_menu_7fdaea" formatted="false">"使用经典歌曲菜单"</string>
+    <string name="ui_use_legacy_colours_a2c942" formatted="false">"使用旧版配色"</string>
+    <string name="ui_use_this_link_92ec2b" formatted="false">"使用此链接"</string>
+    <string name="ui_using_automatic_playlist_cover_0a9fbb" formatted="false">"正在使用自动播放列表封面"</string>
+    <string name="ui_v_1_s_language_community_source_code_15ae61">"v%1$s • 语言、社区与源码"</string>
+    <string name="ui_version_1_s_d2f210">"版本 %1$s"</string>
+    <string name="ui_version_1_s_is_ready_to_install_3e7515">"版本 %1$s 已可安装"</string>
+    <string name="ui_version_info_telegram_community_github_repositor_c557af" formatted="false">"版本信息、Telegram 社区与 GitHub 仓库"</string>
+    <string name="ui_vibration_intensity_2191bd" formatted="false">"振动强度"</string>
+    <string name="ui_video_bc17c1" formatted="false">"视频"</string>
+    <string name="ui_video_id_1_s_4b4f65">"视频 ID：%1$s"</string>
+    <string name="ui_video_search_failed_a31e57" formatted="false">"视频搜索失败"</string>
+    <string name="ui_view_artist_16bfcc" formatted="false">"查看艺人"</string>
+    <string name="ui_view_repository_at_github_com_clash_projects_las_95c5fc" formatted="false">"查看仓库：github.com/Clash-Projects/LastWave-Desktop"</string>
+    <string name="ui_view_repository_at_github_com_clash_projects_las_aa815a" formatted="false">"查看仓库：github.com/Clash-Projects/LastWave-native"</string>
+    <string name="ui_view_your_own_data_again_5d8724" formatted="false">"重新查看自己的数据"</string>
+    <string name="ui_violet_ddcd2f" formatted="false">"紫罗兰"</string>
+    <string name="ui_vocals_only_337845" formatted="false">"仅人声"</string>
+    <string name="ui_volume_seamless_transitions_speed_5c1e43" formatted="false">"音量、无缝过渡与速度"</string>
+    <string name="ui_waiting_for_approval_in_the_browser_8fd5ea" formatted="false">"正在等待浏览器授权…"</string>
+    <string name="ui_watch_exact_sync_music_video_of_currently_playin_5fc2c9" formatted="false">"在播放器菜单中观看与当前歌曲精确同步的音乐视频"</string>
+    <string name="ui_watch_music_video_7fc7fa" formatted="false">"观看音乐视频"</string>
+    <string name="ui_we_couldn_t_load_your_recommendations_try_again__8e72b7" formatted="false">"无法加载推荐，请重试或使用搜索查找音乐。"</string>
+    <string name="ui_websocket_server_url_371447" formatted="false">"WebSocket 服务器地址"</string>
+    <string name="ui_week_f82be6" formatted="false">"周"</string>
+    <string name="ui_weekday_average_34b54c" formatted="false">"工作日平均"</string>
+    <string name="ui_weekend_average_15af3a" formatted="false">"周末平均"</string>
+    <string name="ui_weekly_rhythm_344c21" formatted="false">"每周收听规律"</string>
+    <string name="ui_when_the_queue_ends_keep_playing_similar_songs_0f8b69" formatted="false">"队列结束后继续播放相似歌曲"</string>
+    <string name="ui_whole_song_c43a9a" formatted="false">"整首歌曲"</string>
+    <string name="ui_wi_fi_streaming_quality_2f111e" formatted="false">"Wi-Fi 播放音质"</string>
+    <string name="ui_wi_fi_streaming_quality_a32d59" formatted="false">"Wi-Fi 播放音质"</string>
+    <string name="ui_workout_39463a" formatted="false">"健身"</string>
+    <string name="ui_workout_energy_d523b6" formatted="false">"健身活力"</string>
+    <string name="ui_year_879e32" formatted="false">"年"</string>
+    <string name="ui_year_to_date_progression_615e4c" formatted="false">"本年变化趋势"</string>
+    <string name="ui_you_905cb3" formatted="false">"你"</string>
+    <string name="ui_you_are_co_host_bff7a8" formatted="false">"你是协同房主"</string>
+    <string name="ui_you_are_host_c45f09" formatted="false">"你是房主"</string>
+    <string name="ui_you_are_the_station_admin_14b403" formatted="false">"你是电台管理员"</string>
+    <string name="ui_you_can_reload_the_page_or_paste_your_sp_dc_cook_6a21b6" formatted="false">"你可以重新加载页面，或手动粘贴 sp_dc Cookie。"</string>
+    <string name="ui_you_d38558" formatted="false">"（你）"</string>
+    <string name="ui_you_re_all_caught_up_65a724" formatted="false">"已浏览全部内容"</string>
+    <string name="ui_your_daily_discover_95e4a0" formatted="false">"每日音乐发现"</string>
+    <string name="ui_your_display_name_ade88f" formatted="false">"你的显示名称"</string>
+    <string name="ui_your_favorites_e8a086" formatted="false">"你喜欢的音乐"</string>
+    <string name="ui_your_recent_listening_sessions_99d303" formatted="false">"你最近的收听时段"</string>
+    <string name="ui_your_spotify_favorites_7e36b0" formatted="false">"你在 Spotify 喜欢的歌曲"</string>
+    <string name="ui_your_spotify_library_6b7aef" formatted="false">"你的 Spotify 资料库"</string>
+    <string name="ui_your_spotify_playlists_ea794e" formatted="false">"你的 Spotify 播放列表"</string>
+    <string name="ui_your_top_artists_tracks_recaps_d01d70" formatted="false">"热门艺人、曲目与收听回顾"</string>
+    <string name="ui_your_tracks_based_on_your_scrobbles_d8410e" formatted="false">"你的曲目 • 根据听歌记录推荐"</string>
+    <string name="ui_youtube_account_connection_9e2425" formatted="false">"连接 YouTube 账号"</string>
+    <string name="ui_youtube_link_00a825" formatted="false">"YouTube 链接"</string>
+    <string name="ui_youtube_music_account_70902a" formatted="false">"YouTube Music 账号"</string>
+    <string name="ui_youtube_music_account_channels_history_24_7_sync_34972b" formatted="false">"YouTube Music 账号、频道、历史与全天候同步"</string>
+    <string name="ui_youtube_music_downloads_strictly_as_is_never_upg_53f2ab" formatted="false">"YouTube Music 下载保持原始音质，不会升级。仅在选中 Dolby Atmos 时下载该格式，否则不会下载。Atmos 依次回退到 Hi-Res、CD、320 kbps、YouTube；Hi-Res 逐级降低音质，最后使用 YouTube。"</string>
+    <string name="ui_youtube_music_listening_history_b5295b" formatted="false">"YouTube Music 收听历史"</string>
+    <string name="ui_youtube_music_playlist_ccc4ea" formatted="false">"YouTube Music 播放列表"</string>
+    <string name="ui_youtube_music_plays_strictly_as_is_never_upgrade_4295f2" formatted="false">"YouTube Music 播放保持原始音质，不会升级。仅在选中 Dolby Atmos 时播放该格式，否则不会播放。Atmos 依次回退到 Hi-Res、CD、320 kbps、YouTube；Hi-Res 逐级降低无损音质，最后使用 YouTube。"</string>
+    <string name="ui_youtube_music_section_76acb0" formatted="false">"YouTube Music 栏目"</string>
+    <string name="ui_youtube_music_sign_in_isn_t_supported_by_this_ro_cda9eb" formatted="false">"此系统不支持 YouTube Music 登录。"</string>
+    <string name="ui_youtube_playlist_0559a4" formatted="false">"YouTube 播放列表"</string>
+    <string name="ui_youtube_video_link_or_id_df191e" formatted="false">"YouTube 视频链接或 ID"</string>
+    <string name="ui_made_for_you">为你精选</string>
+    <string name="ui_extra_bc0994d6c7">"我的混音"</string>
+    <string name="ui_extra_830877d1ed">"%1$s 分钟"</string>
+    <string name="ui_extra_b521caa6e1">"管理员"</string>
+    <string name="ui_extra_f70ab04e71">"协同房主"</string>
+    <string name="ui_extra_e645477f66">"房主"</string>
+    <string name="ui_extra_6990f01ad9">"实时"</string>
+    <string name="ui_extra_a204ac9b05">"粘贴"</string>
+    <string name="ui_extra_5497f42be1">"+10 秒"</string>
+    <string name="ui_extra_ca89903230">"-10 秒"</string>
+    <string name="ui_extra_643c518477">"%1$s 个文件夹"</string>
+    <string name="ui_extra_c93e6ff593">"%1$s 首歌曲 • %2$s 位艺人 • %3$s"</string>
+    <string name="ui_extra_47369c14b2">"20 秒"</string>
+    <string name="ui_extra_790739d6ba">"30 秒"</string>
+    <string name="ui_extra_ada1ad5126">"音乐播放器"</string>
+    <string name="ui_extra_0df3b0cedb">"流派混音 • %1$s"</string>
+    <string name="ui_extra_5eccba604f">"流派混音"</string>
+    <string name="ui_extra_9817a18bb1">"最近收听曲目"</string>
+    <string name="ui_extra_a02eaabe46">"热门曲目"</string>
+    <string name="ui_extra_e6f05b9c56">"未听过的音乐混音"</string>
+    <string name="ui_extra_fd1c6df309">"曲目混音 • %1$s"</string>
+    <string name="ui_extra_3f8302dec6">"曲目混音"</string>
+    <string name="ui_extra_84986fd7d9">"艺人混音 • %1$s"</string>
+    <string name="ui_extra_d41ca6e21c">"艺人混音"</string>
+    <string name="ui_extra_5a04520a88">"发现推荐"</string>
+    <string name="ui_extra_f2071b8f29">"LASTWAVE  •  正在播放"</string>
+</resources>

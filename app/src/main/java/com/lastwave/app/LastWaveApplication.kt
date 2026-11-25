@@ -53,6 +53,7 @@ class LastWaveApplication : Application(), ImageLoaderFactory {
         // Pin the selected locale before any component (providers, services,
         // widgets) can load resources with the wrong configuration.
         super.attachBaseContext(com.lastwave.app.util.AppLocaleManager.wrap(base))
+        com.lastwave.app.util.AppText.install(this)
         // Content providers (including AndroidX startup/profile components)
         // are created before Application.onCreate(). Install diagnostics here
         // so failures in that earlier device-dependent phase are not lost.

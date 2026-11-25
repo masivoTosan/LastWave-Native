@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -98,8 +100,8 @@ fun FeedPlaylistDetailScreen(
         ExpressiveHeader(
             modifier = headerModifier,
             backdrop = headerBackdrop,
-            title = playlist?.title?.takeIf(String::isNotBlank) ?: "Playlist",
-            subtitle = playlist?.author ?: "YouTube Music",
+            title = playlist?.title?.takeIf(String::isNotBlank) ?: appText(com.lastwave.app.R.string.ui_playlist_cd95b4),
+            subtitle = playlist?.author ?: appText(com.lastwave.app.R.string.recommendation_source_yt_music),
             onBack = onBack,
         )
             },
@@ -262,7 +264,7 @@ private fun PlaylistContent(
                 )
                 Spacer(Modifier.height(18.dp))
                 Text(
-                    text = playlist.title.ifBlank { "Playlist" },
+                    text = playlist.title.ifBlank { appText(com.lastwave.app.R.string.ui_playlist_cd95b4) },
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
@@ -272,7 +274,7 @@ private fun PlaylistContent(
                 Text(
                     text = listOfNotNull(
                         playlist.author?.takeIf(String::isNotBlank),
-                        "${playlist.tracks.size} tracks",
+                        appText(com.lastwave.app.R.string.ui_1_s_tracks_aece60, (playlist.tracks.size).toString()),
                     ).joinToString(" \u2022 "),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -307,9 +309,9 @@ private fun PlaylistContent(
                     modifier = Modifier.fillMaxWidth(),
                 ) {
                     Text(when {
-                        isSaving -> "Saving…"
-                        savedToLibrary -> "Saved to library"
-                        else -> "Save to library"
+                        isSaving -> appText(com.lastwave.app.R.string.ui_saving_56a228)
+                        savedToLibrary -> appText(com.lastwave.app.R.string.ui_saved_to_library_8a3c7a)
+                        else -> appText(com.lastwave.app.R.string.ui_save_to_library_396649)
                     })
                 }
                 saveError?.let { message ->
@@ -322,7 +324,7 @@ private fun PlaylistContent(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        text = "TRACKS (${displayedTracks.size})",
+                        text = appText(com.lastwave.app.R.string.ui_tracks_1_s_443edb, (displayedTracks.size).toString()),
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary,
@@ -453,7 +455,7 @@ private fun PlaylistContent(
                 artworkUrl = track.artworkUrl,
                 videoId = track.videoId.takeIf(String::isNotBlank),
             ),
-            playbackSourceLabel = playlist.title.ifBlank { "Mix" },
+            playbackSourceLabel = playlist.title.ifBlank { appText(com.lastwave.app.R.string.home_mix) },
             onDismiss = { menuTrack = null },
         )
     }
@@ -467,7 +469,7 @@ private fun PlaylistContent(
                     album = track.album,
                     artworkUrl = track.artworkUrl,
                     videoId = track.videoId.takeIf(String::isNotBlank),
-                    sourceLabel = playlist.title.ifBlank { "Mix" },
+                    sourceLabel = playlist.title.ifBlank { appText(com.lastwave.app.R.string.home_mix) },
                     onPlay = { onPlay(displayedTracks, trayIndex) },
                 ),
                 onDismiss = { miniTrayIndex = null },
@@ -479,6 +481,6 @@ private fun PlaylistContent(
 private fun YouTubeMusicTrack.artistAndAlbum(): String =
     listOfNotNull(artist.takeIf(String::isNotBlank), album?.takeIf(String::isNotBlank))
         .joinToString(" \u2022 ")
-        .ifBlank { "YouTube Music" }
+        .ifBlank { appText(com.lastwave.app.R.string.recommendation_source_yt_music) }
 
 private fun Int.toDurationLabel(): String = "%d:%02d".format(this / 60, this % 60)

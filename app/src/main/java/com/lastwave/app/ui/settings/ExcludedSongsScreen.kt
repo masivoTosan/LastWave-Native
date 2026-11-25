@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -92,8 +94,8 @@ fun ExcludedSongsScreen(
         ExpressiveHeader(
             modifier = headerModifier,
             backdrop = headerBackdrop,
-            title = "Excluded Songs",
-            subtitle = "${exclusions.size} song${if (exclusions.size == 1) "" else "s"} hidden from recommendations",
+            title = appText(com.lastwave.app.R.string.settings_excluded_songs),
+            subtitle = appText(com.lastwave.app.R.string.ui_1_s_song_2_s_hidden_from_recommendations_e827c6, (exclusions.size).toString(), (if (exclusions.size == 1) "" else "s").toString()),
             onBack = onBack,
         )
             },
@@ -124,12 +126,12 @@ fun ExcludedSongsScreen(
                         }
                     }
                     Text(
-                        "No Excluded Songs",
+                        appText(com.lastwave.app.R.string.ui_no_excluded_songs_e4d528),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                     )
                     Text(
-                        "Songs you mark “Don't recommend again” will appear here. You can restore each one separately.",
+                        appText(com.lastwave.app.R.string.ui_songs_you_mark_don_t_recommend_again_will_appear_f982ef),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         textAlign = TextAlign.Center,
@@ -167,10 +169,10 @@ private fun ExcludedSongRow(
 ) {
     val legacyParts = exclusion.trackKey.split('|', limit = 2)
     val title = exclusion.trackName.ifBlank {
-        legacyParts.firstOrNull().orEmpty().legacyDisplayName("Unknown song")
+        legacyParts.firstOrNull().orEmpty().legacyDisplayName(appText(com.lastwave.app.R.string.ui_unknown_song_840fc7))
     }
     val artist = exclusion.artistName.ifBlank {
-        legacyParts.getOrNull(1).orEmpty().legacyDisplayName("Unknown artist")
+        legacyParts.getOrNull(1).orEmpty().legacyDisplayName(appText(com.lastwave.app.R.string.ui_unknown_artist_9566f8))
     }
     val date = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
         .format(Date(exclusion.excludedAtMillis))

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.stats
 
+import com.lastwave.app.util.appText
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lastwave.app.data.generate.TasteProfileProvider
@@ -190,15 +192,15 @@ class ListeningStatsViewModel @Inject constructor(
         val avgSessionMins = ((habits?.avgSessionLabel?.filter { it.isDigit() }?.toIntOrNull() ?: 18)).coerceIn(5, 120)
         val score = (60 + (streak * 4).coerceAtMost(20) + (avgSessionMins / 3).coerceAtMost(20)).coerceIn(65, 99)
         val rating = when {
-            score >= 90 -> "Peak Flow"
-            score >= 80 -> "Optimal Rhythm"
-            score >= 70 -> "Steady Cadence"
-            else -> "Light Rhythm"
+            score >= 90 -> appText(com.lastwave.app.R.string.ui_peak_flow_87b95e)
+            score >= 80 -> appText(com.lastwave.app.R.string.ui_optimal_rhythm_7906af)
+            score >= 70 -> appText(com.lastwave.app.R.string.ui_steady_cadence_a0efb7)
+            else -> appText(com.lastwave.app.R.string.ui_light_rhythm_0e3b19)
         }
         val consistency = ConsistencyScoreData(
             score = score,
             rating = rating,
-            subtitle = if (streak > 2) "$streak-day listening streak active" else "Consistent daily listening sessions",
+            subtitle = if (streak > 2) appText(com.lastwave.app.R.string.ui_1_s_day_listening_streak_active_034be0, (streak).toString()) else appText(com.lastwave.app.R.string.ui_consistent_daily_listening_sessions_c86d60),
             avgSessionMinutes = avgSessionMins,
             activeDaysThisWeek = (streak.coerceAtMost(7)).coerceAtLeast(3),
             streakDays = streak,
@@ -214,22 +216,22 @@ class ListeningStatsViewModel @Inject constructor(
 
         val stages = ListeningStagesData(
             deepFocus = ListeningStage(
-                name = "Deep Focus",
+                name = appText(com.lastwave.app.R.string.ui_deep_focus_b568dd),
                 percent = deepPercent,
                 durationLabel = formatHoursMins((totalListeningMs * deepPercent) / 100),
-                description = "Extended listening sessions and favorite repeats",
+                description = appText(com.lastwave.app.R.string.ui_extended_listening_sessions_and_favorite_repeats_5669b6),
             ),
             flowState = ListeningStage(
-                name = "Flow State",
+                name = appText(com.lastwave.app.R.string.ui_flow_state_8a1cee),
                 percent = flowPercent,
                 durationLabel = formatHoursMins((totalListeningMs * flowPercent) / 100),
-                description = "Balanced background listening & daily rotation",
+                description = appText(com.lastwave.app.R.string.ui_balanced_background_listening_daily_rotation_9c6d22),
             ),
             discovery = ListeningStage(
-                name = "Discovery",
+                name = appText(com.lastwave.app.R.string.ui_discovery_3b3290),
                 percent = discoveryPercent,
                 durationLabel = formatHoursMins((totalListeningMs * discoveryPercent) / 100),
-                description = "Exploring new tracks & genre adventures",
+                description = appText(com.lastwave.app.R.string.ui_exploring_new_tracks_genre_adventures_fc17af),
             ),
         )
 
@@ -245,8 +247,8 @@ class ListeningStatsViewModel @Inject constructor(
                 val trackMs = if (entity.totalPlayTimeMs > 0L) entity.totalPlayTimeMs else entity.playCount * 210_000L
                 RankedTrackItem(
                     rank = idx + 1,
-                    title = entity.title.ifBlank { "Unknown Title" },
-                    artist = entity.artist.ifBlank { "Unknown Artist" },
+                    title = entity.title.ifBlank { appText(com.lastwave.app.R.string.ui_unknown_title_58dfae) },
+                    artist = entity.artist.ifBlank { appText(com.lastwave.app.R.string.ui_unknown_artist_5bf8da) },
                     artworkUrl = entity.artworkUrl,
                     playCount = entity.playCount.coerceAtLeast(1),
                     durationLabel = formatHoursMins(trackMs),
@@ -398,8 +400,8 @@ class ListeningStatsViewModel @Inject constructor(
             }
             val valueLabel = when (metric) {
                 TimelineMetric.LISTENING_TIME -> formatHoursMins(b.totalMs)
-                TimelineMetric.PLAY_COUNT -> "${b.plays} plays"
-                TimelineMetric.AVG_SESSION -> "${numVal.roundToInt()}m"
+                TimelineMetric.PLAY_COUNT -> appText(com.lastwave.app.R.string.details_plays_count, (b.plays).toString())
+                TimelineMetric.AVG_SESSION -> appText(com.lastwave.app.R.string.ui_extra_830877d1ed, (numVal.roundToInt()).toString())
             }
             TimelineBar(
                 label = b.label,
@@ -426,8 +428,8 @@ class ListeningStatsViewModel @Inject constructor(
                     val ms = if (t.totalPlayTimeMs > 0L) t.totalPlayTimeMs else t.playCount * 210_000L
                     RankedCategoryItem(
                         rank = idx + 1,
-                        title = t.title.ifBlank { "Unknown Title" },
-                        subtitle = "${t.playCount.coerceAtLeast(1)} plays \u2022 ${t.artist.ifBlank { "Unknown Artist" }}",
+                        title = t.title.ifBlank { appText(com.lastwave.app.R.string.ui_unknown_title_58dfae) },
+                        subtitle = appText(com.lastwave.app.R.string.ui_1_s_plays_2_s_e5ff95, (t.playCount.coerceAtLeast(1)).toString(), (t.artist.ifBlank { appText(com.lastwave.app.R.string.ui_unknown_artist_9566f8) }).toString()),
                         durationLabel = formatHoursMins(ms),
                         progress = (ms.toFloat() / maxMs).coerceIn(0.05f, 1f),
                         artworkUrl = t.artworkUrl,
@@ -435,7 +437,7 @@ class ListeningStatsViewModel @Inject constructor(
                 }
             }
             CategoryFilter.ARTIST -> {
-                val grouped = tracks.groupBy { it.artist.trim().ifBlank { "Unknown Artist" } }
+                val grouped = tracks.groupBy { it.artist.trim().ifBlank { appText(com.lastwave.app.R.string.ui_unknown_artist_5bf8da) } }
                 val artistList = grouped.map { (artist, list) ->
                     val totalMs = list.sumOf { if (it.totalPlayTimeMs > 0L) it.totalPlayTimeMs else it.playCount * 210_000L }
                     val totalPlays = list.sumOf { it.playCount.coerceAtLeast(1) }
@@ -463,7 +465,7 @@ class ListeningStatsViewModel @Inject constructor(
                         RankedCategoryItem(
                             rank = idx + 1,
                             title = alb.name,
-                            subtitle = "${alb.playCount} plays \u2022 ${alb.artist}",
+                            subtitle = appText(com.lastwave.app.R.string.ui_1_s_plays_2_s_e5ff95, (alb.playCount).toString(), (alb.artist).toString()),
                             durationLabel = formatHoursMins(durationMs),
                             progress = (alb.playCount.toFloat() / maxPlays).coerceIn(0.05f, 1f),
                             artworkUrl = alb.artworkUrl,
@@ -471,7 +473,7 @@ class ListeningStatsViewModel @Inject constructor(
                     }
                 } else {
                     // Fallback to grouping tracks by artist as album proxy
-                    val grouped = tracks.groupBy { it.artist.trim().ifBlank { "Single / Album" } }
+                    val grouped = tracks.groupBy { it.artist.trim().ifBlank { appText(com.lastwave.app.R.string.ui_single_album_fb7bdc) } }
                     val list = grouped.map { (name, list) ->
                         val ms = list.sumOf { if (it.totalPlayTimeMs > 0L) it.totalPlayTimeMs else it.playCount * 210_000L }
                         Triple(name, ms, "${list.sumOf { it.playCount.coerceAtLeast(1) }} plays \u2022 ${list.size} tracks")
@@ -490,7 +492,7 @@ class ListeningStatsViewModel @Inject constructor(
             }
             CategoryFilter.GENRE -> {
                 val tags = tasteTags
-                val genres = if (tags.isNotEmpty()) tags else listOf("Pop", "Electronic", "Rock", "Hip-Hop", "Indie", "R&B")
+                val genres = if (tags.isNotEmpty()) tags else listOf(appText(com.lastwave.app.R.string.ui_pop_267a64), appText(com.lastwave.app.R.string.ui_electronic_622585), appText(com.lastwave.app.R.string.ui_rock_468d79), appText(com.lastwave.app.R.string.ui_hip_hop_2c8b31), appText(com.lastwave.app.R.string.ui_indie_c43a74), appText(com.lastwave.app.R.string.ui_r_b_fa9af5))
                 val totalMs = tracks.sumOf { if (it.totalPlayTimeMs > 0L) it.totalPlayTimeMs else it.playCount * 210_000L }
                 genres.take(8).mapIndexed { idx, genre ->
                     val weight = (genres.size - idx).toFloat() / (genres.size * (genres.size + 1) / 2f)
@@ -499,7 +501,7 @@ class ListeningStatsViewModel @Inject constructor(
                     RankedCategoryItem(
                         rank = idx + 1,
                         title = genre.replaceFirstChar { it.uppercase() },
-                        subtitle = "$plays plays",
+                        subtitle = appText(com.lastwave.app.R.string.details_plays_count, (plays).toString()),
                         durationLabel = formatHoursMins(genreMs),
                         progress = ((genres.size - idx).toFloat() / genres.size).coerceIn(0.15f, 1f),
                     )
@@ -551,7 +553,7 @@ class ListeningStatsViewModel @Inject constructor(
         longestSessionMs = maxOf(longestSessionMs, (totalListeningMs / sessionsCount.coerceAtLeast(1)) * 2)
 
         val avgSessionMs = totalListeningMs / sessionsCount.coerceAtLeast(1)
-        val avgSessionLabel = "${(avgSessionMs / 60_000L).coerceAtLeast(1L)}m"
+        val avgSessionLabel = appText(com.lastwave.app.R.string.ui_extra_830877d1ed, ((avgSessionMs / 60_000L).coerceAtLeast(1L)).toString())
         val longestSessionLabel = formatHoursMins(longestSessionMs)
 
         // Active days
@@ -633,7 +635,7 @@ class ListeningStatsViewModel @Inject constructor(
             return PersonalRecordsData(
                 bestDayPlays = 0,
                 bestDayDurationLabel = "0m",
-                bestDayDate = "None",
+                bestDayDate = appText(com.lastwave.app.R.string.details_canvas_none),
                 bestWeekPlays = 0,
                 bestWeekDurationLabel = "0m",
                 bestMonthPlays = 0,
@@ -674,7 +676,7 @@ class ListeningStatsViewModel @Inject constructor(
         val bestDayKey = bestDayEntry?.key
         val bestDayDate = bestDayKey?.let {
             runCatching { displayDayFmt.format(dayFmt.parse(it)!!) }.getOrNull()
-        } ?: "Today"
+        } ?: appText(com.lastwave.app.R.string.ui_today_24345a)
         val bestDayPlays = bestDayKey?.let { dayPlays[it] } ?: 0
         val bestDayDuration = formatHoursMins(bestDayEntry?.value ?: 0L)
 
@@ -873,6 +875,6 @@ class ListeningStatsViewModel @Inject constructor(
         val totalMins = (ms / 60_000L).coerceAtLeast(0L)
         val hours = totalMins / 60
         val mins = totalMins % 60
-        return if (hours > 0) "${hours}h ${mins}m" else "${mins}m"
+        return if (hours > 0) "${hours}h ${mins}m" else appText(com.lastwave.app.R.string.ui_extra_830877d1ed, (mins).toString())
     }
 }

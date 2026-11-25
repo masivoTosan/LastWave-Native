@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.data.local.SeekbarStyle
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
@@ -505,7 +507,7 @@ internal fun FullPlayerLandscape(
                         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                             Icon(
                                 Icons.Filled.FormatQuote,
-                                contentDescription = "Show lyrics",
+                                contentDescription = appText(com.lastwave.app.R.string.player_show_lyrics_cd),
                                 modifier = Modifier.size(26.dp),
                             )
                         }
@@ -804,7 +806,7 @@ internal fun LandscapeArtworkPane(
                             Box(contentAlignment = Alignment.Center) {
                                 Icon(
                                     Icons.Filled.FastRewind,
-                                    contentDescription = "Seek rewind",
+                                    contentDescription = appText(com.lastwave.app.R.string.player_seek_back_cd),
                                     tint = Color.White,
                                     modifier = Modifier.size(28.dp),
                                 )
@@ -849,7 +851,7 @@ internal fun LandscapeArtworkPane(
                             Box(contentAlignment = Alignment.Center) {
                                 Icon(
                                     Icons.Filled.FastForward,
-                                    contentDescription = "Seek forward",
+                                    contentDescription = appText(com.lastwave.app.R.string.player_seek_fwd_cd),
                                     tint = Color.White,
                                     modifier = Modifier.size(28.dp),
                                 )

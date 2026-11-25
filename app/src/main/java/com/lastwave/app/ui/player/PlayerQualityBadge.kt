@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
 import com.lastwave.app.data.playlist.isLikedIn
@@ -419,9 +421,9 @@ internal fun AppleMusicQualityBadge(
     val isFadeActive = !mixAvailable && shownTransition == BadgeTransition.FADE
 
     val displayTitle = when {
-        isMixActive -> "AutoMix"
-        isFadeActive -> "Crossfade"
-        switch != null -> (if (switch.upgrade) "Upgrading to " else "Switching to ") + switch.title
+        isMixActive -> appText(com.lastwave.app.R.string.ui_automix_b42afb)
+        isFadeActive -> appText(com.lastwave.app.R.string.sig_crossfade)
+        switch != null -> (if (switch.upgrade) appText(com.lastwave.app.R.string.ui_upgrading_to_cf1be2) else appText(com.lastwave.app.R.string.ui_switching_to_bd8bc6)) + switch.title
         else -> qualityTitle(state.audioCodec, state.isLossless, state.samplingRateKHz, state.bitDepth)
     }
 

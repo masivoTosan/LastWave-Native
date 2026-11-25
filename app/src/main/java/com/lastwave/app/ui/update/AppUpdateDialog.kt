@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.update
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -105,7 +107,7 @@ private fun AppUpdateDialog(
                     Icon(Icons.Filled.SystemUpdate, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
                     Spacer(Modifier.width(12.dp))
                     Column {
-                        Text("Update arrived", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                        Text(appText(com.lastwave.app.R.string.ui_update_arrived_6c8cda), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                         Text(
                             buildString {
                                 append("v${info.latestVersion}")
@@ -123,7 +125,7 @@ private fun AppUpdateDialog(
 
                 val linkColor = MaterialTheme.colorScheme.primary
                 val notes = remember(info.releaseNotes, linkColor) {
-                    releaseNotesText(info.releaseNotes.ifBlank { "No release notes were published for this version." }, linkColor)
+                    releaseNotesText(info.releaseNotes.ifBlank { appText(com.lastwave.app.R.string.ui_no_release_notes_were_published_for_this_version_e1ec6c) }, linkColor)
                 }
                 Surface(
                     shape = RoundedCornerShape(16.dp),
@@ -157,7 +159,7 @@ private fun AppUpdateDialog(
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Checkbox(checked = skipThisVersion, onCheckedChange = { skipThisVersion = it })
-                    Text("Don't show again for this version", style = MaterialTheme.typography.bodyMedium)
+                    Text(appText(com.lastwave.app.R.string.ui_don_t_show_again_for_this_version_0f31ca), style = MaterialTheme.typography.bodyMedium)
                 }
 
                 Row(
@@ -166,7 +168,7 @@ private fun AppUpdateDialog(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     TextButton(onClick = onOpenGitHub) { Text("GitHub") }
-                    TextButton(onClick = { onClose(skipThisVersion) }) { Text("Remind me later") }
+                    TextButton(onClick = { onClose(skipThisVersion) }) { Text(appText(com.lastwave.app.R.string.ui_remind_me_later_bebc1c)) }
                     val downloading = info.downloadProgress != null
                     Button(
                         onClick = if (downloading) onCancelDownload else onUpdate,
@@ -174,10 +176,10 @@ private fun AppUpdateDialog(
                     ) {
                         Text(
                             when {
-                                downloading -> "Cancel ${info.downloadProgress}%"
-                                info.isInstalling -> "Installing…"
-                                info.readyToInstall -> "Install"
-                                else -> "Update now"
+                                downloading -> appText(com.lastwave.app.R.string.ui_cancel_1_s_fca5fb, (info.downloadProgress).toString())
+                                info.isInstalling -> appText(com.lastwave.app.R.string.ui_installing_8d2788)
+                                info.readyToInstall -> appText(com.lastwave.app.R.string.ui_install_fd6c3e)
+                                else -> appText(com.lastwave.app.R.string.ui_update_now_c4cbac)
                             },
                         )
                     }

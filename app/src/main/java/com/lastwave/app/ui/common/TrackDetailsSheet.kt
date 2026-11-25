@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.animation.animateContentSize
@@ -118,11 +120,11 @@ data class TrackSpecs(
     val artist: String,
     val album: String? = null,
     val artworkUrl: String? = null,
-    val qualityBadge: String = "Resolving...",
-    val audioCodec: String = "Detecting...",
-    val bitDepthSampleRate: String = "Analyzing...",
+    val qualityBadge: String = appText(com.lastwave.app.R.string.ui_resolving_3e4557),
+    val audioCodec: String = appText(com.lastwave.app.R.string.ui_detecting_955260),
+    val bitDepthSampleRate: String = appText(com.lastwave.app.R.string.ui_analyzing_7fb483),
     val bitrate: String? = null,
-    val provider: String = "Lossless / YouTube",
+    val provider: String = appText(com.lastwave.app.R.string.ui_lossless_youtube_4d8d41),
     val canvasSource: String? = null,
     val isLossless: Boolean = false,
     val durationText: String = "--:--",
@@ -152,15 +154,15 @@ data class TrackSpecs(
 private fun describeLiveCodec(state: MusicPlayerState): String {
     val codec = state.audioCodec.orEmpty()
     return when {
-        codec.contains("ATMOS", ignoreCase = true) -> "Dolby Atmos (E-AC-3 JOC Spatial)"
+        codec.contains("ATMOS", ignoreCase = true) -> appText(com.lastwave.app.R.string.ui_dolby_atmos_e_ac_3_joc_spatial_0d9df0)
         codec.contains("MP3", ignoreCase = true) -> "MPEG Layer 3 (MP3)"
         codec.contains("AAC", ignoreCase = true) || codec.contains("MP4A", ignoreCase = true) ||
             codec.contains("320", ignoreCase = true) || codec.contains("96", ignoreCase = true) -> "Advanced Audio Coding (AAC)"
         codec.contains("OPUS", ignoreCase = true) -> "Opus Interactive Audio"
         codec.contains("FLAC", ignoreCase = true) || codec.equals("LOSSLESS", ignoreCase = true) ||
-            codec.contains("HI-RES", ignoreCase = true) || state.isLossless -> "Free Lossless Audio Codec (FLAC)"
+            codec.contains("HI-RES", ignoreCase = true) || state.isLossless -> appText(com.lastwave.app.R.string.ui_free_lossless_audio_codec_flac_c00d85)
         codec.isNotBlank() -> codec
-        else -> "Detecting..."
+        else -> appText(com.lastwave.app.R.string.ui_detecting_955260)
     }
 }
 
@@ -193,17 +195,17 @@ private fun describeLiveResolution(state: MusicPlayerState): String {
     }
     if (rate != null && rate > 0.0) {
         val kbpsText = kbps?.takeIf { it > 0 }?.let { " ($it kbps)" } ?: ""
-        val label = if (flacLike) "FLAC" else (lossyName ?: "Audio")
+        val label = if (flacLike) "FLAC" else (lossyName ?: appText(com.lastwave.app.R.string.ui_audio_acdac2))
         return "${formatSampleRateKHz(rate)} kHz $label$kbpsText"
     }
-    return "Analyzing..."
+    return appText(com.lastwave.app.R.string.ui_analyzing_7fb483)
 }
 
 /** Provider row for live player state. */
 private fun describeLiveProvider(state: MusicPlayerState): String = when {
-    isSpatialAudioCodec(state.audioCodec) -> "Dolby Atmos"
-    state.isLossless -> "Lossless"
-    state.audioCodec.isNullOrBlank() -> "Lossless / YouTube"
+    isSpatialAudioCodec(state.audioCodec) -> appText(com.lastwave.app.R.string.menu_quality_atmos)
+    state.isLossless -> appText(com.lastwave.app.R.string.ui_lossless_f3b36f)
+    state.audioCodec.isNullOrBlank() -> appText(com.lastwave.app.R.string.ui_lossless_youtube_4d8d41)
     else -> "YouTube Music CDN"
 }
 
@@ -277,7 +279,7 @@ class TrackDetailsViewModel @Inject constructor(
 
                 _specs.value = _specs.value?.copy(
                     qualityBadge = if (live.audioCodec.isNullOrBlank() && !live.isLossless) {
-                        "Resolving..."
+                        appText(com.lastwave.app.R.string.ui_resolving_3e4557)
                     } else {
                         qualityBadgeLabel(live)
                     },
@@ -323,22 +325,22 @@ class TrackDetailsViewModel @Inject constructor(
                     runCatching {
                         val params = mutableMapOf(
                             "method" to "track.getInfo",
-                            "track" to title,
-                            "artist" to artist,
+                            appText(com.lastwave.app.R.string.set_loud_track) to title,
+                            appText(com.lastwave.app.R.string.pd_sort_artist) to artist,
                             "autocorrect" to "1",
                             "api_key" to session.apiKey,
-                            "format" to "json",
+                            appText(com.lastwave.app.R.string.local_sort_format) to "json",
                         )
                         if (session.username.isNotBlank()) {
-                            params["username"] = session.username
+                            params[appText(com.lastwave.app.R.string.set_scrobbler_username)] = session.username
                         }
                         val response = lastFmApi.get(params)
                         if (response.isSuccessful) {
                             val body = response.body()?.string().orEmpty()
-                            val trackObj = json.parseToJsonElement(body).jsonObject["track"]?.jsonObject
+                            val trackObj = json.parseToJsonElement(body).jsonObject[appText(com.lastwave.app.R.string.set_loud_track)]?.jsonObject
                             userPlays = trackObj?.get("userplaycount")?.jsonPrimitive?.contentOrNull?.toLongOrNull() ?: 0L
                             globalPlays = trackObj?.get("playcount")?.jsonPrimitive?.contentOrNull?.toLongOrNull() ?: 0L
-                            listeners = trackObj?.get("listeners")?.jsonPrimitive?.contentOrNull?.toLongOrNull() ?: 0L
+                            listeners = trackObj?.get(appText(com.lastwave.app.R.string.details_listeners))?.jsonPrimitive?.contentOrNull?.toLongOrNull() ?: 0L
                             loved = trackObj?.get("userloved")?.jsonPrimitive?.contentOrNull == "1"
                             // Extract wiki summary
                             val wikiObj = trackObj?.get("wiki")?.jsonObject
@@ -356,17 +358,17 @@ class TrackDetailsViewModel @Inject constructor(
                             mapOf(
                                 "method" to "user.gettrackscrobbles",
                                 "user" to session.username,
-                                "artist" to artist,
-                                "track" to title,
+                                appText(com.lastwave.app.R.string.pd_sort_artist) to artist,
+                                appText(com.lastwave.app.R.string.set_loud_track) to title,
                                 "limit" to "1",
                                 "api_key" to session.apiKey,
-                                "format" to "json",
+                                appText(com.lastwave.app.R.string.local_sort_format) to "json",
                             ),
                         )
                         if (trackScrobblesResp.isSuccessful) {
                             val body = trackScrobblesResp.body()?.string().orEmpty()
                             val root = json.parseToJsonElement(body).jsonObject["trackscrobbles"]?.jsonObject
-                            val trackElem = root?.get("track")
+                            val trackElem = root?.get(appText(com.lastwave.app.R.string.set_loud_track))
                             val trackObj = when (trackElem) {
                                 is JsonArray -> trackElem.firstOrNull()?.jsonObject
                                 is JsonObject -> trackElem
@@ -374,7 +376,7 @@ class TrackDetailsViewModel @Inject constructor(
                             }
                             val isNowPlaying = trackObj?.get("@attr")?.jsonObject?.get("nowplaying")?.jsonPrimitive?.contentOrNull == "true"
                             if (isNowPlaying) {
-                                "Playing now"
+                                appText(com.lastwave.app.R.string.ui_playing_now_885700)
                             } else {
                                 val uts = trackObj?.get("date")?.jsonObject?.get("uts")?.jsonPrimitive?.contentOrNull?.toLongOrNull()
                                 uts?.let { formatRelativeTime(it * 1000L) }
@@ -391,7 +393,7 @@ class TrackDetailsViewModel @Inject constructor(
                                     "user" to session.username,
                                     "limit" to "50",
                                     "api_key" to session.apiKey,
-                                    "format" to "json",
+                                    appText(com.lastwave.app.R.string.local_sort_format) to "json",
                                 ),
                             )
                             if (recentResp.isSuccessful) {
@@ -401,7 +403,7 @@ class TrackDetailsViewModel @Inject constructor(
                                     it.name.equals(title, ignoreCase = true) && it.artist.displayName.equals(artist, ignoreCase = true)
                                 }
                                 if (match?.isNowPlaying == true) {
-                                    "Playing now"
+                                    appText(com.lastwave.app.R.string.ui_playing_now_885700)
                                 } else {
                                     match?.date?.uts?.toLongOrNull()?.let { uts ->
                                         formatRelativeTime(uts * 1000L)
@@ -452,7 +454,7 @@ class TrackDetailsViewModel @Inject constructor(
                     // depth below 48kHz stays unknown.
                     val depth: Int? = resolveDepthForDisplay(s.bitDepth, rateKHz)
                     val badge = if (isAtmos) {
-                        "DOLBY ATMOS"
+                        appText(com.lastwave.app.R.string.menu_quality_atmos)
                     } else if (isLossless) {
                         formatDetailedQualityBadge(depth, rateKHz)
                     } else if (s.codec.equals("mp3", ignoreCase = true)) {
@@ -461,13 +463,13 @@ class TrackDetailsViewModel @Inject constructor(
                         if (s.bandwidth in 1..128000) "HE-AAC" else "AAC 320"
                     } else s.codec.uppercase()
                     val codec = if (isAtmos) {
-                        "Dolby Atmos (E-AC-3 JOC Spatial)"
+                        appText(com.lastwave.app.R.string.ui_dolby_atmos_e_ac_3_joc_spatial_0d9df0)
                     } else if (s.codec.equals("mp3", ignoreCase = true)) {
                         "MPEG Layer 3 (MP3)"
                     } else if (s.codec.equals("aac", ignoreCase = true) || s.codec.contains("mp4a", ignoreCase = true)) {
                         "Advanced Audio Coding (AAC)"
                     } else {
-                        "Free Lossless Audio Codec (FLAC)"
+                        appText(com.lastwave.app.R.string.ui_free_lossless_audio_codec_flac_c00d85)
                     }
                     val depthRate = if (isAtmos) {
                         "24-bit / ${if (s.sampleRate > 0) s.sampleRate / 1000.0 else 48.0} kHz (6 Channels Spatial)"
@@ -476,7 +478,7 @@ class TrackDetailsViewModel @Inject constructor(
                     } else if (rateKHz > 0.0) {
                         "${if (rateKHz % 1.0 == 0.0) rateKHz.toInt().toString() else rateKHz} kHz (${if (s.bandwidth > 0) s.bandwidth / 1000 else 1411} kbps)"
                     } else {
-                        "Lossless (${if (s.bandwidth > 0) s.bandwidth / 1000 else 1411} kbps)"
+                        appText(com.lastwave.app.R.string.ui_lossless_1_s_kbps_3823e4, (if (s.bandwidth > 0) s.bandwidth / 1000 else 1411).toString())
                     }
                     val durText = downloaded?.durationMs?.takeIf { it > 0L }?.let { ms ->
                         val dur = (ms / 1000).toInt()
@@ -494,7 +496,7 @@ class TrackDetailsViewModel @Inject constructor(
                         audioCodec = codec,
                         bitDepthSampleRate = depthRate,
                         bitrate = moduleBitrate,
-                        provider = "Lossless Provider Module",
+                        provider = appText(com.lastwave.app.R.string.ui_lossless_provider_module_f5e65e),
                         isLossless = isLossless,
                         durationText = durText,
                     )
@@ -569,20 +571,20 @@ class TrackDetailsViewModel @Inject constructor(
 
     private fun formatRelativeTime(millis: Long): String {
         val diff = System.currentTimeMillis() - millis
-        if (diff < 0) return "Just now"
+        if (diff < 0) return appText(com.lastwave.app.R.string.fr_time_now)
         val seconds = diff / 1000
         val minutes = seconds / 60
         val hours = minutes / 60
         val days = hours / 24
 
         return when {
-            minutes < 2 -> "Just now"
-            minutes < 60 -> "$minutes min ago"
-            hours == 1L -> "1 hour ago"
-            hours < 24 -> "$hours hrs ago"
-            days == 1L -> "Yesterday"
-            days < 7 -> "$days days ago"
-            days < 30 -> "${days / 7}w ago"
+            minutes < 2 -> appText(com.lastwave.app.R.string.fr_time_now)
+            minutes < 60 -> appText(com.lastwave.app.R.string.ui_1_s_min_ago_e2de68, (minutes).toString())
+            hours == 1L -> appText(com.lastwave.app.R.string.ui_1_hour_ago_ce7276)
+            hours < 24 -> appText(com.lastwave.app.R.string.ui_1_s_hrs_ago_356748, (hours).toString())
+            days == 1L -> appText(com.lastwave.app.R.string.fr_time_yesterday)
+            days < 7 -> appText(com.lastwave.app.R.string.ui_1_s_days_ago_4876e2, (days).toString())
+            days < 30 -> appText(com.lastwave.app.R.string.ui_1_sw_ago_a33cab, (days / 7).toString())
             days < 365 -> SimpleDateFormat("MMM d", Locale.getDefault()).format(Date(millis))
             else -> SimpleDateFormat("MMM yyyy", Locale.getDefault()).format(Date(millis))
         }

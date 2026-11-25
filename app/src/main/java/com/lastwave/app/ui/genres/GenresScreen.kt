@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.genres
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -159,7 +161,7 @@ fun GenresScreen(
 @Composable
 private fun PeriodDropdown(period: String, onChange: (String) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
-    val label = GENRE_PERIODS.firstOrNull { it.first == period }?.second ?: "Overall"
+    val label = GENRE_PERIODS.firstOrNull { it.first == period }?.second ?: appText(com.lastwave.app.R.string.fr_period_all)
     Box {
         Surface(
             shape = RoundedCornerShape(50),
@@ -240,7 +242,7 @@ private fun GenreDetailSheet(
             Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 8.dp)) {
                 Text(genre.replaceFirstChar { it.uppercase() }, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                 Text(
-                    if (state.isDiscoverMode) "Discoveries \u2022 Fresh recommendations" else "Your Tracks \u2022 Based on your scrobbles",
+                    if (state.isDiscoverMode) appText(com.lastwave.app.R.string.ui_discoveries_fresh_recommendations_56e74e) else appText(com.lastwave.app.R.string.ui_your_tracks_based_on_your_scrobbles_d8410e),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -293,7 +295,7 @@ private fun GenreDetailSheet(
         TrackContextMenuSheet(
             target = TrackMenuTarget.Track(track.name, track.artist, track.url),
             capabilities = TrackMenuCapabilities(showDeleteScrobble = true),
-            playbackSourceLabel = "Genres",
+            playbackSourceLabel = appText(com.lastwave.app.R.string.ui_genres_96817a),
             onDismiss = { menuTrack = null },
             onExploreGenre = onExploreGenre,
         )

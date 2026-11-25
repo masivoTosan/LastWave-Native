@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.ui.common.PredictiveBackScreen
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -217,9 +219,9 @@ internal fun DownloadFilterControls(
                 placeholder = {
                     Text(
                         when (selectedTab) {
-                            DownloadTab.SONGS -> "Search songs, artists, albums..."
-                            DownloadTab.ARTISTS -> "Search downloaded artists..."
-                            DownloadTab.ALBUMS -> "Search downloaded albums..."
+                            DownloadTab.SONGS -> appText(com.lastwave.app.R.string.ui_search_songs_artists_albums_54bb0c)
+                            DownloadTab.ARTISTS -> appText(com.lastwave.app.R.string.ui_search_downloaded_artists_cb16c9)
+                            DownloadTab.ALBUMS -> appText(com.lastwave.app.R.string.ui_search_downloaded_albums_1d92c6)
                         },
                         style = MaterialTheme.typography.bodyMedium,
                         maxLines = 1,

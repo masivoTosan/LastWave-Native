@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.ui.common.PredictiveBackScreen
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -157,7 +159,7 @@ internal fun DownloadedSongsList(
         if (activeDownloads.isNotEmpty()) {
             item {
                 Text(
-                    "Downloading Now (${activeDownloads.size})",
+                    appText(com.lastwave.app.R.string.ui_downloading_now_1_s_493bbb, (activeDownloads.size).toString()),
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
@@ -185,7 +187,7 @@ internal fun DownloadedSongsList(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        "Songs (${tracks.size})",
+                        appText(com.lastwave.app.R.string.ui_songs_1_s_bf2106, (tracks.size).toString()),
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -273,7 +275,7 @@ internal fun DownloadedSongsList(
                             modifier = Modifier.size(36.dp),
                         )
                         Text(
-                            "No matching downloaded songs",
+                            appText(com.lastwave.app.R.string.ui_no_matching_downloaded_songs_f12941),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -313,7 +315,7 @@ internal fun DownloadedArtistsList(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(
-                        "Artists (${artists.size})",
+                        appText(com.lastwave.app.R.string.ui_artists_1_s_50446e, (artists.size).toString()),
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -376,7 +378,7 @@ internal fun DownloadedArtistsList(
                             Spacer(Modifier.height(2.dp))
                             val albumText = if (artist.albumCount > 0) "${artist.albumCount} album(s) \u2022 " else ""
                             Text(
-                                text = "$albumText${artist.tracks.size} song(s) \u2022 ${formatBytes(artist.totalSizeBytes)}",
+                                text = appText(com.lastwave.app.R.string.ui_1_s_2_s_song_s_3_s_bd0b2b, (albumText).toString(), (artist.tracks.size).toString(), (formatBytes(artist.totalSizeBytes)).toString()),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -424,7 +426,7 @@ internal fun DownloadedArtistsList(
                             modifier = Modifier.size(36.dp),
                         )
                         Text(
-                            "No downloaded artists found",
+                            appText(com.lastwave.app.R.string.ui_no_downloaded_artists_found_5d3714),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -526,7 +528,7 @@ internal fun DownloadedAlbumsList(
                             )
                             Spacer(Modifier.height(2.dp))
                             Text(
-                                text = "${album.artist} \u2022 ${album.tracks.size} track(s) \u2022 ${formatBytes(album.totalSizeBytes)}",
+                                text = appText(com.lastwave.app.R.string.ui_1_s_2_s_track_s_3_s_fb0a0a, (album.artist).toString(), (album.tracks.size).toString(), (formatBytes(album.totalSizeBytes)).toString()),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 maxLines = 1,
@@ -576,7 +578,7 @@ internal fun DownloadedAlbumsList(
                             modifier = Modifier.size(36.dp),
                         )
                         Text(
-                            "No downloaded albums found",
+                            appText(com.lastwave.app.R.string.ui_no_downloaded_albums_found_e3281c),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -653,7 +655,7 @@ internal fun ArtistDetailView(
                     Spacer(Modifier.height(4.dp))
 
                     Text(
-                        text = "${tracks.size} downloaded song(s) \u2022 ${albums.size} album(s) \u2022 ${formatBytes(totalSize)}",
+                        text = appText(com.lastwave.app.R.string.ui_1_s_downloaded_song_s_2_s_album_s_3_s_46eec9, (tracks.size).toString(), (albums.size).toString(), (formatBytes(totalSize)).toString()),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -740,7 +742,7 @@ internal fun ArtistDetailView(
                                     overflow = TextOverflow.Ellipsis,
                                 )
                                 Text(
-                                    text = "${album.tracks.size} tracks",
+                                    text = appText(com.lastwave.app.R.string.ui_1_s_tracks_aece60, (album.tracks.size).toString()),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
@@ -754,7 +756,7 @@ internal fun ArtistDetailView(
         // Songs by this artist
         item {
             Text(
-                text = "Songs (${tracks.size})",
+                text = appText(com.lastwave.app.R.string.ui_songs_1_s_bf2106, (tracks.size).toString()),
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -858,7 +860,7 @@ internal fun AlbumDetailView(
                     Spacer(Modifier.height(4.dp))
 
                     Text(
-                        text = "By $artistName",
+                        text = appText(com.lastwave.app.R.string.ui_by_1_s_893358, (artistName).toString()),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.primary,
@@ -868,7 +870,7 @@ internal fun AlbumDetailView(
                     Spacer(Modifier.height(4.dp))
 
                     Text(
-                        text = "${tracks.size} tracks \u2022 ${formatDuration(totalDuration)} \u2022 ${formatBytes(totalSize)}",
+                        text = appText(com.lastwave.app.R.string.ui_1_s_tracks_2_s_3_s_3110b9, (tracks.size).toString(), (formatDuration(totalDuration)).toString(), (formatBytes(totalSize)).toString()),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -909,7 +911,7 @@ internal fun AlbumDetailView(
         // Track List
         item {
             Text(
-                text = "Tracks (${tracks.size})",
+                text = appText(com.lastwave.app.R.string.ui_tracks_1_s_7c2f32, (tracks.size).toString()),
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,

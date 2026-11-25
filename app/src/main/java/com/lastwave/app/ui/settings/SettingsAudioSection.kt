@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material3.HorizontalDivider
 
 import androidx.activity.compose.BackHandler
@@ -287,10 +289,10 @@ internal fun CrossfadeDurationRow(
     val shape = groupShape(position)
 
     val blendStyle = when (sliderValue.roundToInt()) {
-        in 1..2 -> "Quick DJ overlap"
-        in 3..5 -> "Standard smooth blend"
-        in 6..8 -> "Long musical transition"
-        else -> "Extended cinematic crossfade"
+        in 1..2 -> appText(com.lastwave.app.R.string.ui_quick_dj_overlap_013691)
+        in 3..5 -> appText(com.lastwave.app.R.string.ui_standard_smooth_blend_18f183)
+        in 6..8 -> appText(com.lastwave.app.R.string.ui_long_musical_transition_5a3ca1)
+        else -> appText(com.lastwave.app.R.string.ui_extended_cinematic_crossfade_892284)
     }
 
     Card(
@@ -391,9 +393,9 @@ internal fun AutoMixControlsCard(
     }
 
     val isAuto = sliderValue.roundToInt() <= 11
-    val displayValue = if (isAuto) "Auto" else "${sliderValue.roundToInt()}s"
+    val displayValue = if (isAuto) appText(com.lastwave.app.R.string.autoeq_preamp_auto) else "${sliderValue.roundToInt()}s"
     val durationDesc = if (isAuto) {
-        "Auto \u2022 Phrase-matched transition"
+        appText(com.lastwave.app.R.string.ui_auto_phrase_matched_transition_9c409d)
     } else {
         "${sliderValue.roundToInt()}s \u2022 Custom DJ blend"
     }
@@ -416,7 +418,7 @@ internal fun AutoMixControlsCard(
             ) {
                 Column(Modifier.weight(1f)) {
                     Text(
-                        "Transition Duration",
+                        appText(com.lastwave.app.R.string.ui_transition_duration_8fb051),
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Medium,
                     )
@@ -445,7 +447,7 @@ internal fun AutoMixControlsCard(
                 ) {
                     Icon(
                         imageVector = if (isExpanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
-                        contentDescription = if (isExpanded) "Collapse transition duration" else "Expand transition duration",
+                        contentDescription = if (isExpanded) appText(com.lastwave.app.R.string.ui_collapse_transition_duration_48d613) else appText(com.lastwave.app.R.string.ui_expand_transition_duration_c94036),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.size(20.dp),
                     )
@@ -498,9 +500,9 @@ internal fun AutoMixControlsCard(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
                     ) {
-                        Text("Auto", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
-                        Text("20s", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
-                        Text("30s", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
+                        Text(appText(com.lastwave.app.R.string.autoeq_preamp_auto), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
+                        Text(appText(com.lastwave.app.R.string.ui_extra_47369c14b2), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
+                        Text(appText(com.lastwave.app.R.string.ui_extra_790739d6ba), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
                     }
                 }
             }
@@ -526,14 +528,14 @@ internal fun AutoMixControlsCard(
                 Spacer(Modifier.width(14.dp))
                 Column(Modifier.weight(1f)) {
                     Text(
-                        "Bass swap",
+                        appText(com.lastwave.app.R.string.ui_bass_swap_47eede),
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Medium,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
                     Text(
-                        "Hands the low end over on the beat so basslines never stack",
+                        appText(com.lastwave.app.R.string.ui_hands_the_low_end_over_on_the_beat_so_basslines__6950a4),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 1,
@@ -596,7 +598,7 @@ internal fun MusicHapticsControlsCard(
                     ) {
                         Icon(Icons.Filled.Info, contentDescription = null, modifier = Modifier.size(18.dp))
                         Text(
-                            text = "Paused while Bit-Perfect USB DAC bypass is active",
+                            text = appText(com.lastwave.app.R.string.ui_paused_while_bit_perfect_usb_dac_bypass_is_activ_d8ccd4),
                             style = MaterialTheme.typography.bodySmall,
                         )
                     }
@@ -605,7 +607,7 @@ internal fun MusicHapticsControlsCard(
 
             // 1. Mode Selector Chips
             Text(
-                text = "Haptic Mode",
+                text = appText(com.lastwave.app.R.string.ui_haptic_mode_770109),
                 style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colorScheme.primary,
@@ -642,7 +644,7 @@ internal fun MusicHapticsControlsCard(
 
             // 2. Intensity Segmented Button Chips
             Text(
-                text = "Vibration Intensity",
+                text = appText(com.lastwave.app.R.string.ui_vibration_intensity_2191bd),
                 style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colorScheme.primary,
@@ -669,9 +671,9 @@ internal fun MusicHapticsControlsCard(
             }
             Text(
                 text = when (config.intensity) {
-                    MusicHapticsIntensity.LIGHT -> "Subtle 35% pulse for relaxed listening"
-                    MusicHapticsIntensity.MEDIUM -> "Balanced 65% pulse tuned for standard rhythm"
-                    MusicHapticsIntensity.STRONG -> "Full 100% kick for heavy bass drops & transients"
+                    MusicHapticsIntensity.LIGHT -> appText(com.lastwave.app.R.string.ui_subtle_35_pulse_for_relaxed_listening_a0db04)
+                    MusicHapticsIntensity.MEDIUM -> appText(com.lastwave.app.R.string.ui_balanced_65_pulse_tuned_for_standard_rhythm_a2604d)
+                    MusicHapticsIntensity.STRONG -> appText(com.lastwave.app.R.string.ui_full_100_kick_for_heavy_bass_drops_transients_6a95e9)
                 },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -683,7 +685,7 @@ internal fun MusicHapticsControlsCard(
 
             // 3. Engine Routing Selector
             Text(
-                text = "Engine Routing",
+                text = appText(com.lastwave.app.R.string.ui_engine_routing_f7033f),
                 style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colorScheme.primary,
@@ -702,9 +704,9 @@ internal fun MusicHapticsControlsCard(
                         label = {
                             Text(
                                 when (engine) {
-                                    MusicHapticsEngineMode.AUTO -> "Auto"
-                                    MusicHapticsEngineMode.DSP_PRECISION -> "DSP"
-                                    MusicHapticsEngineMode.HARDWARE_NATIVE -> "Hardware"
+                                    MusicHapticsEngineMode.AUTO -> appText(com.lastwave.app.R.string.autoeq_preamp_auto)
+                                    MusicHapticsEngineMode.DSP_PRECISION -> appText(com.lastwave.app.R.string.sig_node_dsp)
+                                    MusicHapticsEngineMode.HARDWARE_NATIVE -> appText(com.lastwave.app.R.string.ui_hardware_b76ab6)
                                 },
                                 style = MaterialTheme.typography.labelMedium,
                                 fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
@@ -715,9 +717,9 @@ internal fun MusicHapticsControlsCard(
                 }
             }
             val engineDesc = when (config.engineMode) {
-                MusicHapticsEngineMode.AUTO -> if (isHardwareAvailable) "Hardware HapticGenerator for Whole Song; DSP for filtered modes" else "Precision Media3 DSP engine active"
-                MusicHapticsEngineMode.DSP_PRECISION -> "Precision Media3 transient analyzer (consistent across all devices)"
-                MusicHapticsEngineMode.HARDWARE_NATIVE -> if (isHardwareAvailable) "Android 12+ hardware HapticGenerator coupled to audio HAL" else "Unavailable on this hardware (falling back to DSP)"
+                MusicHapticsEngineMode.AUTO -> if (isHardwareAvailable) appText(com.lastwave.app.R.string.ui_hardware_hapticgenerator_for_whole_song_dsp_for__94fdcf) else appText(com.lastwave.app.R.string.ui_precision_media3_dsp_engine_active_6688d8)
+                MusicHapticsEngineMode.DSP_PRECISION -> appText(com.lastwave.app.R.string.ui_precision_media3_transient_analyzer_consistent_a_fdffeb)
+                MusicHapticsEngineMode.HARDWARE_NATIVE -> if (isHardwareAvailable) appText(com.lastwave.app.R.string.ui_android_12_hardware_hapticgenerator_coupled_to_a_cbd1e5) else appText(com.lastwave.app.R.string.ui_unavailable_on_this_hardware_falling_back_to_dsp_4d5bae)
             }
             Text(
                 text = engineDesc,
@@ -737,12 +739,12 @@ internal fun MusicHapticsControlsCard(
             ) {
                 Column(Modifier.weight(1f)) {
                     Text(
-                        "Pause on Battery Saver",
+                        appText(com.lastwave.app.R.string.ui_pause_on_battery_saver_f4cd6d),
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Medium,
                     )
                     Text(
-                        "Preserves battery when Android Power Saver is active",
+                        appText(com.lastwave.app.R.string.ui_preserves_battery_when_android_power_saver_is_ac_4a0187),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -861,7 +863,7 @@ internal fun ClarityPresetDialog(
                 verticalArrangement = Arrangement.spacedBy(4.dp),
             ) {
                 Text(
-                    "Tunes the Studio Master Clarity chain to the output. Reference is the unmodified shipping curve.",
+                    appText(com.lastwave.app.R.string.set_clarity_desc),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

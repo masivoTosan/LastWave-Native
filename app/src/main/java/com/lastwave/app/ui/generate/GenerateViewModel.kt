@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.generate
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -32,19 +34,19 @@ private const val GENERATION_TIMEOUT_MS = 60_000L
  *  gaps when connected, and guest/offline falls back to local + charts. */
 enum class GenerateMode(val labelRes: Int, val descriptionRes: Int, val storageValue: String) {
     TOP(com.lastwave.app.R.string.gen_mode_top, com.lastwave.app.R.string.gen_mode_top_desc, "top"),
-    RECENT(com.lastwave.app.R.string.gen_mode_recent, com.lastwave.app.R.string.gen_mode_recent_desc, "recent"),
+    RECENT(com.lastwave.app.R.string.gen_mode_recent, com.lastwave.app.R.string.gen_mode_recent_desc, appText(com.lastwave.app.R.string.fr_tab_recent)),
     SIMILAR_TRACKS(com.lastwave.app.R.string.gen_mode_song_radio, com.lastwave.app.R.string.gen_mode_song_radio_desc, "similar-tracks"),
     SIMILAR_ARTISTS(com.lastwave.app.R.string.gen_mode_sim_artists, com.lastwave.app.R.string.gen_mode_sim_artists_desc, "similar-artists"),
     TAG(com.lastwave.app.R.string.gen_mode_tag, com.lastwave.app.R.string.gen_mode_tag_desc, "tag"),
-    MIX(com.lastwave.app.R.string.gen_mode_mix, com.lastwave.app.R.string.gen_mode_mix_desc, "mix"),
-    RECOMMENDATIONS(com.lastwave.app.R.string.gen_mode_reco, com.lastwave.app.R.string.gen_mode_reco_desc, "recommendations"),
+    MIX(com.lastwave.app.R.string.gen_mode_mix, com.lastwave.app.R.string.gen_mode_mix_desc, appText(com.lastwave.app.R.string.home_mix)),
+    RECOMMENDATIONS(com.lastwave.app.R.string.gen_mode_reco, com.lastwave.app.R.string.gen_mode_reco_desc, appText(com.lastwave.app.R.string.settings_section_recommendations)),
     NEVER_HEARD(com.lastwave.app.R.string.gen_mode_never, com.lastwave.app.R.string.gen_mode_never_desc, "never-heard"),
-    LIBRARY(com.lastwave.app.R.string.gen_mode_library, com.lastwave.app.R.string.gen_mode_library_desc, "library"),
+    LIBRARY(com.lastwave.app.R.string.gen_mode_library, com.lastwave.app.R.string.gen_mode_library_desc, appText(com.lastwave.app.R.string.pl_title)),
 }
 
 /** Exact 6 period chips shared by Top Tracks + My Library. */
 val GENERATE_PERIODS = listOf(
-    "overall" to com.lastwave.app.R.string.gen_period_all,
+    appText(com.lastwave.app.R.string.fr_period_all) to com.lastwave.app.R.string.gen_period_all,
     "12month" to com.lastwave.app.R.string.gen_period_12mo,
     "6month" to com.lastwave.app.R.string.gen_period_6mo,
     "3month" to com.lastwave.app.R.string.gen_period_3mo,
@@ -53,13 +55,13 @@ val GENERATE_PERIODS = listOf(
 )
 
 /** Exact 12 quick-select genre chips from generator.html's tag-suggestions. */
-val GENRE_QUICK_CHIPS = listOf("pop", "rock", "hip-hop", "electronic", "jazz", "lofi", "metal", "indie", "classical", "r&b", "ambient", "punk")
+val GENRE_QUICK_CHIPS = listOf(appText(com.lastwave.app.R.string.ui_pop_267a64), appText(com.lastwave.app.R.string.ui_rock_468d79), appText(com.lastwave.app.R.string.ui_hip_hop_2c8b31), appText(com.lastwave.app.R.string.ui_electronic_622585), appText(com.lastwave.app.R.string.ui_jazz_0f940a), "lofi", appText(com.lastwave.app.R.string.ui_metal_90acb4), appText(com.lastwave.app.R.string.ui_indie_c43a74), appText(com.lastwave.app.R.string.ui_classical_1dd412), appText(com.lastwave.app.R.string.ui_r_b_fa9af5), "ambient", "punk")
 
 @Immutable
 data class GenerateUiState(
     val selectedMode: GenerateMode? = null,
     val trackCount: Int = 25,
-    val period: String = "overall",
+    val period: String = appText(com.lastwave.app.R.string.fr_period_all),
     val seedTrackName: String = "",
     val seedArtistName: String = "",
     val seedVideoId: String? = null,
@@ -227,20 +229,20 @@ class GenerateViewModel @Inject constructor(
 
         when (mode) {
             GenerateMode.SIMILAR_TRACKS -> if (state.seedTrackName.isBlank() || state.seedArtistName.isBlank()) {
-                _uiState.update { it.copy(error = "Enter a seed track and artist") }; return
+                _uiState.update { it.copy(error = appText(com.lastwave.app.R.string.ui_enter_a_seed_track_and_artist_7f69b8)) }; return
             }
             GenerateMode.SIMILAR_ARTISTS -> if (state.seedArtistQuery.isBlank()) {
-                _uiState.update { it.copy(error = "Enter a seed artist") }; return
+                _uiState.update { it.copy(error = appText(com.lastwave.app.R.string.ui_enter_a_seed_artist_a0f1b0)) }; return
             }
             GenerateMode.TAG -> if (state.tagInput.isBlank()) {
-                _uiState.update { it.copy(error = "Enter a genre/tag") }; return
+                _uiState.update { it.copy(error = appText(com.lastwave.app.R.string.ui_enter_a_genre_tag_d3451b)) }; return
             }
             else -> Unit
         }
 
         viewModelScope.launch {
-            _uiState.update { it.copy(isGenerating = true, error = null, loadingMessage = "Analyzing taste profile\u2026") }
-            generationStatus.update(isGenerating = true, message = "Analyzing taste profile\u2026")
+            _uiState.update { it.copy(isGenerating = true, error = null, loadingMessage = appText(com.lastwave.app.R.string.ui_analyzing_taste_profile_6829ba)) }
+            generationStatus.update(isGenerating = true, message = appText(com.lastwave.app.R.string.ui_analyzing_taste_profile_6829ba))
             try {
                 val onProgress: (String) -> Unit = { msg ->
                     _uiState.update { s -> s.copy(loadingMessage = msg) }
@@ -248,9 +250,9 @@ class GenerateViewModel @Inject constructor(
                 }
 
                 if (mode == GenerateMode.SIMILAR_TRACKS) {
-                    onProgress("Finding similar songs with YouTube Music\u2026")
+                    onProgress(appText(com.lastwave.app.R.string.ui_finding_similar_songs_with_youtube_music_a1047d))
                 } else {
-                    onProgress("Blending Last.fm and YouTube Music\u2026")
+                    onProgress(appText(com.lastwave.app.R.string.ui_blending_last_fm_and_youtube_music_6a4064))
                 }
 
                 val targetCount = if (mode == GenerateMode.RECOMMENDATIONS) {
@@ -285,7 +287,7 @@ class GenerateViewModel @Inject constructor(
                     }
                 }
 
-                onProgress("Pre-checking availability\u2026")
+                onProgress(appText(com.lastwave.app.R.string.ui_pre_checking_availability_ece3f4))
                 val preparedTracks = if (mode == GenerateMode.RECOMMENDATIONS) {
                     // RecommendationEngine already applies its own diversity
                     // stages. Do not discard fresh tracks afterward via the
@@ -305,18 +307,18 @@ class GenerateViewModel @Inject constructor(
                 }
                 if (finalTracks.isEmpty()) {
                     val message = if (mode == GenerateMode.SIMILAR_TRACKS && state.seedTrackName.isNotBlank()) {
-                        "No similar songs found to mix for \"${state.seedTrackName}\"."
+                        appText(com.lastwave.app.R.string.ui_no_similar_songs_found_to_mix_for_1_s_d6ed13, (state.seedTrackName).toString())
                     } else if (mode == GenerateMode.SIMILAR_ARTISTS && state.seedArtistQuery.isNotBlank()) {
-                        "No similar artists found for \"${state.seedArtistQuery}\"."
+                        appText(com.lastwave.app.R.string.ui_no_similar_artists_found_for_1_s_0e4b39, (state.seedArtistQuery).toString())
                     } else if (mode == GenerateMode.TAG && state.tagInput.isNotBlank()) {
-                        "No songs found for tag \"${state.tagInput}\"."
+                        appText(com.lastwave.app.R.string.ui_no_songs_found_for_tag_1_s_a87759, (state.tagInput).toString())
                     } else {
-                        "No songs found to create this mix."
+                        appText(com.lastwave.app.R.string.ui_no_songs_found_to_create_this_mix_af6eba)
                     }
                     throw IllegalStateException(message)
                 }
 
-                onProgress("Saving playlist\u2026")
+                onProgress(appText(com.lastwave.app.R.string.ui_saving_playlist_89bc51))
                 val existingTitles = playlistRepository.titles()
                 val title = PlaylistNamer.generateUniqueName(existingTitles)
                 val subtitle = PlaylistNamer.subtitleFor(
@@ -342,11 +344,11 @@ class GenerateViewModel @Inject constructor(
 
                 _navEvents.tryEmit(GenerateNavEvent.NavigateToPlaylistLoading(saved.id))
             } catch (_: TimeoutCancellationException) {
-                _uiState.update { it.copy(error = "Playlist generation timed out. Check your connection and try again.") }
+                _uiState.update { it.copy(error = appText(com.lastwave.app.R.string.ui_playlist_generation_timed_out_check_your_connect_40ad6e)) }
             } catch (cancellation: CancellationException) {
                 throw cancellation
             } catch (e: Exception) {
-                _uiState.update { it.copy(error = e.message ?: "Couldn't generate a playlist") }
+                _uiState.update { it.copy(error = e.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_generate_a_playlist_c17e2d)) }
             } finally {
                 _uiState.update { it.copy(isGenerating = false) }
                 generationStatus.update(isGenerating = false)

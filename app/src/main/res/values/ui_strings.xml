@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_0_songs_a35bbc" formatted="false">"0 songs"</string>
+    <string name="ui_0_tracks_5ab8a8" formatted="false">"0 tracks"</string>
+    <string name="ui_1_hour_ago_ce7276" formatted="false">"1 hour ago"</string>
+    <string name="ui_1_s_2_s_bit_edd157">"%1$s\n%2$s bit"</string>
+    <string name="ui_1_s_2_s_song_s_3_s_bd0b2b">"%1$s%2$s song(s) • %3$s"</string>
+    <string name="ui_1_s_2_s_track_s_3_s_fb0a0a">"%1$s • %2$s track(s) • %3$s"</string>
+    <string name="ui_1_s_2_s_tracks_1525d0">"%1$s • %2$s tracks"</string>
+    <string name="ui_1_s_account_connection_7ed024">"%1$s Account Connection"</string>
+    <string name="ui_1_s_albums_2_s_07f02d">"%1$s albums • %2$s"</string>
+    <string name="ui_1_s_best_for_smooth_sync_2f02cb">"%1$s • Best for smooth sync"</string>
+    <string name="ui_1_s_bit_f051aa">"%1$s bit"</string>
+    <string name="ui_1_s_cover_7b0a7f">"%1$s cover"</string>
+    <string name="ui_1_s_day_listening_streak_active_034be0">"%1$s-day listening streak active"</string>
+    <string name="ui_1_s_days_ago_4876e2">"%1$s days ago"</string>
+    <string name="ui_1_s_days_b2de92">"%1$s days"</string>
+    <string name="ui_1_s_downloaded_song_s_2_s_album_s_3_s_46eec9">"%1$s downloaded song(s) • %2$s album(s) • %3$s"</string>
+    <string name="ui_1_s_hrs_ago_356748">"%1$s hrs ago"</string>
+    <string name="ui_1_s_listening_2_s_0b08da">"%1$s listening · %2$s"</string>
+    <string name="ui_1_s_lossless_youtube_e14ac2">"%1$s • Lossless &amp; YouTube"</string>
+    <string name="ui_1_s_min_5c8f84">"%1$s min"</string>
+    <string name="ui_1_s_min_ago_e2de68">"%1$s min ago"</string>
+    <string name="ui_1_s_minutes_e23e2d">"%1$s minutes"</string>
+    <string name="ui_1_s_more_c7228e">"+%1$s more"</string>
+    <string name="ui_1_s_plays_2_s_e5ff95">"%1$s plays • %2$s"</string>
+    <string name="ui_1_s_queued_next_bd1e22">"%1$s queued next"</string>
+    <string name="ui_1_s_removed_2ebeac">"\"%1$s\" removed"</string>
+    <string name="ui_1_s_room_code_bd8068">"%1$s · ROOM CODE"</string>
+    <string name="ui_1_s_scrobbles_12e2b0">"%1$s scrobbles"</string>
+    <string name="ui_1_s_setting_2_s_found_1e2fcd">"%1$s setting%2$s found"</string>
+    <string name="ui_1_s_song_2_s_hidden_from_recommendations_e827c6">"%1$s song%2$s hidden from recommendations"</string>
+    <string name="ui_1_s_songs_9b614d">"%1$s songs"</string>
+    <string name="ui_1_s_tracks_2_s_3_s_3110b9">"%1$s tracks • %2$s • %3$s"</string>
+    <string name="ui_1_s_tracks_aece60">"%1$s tracks"</string>
+    <string name="ui_1_sd_2_sh_3_sm_0bde2a">"%1$sd %2$sh %3$sm"</string>
+    <string name="ui_1_sd_ago_9f8393">"%1$sd ago"</string>
+    <string name="ui_1_sh_2_sm_3_ss_b61806">"%1$sh %2$sm %3$ss"</string>
+    <string name="ui_1_sh_ago_ea18cf">"%1$sh ago"</string>
+    <string name="ui_1_sm_2_ss_99d2fa">"%1$sm %2$ss"</string>
+    <string name="ui_1_sm_ago_aa5898">"%1$sm ago"</string>
+    <string name="ui_1_song_093990" formatted="false">"1 song"</string>
+    <string name="ui_1_sw_ago_a33cab">"%1$sw ago"</string>
+    <string name="ui_1_track_5e9171" formatted="false">"1 track"</string>
+    <string name="ui_24_7_library_sync_8cfb92" formatted="false">"24/7 Library Sync"</string>
+    <string name="ui_about_this_album_8d7604" formatted="false">"About this Album"</string>
+    <string name="ui_accent_color_2bef52" formatted="false">"Accent Color"</string>
+    <string name="ui_accent_color_palette_cae508" formatted="false">"Accent Color &amp; Palette"</string>
+    <string name="ui_account_connection_canvas_playlist_imports_liked_2264c3" formatted="false">"Account connection, Canvas, playlist imports &amp; Liked Songs sync"</string>
+    <string name="ui_acoustic_b6e266" formatted="false">"Acoustic"</string>
+    <string name="ui_acoustic_tuning_eq_f71aba" formatted="false">"Acoustic Tuning &amp; EQ"</string>
+    <string name="ui_active_custom_dj_blend_1_ss_acad23">"Active • Custom DJ blend (%1$ss)"</string>
+    <string name="ui_active_days_0ebfff" formatted="false">"Active Days"</string>
+    <string name="ui_active_phrase_matched_transition_auto_c98cb5" formatted="false">"Active • Phrase-matched transition (Auto)"</string>
+    <string name="ui_adaptive_color_background_on_the_now_playing_scr_f07a71" formatted="false">"Adaptive color background on the now playing screen driven by album art"</string>
+    <string name="ui_adapts_to_your_connection_up_to_your_wi_fi_quali_357711" formatted="false">"Adapts to your connection • Up to your Wi-Fi quality"</string>
+    <string name="ui_add_61cc55" formatted="false">"Add"</string>
+    <string name="ui_add_another_concurrent_streaming_addon_server_e2a4f8" formatted="false">"Add another concurrent streaming addon server"</string>
+    <string name="ui_add_another_copy_c68ce3" formatted="false">"Add another copy"</string>
+    <string name="ui_add_key_49e644" formatted="false">"Add key"</string>
+    <string name="ui_add_streaming_addon_056a61" formatted="false">"Add Streaming Addon"</string>
+    <string name="ui_add_to_1_s_cd52e8">"Add to %1$s"</string>
+    <string name="ui_add_to_youtube_liked_b4c402" formatted="false">"Add to YouTube Liked"</string>
+    <string name="ui_add_your_api_key_below_first_then_connect_3ddcdc" formatted="false">"Add your API key below first, then connect."</string>
+    <string name="ui_add_your_last_fm_api_key_in_settings_integration_9eb276" formatted="false">"Add your Last.fm API key in Settings → Integrations first"</string>
+    <string name="ui_added_1_s_tracks_79e02c">"Added %1$s tracks"</string>
+    <string name="ui_added_to_liked_songs_3ca337" formatted="false">"Added to Liked Songs"</string>
+    <string name="ui_added_to_offline_playlist_556f70" formatted="false">"Added to offline playlist"</string>
+    <string name="ui_added_to_playlist_1edb4f" formatted="false">"Added to playlist"</string>
+    <string name="ui_addon_is_active_and_reachable_7e4df1" formatted="false">"Addon is active and reachable"</string>
+    <string name="ui_addon_rejected_1_s_2cfdce">"Addon rejected: %1$s"</string>
+    <string name="ui_addon_removed_262972" formatted="false">"Addon removed"</string>
+    <string name="ui_addon_unreachable_1_s_d675ae">"Addon unreachable: %1$s"</string>
+    <string name="ui_addon_url_cannot_be_empty_380f6c" formatted="false">"Addon URL cannot be empty"</string>
+    <string name="ui_adjust_crossfade_duration_slider_in_seconds_betw_e91c67" formatted="false">"Adjust crossfade duration slider in seconds between songs"</string>
+    <string name="ui_adjust_the_scale_of_lyrics_in_both_modern_karaok_0a9fa6" formatted="false">"Adjust the scale of lyrics in both modern karaoke and classic lyrics views."</string>
+    <string name="ui_adjust_timing_offset_in_milliseconds_to_match_ly_9a860c" formatted="false">"Adjust timing offset in milliseconds to match lyrics with vocals"</string>
+    <string name="ui_after_signing_in_or_connecting_cookies_you_ll_be_bf6a31" formatted="false">"After signing in or connecting cookies you\'ll be returned here automatically."</string>
+    <string name="ui_air_ddd068" formatted="false">"Air"</string>
+    <string name="ui_album_for_you_38dc4c" formatted="false">"Album for you"</string>
+    <string name="ui_albums_in_rotation_4ebec8" formatted="false">"Albums in Rotation"</string>
+    <string name="ui_alignment_7f8c51" formatted="false">"Alignment"</string>
+    <string name="ui_all_home_sections_are_hidden_6de6e0" formatted="false">"All home sections are hidden"</string>
+    <string name="ui_all_songs_already_downloaded_0f7017" formatted="false">"All songs already downloaded"</string>
+    <string name="ui_all_time_progression_374f16" formatted="false">"All-time progression"</string>
+    <string name="ui_allow_canvas_video_streaming_over_mobile_and_cel_f34d8a" formatted="false">"Allow canvas video streaming over mobile and cellular networks"</string>
+    <string name="ui_allow_external_equalizers_dolby_atmos_wavelet_to_dc2666" formatted="false">"Allow external equalizers (Dolby Atmos, Wavelet) to process playback"</string>
+    <string name="ui_allow_music_access_4eaad3" formatted="false">"Allow music access"</string>
+    <string name="ui_already_in_offline_playlist_7a3916" formatted="false">"Already in offline playlist"</string>
+    <string name="ui_already_liked_71ab82" formatted="false">"Already liked"</string>
+    <string name="ui_already_saved_as_1_s_769f47">"Already saved as \"%1$s\""</string>
+    <string name="ui_alternative_3b74e9" formatted="false">"Alternative"</string>
+    <string name="ui_always_on_rooms_70423e" formatted="false">"ALWAYS-ON ROOMS"</string>
+    <string name="ui_amber_27a01d" formatted="false">"Amber"</string>
+    <string name="ui_an_endless_station_shaped_by_your_listening_6f37ca" formatted="false">"An endless station shaped by your listening"</string>
+    <string name="ui_analyzing_7fb483" formatted="false">"Analyzing..."</string>
+    <string name="ui_analyzing_taste_profile_6829ba" formatted="false">"Analyzing taste profile…"</string>
+    <string name="ui_android_12_hardware_hapticgenerator_coupled_to_a_cbd1e5" formatted="false">"Android 12+ hardware HapticGenerator coupled to audio HAL"</string>
+    <string name="ui_android_default_output_f59518" formatted="false">"Android Default Output"</string>
+    <string name="ui_android_native_haptics_b16753" formatted="false">"Android native haptics"</string>
+    <string name="ui_android_system_webview_is_unavailable_install_or_608310" formatted="false">"Android System WebView is unavailable. Install or enable a WebView provider to connect Spotify."</string>
+    <string name="ui_android_system_webview_is_unavailable_install_or_e99fba" formatted="false">"Android System WebView is unavailable. Install or enable a WebView provider to connect YouTube Music."</string>
+    <string name="ui_animate_fluid_rotating_artwork_in_lyrics_view_di_20a453" formatted="false">"Animate fluid rotating artwork in lyrics view (disable for static background)"</string>
+    <string name="ui_animate_fluid_rotating_artwork_in_player_and_lyr_68d60d" formatted="false">"Animate fluid rotating artwork in player and lyrics view (disable for static background)"</string>
+    <string name="ui_anime_f1b32a" formatted="false">"Anime"</string>
+    <string name="ui_anyone_in_room_can_play_pause_seek_and_change_so_e64f25" formatted="false">"Anyone in room can play, pause, seek, and change songs"</string>
+    <string name="ui_app_font_6a5c3e" formatted="false">"App Font"</string>
+    <string name="ui_app_preferences_and_audio_options_eaac9b" formatted="false">"App preferences and audio options"</string>
+    <string name="ui_apply_the_equalizer_preset_88b1e8" formatted="false">"apply the equalizer preset"</string>
+    <string name="ui_approve_in_your_browser_you_can_disconnect_anyti_d76250" formatted="false">"Approve in your browser. You can disconnect anytime — Stats keep working locally."</string>
+    <string name="ui_artist_a_z_3205a4" formatted="false">"Artist (A-Z)"</string>
+    <string name="ui_artist_motion_51cecd" formatted="false">"Artist Motion"</string>
+    <string name="ui_artist_spotlight_6a671f" formatted="false">"Artist Spotlight"</string>
+    <string name="ui_artists_1_s_50446e">"Artists (%1$s)"</string>
+    <string name="ui_ask_spotify_first_before_apple_music_tidal_and_c_2a6e9d" formatted="false">"Ask Spotify first, before Apple Music, Tidal and community artwork"</string>
+    <string name="ui_audio_acdac2" formatted="false">"Audio"</string>
+    <string name="ui_audio_controls_3590d9" formatted="false">"Audio Controls"</string>
+    <string name="ui_audio_controls_6f8f4c" formatted="false">"Audio controls"</string>
+    <string name="ui_auto_phrase_matched_transition_9c409d" formatted="false">"Auto • Phrase-matched transition"</string>
+    <string name="ui_autoeq_correction_target_curves_peq_954c36" formatted="false">"AutoEQ correction, target curves &amp; PEQ"</string>
+    <string name="ui_automix_b42afb" formatted="false">"AutoMix"</string>
+    <string name="ui_autoplay_similar_songs_bde9eb" formatted="false">"Autoplay similar songs"</string>
+    <string name="ui_avg_plays_track_667062" formatted="false">"Avg plays/track"</string>
+    <string name="ui_avg_session_48116e" formatted="false">"Avg. Session"</string>
+    <string name="ui_avg_session_6d49c6" formatted="false">"Avg. session"</string>
+    <string name="ui_avg_session_87fc8c" formatted="false">"Avg session"</string>
+    <string name="ui_back_to_all_playlists_6a2b02" formatted="false">"Back to all playlists"</string>
+    <string name="ui_back_to_my_profile_333fa4" formatted="false">"Back to my profile"</string>
+    <string name="ui_back_to_player_a153c9" formatted="false">"Back to player"</string>
+    <string name="ui_backup_settings_playlists_b7a92e" formatted="false">"Backup Settings &amp; Playlists"</string>
+    <string name="ui_balanced_65_pulse_tuned_for_standard_rhythm_a2604d" formatted="false">"Balanced 65% pulse tuned for standard rhythm"</string>
+    <string name="ui_balanced_background_listening_daily_rotation_9c6d22" formatted="false">"Balanced background listening &amp; daily rotation"</string>
+    <string name="ui_balanced_pulses_for_everyday_listening_c5a27d" formatted="false">"Balanced pulses for everyday listening."</string>
+    <string name="ui_bass_0db_punch_291cd6" formatted="false">"Bass: 0dB Punch!"</string>
+    <string name="ui_bass_0db_unity_79c538" formatted="false">"Bass: 0dB Unity"</string>
+    <string name="ui_bass_18db_cut_510d4e" formatted="false">"Bass: -18dB Cut"</string>
+    <string name="ui_bass_18db_duck_498bbe" formatted="false">"Bass: -18dB Duck"</string>
+    <string name="ui_bass_beats_bdd901" formatted="false">"Bass &amp; Beats"</string>
+    <string name="ui_bass_ducked_2e22c1" formatted="false">"Bass: Ducked"</string>
+    <string name="ui_bass_exchange_7e906b" formatted="false">"Bass exchange"</string>
+    <string name="ui_bass_swap_47eede" formatted="false">"Bass swap"</string>
+    <string name="ui_beat_blend_3dab2f" formatted="false">"Beat blend"</string>
+    <string name="ui_beat_matched_key_locked_seamless_dual_deck_mixin_44e0f3" formatted="false">"Beat-matched, key-locked seamless dual-deck mixing"</string>
+    <string name="ui_beat_matched_mixes_when_the_songs_allow_clean_fa_6b4ef9" formatted="false">"Beat-matched mixes when the songs allow, clean fades when not"</string>
+    <string name="ui_bespoke_logo_palette_with_electric_lime_and_obsi_786921" formatted="false">"Bespoke logo palette with Electric Lime and Obsidian Teal"</string>
+    <string name="ui_best_day_d62946" formatted="false">"Best day"</string>
+    <string name="ui_best_month_54673a" formatted="false">"Best month"</string>
+    <string name="ui_best_week_d74574" formatted="false">"Best week"</string>
+    <string name="ui_bit_perfect_mode_552e9e" formatted="false">"Bit-Perfect Mode"</string>
+    <string name="ui_blend_the_end_of_a_track_smoothly_into_the_next__18f697" formatted="false">"Blend the end of a track smoothly into the next one"</string>
+    <string name="ui_blending_last_fm_and_youtube_music_6a4064" formatted="false">"Blending Last.fm and YouTube Music…"</string>
+    <string name="ui_bollywood_e668a8" formatted="false">"Bollywood"</string>
+    <string name="ui_browse_and_configure_modular_plugins_and_extra_f_1cee66" formatted="false">"Browse and configure modular plugins and extra features"</string>
+    <string name="ui_browse_by_mood_and_genre_a1f5ac" formatted="false">"Browse by mood and genre"</string>
+    <string name="ui_button_now_playing_505d89" formatted="false">"Button Now playing"</string>
+    <string name="ui_by_1_s_893358">"By %1$s"</string>
+    <string name="ui_bypass_android_mixer_dsp_stream_bit_exact_audio__d66772" formatted="false">"Bypass Android mixer &amp; DSP; stream bit-exact audio to USB DAC"</string>
+    <string name="ui_bypass_the_android_mixer_on_the_speaker_jack_wit_954705" formatted="false">"Bypass the Android mixer on the speaker / jack without a USB DAC"</string>
+    <string name="ui_cache_cleanup_export_import_settings_database_to_c7f9b8" formatted="false">"Cache cleanup, Export &amp; Import settings, Database tools"</string>
+    <string name="ui_cancel_1_s_fca5fb">"Cancel %1$s%%"</string>
+    <string name="ui_cancel_reply_bd62d2" formatted="false">"Cancel reply"</string>
+    <string name="ui_cancel_sleep_timer_44e2c7" formatted="false">"Cancel sleep timer"</string>
+    <string name="ui_cancelled_1_s_downloads_442da3">"Cancelled %1$s downloads"</string>
+    <string name="ui_cannot_delete_scrobble_has_no_timestamp_9e5d0e" formatted="false">"Cannot delete — scrobble has no timestamp"</string>
+    <string name="ui_canvas_full_bleed_15374a" formatted="false">"Canvas Full Bleed"</string>
+    <string name="ui_canvas_on_cellular_data_d84c6d" formatted="false">"Canvas on Cellular Data"</string>
+    <string name="ui_canvas_video_backgrounds_11ae9f" formatted="false">"Canvas Video Backgrounds"</string>
+    <string name="ui_cd_lossless_16_bit_44_1_khz_flac_619436" formatted="false">"CD Lossless (16-bit / 44.1 kHz FLAC)"</string>
+    <string name="ui_cellular_streaming_quality_5d5aaa" formatted="false">"Cellular streaming quality"</string>
+    <string name="ui_cellular_streaming_quality_a24de0" formatted="false">"Cellular Streaming Quality"</string>
+    <string name="ui_center_a23911" formatted="false">"Center"</string>
+    <string name="ui_change_64fbd9" formatted="false">"Change"</string>
+    <string name="ui_change_app_language_english_spanish_russian_and__1ea784" formatted="false">"Change app language (English, Spanish, Russian, and more)"</string>
+    <string name="ui_chat_2ced57" formatted="false">"Chat"</string>
+    <string name="ui_check_github_releases_for_the_latest_version_and_905e07" formatted="false">"Check GitHub releases for the latest version and changelog"</string>
+    <string name="ui_check_login_3277f9" formatted="false">"Check Login"</string>
+    <string name="ui_checking_97876b" formatted="false">"Checking"</string>
+    <string name="ui_checking_github_releases_3d176d" formatted="false">"Checking GitHub releases..."</string>
+    <string name="ui_chill_e31567" formatted="false">"Chill"</string>
+    <string name="ui_choose_a_different_video_6f0c50" formatted="false">"Choose a different video"</string>
+    <string name="ui_choose_a_mode_to_generate_a_playlist_2d7ee9" formatted="false">"Choose a mode to generate a playlist"</string>
+    <string name="ui_choose_a_video_11124d" formatted="false">"Choose a video"</string>
+    <string name="ui_choose_audio_quality_while_connected_to_wi_fi_2e0b85" formatted="false">"Choose audio quality while connected to Wi-Fi"</string>
+    <string name="ui_choose_audio_quality_while_using_mobile_data_d9fa3f" formatted="false">"Choose audio quality while using mobile data"</string>
+    <string name="ui_choose_between_default_wavy_and_waveform_slider__a22626" formatted="false">"Choose between Default, Wavy, and Waveform slider styles"</string>
+    <string name="ui_choose_one_or_more_playlists_3355aa" formatted="false">"Choose one or more playlists"</string>
+    <string name="ui_choose_preferred_synced_lyrics_provider_lrclib_m_ff91c8" formatted="false">"Choose preferred synced lyrics provider (LRCLIB, Musixmatch, etc.)"</string>
+    <string name="ui_choose_specific_playlists_to_mirror_with_your_yo_4726c7" formatted="false">"Choose specific playlists to mirror with your YouTube Music account"</string>
+    <string name="ui_choose_the_preferred_quality_for_this_connection_1dca05" formatted="false">"Choose the preferred quality for this connection"</string>
+    <string name="ui_choose_video_547ac0" formatted="false">"Choose video"</string>
+    <string name="ui_choose_which_account_playlists_appear_in_lastwav_dfe359" formatted="false">"Choose which account playlists appear in LastWave"</string>
+    <string name="ui_choose_which_playlists_mirror_to_youtube_music_c971db" formatted="false">"Choose which playlists mirror to YouTube Music"</string>
+    <string name="ui_clashprojects_on_telegram_3047ea" formatted="false">"@clashprojects on Telegram"</string>
+    <string name="ui_clashprojects_support_4613e1" formatted="false">"ClashProjects Support"</string>
+    <string name="ui_classic_bottom_now_playing_card_308713" formatted="false">"Classic bottom now playing card"</string>
+    <string name="ui_classical_1dd412" formatted="false">"Classical"</string>
+    <string name="ui_clear_download_history_a53e13" formatted="false">"clear download history"</string>
+    <string name="ui_clear_downloads_dac07f" formatted="false">"clear downloads"</string>
+    <string name="ui_clear_exclusions_e3367a" formatted="false">"clear exclusions"</string>
+    <string name="ui_clear_queue_except_playing_song_5eed6e" formatted="false">"Clear queue except playing song"</string>
+    <string name="ui_clear_saved_data_f464ab" formatted="false">"clear saved data"</string>
+    <string name="ui_clear_the_session_d6652d" formatted="false">"clear the session"</string>
+    <string name="ui_close_automix_716393" formatted="false">"Close AutoMix"</string>
+    <string name="ui_close_video_91e08c" formatted="false">"Close video"</string>
+    <string name="ui_close_video_show_album_art_c8f833" formatted="false">"Close video, show album art"</string>
+    <string name="ui_code_copied_1_s_d6fb47">"Code copied: %1$s"</string>
+    <string name="ui_collaboration_social_482968" formatted="false">"Collaboration &amp; Social"</string>
+    <string name="ui_collaborative_67efce" formatted="false">"Collaborative"</string>
+    <string name="ui_collaborative_anyone_can_control_2284c4" formatted="false">"Collaborative • Anyone can control"</string>
+    <string name="ui_collaborative_default_2ecbc5" formatted="false">"Collaborative (Default)"</string>
+    <string name="ui_collapse_app_icons_094365" formatted="false">"Collapse app icons"</string>
+    <string name="ui_collapse_transition_duration_48d613" formatted="false">"Collapse transition duration"</string>
+    <string name="ui_community_discussions_c65821" formatted="false">"Community &amp; discussions"</string>
+    <string name="ui_commute_136980" formatted="false">"Commute"</string>
+    <string name="ui_compact_floating_dock_with_a_label_beside_the_se_af0dbf" formatted="false">"Compact floating dock with a label beside the selected icon"</string>
+    <string name="ui_compare_how_you_listen_across_genres_artists_alb_3b26bf" formatted="false">"Compare how you listen across genres, artists, albums, and songs."</string>
+    <string name="ui_configure_custom_last_fm_api_key_and_secret_to_b_149d72" formatted="false">"Configure custom Last.fm API key and secret to bypass shared rate limits"</string>
+    <string name="ui_configure_visible_feeds_shelves_and_quick_access_0fe1be" formatted="false">"Configure visible feeds, shelves, and quick access on the Home tab"</string>
+    <string name="ui_connect_an_account_first_1e0e59" formatted="false">"Connect an account first"</string>
+    <string name="ui_connect_last_fm_account_for_global_scrobbling_lo_f6b684" formatted="false">"Connect Last.fm account for global scrobbling, loved tracks, and listening stats"</string>
+    <string name="ui_connect_last_fm_in_settings_to_sync_global_scrob_79e7c9" formatted="false">"Connect Last.fm in Settings to sync global scrobbles"</string>
+    <string name="ui_connect_or_manage_your_google_youtube_music_acco_24889b" formatted="false">"Connect or manage your Google / YouTube Music account"</string>
+    <string name="ui_connect_spotify_098751" formatted="false">"Connect Spotify"</string>
+    <string name="ui_connect_spotify_account_e9e3f8" formatted="false">"Connect Spotify Account"</string>
+    <string name="ui_connect_to_your_personal_or_custom_addon_server__d35be0" formatted="false">"Connect to your personal or custom Addon server URL"</string>
+    <string name="ui_connect_with_us_65ac13" formatted="false">"Connect with us"</string>
+    <string name="ui_connected_1_s_6c3de9">"Connected: %1$s"</string>
+    <string name="ui_connected_as_1_s_24_7_library_sync_7d9e50">"Connected as %1$s • 24/7 library sync"</string>
+    <string name="ui_connected_c2f9b7" formatted="false">"Connected"</string>
+    <string name="ui_connected_sp_dc_canvas_playlist_imports_liked_so_5220c5" formatted="false">"Connected (sp_dc) • Canvas, playlist imports &amp; Liked Songs sync"</string>
+    <string name="ui_connected_sp_dc_e98b27" formatted="false">"Connected (sp_dc)"</string>
+    <string name="ui_connecting_48b998" formatted="false">"CONNECTING"</string>
+    <string name="ui_connecting_b98e3f" formatted="false">"Connecting..."</string>
+    <string name="ui_connecting_to_last_fm_442d60" formatted="false">"Connecting to Last.fm…"</string>
+    <string name="ui_connecting_to_room_b245a7" formatted="false">"Connecting to Room..."</string>
+    <string name="ui_connection_failed_202caa" formatted="false">"Connection failed"</string>
+    <string name="ui_consistent_daily_listening_sessions_c86d60" formatted="false">"Consistent daily listening sessions"</string>
+    <string name="ui_control_which_playlists_from_your_youtube_accoun_08491c" formatted="false">"Control which playlists from your YouTube account appear in LastWave"</string>
+    <string name="ui_controls_bee75c" formatted="false">"Controls"</string>
+    <string name="ui_cookie_login_92f196" formatted="false">"Cookie Login"</string>
+    <string name="ui_copy_code_1589b6" formatted="false">"Copy Code"</string>
+    <string name="ui_could_not_complete_last_fm_sign_in_3402e0" formatted="false">"Could not complete Last.fm sign-in"</string>
+    <string name="ui_could_not_connect_last_fm_a767a8" formatted="false">"Could not connect Last.fm"</string>
+    <string name="ui_could_not_exclude_this_song_please_try_again_ef2c60" formatted="false">"Could not exclude this song. Please try again."</string>
+    <string name="ui_could_not_find_related_tracks_2249e5" formatted="false">"Could not find related tracks"</string>
+    <string name="ui_could_not_read_this_backup_779200" formatted="false">"Could not read this backup"</string>
+    <string name="ui_could_not_search_videos_6962bd" formatted="false">"Could not search videos"</string>
+    <string name="ui_couldn_t_add_to_playlist_2d5b31" formatted="false">"Couldn\'t add to playlist"</string>
+    <string name="ui_couldn_t_delete_1_s_playlist_2_s_try_again_1a0177">"Couldn\'t delete %1$s playlist%2$s. Try again."</string>
+    <string name="ui_couldn_t_delete_playlist_try_again_8bb9df" formatted="false">"Couldn\'t delete playlist. Try again."</string>
+    <string name="ui_couldn_t_find_any_songs_in_this_playlist_please__369330" formatted="false">"Couldn\'t find any songs in this playlist. Please ensure the link is public or unlisted."</string>
+    <string name="ui_couldn_t_finish_connecting_1_s_9be13a">"Couldn\'t finish connecting: %1$s"</string>
+    <string name="ui_couldn_t_finish_loading_tap_retry_2175c5" formatted="false">"Couldn\'t finish loading. Tap Retry."</string>
+    <string name="ui_couldn_t_finish_loading_this_playlist_tap_retry_b87805" formatted="false">"Couldn\'t finish loading this playlist. Tap Retry."</string>
+    <string name="ui_couldn_t_generate_a_playlist_c17e2d" formatted="false">"Couldn\'t generate a playlist"</string>
+    <string name="ui_couldn_t_load_genres_aab8b4" formatted="false">"Couldn\'t load genres"</string>
+    <string name="ui_couldn_t_load_local_stats_9fcdc1" formatted="false">"Couldn\'t load local stats"</string>
+    <string name="ui_couldn_t_load_lyrics_360572" formatted="false">"Couldn\'t load lyrics"</string>
+    <string name="ui_couldn_t_load_more_releases_tap_retry_4daa6f" formatted="false">"Couldn\'t load more releases. Tap Retry."</string>
+    <string name="ui_couldn_t_load_new_releases_tap_retry_d67bae" formatted="false">"Couldn\'t load new releases. Tap Retry."</string>
+    <string name="ui_couldn_t_load_playlist_songs_public_unlisted_lin_fd7fa3" formatted="false">"Couldn\'t load playlist songs. Public/unlisted links work anonymously — connect a YouTube Music account in Settings to import your own."</string>
+    <string name="ui_couldn_t_load_podcasts_tap_retry_f29b6f" formatted="false">"Couldn\'t load podcasts. Tap Retry."</string>
+    <string name="ui_couldn_t_load_recommendations_de4b4e" formatted="false">"Couldn\'t load recommendations"</string>
+    <string name="ui_couldn_t_load_that_profile_621d46" formatted="false">"Couldn\'t load that profile"</string>
+    <string name="ui_couldn_t_load_this_playlist_if_it_s_not_yours_ch_f3cf45" formatted="false">"Couldn\'t load this playlist. If it\'s not yours, check that sharing is enabled."</string>
+    <string name="ui_couldn_t_load_this_podcast_right_now_c8a421" formatted="false">"Couldn\'t load this podcast right now."</string>
+    <string name="ui_couldn_t_load_this_podcast_tap_retry_204367" formatted="false">"Couldn\'t load this podcast. Tap Retry."</string>
+    <string name="ui_couldn_t_make_playlist_local_76c0c2" formatted="false">"Couldn\'t make playlist local"</string>
+    <string name="ui_couldn_t_read_playlists_try_again_8ca078" formatted="false">"Couldn\'t read playlists. Try again."</string>
+    <string name="ui_couldn_t_read_spotify_liked_songs_1_s_11fc37">"Couldn\'t read Spotify liked songs: %1$s"</string>
+    <string name="ui_couldn_t_read_that_playlist_1_s_f31ec1">"Couldn\'t read that playlist: %1$s"</string>
+    <string name="ui_couldn_t_refresh_playlist_tap_retry_1353f1" formatted="false">"Couldn\'t refresh playlist. Tap Retry."</string>
+    <string name="ui_couldn_t_regenerate_playlist_55c400" formatted="false">"Couldn\'t regenerate playlist"</string>
+    <string name="ui_couldn_t_remove_song_85f483" formatted="false">"Couldn\'t remove song"</string>
+    <string name="ui_couldn_t_save_new_order_f6f221" formatted="false">"Couldn\'t save new order"</string>
+    <string name="ui_couldn_t_save_playlist_try_again_e5b7d9" formatted="false">"Couldn\'t save playlist. Try again."</string>
+    <string name="ui_couldn_t_save_the_spotify_session_99498d" formatted="false">"Couldn\'t save the Spotify session."</string>
+    <string name="ui_couldn_t_update_liked_songs_90ae54" formatted="false">"Couldn\'t update Liked Songs"</string>
+    <string name="ui_country_d523eb" formatted="false">"Country"</string>
+    <string name="ui_cover_and_remixes_69c61e" formatted="false">"Cover and remixes"</string>
+    <string name="ui_create_jam_room_85d438" formatted="false">"Create Jam Room"</string>
+    <string name="ui_create_room_7a913e" formatted="false">"Create Room"</string>
+    <string name="ui_created_1_s_196a9b">"Created %1$s"</string>
+    <string name="ui_created_1_s_2_s_tracks_ca8327">"Created \"%1$s\" (%2$s tracks)"</string>
+    <string name="ui_creating_28ea76" formatted="false">"Creating..."</string>
+    <string name="ui_creating_room_47cdda" formatted="false">"Creating Room..."</string>
+    <string name="ui_creating_your_personalized_mix_d7e4f2" formatted="false">"Creating your personalized mix…"</string>
+    <string name="ui_crimson_b3f39a" formatted="false">"Crimson"</string>
+    <string name="ui_crossfade_duration_820ce1" formatted="false">"Crossfade Duration"</string>
+    <string name="ui_crystal_clear_open_sound_airy_detail_and_deep_cl_969e32" formatted="false">"Crystal-clear open sound, airy detail, and deep clean stereo separation"</string>
+    <string name="ui_cue_1_sms_d31490">"Cue: +%1$sms"</string>
+    <string name="ui_cue_beat_1_aafedb" formatted="false">"Cue: Beat 1"</string>
+    <string name="ui_current_month_progression_c0ed2d" formatted="false">"Current month progression"</string>
+    <string name="ui_current_track_artwork_f178f6" formatted="false">"Current Track Artwork"</string>
+    <string name="ui_current_version_1_s_ce4652">"Current version: %1$s"</string>
+    <string name="ui_current_week_progression_5b1feb" formatted="false">"Current week progression"</string>
+    <string name="ui_custom_profile_touch_and_drag_any_bar_up_down_6cd4a4" formatted="false">"Custom profile • touch and drag any bar up/down"</string>
+    <string name="ui_custom_server_settings_bff284" formatted="false">"Custom Server Settings"</string>
+    <string name="ui_custom_timer_9a3d60" formatted="false">"Custom timer"</string>
+    <string name="ui_customize_and_re_enable_sections_in_settings_lib_391186" formatted="false">"Customize and re-enable sections in Settings → Library &amp; Content → Home sections."</string>
+    <string name="ui_daily_listening_activity_across_the_past_3_month_54f929" formatted="false">"Daily listening activity across the past 3 months."</string>
+    <string name="ui_data_e5e429" formatted="false">"Data"</string>
+    <string name="ui_data_saver_96_kbps_he_aac_d57fc0" formatted="false">"Data Saver (96 kbps HE-AAC)"</string>
+    <string name="ui_deep_bass_drum_hits_40_130_hz_95e5be" formatted="false">"Deep bass &amp; drum hits · 40–130 Hz"</string>
+    <string name="ui_deep_focus_b568dd" formatted="false">"Deep Focus"</string>
+    <string name="ui_deep_focus_vs_daily_flow_vs_discovery_fe9ed7" formatted="false">"Deep focus vs. daily flow vs. discovery"</string>
+    <string name="ui_delete_download_a4ea09" formatted="false">"delete download"</string>
+    <string name="ui_delete_download_history_a0130b" formatted="false">"delete download history"</string>
+    <string name="ui_delete_the_equalizer_preset_7bb1f1" formatted="false">"delete the equalizer preset"</string>
+    <string name="ui_deleted_1_s_playlist_2_s_7a0f68">"Deleted %1$s playlist%2$s"</string>
+    <string name="ui_detecting_955260" formatted="false">"Detecting..."</string>
+    <string name="ui_device_audio_3458df" formatted="false">"Device Audio"</string>
+    <string name="ui_direct_usbdevfs_communication_with_external_usb__2064dd" formatted="false">"Direct usbdevfs communication with external USB DACs (Android 10+)"</string>
+    <string name="ui_disabled_f4f447" formatted="false">"Disabled"</string>
+    <string name="ui_disconnect_last_fm_d3bc8f" formatted="false">"disconnect Last.fm"</string>
+    <string name="ui_disconnect_spotify_1b03fb" formatted="false">"Disconnect Spotify?"</string>
+    <string name="ui_disconnect_youtube_music_ec2b2c" formatted="false">"disconnect YouTube Music"</string>
+    <string name="ui_discover_4827ea" formatted="false">"Discover"</string>
+    <string name="ui_discover_fresh_tracks_45e648" formatted="false">"Discover fresh tracks"</string>
+    <string name="ui_discover_mix_4c87f5" formatted="false">"Discover Mix"</string>
+    <string name="ui_discover_personalized_podcasts_and_shows_4b12d8" formatted="false">"Discover personalized podcasts and shows"</string>
+    <string name="ui_discoveries_fresh_recommendations_56e74e" formatted="false">"Discoveries • Fresh recommendations"</string>
+    <string name="ui_discovery_3b3290" formatted="false">"Discovery"</string>
+    <string name="ui_dismiss_error_347aaa" formatted="false">"Dismiss error"</string>
+    <string name="ui_dolby_atmos_e_ac_3_joc_spatial_0d9df0" formatted="false">"Dolby Atmos (E-AC-3 JOC Spatial)"</string>
+    <string name="ui_dolby_atmos_spatial_immersive_audio_2f5f0a" formatted="false">"Dolby Atmos (Spatial Immersive Audio)"</string>
+    <string name="ui_don_t_show_again_d9afd5" formatted="false">"Don\'t show again"</string>
+    <string name="ui_don_t_show_again_for_this_version_0f31ca" formatted="false">"Don\'t show again for this version"</string>
+    <string name="ui_downloading_1_s_songs_2_s_already_saved_2b71a6">"Downloading %1$s songs (%2$s already saved)"</string>
+    <string name="ui_downloading_1_s_songs_f16c02">"Downloading %1$s songs"</string>
+    <string name="ui_downloading_1_song_75e402" formatted="false">"Downloading 1 song"</string>
+    <string name="ui_downloading_now_1_s_493bbb">"Downloading Now (%1$s)"</string>
+    <string name="ui_downloads_a862c2" formatted="false">"Downloads"</string>
+    <string name="ui_downloads_in_progress_0ff031" formatted="false">"Downloads in progress"</string>
+    <string name="ui_duration_minutes_10c3d1" formatted="false">"Duration (minutes)"</string>
+    <string name="ui_dynamic_color_material_you_519ae0" formatted="false">"Dynamic Color (Material You)"</string>
+    <string name="ui_dynamic_now_playing_screen_f464cd" formatted="false">"Dynamic Now Playing Screen"</string>
+    <string name="ui_dynamic_translucent_frosted_glass_backgrounds_an_0081f8" formatted="false">"Dynamic translucent frosted glass backgrounds and blur effects"</string>
+    <string name="ui_e_g_l86nsd_711ef8" formatted="false">"e.g. L86NSD"</string>
+    <string name="ui_e_g_wave01_af8190" formatted="false">"e.g. WAVE01"</string>
+    <string name="ui_each_channel_keeps_its_own_sync_mirrors_switchin_16cb9f" formatted="false">"Each channel keeps its own sync mirrors — switching re-mirrors cleanly instead of mixing libraries."</string>
+    <string name="ui_echo_freeze_tail_0f5576" formatted="false">"ECHO FREEZE TAIL"</string>
+    <string name="ui_edit_streaming_addon_17e925" formatted="false">"Edit Streaming Addon"</string>
+    <string name="ui_edits_save_into_1_s_automatically_917540">"Edits save into “%1$s” automatically"</string>
+    <string name="ui_electronic_622585" formatted="false">"Electronic"</string>
+    <string name="ui_enable_scrobbling_4b061c" formatted="false">"enable scrobbling"</string>
+    <string name="ui_enabled_df174a" formatted="false">"Enabled"</string>
+    <string name="ui_end_jam_session_26c6a5" formatted="false">"End Jam Session"</string>
+    <string name="ui_energy_boosters_b65d22" formatted="false">"Energy boosters"</string>
+    <string name="ui_engine_routing_ec62b3" formatted="false">"Engine routing"</string>
+    <string name="ui_engine_routing_f7033f" formatted="false">"Engine Routing"</string>
+    <string name="ui_enter_6_character_room_code_517686" formatted="false">"Enter 6-Character Room Code"</string>
+    <string name="ui_enter_a_genre_tag_d3451b" formatted="false">"Enter a genre/tag"</string>
+    <string name="ui_enter_a_seed_artist_a0f1b0" formatted="false">"Enter a seed artist"</string>
+    <string name="ui_enter_a_seed_track_and_artist_7f69b8" formatted="false">"Enter a seed track and artist"</string>
+    <string name="ui_enter_cookie_82a2b3" formatted="false">"Enter Cookie"</string>
+    <string name="ui_enter_the_url_of_your_personal_addon_service_e_g_887706" formatted="false">"Enter the URL of your personal Addon service (e.g. http://10.0.2.2:8787/a/&lt;token&gt;/ or custom host):"</string>
+    <string name="ui_error_connecting_1_s_86a4c8">"Error connecting: %1$s"</string>
+    <string name="ui_exempt_app_from_device_battery_restrictions_slee_69fc80" formatted="false">"Exempt app from device battery restrictions, sleeping apps, and Samsung Device Care"</string>
+    <string name="ui_exit_fullscreen_f604d9" formatted="false">"Exit Fullscreen"</string>
+    <string name="ui_exit_fullscreen_lyrics_d2e82d" formatted="false">"Exit fullscreen lyrics"</string>
+    <string name="ui_expand_app_icons_78df37" formatted="false">"Expand app icons"</string>
+    <string name="ui_expand_canvas_video_to_fill_entire_screen_behind_06a904" formatted="false">"Expand canvas video to fill entire screen behind controls"</string>
+    <string name="ui_expand_fullscreen_71ed3e" formatted="false">"Expand Fullscreen"</string>
+    <string name="ui_expand_transition_duration_c94036" formatted="false">"Expand transition duration"</string>
+    <string name="ui_experimental_features_fbb63a" formatted="false">"Experimental &amp; Features"</string>
+    <string name="ui_exploring_new_tracks_genre_adventures_fc17af" formatted="false">"Exploring new tracks &amp; genre adventures"</string>
+    <string name="ui_export_diagnostic_report_crash_logs_and_hardware_657b0d" formatted="false">"Export diagnostic report, crash logs, and hardware device info"</string>
+    <string name="ui_export_diagnostics_89d278" formatted="false">"export diagnostics"</string>
+    <string name="ui_export_diagnostics_logs_afee25" formatted="false">"Export Diagnostics &amp; Logs"</string>
+    <string name="ui_export_your_local_playlists_credentials_and_app__844f4c" formatted="false">"Export your local playlists, credentials, and app preferences to a JSON file"</string>
+    <string name="ui_extended_cinematic_crossfade_892284" formatted="false">"Extended cinematic crossfade"</string>
+    <string name="ui_extended_listening_sessions_and_favorite_repeats_5669b6" formatted="false">"Extended listening sessions and favorite repeats"</string>
+    <string name="ui_extensions_modules_86c278" formatted="false">"Extensions &amp; Modules"</string>
+    <string name="ui_fast_start_best_quality_first_or_never_upgrade_8e582c" formatted="false">"Fast start, best quality first, or never upgrade"</string>
+    <string name="ui_favourite_to_revisit_90100b" formatted="false">"Favourite to revisit"</string>
+    <string name="ui_featured_playlist_for_you_04d50b" formatted="false">"Featured playlist for you"</string>
+    <string name="ui_feed_mix_14261b" formatted="false">"Feed mix"</string>
+    <string name="ui_feel_good_9c073f" formatted="false">"Feel good"</string>
+    <string name="ui_fetch_and_play_spotify_s_looping_visual_videos_i_9e469f" formatted="false">"Fetch and play Spotify\'s looping visual videos in background"</string>
+    <string name="ui_fidelity_410d7d" formatted="false">"Fidelity"</string>
+    <string name="ui_file_2c3caf" formatted="false">"File"</string>
+    <string name="ui_find_the_right_video_a3018c" formatted="false">"Find the right video"</string>
+    <string name="ui_find_your_next_favorite_2175b3" formatted="false">"Find your next favorite"</string>
+    <string name="ui_finding_similar_songs_for_1_s_8ac296">"Finding similar songs for %1$s…"</string>
+    <string name="ui_finding_similar_songs_with_youtube_music_a1047d" formatted="false">"Finding similar songs with YouTube Music…"</string>
+    <string name="ui_finish_delete_cf6ee4" formatted="false">"finish delete"</string>
+    <string name="ui_finish_loading_the_playlist_before_saving_it_c38b7f" formatted="false">"Finish loading the playlist before saving it."</string>
+    <string name="ui_floating_button_mode_active_card_hidden_0c3553" formatted="false">"Floating button mode active • Card hidden"</string>
+    <string name="ui_flow_86eff8" formatted="false">"Flow"</string>
+    <string name="ui_flow_state_8a1cee" formatted="false">"Flow State"</string>
+    <string name="ui_focus_fe7f55" formatted="false">"Focus"</string>
+    <string name="ui_focus_mode_9a2af5" formatted="false">"Focus mode"</string>
+    <string name="ui_forgotten_favorites_02761d" formatted="false">"Forgotten favorites"</string>
+    <string name="ui_found_1_s_playlists_ea3fff">"Found %1$s Playlists"</string>
+    <string name="ui_free_75f527" formatted="false">"Free"</string>
+    <string name="ui_free_lossless_audio_codec_flac_c00d85" formatted="false">"Free Lossless Audio Codec (FLAC)"</string>
+    <string name="ui_fresh_drops_29bc2e" formatted="false">"Fresh drops"</string>
+    <string name="ui_fresh_finds_2838d0" formatted="false">"Fresh Finds"</string>
+    <string name="ui_fresh_finds_old_favorites_5b3330" formatted="false">"Fresh finds, old favorites"</string>
+    <string name="ui_fresh_finds_old_favorites_f6996c" formatted="false">"Fresh finds, old &amp; favorites"</string>
+    <string name="ui_friends_activity_415888" formatted="false">"Friends Activity"</string>
+    <string name="ui_friends_c11d5e" formatted="false">"Friends"</string>
+    <string name="ui_friends_can_join_with_this_code_or_invite_link_t_350da3" formatted="false">"Friends can join with this code or invite link to listen synchronously."</string>
+    <string name="ui_from_the_community_168a46" formatted="false">"From the community"</string>
+    <string name="ui_from_your_library_5dd0dc" formatted="false">"From your library"</string>
+    <string name="ui_full_100_kick_for_heavy_bass_drops_transients_6a95e9" formatted="false">"Full 100% kick for heavy bass drops &amp; transients"</string>
+    <string name="ui_full_hd_777e37" formatted="false">"Full HD"</string>
+    <string name="ui_full_range_taps_and_rhythmic_textures_5d149f" formatted="false">"Full-range taps and rhythmic textures"</string>
+    <string name="ui_full_strength_pulses_for_bass_drops_cf4d9c" formatted="false">"Full-strength pulses for bass drops."</string>
+    <string name="ui_fullscreen_lyrics_2f35af" formatted="false">"Fullscreen lyrics"</string>
+    <string name="ui_genres_96817a" formatted="false">"Genres"</string>
+    <string name="ui_get_better_recommendations_a03e6e" formatted="false">"Get better recommendations"</string>
+    <string name="ui_get_real_time_assistance_report_bugs_discover_ne_37aa89" formatted="false">"Get real-time assistance, report bugs, discover new releases, and connect directly with the developer community."</string>
+    <string name="ui_go_to_album_e2d3b3" formatted="false">"Go to album"</string>
+    <string name="ui_go_to_artist_1_s_130128">"Go to artist (%1$s)"</string>
+    <string name="ui_google_account_07030d" formatted="false">"Google account"</string>
+    <string name="ui_gradient_blur_on_canvas_308953" formatted="false">"Gradient Blur on Canvas"</string>
+    <string name="ui_grouped_by_day_61a54a" formatted="false">"Grouped by day"</string>
+    <string name="ui_grouped_by_month_56c352" formatted="false">"Grouped by month"</string>
+    <string name="ui_grouped_by_year_ca6e28" formatted="false">"Grouped by year"</string>
+    <string name="ui_guest_face83" formatted="false">"Guest"</string>
+    <string name="ui_halo_f3681d" formatted="false">"Halo"</string>
+    <string name="ui_hands_the_low_end_over_on_the_beat_so_basslines__6950a4" formatted="false">"Hands the low end over on the beat so basslines never stack"</string>
+    <string name="ui_haptic_mode_770109" formatted="false">"Haptic Mode"</string>
+    <string name="ui_haptics_suspended_while_bit_perfect_usb_dac_bypa_a9594c" formatted="false">"Haptics suspended while Bit-Perfect USB DAC bypass is active"</string>
+    <string name="ui_hardware_b76ab6" formatted="false">"Hardware"</string>
+    <string name="ui_hardware_hapticgenerator_for_whole_song_dsp_for__94fdcf" formatted="false">"Hardware HapticGenerator for Whole Song; DSP for filtered modes"</string>
+    <string name="ui_hardware_unavailable_using_dsp_0f6f6d" formatted="false">"Hardware unavailable · using DSP"</string>
+    <string name="ui_headphone_correction_from_the_autoeq_database_pa_5e2e48" formatted="false">"Headphone correction from the AutoEQ database, parametric EQ, per-device profiles"</string>
+    <string name="ui_heard_in_shorts_cf2967" formatted="false">"Heard in shorts"</string>
+    <string name="ui_heavy_rotation_1e493f" formatted="false">"Heavy Rotation"</string>
+    <string name="ui_hi_res_24_bit_192_khz_flac_ac7214" formatted="false">"Hi-Res (24-bit / 192 kHz FLAC)"</string>
+    <string name="ui_hi_res_24_bit_96_khz_flac_16a8a0" formatted="false">"Hi-Res (24-bit / 96 kHz FLAC)"</string>
+    <string name="ui_hi_res_audio_038fb9" formatted="false">"Hi-Res Audio"</string>
+    <string name="ui_hi_res_audio_max_800e03" formatted="false">"Hi-Res Audio (Max)"</string>
+    <string name="ui_hi_res_lossless_13a296" formatted="false">"Hi-Res Lossless"</string>
+    <string name="ui_hide_34d8b6" formatted="false">"Hide"</string>
+    <string name="ui_hide_lyrics_buttons_0bfbb3" formatted="false">"Hide Lyrics Buttons"</string>
+    <string name="ui_hide_section_642f79" formatted="false">"Hide section"</string>
+    <string name="ui_high_definition_627ef7" formatted="false">"High Definition"</string>
+    <string name="ui_hip_hop_2c8b31" formatted="false">"Hip-Hop"</string>
+    <string name="ui_home_layout_sections_f71040" formatted="false">"Home Layout &amp; Sections"</string>
+    <string name="ui_home_organization_1c7c46" formatted="false">"Home &amp; Organization"</string>
+    <string name="ui_home_screen_sections_dde164" formatted="false">"Home Screen Sections"</string>
+    <string name="ui_host_3960ec" formatted="false">"Host"</string>
+    <string name="ui_host_only_b2a141" formatted="false">"Host Only"</string>
+    <string name="ui_host_only_broadcast_ed3937" formatted="false">"Host Only / Broadcast"</string>
+    <string name="ui_host_only_only_host_controls_18744c" formatted="false">"Host Only • Only host controls"</string>
+    <string name="ui_hourly_rhythm_2020b2" formatted="false">"Hourly rhythm"</string>
+    <string name="ui_how_your_listening_time_is_distributed_across_yo_682196" formatted="false">"How your listening time is distributed across your top tracks."</string>
+    <string name="ui_hpf_1_shz_q_1_35_eed9cc">"HPF: %1$sHz (Q=1.35)"</string>
+    <string name="ui_http_addon_b91a5b" formatted="false">"HTTP Addon"</string>
+    <string name="ui_idle_time_before_the_floating_lyrics_buttons_fad_cffd99" formatted="false">"Idle time before the floating lyrics buttons fade out (2-10 s or Never)"</string>
+    <string name="ui_import_1_s_selected_playlist_s_b9baa9">"Import %1$s Selected Playlist(s)"</string>
+    <string name="ui_import_1_s_tracks_141776">"Import %1$s tracks"</string>
+    <string name="ui_import_1_track_1da8cc" formatted="false">"Import 1 track"</string>
+    <string name="ui_import_a_previously_saved_lastwave_backup_file_t_554549" formatted="false">"Import a previously saved LastWave backup file to restore settings &amp; playlists"</string>
+    <string name="ui_import_csv_tsv_m3u_m3u8_or_txt_files_for_txt_use_d42557" formatted="false">"Import CSV, TSV, M3U/M3U8, or TXT files. For TXT, use Artist - Title, one song per line, or YouTube links. Only verified matches are imported; uncertain tracks are skipped."</string>
+    <string name="ui_import_failed_fbae89" formatted="false">"Import failed"</string>
+    <string name="ui_import_from_playlist_file_fc0836" formatted="false">"Import from Playlist File"</string>
+    <string name="ui_import_playlist_files_csv_listening_logs_or_m3u__7b9770" formatted="false">"Import playlist files, CSV listening logs, or M3U/M3U8 playlists from storage"</string>
+    <string name="ui_import_playlists_from_file_csv_m3u_993ebd" formatted="false">"Import Playlists from File (CSV / M3U)"</string>
+    <string name="ui_import_sp_dc_token_8f640f" formatted="false">"Import sp_dc token"</string>
+    <string name="ui_import_with_link_ea4908" formatted="false">"Import with Link"</string>
+    <string name="ui_import_your_spotify_playlists_and_liked_songs_in_a0627e" formatted="false">"Import your Spotify playlists and Liked Songs into this app\'s library"</string>
+    <string name="ui_import_youtube_playlist_a4ca7a" formatted="false">"Import YouTube Playlist"</string>
+    <string name="ui_importing_playlist_1_s_of_2_s_5f1a37">"Importing playlist %1$s of %2$s..."</string>
+    <string name="ui_importing_playlist_93bd12" formatted="false">"Importing Playlist..."</string>
+    <string name="ui_importing_playlist_c994af" formatted="false">"Importing playlist..."</string>
+    <string name="ui_imports_addons_68a3bc" formatted="false">"Imports &amp; Addons"</string>
+    <string name="ui_imports_e42328" formatted="false">"Imports"</string>
+    <string name="ui_in_app_volume_26ff7f" formatted="false">"In-App Volume"</string>
+    <string name="ui_in_room_chat_is_ready_say_hello_957d23" formatted="false">"In-room chat is ready. Say hello!"</string>
+    <string name="ui_in_session_1_s_2_s_listening_together_19841b">"In Session: #%1$s • %2$s listening together"</string>
+    <string name="ui_incoming_track_artwork_215061" formatted="false">"Incoming Track Artwork"</string>
+    <string name="ui_independent_tempo_and_pitch_stretch_ef2ec6" formatted="false">"Independent tempo and pitch stretch"</string>
+    <string name="ui_india_967ce3" formatted="false">"India"</string>
+    <string name="ui_indie_c43a74" formatted="false">"Indie"</string>
+    <string name="ui_infinite_radio_839559" formatted="false">"Infinite Radio"</string>
+    <string name="ui_inspired_by_1_s_a29a72">"Inspired by %1$s"</string>
+    <string name="ui_install_fd6c3e" formatted="false">"Install"</string>
+    <string name="ui_installed_1_s_56a2b8">"Installed %1$s"</string>
+    <string name="ui_installing_8d2788" formatted="false">"Installing…"</string>
+    <string name="ui_intensity_0ad6e4" formatted="false">"Intensity"</string>
+    <string name="ui_internal_hi_res_dac_79d302" formatted="false">"Internal Hi-Res DAC"</string>
+    <string name="ui_invalid_cookies_make_sure_sapisid_is_present_1614de" formatted="false">"Invalid cookies. Make sure SAPISID is present."</string>
+    <string name="ui_jam_sync_47885d" formatted="false">"Jam Sync"</string>
+    <string name="ui_jam_timeline_1793dd" formatted="false">"Jam timeline"</string>
+    <string name="ui_jazz_0f940a" formatted="false">"Jazz"</string>
+    <string name="ui_join_clashprojects_on_telegram_for_app_news_beta_f265cb" formatted="false">"Join @clashprojects on Telegram for app news, beta builds, and support"</string>
+    <string name="ui_join_e0d731" formatted="false">"Join"</string>
+    <string name="ui_join_jam_room_d6ece9" formatted="false">"Join Jam Room"</string>
+    <string name="ui_join_materialyouapp_on_telegram_to_discover_othe_2e5cbd" formatted="false">"Join @MaterialYouApp on Telegram to discover other applications"</string>
+    <string name="ui_join_my_lastwave_jam_session_a7f2c1" formatted="false">"Join my LastWave Jam session"</string>
+    <string name="ui_join_my_lastwave_jam_session_room_code_1_s_2_s_875df2">"Join my LastWave Jam session! Room code: %1$s\n%2$s"</string>
+    <string name="ui_join_our_discord_community_server_for_support_an_807953" formatted="false">"Join our Discord community server for support and feedback"</string>
+    <string name="ui_join_room_902fc2" formatted="false">"Join Room"</string>
+    <string name="ui_join_support_35b43b" formatted="false">"Join Support"</string>
+    <string name="ui_jump_back_in_582e89" formatted="false">"Jump Back In"</string>
+    <string name="ui_just_now_a7f8e7" formatted="false">"just now"</string>
+    <string name="ui_karaoke_glow_sliding_fade_bounce_or_modern_full__6ebffc" formatted="false">"Karaoke glow, sliding, fade, bounce, or Modern full-screen UI"</string>
+    <string name="ui_keep_playlists_and_favorites_continuously_synced_8d7523" formatted="false">"Keep playlists and favorites continuously synced with YouTube Music"</string>
+    <string name="ui_keep_your_yt_music_library_in_sync_with_lastwave_5654aa" formatted="false">"Keep your YT Music library in sync with LastWave"</string>
+    <string name="ui_kick_cue_1_sms_adcc14">"KICK CUE +%1$sms"</string>
+    <string name="ui_known_28d714" formatted="false">"Known"</string>
+    <string name="ui_language_the_lyrics_translate_button_turns_songs_23e69f" formatted="false">"Language the lyrics translate button turns songs into (blank follows the app language)"</string>
+    <string name="ui_last_12_months_842a51" formatted="false">"Last 12 Months"</string>
+    <string name="ui_last_12_weeks_bded67" formatted="false">"Last 12 weeks"</string>
+    <string name="ui_last_30_days_611886" formatted="false">"Last 30 Days"</string>
+    <string name="ui_last_7_days_652292" formatted="false">"Last 7 Days"</string>
+    <string name="ui_last_fm_account_connection_50961e" formatted="false">"Last.fm Account Connection"</string>
+    <string name="ui_last_fm_custom_api_credentials_256bb5" formatted="false">"Last.fm Custom API Credentials"</string>
+    <string name="ui_last_fm_only_allows_scrobbling_through_a_signed__577625" formatted="false">"Last.fm only allows scrobbling through a signed session, and the only way to get one without a browser is with your password. It\'s sent once, directly to Last.fm over HTTPS, and never stored."</string>
+    <string name="ui_last_fm_unreachable_showing_local_plays_tap_to_r_92681a" formatted="false">"Last.fm unreachable — showing local plays · Tap to retry"</string>
+    <string name="ui_last_month_9cce45" formatted="false">"Last month"</string>
+    <string name="ui_last_pass_failed_will_retry_automatically_9bf960" formatted="false">"Last pass failed — will retry automatically"</string>
+    <string name="ui_lastwave_discord_21ea25" formatted="false">"LastWave Discord"</string>
+    <string name="ui_lastwave_never_sees_your_password_sign_in_happen_575dd0" formatted="false">"LastWave never sees your password — sign-in happens entirely inside Google\'s page."</string>
+    <string name="ui_lead_vocal_phrasing_300_3_200_hz_453af1" formatted="false">"Lead vocal phrasing · 300–3,200 Hz"</string>
+    <string name="ui_leave_end_jam_session_6fde9e" formatted="false">"Leave / End Jam Session"</string>
+    <string name="ui_leave_jam_session_0a7836" formatted="false">"Leave Jam Session"</string>
+    <string name="ui_less_526cb7" formatted="false">"Less"</string>
+    <string name="ui_libre_fm_account_52ef25" formatted="false">"Libre.fm account"</string>
+    <string name="ui_light_rhythm_0e3b19" formatted="false">"Light Rhythm"</string>
+    <string name="ui_like_song_0d3fb3" formatted="false">"Like song"</string>
+    <string name="ui_liked_on_youtube_b6ffe7" formatted="false">"Liked on YouTube"</string>
+    <string name="ui_likely_match_80eee9" formatted="false">" • likely match"</string>
+    <string name="ui_limit_of_1_s_reached_2d4df1">"Limit of %1$s reached"</string>
+    <string name="ui_line_by_line_synced_lyrics_c63404" formatted="false">"Line-by-line synced lyrics"</string>
+    <string name="ui_linked_a089f6" formatted="false">"Linked"</string>
+    <string name="ui_list_a1fffa" formatted="false">"List"</string>
+    <string name="ui_listen_again_31d30b" formatted="false">"Listen again"</string>
+    <string name="ui_listen_together_7b3aef" formatted="false">"LISTEN TOGETHER"</string>
+    <string name="ui_listen_together_7c4268" formatted="false">"Listen together"</string>
+    <string name="ui_listen_together_in_real_time_0a2db5" formatted="false">"Listen together in real time"</string>
+    <string name="ui_listenbrainz_account_9b4963" formatted="false">"ListenBrainz account"</string>
+    <string name="ui_listener_37ea46" formatted="false">"Listener"</string>
+    <string name="ui_listeners_1_s_906cd4">"Listeners (%1$s)"</string>
+    <string name="ui_listening_by_1_s_e96628">"Listening by %1$s"</string>
+    <string name="ui_listening_concentration_876069" formatted="false">"Listening concentration"</string>
+    <string name="ui_listening_frequency_by_hour_across_all_recorded__e1a93b" formatted="false">"Listening frequency by hour across all recorded sessions."</string>
+    <string name="ui_listening_habits_a2c7a0" formatted="false">"Listening habits"</string>
+    <string name="ui_listening_stages_871a29" formatted="false">"Listening Stages"</string>
+    <string name="ui_listening_stats_9d8b97" formatted="false">"Listening Stats"</string>
+    <string name="ui_listening_stats_a760b2" formatted="false">"Listening stats"</string>
+    <string name="ui_listening_time_f3c051" formatted="false">"Listening time"</string>
+    <string name="ui_listening_timeline_88101f" formatted="false">"Listening timeline"</string>
+    <string name="ui_live_1_s_3e2723">"Live • %1$s"</string>
+    <string name="ui_live_performances_1dccf6" formatted="false">"Live performances"</string>
+    <string name="ui_live_station_admin_in_control_f2df82" formatted="false">"Live station • Admin in control"</string>
+    <string name="ui_live_station_auto_radio_9a3b87" formatted="false">"Live station • Auto radio"</string>
+    <string name="ui_live_sync_1_s_e868c3">"● Live Sync • %1$s"</string>
+    <string name="ui_lo_fi_3c8354" formatted="false">"Lo-Fi"</string>
+    <string name="ui_loading_1_s_e69943">"Loading %1$s..."</string>
+    <string name="ui_loading_1_s_s_playlists_56ec09">"Loading %1$s\'s playlists..."</string>
+    <string name="ui_loading_friends_0e28dc" formatted="false">"Loading friends"</string>
+    <string name="ui_loading_playlist_preview_8c1568" formatted="false">"Loading playlist preview"</string>
+    <string name="ui_loading_your_listening_history_1518ad" formatted="false">"Loading your listening history"</string>
+    <string name="ui_local_search_6a4c6c" formatted="false">"Local Search"</string>
+    <string name="ui_local_songs_350153" formatted="false">"Local songs"</string>
+    <string name="ui_lock_queue_f20e02" formatted="false">"Lock queue"</string>
+    <string name="ui_log_in_to_youtube_music_95e278" formatted="false">"Log in to YouTube Music"</string>
+    <string name="ui_log_in_to_youtube_music_or_create_a_free_account_fb4572" formatted="false">"Log in to YouTube Music, or create a free account, to get personalized songs and queues."</string>
+    <string name="ui_log_out_eb3542" formatted="false">"log out"</string>
+    <string name="ui_log_out_of_spotify_d4b786" formatted="false">"Log out of Spotify"</string>
+    <string name="ui_long_musical_transition_5a3ca1" formatted="false">"Long musical transition"</string>
+    <string name="ui_long_press_a_friend_to_pin_a3c79d" formatted="false">"Long-press a friend to pin"</string>
+    <string name="ui_longest_session_d7c4b9" formatted="false">"Longest session"</string>
+    <string name="ui_longest_streak_5800ff" formatted="false">"Longest streak"</string>
+    <string name="ui_looping_visual_canvas_videos_during_playback_lik_3ede51" formatted="false">"Looping visual canvas videos during playback like Spotify Canvas"</string>
+    <string name="ui_lossless_1_s_kbps_3823e4">"Lossless (%1$s kbps)"</string>
+    <string name="ui_lossless_f3b36f" formatted="false">"Lossless"</string>
+    <string name="ui_lossless_provider_module_f5e65e" formatted="false">"Lossless Provider Module"</string>
+    <string name="ui_lossless_youtube_4d8d41" formatted="false">"Lossless / YouTube"</string>
+    <string name="ui_low_bitrate_audio_to_reduce_mobile_data_use_aa2d0b" formatted="false">"Low-bitrate audio to reduce mobile data use"</string>
+    <string name="ui_lpf_1_shz_185e8d">"LPF: %1$sHz"</string>
+    <string name="ui_lpf_20khz_open_af687b" formatted="false">"LPF: 20kHz Open"</string>
+    <string name="ui_lyrics_animation_style_e99055" formatted="false">"Lyrics Animation Style"</string>
+    <string name="ui_lyrics_options_5fa2b6" formatted="false">"Lyrics options"</string>
+    <string name="ui_lyrics_size_1_s_a1cb8a">"Lyrics size: %1$s%%"</string>
+    <string name="ui_lyrics_style_635601" formatted="false">"Lyrics style"</string>
+    <string name="ui_lyrics_sync_offset_26dba2" formatted="false">"Lyrics Sync Offset"</string>
+    <string name="ui_lyrics_text_size_200aed" formatted="false">"Lyrics Text Size"</string>
+    <string name="ui_make_admin_84ec1c" formatted="false">"Make admin"</string>
+    <string name="ui_make_host_105c99" formatted="false">"Make host"</string>
+    <string name="ui_manage_songs_excluded_from_recommendations_and_s_b08a2e" formatted="false">"Manage songs excluded from recommendations and smart mixes"</string>
+    <string name="ui_manual_sp_dc_cookie_entry_0fc582" formatted="false">"Manual sp_dc cookie entry"</string>
+    <string name="ui_manual_sp_dc_entry_b43590" formatted="false">"Manual sp_dc Entry"</string>
+    <string name="ui_match_ui_accent_colors_to_wallpaper_and_system_p_402840" formatted="false">"Match UI accent colors to wallpaper and system palette"</string>
+    <string name="ui_material_you_apps_1673ab" formatted="false">"Material You Apps"</string>
+    <string name="ui_material_you_channel_9c7649" formatted="false">"Material You Channel"</string>
+    <string name="ui_max_volume_5bdfcc" formatted="false">"Max volume"</string>
+    <string name="ui_metal_90acb4" formatted="false">"Metal"</string>
+    <string name="ui_mid_9a6af7" formatted="false">"Mid"</string>
+    <string name="ui_minimize_player_a5a19f" formatted="false">"Minimize player"</string>
+    <string name="ui_minimize_to_now_playing_e59acc" formatted="false">"Minimize to Now Playing"</string>
+    <string name="ui_mix_complete_f03488" formatted="false">"Mix complete"</string>
+    <string name="ui_mixed_1_s_9751ac">"Mixed ✓%1$s"</string>
+    <string name="ui_mixed_for_you_3f2315" formatted="false">"Mixed For You"</string>
+    <string name="ui_mode_fbb6d6" formatted="false">"Mode:"</string>
+    <string name="ui_module_removed_a52241" formatted="false">"Module removed"</string>
+    <string name="ui_month_082bc3" formatted="false">"Month"</string>
+    <string name="ui_more_4bab2d" formatted="false">"More"</string>
+    <string name="ui_more_apps_from_clash_projects_1a83d5" formatted="false">"More Apps from Clash Projects"</string>
+    <string name="ui_more_by_1_s_74556a">"More by %1$s"</string>
+    <string name="ui_more_from_us_146449" formatted="false">"More from us"</string>
+    <string name="ui_more_options_86c0a3" formatted="false">"More options"</string>
+    <string name="ui_most_active_day_e7f686" formatted="false">"Most active day"</string>
+    <string name="ui_most_played_e70fff" formatted="false">"Most Played"</string>
+    <string name="ui_most_played_tracks_for_the_selected_time_range_00942a" formatted="false">"Most played tracks for the selected time range."</string>
+    <string name="ui_most_songs_99c0dd" formatted="false">"Most Songs"</string>
+    <string name="ui_most_tracks_ec4c8b" formatted="false">"Most Tracks"</string>
+    <string name="ui_music_haptics_8787ab" formatted="false">"Music Haptics"</string>
+    <string name="ui_music_video_for_you_41ef5e" formatted="false">"Music video for you"</string>
+    <string name="ui_mute_0f0973" formatted="false">"Mute"</string>
+    <string name="ui_my_presets_1_s_2_s_a7160a">"My presets  %1$s/%2$s"</string>
+    <string name="ui_name_a_z_fd07da" formatted="false">"Name (A-Z)"</string>
+    <string name="ui_native_for_whole_song_dsp_for_filters_c3b5b8" formatted="false">"Native for whole song; DSP for filters"</string>
+    <string name="ui_new_release_69a2ac" formatted="false">"New release"</string>
+    <string name="ui_new_releases_8b2fa9" formatted="false">"New Releases"</string>
+    <string name="ui_no_1_s_plays_captured_in_this_range_yet_4dce05">"No %1$s plays captured in this range yet."</string>
+    <string name="ui_no_active_downloads_in_playlist_77d454" formatted="false">"No active downloads in playlist"</string>
+    <string name="ui_no_browser_available_to_open_link_2fd17a" formatted="false">"No browser available to open link"</string>
+    <string name="ui_no_browser_or_telegram_app_available_524955" formatted="false">"No browser or Telegram app available"</string>
+    <string name="ui_no_cue_window_pcm_c32446" formatted="false">"No cue-window PCM"</string>
+    <string name="ui_no_custom_playlists_found_in_this_spotify_accoun_6fcb36" formatted="false">"No custom playlists found in this Spotify account."</string>
+    <string name="ui_no_downloaded_albums_found_e3281c" formatted="false">"No downloaded albums found"</string>
+    <string name="ui_no_downloaded_artists_found_5d3714" formatted="false">"No downloaded artists found"</string>
+    <string name="ui_no_excluded_songs_e4d528" formatted="false">"No Excluded Songs"</string>
+    <string name="ui_no_friends_found_on_this_last_fm_account_0509c0" formatted="false">"No friends found on this Last.fm account."</string>
+    <string name="ui_no_liked_songs_found_in_your_spotify_account_eaed6c" formatted="false">"No liked songs found in your Spotify account."</string>
+    <string name="ui_no_likely_matches_found_paste_the_exact_youtube__724f3a" formatted="false">"No likely matches found. Paste the exact YouTube link above."</string>
+    <string name="ui_no_matching_downloaded_songs_f12941" formatted="false">"No matching downloaded songs"</string>
+    <string name="ui_no_messages_yet_say_hello_639866" formatted="false">"No messages yet. Say hello!"</string>
+    <string name="ui_no_new_releases_available_right_now_ba89a8" formatted="false">"No new releases available right now."</string>
+    <string name="ui_no_playlists_found_for_1_s_a5a39c">"No playlists found for \"%1$s\""</string>
+    <string name="ui_no_playlists_in_your_library_yet_e995db" formatted="false">"No playlists in your library yet"</string>
+    <string name="ui_no_playlists_yet_create_your_first_playlist_belo_a528b1" formatted="false">"No playlists yet. Create your first playlist below."</string>
+    <string name="ui_no_podcasts_available_right_now_13f9e9" formatted="false">"No podcasts available right now."</string>
+    <string name="ui_no_release_notes_were_published_for_this_version_e1ec6c" formatted="false">"No release notes were published for this version."</string>
+    <string name="ui_no_similar_artists_found_for_1_s_0e4b39">"No similar artists found for \"%1$s\"."</string>
+    <string name="ui_no_similar_songs_found_to_mix_for_1_s_d6ed13">"No similar songs found to mix for \"%1$s\"."</string>
+    <string name="ui_no_songs_found_for_tag_1_s_a87759">"No songs found for tag \"%1$s\"."</string>
+    <string name="ui_no_songs_found_to_create_this_mix_af6eba" formatted="false">"No songs found to create this mix."</string>
+    <string name="ui_no_songs_to_download_in_this_playlist_8f6cf6" formatted="false">"No songs to download in this playlist"</string>
+    <string name="ui_no_spotify_session_detected_log_in_above_first_9bed6e" formatted="false">"No Spotify session detected. Log in above first."</string>
+    <string name="ui_no_track_playback_recorded_for_this_range_49970b" formatted="false">"No track playback recorded for this range."</string>
+    <string name="ui_no_track_playing_326cae" formatted="false">"No track playing"</string>
+    <string name="ui_no_tracks_found_in_that_playlist_make_sure_it_is_93f5c9" formatted="false">"No tracks found in that playlist. Make sure it is public or your account is connected."</string>
+    <string name="ui_nothing_queued_3ff488" formatted="false">"Nothing queued."</string>
+    <string name="ui_now_playing_084473" formatted="false">"Now Playing"</string>
+    <string name="ui_nudges_the_highlight_when_a_provider_s_timestamp_e220e6" formatted="false">"Nudges the highlight when a provider\'s timestamps run early or late. + shows lyrics early (fixes late lyrics), − delays them. Seekbar is unaffected."</string>
+    <string name="ui_ocean_76022a" formatted="false">"Ocean"</string>
+    <string name="ui_off_original_audio_passes_through_0c8de7" formatted="false">"Off — original audio passes through"</string>
+    <string name="ui_offline_download_format_bitrate_lossless_flac_or_e00229" formatted="false">"Offline download format &amp; bitrate, Lossless FLAC or YouTube stream"</string>
+    <string name="ui_ok_thanks_b3d641" formatted="false">"OK, thanks"</string>
+    <string name="ui_oldest_first_06dc81" formatted="false">"Oldest First"</string>
+    <string name="ui_one_pause_or_change_per_minute_try_again_at_1_s_cce703">"One pause or change per minute. Try again at %1$s."</string>
+    <string name="ui_only_you_control_playback_guests_listen_along_in_ab2d69" formatted="false">"Only you control playback; guests listen along in real-time sync"</string>
+    <string name="ui_open_autoeq_parametric_eq_e14c26" formatted="false">"Open AutoEQ / Parametric EQ"</string>
+    <string name="ui_open_in_browser_56c8f9" formatted="false">"Open in Browser"</string>
+    <string name="ui_open_playlist_1_s_9f2945">"Open playlist %1$s"</string>
+    <string name="ui_open_source_code_995802" formatted="false">"Open Source Code"</string>
+    <string name="ui_optimal_rhythm_7906af" formatted="false">"Optimal Rhythm"</string>
+    <string name="ui_optional_stats_use_local_listening_when_disconne_a8a251" formatted="false">"Optional • Stats use local listening when disconnected"</string>
+    <string name="ui_origin_44ab85" formatted="false">"Origin"</string>
+    <string name="ui_output_loudness_7fd025" formatted="false">"Output &amp; Loudness"</string>
+    <string name="ui_panel_2f4bd7" formatted="false">"Panel"</string>
+    <string name="ui_parsing_matching_1_s_tracks_2ac556">"Parsing &amp; matching %1$s tracks..."</string>
+    <string name="ui_party_60b18f" formatted="false">"Party"</string>
+    <string name="ui_past_7_days_8adf85" formatted="false">"Past 7 Days"</string>
+    <string name="ui_paste_a_public_playlist_url_from_spotify_or_appl_44dbb6" formatted="false">"Paste a public playlist URL from Spotify or Apple Music to transfer tracks"</string>
+    <string name="ui_paste_a_session_cookie_from_your_browser_instead_50b7ce" formatted="false">"Paste a session cookie from your browser instead of signing in here"</string>
+    <string name="ui_paste_a_spotify_or_apple_music_playlist_link_d5df31" formatted="false">"Paste a Spotify or Apple Music playlist link."</string>
+    <string name="ui_paste_a_youtube_link_or_11_character_video_id_f94366" formatted="false">"Paste a YouTube link or 11-character video ID"</string>
+    <string name="ui_paste_any_public_spotify_or_apple_music_playlist_9d4718" formatted="false">"Paste any public Spotify or Apple Music playlist link. LastWave reads the tracks and matches them into your library."</string>
+    <string name="ui_paste_any_youtube_or_youtube_music_playlist_url__680293" formatted="false">"Paste any YouTube or YouTube Music playlist URL. LastWave resolves every track — no 100-song cap, full playlists import completely."</string>
+    <string name="ui_paste_playlist_link_7943d7" formatted="false">"Paste Playlist Link"</string>
+    <string name="ui_paste_playlist_link_or_browse_id_32b619" formatted="false">"Paste playlist link or browse ID"</string>
+    <string name="ui_paste_sp_dc_7bd908" formatted="false">"Paste sp_dc"</string>
+    <string name="ui_paste_your_spotify_sp_dc_cookie_value_from_your__60982c" formatted="false">"Paste your Spotify \'sp_dc\' cookie value from your web browser developer tools:"</string>
+    <string name="ui_pause_on_battery_saver_7a7b95" formatted="false">"Pause on battery saver"</string>
+    <string name="ui_pause_on_battery_saver_f4cd6d" formatted="false">"Pause on Battery Saver"</string>
+    <string name="ui_pause_skip_locked_until_1_s_f09c17">"Pause &amp; skip locked until %1$s"</string>
+    <string name="ui_paused_usb_dac_exclusive_active_0c7410" formatted="false">"Paused (USB DAC Exclusive active)"</string>
+    <string name="ui_paused_while_bit_perfect_is_enabled_afc9b1" formatted="false">"Paused while Bit-Perfect is enabled"</string>
+    <string name="ui_paused_while_bit_perfect_usb_dac_bypass_is_activ_d8ccd4" formatted="false">"Paused while Bit-Perfect USB DAC bypass is active"</string>
+    <string name="ui_peak_flow_87b95e" formatted="false">"Peak Flow"</string>
+    <string name="ui_peak_segment_3bcb9c" formatted="false">"Peak segment"</string>
+    <string name="ui_peak_timeline_slot_916cfb" formatted="false">"Peak timeline slot"</string>
+    <string name="ui_personal_records_05223a" formatted="false">"Personal records"</string>
+    <string name="ui_physical_rhythm_synchronization_via_haptic_motor_7d6725" formatted="false">"Physical rhythm synchronization via haptic motor"</string>
+    <string name="ui_physical_rhythm_synchronization_via_phone_s_hapt_3c49e1" formatted="false">"Physical rhythm synchronization via phone\'s haptic motor"</string>
+    <string name="ui_physical_rhythm_synchronization_via_phone_s_hapt_65e538" formatted="false">"Physical rhythm synchronization via phone\'s haptic motor (Active)"</string>
+    <string name="ui_pick_presets_monochrome_palette_or_custom_color__0107e5" formatted="false">"Pick presets, monochrome palette, or custom color wheel"</string>
+    <string name="ui_pick_the_correct_upload_for_1_s_your_choice_is_s_78b954">"Pick the correct upload for %1$s. Your choice is saved for this song."</string>
+    <string name="ui_pin_at_the_top_960e57" formatted="false">"Pin at the top"</string>
+    <string name="ui_pitch_a6c2d0" formatted="false">"Pitch"</string>
+    <string name="ui_pitch_black_surfaces_for_oled_and_amoled_screens_a73567" formatted="false">"Pitch black surfaces for OLED and AMOLED screens to save battery"</string>
+    <string name="ui_play_1_s_2_s_4714b6">"Play %1$s, %2$s"</string>
+    <string name="ui_play_count_50a957" formatted="false">"Play count"</string>
+    <string name="ui_play_music_ec21b7" formatted="false">"Play music"</string>
+    <string name="ui_play_playlist_1_s_290e6c">"Play playlist %1$s"</string>
+    <string name="ui_playback_speed_3c0668" formatted="false">"Playback Speed"</string>
+    <string name="ui_playback_start_c39d34" formatted="false">"Playback start"</string>
+    <string name="ui_playback_ui_b8b96f" formatted="false">"Playback &amp; UI"</string>
+    <string name="ui_playing_now_885700" formatted="false">"Playing now"</string>
+    <string name="ui_playlist_added_to_youtube_music_sync_943caf" formatted="false">"Playlist added to YouTube Music sync"</string>
+    <string name="ui_playlist_cd95b4" formatted="false">"Playlist"</string>
+    <string name="ui_playlist_could_not_be_loaded_14a6ac" formatted="false">"Playlist could not be loaded"</string>
+    <string name="ui_playlist_cover_updated_002f60" formatted="false">"Playlist cover updated"</string>
+    <string name="ui_playlist_deleted_3cd30e" formatted="false">"Playlist deleted"</string>
+    <string name="ui_playlist_generation_timed_out_check_your_connect_40ad6e" formatted="false">"Playlist generation timed out. Check your connection and try again."</string>
+    <string name="ui_playlist_pinned_to_top_068d4e" formatted="false">"Playlist pinned to top"</string>
+    <string name="ui_playlist_removed_from_youtube_music_sync_4f88ac" formatted="false">"Playlist removed from YouTube Music sync"</string>
+    <string name="ui_playlist_renamed_839cfc" formatted="false">"Playlist renamed"</string>
+    <string name="ui_playlist_saved_5b33dd" formatted="false">"Playlist saved!"</string>
+    <string name="ui_playlist_unpinned_606ba5" formatted="false">"Playlist unpinned"</string>
+    <string name="ui_playlists_mirror_to_your_account_synced_1_s_9af73f">"Playlists mirror to your account • synced %1$s"</string>
+    <string name="ui_plays_a6bc73" formatted="false">"Plays"</string>
+    <string name="ui_please_enter_cookie_text_2d48f6" formatted="false">"Please enter cookie text."</string>
+    <string name="ui_podcast_bafb6e" formatted="false">"Podcast"</string>
+    <string name="ui_pop_267a64" formatted="false">"Pop"</string>
+    <string name="ui_pre_checking_availability_ece3f4" formatted="false">"Pre-checking availability…"</string>
+    <string name="ui_precision_dsp_active_38660c" formatted="false">"Precision DSP active"</string>
+    <string name="ui_precision_media3_dsp_engine_active_6688d8" formatted="false">"Precision Media3 DSP engine active"</string>
+    <string name="ui_precision_media3_transient_analyzer_consistent_a_fdffeb" formatted="false">"Precision Media3 transient analyzer (consistent across all devices)"</string>
+    <string name="ui_prefer_spotify_canvas_033107" formatted="false">"Prefer Spotify Canvas"</string>
+    <string name="ui_preparing_waveform_d78864" formatted="false">"Preparing waveform…"</string>
+    <string name="ui_preparing_your_music_d7187c" formatted="false">"Preparing your music"</string>
+    <string name="ui_preserves_battery_when_android_power_saver_is_ac_4a0187" formatted="false">"Preserves battery when Android Power Saver is active"</string>
+    <string name="ui_presets_e709e7" formatted="false">"Presets"</string>
+    <string name="ui_preview_4bf306" formatted="false">"Preview:"</string>
+    <string name="ui_preview_queues_cffa81" formatted="false">"Preview Queues"</string>
+    <string name="ui_pure_black_amoled_a303f6" formatted="false">"Pure Black AMOLED"</string>
+    <string name="ui_quad_hd_2k_1d3242" formatted="false">"Quad HD 2K"</string>
+    <string name="ui_queue_switched_to_a_mix_of_1_s_songs_3efa5e">"Queue switched to a mix of %1$s songs"</string>
+    <string name="ui_quick_actions_c40810" formatted="false">"Quick Actions"</string>
+    <string name="ui_quick_dj_overlap_013691" formatted="false">"Quick DJ overlap"</string>
+    <string name="ui_quick_picks_d09a9b" formatted="false">"Quick Picks"</string>
+    <string name="ui_r_b_fa9af5" formatted="false">"R&amp;B"</string>
+    <string name="ui_real_time_syllable_sync_karaoke_highlight_9b7ae0" formatted="false">"Real-time syllable sync &amp; karaoke highlight"</string>
+    <string name="ui_recaps_9b52ab" formatted="false">"Recaps"</string>
+    <string name="ui_recently_added_66560f" formatted="false">"Recently Added"</string>
+    <string name="ui_recommendation_exclusions_e52017" formatted="false">"Recommendation Exclusions"</string>
+    <string name="ui_recommended_music_videos_8a4469" formatted="false">"Recommended music videos"</string>
+    <string name="ui_record_plays_and_scrobbles_in_your_official_yout_26ab38" formatted="false">"Record plays and scrobbles in your official YouTube Music history"</string>
+    <string name="ui_refresh_exclusions_9f7df7" formatted="false">"refresh exclusions"</string>
+    <string name="ui_regenerating_inspired_mix_213fde" formatted="false">"Regenerating inspired mix…"</string>
+    <string name="ui_rejected_1_s_a54c84">"Rejected: %1$s"</string>
+    <string name="ui_relax_9704b9" formatted="false">"Relax"</string>
+    <string name="ui_reload_cce715" formatted="false">"Reload"</string>
+    <string name="ui_remind_me_later_bebc1c" formatted="false">"Remind me later"</string>
+    <string name="ui_remove_credentials_playlists_cached_audio_and_re_4676e3" formatted="false">"Remove credentials, playlists, cached audio, and reset all preferences"</string>
+    <string name="ui_remove_failed_debe01" formatted="false">"Remove failed"</string>
+    <string name="ui_remove_from_youtube_liked_387949" formatted="false">"Remove from YouTube Liked"</string>
+    <string name="ui_remove_host_decfda" formatted="false">"Remove host"</string>
+    <string name="ui_remove_the_api_key_789f91" formatted="false">"remove the API key"</string>
+    <string name="ui_removed_from_liked_songs_6950fe" formatted="false">"Removed from Liked Songs"</string>
+    <string name="ui_rename_preset_52abbe" formatted="false">"Rename preset"</string>
+    <string name="ui_rename_the_equalizer_preset_3fdae1" formatted="false">"rename the equalizer preset"</string>
+    <string name="ui_reorder_33d997" formatted="false">"Reorder"</string>
+    <string name="ui_reorder_show_or_hide_sections_displayed_on_your__812d2e" formatted="false">"Reorder, show, or hide sections displayed on your Home screen"</string>
+    <string name="ui_reorder_works_for_local_playlists_c73762" formatted="false">"Reorder works for local playlists"</string>
+    <string name="ui_repeat_all_7cce34" formatted="false">"Repeat all"</string>
+    <string name="ui_repeat_off_c4d7b8" formatted="false">"Repeat off"</string>
+    <string name="ui_repeat_one_05f3dd" formatted="false">"Repeat one"</string>
+    <string name="ui_replaygain_volume_leveling_track_14_lufs_album_d_1ca477" formatted="false">"ReplayGain volume leveling: Track (-14 LUFS), Album dynamics, or Off"</string>
+    <string name="ui_reply_6c2bb7" formatted="false">"Reply"</string>
+    <string name="ui_replying_to_1_s_510012">"Replying to %1$s"</string>
+    <string name="ui_reset_app_clear_all_data_02bdc9" formatted="false">"Reset App &amp; Clear All Data"</string>
+    <string name="ui_reset_default_c46b7a" formatted="false">"Reset Default"</string>
+    <string name="ui_reset_download_location_c67fdb" formatted="false">"reset download location"</string>
+    <string name="ui_reset_speed_and_pitch_ab05ae" formatted="false">"Reset speed and pitch"</string>
+    <string name="ui_reset_to_default_server_50b81d" formatted="false">"Reset to default server"</string>
+    <string name="ui_resolving_3e4557" formatted="false">"Resolving..."</string>
+    <string name="ui_restore_backup_7da131" formatted="false">"Restore backup?"</string>
+    <string name="ui_restore_from_backup_5df7f0" formatted="false">"Restore from Backup"</string>
+    <string name="ui_restore_the_backup_05f5e4" formatted="false">"restore the backup"</string>
+    <string name="ui_rhythm_consistency_c6492e" formatted="false">"Rhythm &amp; Consistency"</string>
+    <string name="ui_rock_468d79" formatted="false">"Rock"</string>
+    <string name="ui_romance_c6c050" formatted="false">"Romance"</string>
+    <string name="ui_room_1_s_568eff">"Room %1$s"</string>
+    <string name="ui_room_code_8572d5" formatted="false">"ROOM CODE"</string>
+    <string name="ui_room_code_a66508" formatted="false">"Room Code"</string>
+    <string name="ui_room_code_copied_c28842" formatted="false">"Room code copied"</string>
+    <string name="ui_room_permissions_control_27171b" formatted="false">"Room Permissions &amp; Control"</string>
+    <string name="ui_rose_51ad0e" formatted="false">"Rose"</string>
+    <string name="ui_sage_c3bd77" formatted="false">"Sage"</string>
+    <string name="ui_save_album_to_library_fa8aab" formatted="false">"Save album to library"</string>
+    <string name="ui_save_api_credentials_2b9439" formatted="false">"save API credentials"</string>
+    <string name="ui_save_as_playlist_995e4d" formatted="false">"Save as playlist"</string>
+    <string name="ui_save_as_preset_770ba1" formatted="false">"Save as preset"</string>
+    <string name="ui_save_lrc_companion_files_embed_lyrics_in_downloa_03bad2" formatted="false">"Save .lrc companion files &amp; embed lyrics in downloaded tracks"</string>
+    <string name="ui_save_preset_828897" formatted="false">"Save preset"</string>
+    <string name="ui_save_server_465cac" formatted="false">"Save Server"</string>
+    <string name="ui_save_the_equalizer_preset_ac21e1" formatted="false">"save the equalizer preset"</string>
+    <string name="ui_save_to_library_396649" formatted="false">"Save to library"</string>
+    <string name="ui_saved_1_s_52af3b">"Saved %1$s"</string>
+    <string name="ui_saved_as_1_s_1e0603">"Saved as \"%1$s\""</string>
+    <string name="ui_saved_to_library_8a3c7a" formatted="false">"Saved to library"</string>
+    <string name="ui_saving_56a228" formatted="false">"Saving…"</string>
+    <string name="ui_saving_playlist_89bc51" formatted="false">"Saving playlist…"</string>
+    <string name="ui_say_something_b41a5d" formatted="false">"Say something..."</string>
+    <string name="ui_scale_and_resize_lyrics_font_size_across_the_pla_4885b2" formatted="false">"Scale and resize lyrics font size across the player and full-screen views"</string>
+    <string name="ui_scale_volume_in_the_app_instead_of_the_dac_s_har_037823" formatted="false">"Scale volume in the app instead of the DAC\'s hardware volume"</string>
+    <string name="ui_score_489f48" formatted="false">"Score"</string>
+    <string name="ui_scrobble_deleted_295cbc" formatted="false">"Scrobble deleted"</string>
+    <string name="ui_scrobbles_66915b" formatted="false">"Scrobbles"</string>
+    <string name="ui_scroll_to_current_song_552966" formatted="false">"Scroll to current song"</string>
+    <string name="ui_search_browse_or_paste_playlist_links_ids_to_imp_74feaf" formatted="false">"Search, browse, or paste playlist links &amp; IDs to import into library"</string>
+    <string name="ui_search_downloaded_albums_1d92c6" formatted="false">"Search downloaded albums..."</string>
+    <string name="ui_search_downloaded_artists_cb16c9" formatted="false">"Search downloaded artists..."</string>
+    <string name="ui_search_for_1_s_3852f8">"Search for \"%1$s\""</string>
+    <string name="ui_search_for_a_favorite_or_explore_something_new_y_7b9f8e" formatted="false">"Search for a favorite or explore something new. Your music starts here."</string>
+    <string name="ui_search_playlists_d8a78e" formatted="false">"Search playlists..."</string>
+    <string name="ui_search_songs_artists_albums_54bb0c" formatted="false">"Search songs, artists, albums..."</string>
+    <string name="ui_searching_youtube_for_1_s_bf29c8">"Searching YouTube for %1$s…"</string>
+    <string name="ui_seed_recommendations_from_youtube_music_or_spoti_74afee" formatted="false">"Seed recommendations from YouTube Music or Spotify"</string>
+    <string name="ui_select_offline_audio_resolution_bit_depth_175a33" formatted="false">"Select offline audio resolution &amp; bit depth"</string>
+    <string name="ui_select_system_default_light_theme_or_dark_theme_f2f32a" formatted="false">"Select System default, Light theme, or Dark theme"</string>
+    <string name="ui_selected_playlists_mirror_to_your_account_24_7_e49395" formatted="false">"Selected playlists mirror to your account, 24/7"</string>
+    <string name="ui_send_9bc257" formatted="false">"Send"</string>
+    <string name="ui_server_settings_28af3c" formatted="false">"Server settings"</string>
+    <string name="ui_server_url_saved_3d183e" formatted="false">"Server URL saved"</string>
+    <string name="ui_server_url_updated_1dc31f" formatted="false">"Server URL updated"</string>
+    <string name="ui_services_add_ons_efd5ed" formatted="false">"Services &amp; Add-ons"</string>
+    <string name="ui_session_token_12f1f7" formatted="false">"Session Token"</string>
+    <string name="ui_sessions_day_27c068" formatted="false">"Sessions/day"</string>
+    <string name="ui_set_custom_timer_ae160f" formatted="false">"Set Custom Timer"</string>
+    <string name="ui_shape_sound_across_15_frequency_bands_with_custo_870d44" formatted="false">"Shape sound across 15 frequency bands with custom curves and presets"</string>
+    <string name="ui_shaping_your_music_in_real_time_ca0874" formatted="false">"Shaping your music in real-time"</string>
+    <string name="ui_share_invite_758c66" formatted="false">"Share Invite"</string>
+    <string name="ui_share_lastwave_jam_invite_c515a0" formatted="false">"Share LastWave Jam Invite"</string>
+    <string name="ui_show_auto_eq_in_volume_panel_2231d6" formatted="false">"Show Auto EQ in volume panel"</string>
+    <string name="ui_show_autoeq_and_parametric_eq_shortcut_in_now_pl_4b030b" formatted="false">"Show AutoEQ and Parametric EQ shortcut in Now Playing audio controls sheet"</string>
+    <string name="ui_show_hide_account_playlists_c81413" formatted="false">"Show / Hide Account Playlists"</string>
+    <string name="ui_show_motion_video_dd2dfa" formatted="false">"Show Motion Video"</string>
+    <string name="ui_show_or_hide_podcast_shelves_show_pages_and_epis_9a5540" formatted="false">"Show or hide podcast shelves, show pages and episode search"</string>
+    <string name="ui_show_photo_c1eb8b" formatted="false">"Show Photo"</string>
+    <string name="ui_show_the_playing_track_quality_and_cover_on_your_3dcf00" formatted="false">"Show the playing track, quality and cover on your Discord profile"</string>
+    <string name="ui_shuffle_off_e59f97" formatted="false">"Shuffle off"</string>
+    <string name="ui_shuffle_on_785728" formatted="false">"Shuffle on"</string>
+    <string name="ui_shuffle_recommendations_d613c8" formatted="false">"Shuffle Recommendations"</string>
+    <string name="ui_sign_in_failed_108b93" formatted="false">"Sign in failed"</string>
+    <string name="ui_sign_in_incomplete_finish_signing_in_then_tap_i__ecab81" formatted="false">"Sign-in incomplete — finish signing in, then tap \"I\'m signed in\"."</string>
+    <string name="ui_sign_in_to_access_and_import_your_personal_playl_0a87de" formatted="false">"Sign in to access and import your personal playlists, Liked Songs, and enable Spotify Canvas."</string>
+    <string name="ui_sign_in_to_enable_official_spotify_canvas_video__5e24f2" formatted="false">"Sign in to enable official Spotify Canvas video loops &amp; library sync"</string>
+    <string name="ui_sign_in_to_unlock_spotify_canvas_video_loops_c60d3f" formatted="false">"Sign in to unlock Spotify Canvas video loops"</string>
+    <string name="ui_sign_in_with_your_google_account_6049f9" formatted="false">"Sign in with your Google account"</string>
+    <string name="ui_signed_in_but_spotify_refused_the_session_sign_i_98ff87" formatted="false">"Signed in, but Spotify refused the session. Sign in again, or paste a fresh cookie."</string>
+    <string name="ui_similar_to_0939c3" formatted="false">"Similar to"</string>
+    <string name="ui_single_album_fb7bdc" formatted="false">"Single / Album"</string>
+    <string name="ui_singles_eps_6862eb" formatted="false">"Singles &amp; EPs"</string>
+    <string name="ui_skip_3da474" formatted="false">"Skip"</string>
+    <string name="ui_sleep_3cac34" formatted="false">"Sleep"</string>
+    <string name="ui_sleep_timer_ef2998" formatted="false">"Sleep Timer"</string>
+    <string name="ui_sleep_tracker_inspired_flow_analysis_e10c92" formatted="false">"Sleep tracker inspired flow analysis"</string>
+    <string name="ui_smooth_fade_5c3aaa" formatted="false">"Smooth fade"</string>
+    <string name="ui_smooth_transition_between_tracks_1_s_sec_39d1d4">"Smooth transition between tracks • %1$s sec"</string>
+    <string name="ui_some_tracks_couldn_t_load_retry_9d75b5" formatted="false">"Some tracks couldn\'t load. Retry."</string>
+    <string name="ui_song_excluded_from_recommendations_f0969b" formatted="false">"Song excluded from recommendations"</string>
+    <string name="ui_song_excluded_here_and_on_youtube_music_21c886" formatted="false">"Song excluded here and on YouTube Music"</string>
+    <string name="ui_song_excluded_here_could_not_update_youtube_musi_ed4f44" formatted="false">"Song excluded here. Could not update YouTube Music; please try again."</string>
+    <string name="ui_song_excluded_here_youtube_music_could_not_confi_af4481" formatted="false">"Song excluded here. YouTube Music could not confirm this change."</string>
+    <string name="ui_song_removed_from_playlist_e05c9f" formatted="false">"Song removed from playlist"</string>
+    <string name="ui_songs_1_s_bf2106">"Songs (%1$s)"</string>
+    <string name="ui_songs_you_mark_don_t_recommend_again_will_appear_f982ef" formatted="false">"Songs you mark “Don\'t recommend again” will appear here. You can restore each one separately."</string>
+    <string name="ui_sort_songs_c870be" formatted="false">"Sort songs"</string>
+    <string name="ui_spatial_729ac1" formatted="false">"Spatial"</string>
+    <string name="ui_spatial_immersive_audio_master_audio_9fcbc0" formatted="false">"Spatial Immersive Audio • Master Audio"</string>
+    <string name="ui_speed_pitch_bdf451" formatted="false">"Speed &amp; Pitch"</string>
+    <string name="ui_spotify_account_56f3de" formatted="false">"Spotify Account"</string>
+    <string name="ui_spotify_account_library_30c9bb" formatted="false">"Spotify Account Library"</string>
+    <string name="ui_spotify_apple_music_link_1bea1e" formatted="false">"Spotify &amp; Apple Music link"</string>
+    <string name="ui_spotify_canvas_connected_c598e8" formatted="false">"Spotify Canvas connected!"</string>
+    <string name="ui_spotify_canvas_looping_background_videos_bb0707" formatted="false">"Spotify Canvas (Looping background videos)"</string>
+    <string name="ui_spotify_disconnected_747420" formatted="false">"Spotify disconnected"</string>
+    <string name="ui_spotify_playlist_5fd60a" formatted="false">"Spotify Playlist"</string>
+    <string name="ui_stage_the_restore_ffe7fb" formatted="false">"stage the restore"</string>
+    <string name="ui_standard_320_kbps_ae7375" formatted="false">"Standard (320 kbps)"</string>
+    <string name="ui_standard_320_kbps_mp3_641dd6" formatted="false">"Standard (320 kbps MP3)"</string>
+    <string name="ui_standard_definition_a55bde" formatted="false">"Standard Definition"</string>
+    <string name="ui_standard_quality_c8e06b" formatted="false">"Standard Quality"</string>
+    <string name="ui_standard_smooth_blend_18f183" formatted="false">"Standard smooth blend"</string>
+    <string name="ui_standby_deck_empty_20011d" formatted="false">"Standby Deck Empty"</string>
+    <string name="ui_start_a_song_in_any_media_app_c126c3" formatted="false">"Start a song in any media app"</string>
+    <string name="ui_start_jam_session_cb8d60" formatted="false">"Start Jam Session"</string>
+    <string name="ui_starting_import_bf718a" formatted="false">"Starting import..."</string>
+    <string name="ui_statistics_2086b2" formatted="false">"Statistics"</string>
+    <string name="ui_steady_cadence_a0efb7" formatted="false">"Steady Cadence"</string>
+    <string name="ui_stop_music_when_lastwave_is_removed_from_recents_873a05" formatted="false">"Stop music when LastWave is removed from Recents"</string>
+    <string name="ui_stop_playback_automatically_c2682d" formatted="false">"Stop playback automatically"</string>
+    <string name="ui_stop_when_the_queue_ends_nothing_is_added_automa_2fadbb" formatted="false">"Stop when the queue ends; nothing is added automatically"</string>
+    <string name="ui_storage_size_ff8fec" formatted="false">"Storage Size"</string>
+    <string name="ui_streak_ac4792" formatted="false">"Streak"</string>
+    <string name="ui_stream_to_tv_or_speaker_f06516" formatted="false">"Stream to TV or speaker"</string>
+    <string name="ui_streaming_addons_0af2dc" formatted="false">"Streaming Addons"</string>
+    <string name="ui_subtle_35_pulse_for_relaxed_listening_a0db04" formatted="false">"Subtle 35% pulse for relaxed listening"</string>
+    <string name="ui_subtle_pulses_for_relaxed_listening_558b38" formatted="false">"Subtle pulses for relaxed listening."</string>
+    <string name="ui_suspend_haptics_to_save_power_c6d508" formatted="false">"Suspend haptics to save power"</string>
+    <string name="ui_switch_between_personal_and_brand_channels_linke_64ed53" formatted="false">"Switch between personal and brand channels linked to your account"</string>
+    <string name="ui_switch_to_album_art_556f48" formatted="false">"Switch to album art"</string>
+    <string name="ui_switch_youtube_channel_32cf57" formatted="false">"switch YouTube channel"</string>
+    <string name="ui_switching_to_bd8bc6" formatted="false">"Switching to "</string>
+    <string name="ui_sync_downloads_from_storage_ce9ce6" formatted="false">"sync downloads from storage"</string>
+    <string name="ui_sync_offset_dd9f6f" formatted="false">"Sync offset"</string>
+    <string name="ui_sync_playlist_json_fe98e9" formatted="false">"Sync playlist JSON?"</string>
+    <string name="ui_sync_playlists_4df049" formatted="false">"Sync Playlists"</string>
+    <string name="ui_sync_server_address_26fe8f" formatted="false">"Sync Server Address"</string>
+    <string name="ui_sync_youtube_music_79ba85" formatted="false">"sync YouTube Music"</string>
+    <string name="ui_syncing_1_s_2_s_3_s_8aa728">"Syncing %1$s/%2$s • %3$s"</string>
+    <string name="ui_synthwave_9afb31" formatted="false">"Synthwave"</string>
+    <string name="ui_system_about_178f7b" formatted="false">"System &amp; About"</string>
+    <string name="ui_tail_55_freeze_31c31a" formatted="false">"Tail: 55% Freeze"</string>
+    <string name="ui_tail_dry_1ba926" formatted="false">"Tail: Dry"</string>
+    <string name="ui_take_me_to_yt_music_login_7e0c32" formatted="false">"Take me to YT Music login"</string>
+    <string name="ui_take_requests_directly_from_personal_or_communit_333674" formatted="false">"Take requests directly from personal or community Addon services. Multiple enabled addons query concurrently for the best audio stream."</string>
+    <string name="ui_tap_to_detect_every_media_app_b79dfd" formatted="false">"Tap to detect every media app"</string>
+    <string name="ui_tap_to_download_1_s_e9b304">"Tap to download %1$s"</string>
+    <string name="ui_tap_to_download_new_version_fc6c54" formatted="false">"Tap to download new version"</string>
+    <string name="ui_tap_to_manage_session_1ef90b" formatted="false">"Tap to manage session"</string>
+    <string name="ui_tap_to_retry_4f95ef" formatted="false">"Tap to retry"</string>
+    <string name="ui_telegram_support_a1c9e5" formatted="false">"Telegram Support"</string>
+    <string name="ui_telegram_updates_support_a730db" formatted="false">"Telegram Updates &amp; Support"</string>
+    <string name="ui_tempo_pitch_linked_b69fb2" formatted="false">"Tempo &amp; pitch linked"</string>
+    <string name="ui_text_size_3cc6e1" formatted="false">"Text size"</string>
+    <string name="ui_that_file_is_not_a_valid_lastwave_backup_55e9a8" formatted="false">"That file is not a valid LastWave backup"</string>
+    <string name="ui_the_sound_keeps_playing_as_custom_until_you_pick_1e2b21" formatted="false">"The sound keeps playing as Custom until you pick another preset."</string>
+    <string name="ui_theme_mode_bb6b0b" formatted="false">"Theme Mode"</string>
+    <string name="ui_this_backup_was_created_by_a_newer_lastwave_vers_06a6c7" formatted="false">"This backup was created by a newer LastWave version"</string>
+    <string name="ui_this_month_0f6cc3" formatted="false">"This Month"</string>
+    <string name="ui_this_month_1b4785" formatted="false">"This month"</string>
+    <string name="ui_this_month_vs_last_6b0f1d" formatted="false">"This month vs last"</string>
+    <string name="ui_this_playlist_is_unavailable_86533b" formatted="false">"This playlist is unavailable."</string>
+    <string name="ui_this_rom_s_webview_implementation_is_incompatibl_ae1752" formatted="false">"This ROM\'s WebView implementation is incompatible. Spotify sign-in is disabled safely."</string>
+    <string name="ui_this_rom_s_webview_implementation_is_incompatibl_c5b427" formatted="false">"This ROM\'s WebView implementation is incompatible. YouTube Music sign-in is disabled safely."</string>
+    <string name="ui_this_will_merge_1_s_playlist_s_from_the_local_js_46185d">"This will merge %1$s playlist(s) from the local JSON file and reconnect automatic syncing."</string>
+    <string name="ui_this_will_remove_your_spotify_session_and_log_yo_be18d8" formatted="false">"This will remove your Spotify session and log you out. Spotify Canvas loops and synced playlists will be disabled until you reconnect."</string>
+    <string name="ui_this_will_replace_your_current_data_with_1_s_pla_53debd">"This will replace your current data with %1$s playlist(s) and all settings from the backup file."</string>
+    <string name="ui_title_a_z_fe7b7e" formatted="false">"Title (A-Z)"</string>
+    <string name="ui_today_24345a" formatted="false">"Today"</string>
+    <string name="ui_toggle_between_system_font_and_custom_typography_a247ea" formatted="false">"Toggle between system font and custom typography"</string>
+    <string name="ui_toggle_download_lyrics_274a85" formatted="false">"toggle download lyrics"</string>
+    <string name="ui_top_3_share_c44458" formatted="false">"Top 3 share"</string>
+    <string name="ui_top_3_tracks_account_for_1_s_of_your_listening_t_a311d7">"Top 3 tracks account for %1$s%% of your listening time."</string>
+    <string name="ui_top_albums_0db744" formatted="false">"Top Albums"</string>
+    <string name="ui_top_categories_39960c" formatted="false">"Top categories"</string>
+    <string name="ui_top_charts_a6764c" formatted="false">"Top Charts"</string>
+    <string name="ui_total_listen_duration_1_s_ae725d">"Total Listen Duration: %1$s"</string>
+    <string name="ui_total_listening_captured_in_the_selected_range_y_800a1a" formatted="false">"Total listening captured in the selected range. Yearly bars summarize your full history."</string>
+    <string name="ui_total_listening_captured_this_month_daily_bars_s_9c9d5f" formatted="false">"Total listening captured this month. Daily bars summarize your progression."</string>
+    <string name="ui_total_listening_captured_this_week_daily_bars_su_13cd5b" formatted="false">"Total listening captured this week. Daily bars summarize your progression."</string>
+    <string name="ui_total_listening_captured_this_year_monthly_bars__bfcbb5" formatted="false">"Total listening captured this year. Monthly bars summarize your progression."</string>
+    <string name="ui_total_scrobbles_45fd3f" formatted="false">"Total Scrobbles"</string>
+    <string name="ui_total_sessions_3d28aa" formatted="false">"Total sessions"</string>
+    <string name="ui_track_1_s_f4bf73">"Track %1$s"</string>
+    <string name="ui_track_concentration_f93065" formatted="false">"Track concentration"</string>
+    <string name="ui_track_count_unavailable_38d833" formatted="false">"Track count unavailable"</string>
+    <string name="ui_tracklist_preview_d7e6f0" formatted="false">"Tracklist Preview"</string>
+    <string name="ui_tracks_1_s_443edb">"TRACKS (%1$s)"</string>
+    <string name="ui_tracks_1_s_7c2f32">"Tracks (%1$s)"</string>
+    <string name="ui_tracks_in_this_range_e4c07d" formatted="false">"Tracks in this range"</string>
+    <string name="ui_transition_duration_8fb051" formatted="false">"Transition Duration"</string>
+    <string name="ui_transition_waveform_1_s_into_2_s_eb9507">"Transition waveform: %1$s into %2$s"</string>
+    <string name="ui_translation_language_15fff1" formatted="false">"Translation Language"</string>
+    <string name="ui_trending_charts_1b54e7" formatted="false">"Trending Charts"</string>
+    <string name="ui_trending_songs_for_you_2e0b8f" formatted="false">"Trending songs for you"</string>
+    <string name="ui_turn_on_to_apply_equalization_live_88e0b5" formatted="false">"Turn on to apply equalization live"</string>
+    <string name="ui_turn_timer_off_459464" formatted="false">"Turn timer off"</string>
+    <string name="ui_type_a_message_09bdff" formatted="false">"Type a message..."</string>
+    <string name="ui_ultra_hd_4k_8141f1" formatted="false">"Ultra HD 4K"</string>
+    <string name="ui_unable_to_load_spotify_login_page_directly_97a46a" formatted="false">"Unable to load Spotify login page directly."</string>
+    <string name="ui_unable_to_resolve_video_stream_57a9f7" formatted="false">"Unable to resolve video stream"</string>
+    <string name="ui_unavailable_on_this_hardware_falling_back_to_dsp_4d5bae" formatted="false">"Unavailable on this hardware (falling back to DSP)"</string>
+    <string name="ui_undo_39fc72" formatted="false">"Undo"</string>
+    <string name="ui_unique_tracks_f662be" formatted="false">"Unique tracks"</string>
+    <string name="ui_unknown_album_d46bfb" formatted="false">"Unknown Album"</string>
+    <string name="ui_unknown_artist_5bf8da" formatted="false">"Unknown Artist"</string>
+    <string name="ui_unknown_artist_9566f8" formatted="false">"Unknown artist"</string>
+    <string name="ui_unknown_song_840fc7" formatted="false">"Unknown song"</string>
+    <string name="ui_unknown_title_58dfae" formatted="false">"Unknown Title"</string>
+    <string name="ui_unknown_track_698495" formatted="false">"Unknown track"</string>
+    <string name="ui_unlike_song_b50354" formatted="false">"Unlike song"</string>
+    <string name="ui_unlimited_b8bef3" formatted="false">"Unlimited"</string>
+    <string name="ui_unlimited_queue_7c8e6b" formatted="false">"Unlimited queue"</string>
+    <string name="ui_unlock_queue_7da814" formatted="false">"Unlock queue"</string>
+    <string name="ui_unmute_7044c3" formatted="false">"Unmute"</string>
+    <string name="ui_unpin_from_top_9427d8" formatted="false">"Unpin from top"</string>
+    <string name="ui_unreachable_1_s_87847a">"Unreachable: %1$s"</string>
+    <string name="ui_up_next_admin_queue_3b66a7" formatted="false">"UP NEXT · ADMIN QUEUE"</string>
+    <string name="ui_up_next_in_shuffle_order_1af35c" formatted="false">"Up next in shuffle order"</string>
+    <string name="ui_up_next_your_queue_is_shared_31c476" formatted="false">"UP NEXT · YOUR QUEUE IS SHARED"</string>
+    <string name="ui_up_to_24_bit_192_khz_lossless_flac_13f26d" formatted="false">"Up to 24-bit / 192 kHz • Lossless FLAC"</string>
+    <string name="ui_up_to_24_bit_192_khz_studio_master_flac_eb7ef4" formatted="false">"Up to 24-bit / 192 kHz • Studio Master FLAC"</string>
+    <string name="ui_up_to_320_kbps_mp3_aac_78ebf5" formatted="false">"Up to 320 kbps • MP3 / AAC"</string>
+    <string name="ui_update_album_artist_folders_2df626" formatted="false">"update album-artist folders"</string>
+    <string name="ui_update_album_sort_c0c80c" formatted="false">"update album sort"</string>
+    <string name="ui_update_arrived_6c8cda" formatted="false">"Update arrived"</string>
+    <string name="ui_update_artist_sort_5068aa" formatted="false">"update artist sort"</string>
+    <string name="ui_update_automix_mode_e3f3cb" formatted="false">"update automix mode"</string>
+    <string name="ui_update_automix_thermal_profile_48b1eb" formatted="false">"update automix thermal profile"</string>
+    <string name="ui_update_available_101090" formatted="false">"Update Available!"</string>
+    <string name="ui_update_available_1_s_v_2_s_21d820">"Update Available (%1$s) • v%2$s"</string>
+    <string name="ui_update_bit_perfect_mode_f7ef8a" formatted="false">"update Bit-Perfect mode"</string>
+    <string name="ui_update_discord_presence_80b46e" formatted="false">"update Discord presence"</string>
+    <string name="ui_update_download_folder_0fb79e" formatted="false">"update download folder"</string>
+    <string name="ui_update_download_location_a23633" formatted="false">"update download location"</string>
+    <string name="ui_update_folder_structure_ef62fa" formatted="false">"update folder structure"</string>
+    <string name="ui_update_loudness_mode_02a87d" formatted="false">"update loudness mode"</string>
+    <string name="ui_update_loudness_preamp_f30f48" formatted="false">"update loudness preamp"</string>
+    <string name="ui_update_now_c4cbac" formatted="false">"Update now"</string>
+    <string name="ui_update_pause_on_zero_volume_setting_21b138" formatted="false">"update pause on zero volume setting"</string>
+    <string name="ui_update_playlist_sync_472fa8" formatted="false">"update playlist sync"</string>
+    <string name="ui_update_primary_artist_filter_349d5b" formatted="false">"update primary-artist filter"</string>
+    <string name="ui_update_ready_1_s_d72b0e">"Update Ready (%1$s)"</string>
+    <string name="ui_update_scrobbling_e011a6" formatted="false">"update scrobbling"</string>
+    <string name="ui_update_song_sort_08ca4f" formatted="false">"update song sort"</string>
+    <string name="ui_update_stop_playback_on_recents_setting_4f6831" formatted="false">"update stop playback on recents setting"</string>
+    <string name="ui_update_studio_master_clarity_e02db5" formatted="false">"update Studio Master Clarity"</string>
+    <string name="ui_update_the_equalizer_6c08c4" formatted="false">"update the equalizer"</string>
+    <string name="ui_update_the_equalizer_band_1c9025" formatted="false">"update the equalizer band"</string>
+    <string name="ui_update_youtube_history_sync_27c51b" formatted="false">"update YouTube history sync"</string>
+    <string name="ui_update_youtube_playlist_visibility_cd7374" formatted="false">"update YouTube playlist visibility"</string>
+    <string name="ui_update_youtube_sync_9291a1" formatted="false">"update YouTube sync"</string>
+    <string name="ui_upgrading_to_cf1be2" formatted="false">"Upgrading to "</string>
+    <string name="ui_usb_exclusive_output_23b130" formatted="false">"USB exclusive output"</string>
+    <string name="ui_use_classic_song_menu_7fdaea" formatted="false">"Use Classic Song Menu"</string>
+    <string name="ui_use_legacy_colours_a2c942" formatted="false">"Use Legacy Colours"</string>
+    <string name="ui_use_this_link_92ec2b" formatted="false">"Use this link"</string>
+    <string name="ui_using_automatic_playlist_cover_0a9fbb" formatted="false">"Using automatic playlist cover"</string>
+    <string name="ui_v_1_s_language_community_source_code_15ae61">"v%1$s • Language, Community, Source code"</string>
+    <string name="ui_version_1_s_d2f210">"Version %1$s"</string>
+    <string name="ui_version_1_s_is_ready_to_install_3e7515">"Version %1$s is ready to install"</string>
+    <string name="ui_version_info_telegram_community_github_repositor_c557af" formatted="false">"Version info, Telegram community, GitHub repository"</string>
+    <string name="ui_vibration_intensity_2191bd" formatted="false">"Vibration Intensity"</string>
+    <string name="ui_video_bc17c1" formatted="false">"Video"</string>
+    <string name="ui_video_id_1_s_4b4f65">"Video ID: %1$s"</string>
+    <string name="ui_video_search_failed_a31e57" formatted="false">"Video search failed"</string>
+    <string name="ui_view_artist_16bfcc" formatted="false">"View artist"</string>
+    <string name="ui_view_repository_at_github_com_clash_projects_las_95c5fc" formatted="false">"View repository at github.com/Clash-Projects/LastWave-Desktop"</string>
+    <string name="ui_view_repository_at_github_com_clash_projects_las_aa815a" formatted="false">"View repository at github.com/Clash-Projects/LastWave-native"</string>
+    <string name="ui_view_your_own_data_again_5d8724" formatted="false">"View your own data again"</string>
+    <string name="ui_violet_ddcd2f" formatted="false">"Violet"</string>
+    <string name="ui_vocals_only_337845" formatted="false">"Vocals only"</string>
+    <string name="ui_volume_seamless_transitions_speed_5c1e43" formatted="false">"Volume, seamless transitions &amp; speed"</string>
+    <string name="ui_waiting_for_approval_in_the_browser_8fd5ea" formatted="false">"Waiting for approval in the browser…"</string>
+    <string name="ui_watch_exact_sync_music_video_of_currently_playin_5fc2c9" formatted="false">"Watch exact-sync music video of currently playing song in player menu"</string>
+    <string name="ui_watch_music_video_7fc7fa" formatted="false">"Watch music video"</string>
+    <string name="ui_we_couldn_t_load_your_recommendations_try_again__8e72b7" formatted="false">"We couldn\'t load your recommendations. Try again, or find something in search."</string>
+    <string name="ui_websocket_server_url_371447" formatted="false">"WebSocket Server URL"</string>
+    <string name="ui_week_f82be6" formatted="false">"Week"</string>
+    <string name="ui_weekday_average_34b54c" formatted="false">"Weekday average"</string>
+    <string name="ui_weekend_average_15af3a" formatted="false">"Weekend average"</string>
+    <string name="ui_weekly_rhythm_344c21" formatted="false">"Weekly rhythm"</string>
+    <string name="ui_when_the_queue_ends_keep_playing_similar_songs_0f8b69" formatted="false">"When the queue ends, keep playing similar songs"</string>
+    <string name="ui_whole_song_c43a9a" formatted="false">"Whole song"</string>
+    <string name="ui_wi_fi_streaming_quality_2f111e" formatted="false">"Wi-Fi Streaming Quality"</string>
+    <string name="ui_wi_fi_streaming_quality_a32d59" formatted="false">"Wi-Fi streaming quality"</string>
+    <string name="ui_workout_39463a" formatted="false">"Workout"</string>
+    <string name="ui_workout_energy_d523b6" formatted="false">"Workout Energy"</string>
+    <string name="ui_year_879e32" formatted="false">"Year"</string>
+    <string name="ui_year_to_date_progression_615e4c" formatted="false">"Year-to-date progression"</string>
+    <string name="ui_you_905cb3" formatted="false">"You"</string>
+    <string name="ui_you_are_co_host_bff7a8" formatted="false">"You are Co-host"</string>
+    <string name="ui_you_are_host_c45f09" formatted="false">"You are Host"</string>
+    <string name="ui_you_are_the_station_admin_14b403" formatted="false">"You are the station admin"</string>
+    <string name="ui_you_can_reload_the_page_or_paste_your_sp_dc_cook_6a21b6" formatted="false">"You can reload the page or paste your sp_dc cookie manually."</string>
+    <string name="ui_you_d38558" formatted="false">" (You)"</string>
+    <string name="ui_you_re_all_caught_up_65a724" formatted="false">"You\'re all caught up"</string>
+    <string name="ui_your_daily_discover_95e4a0" formatted="false">"Your daily discover"</string>
+    <string name="ui_your_display_name_ade88f" formatted="false">"Your Display Name"</string>
+    <string name="ui_your_favorites_e8a086" formatted="false">"Your favorites"</string>
+    <string name="ui_your_recent_listening_sessions_99d303" formatted="false">"Your recent listening sessions"</string>
+    <string name="ui_your_spotify_favorites_7e36b0" formatted="false">"Your Spotify Favorites"</string>
+    <string name="ui_your_spotify_library_6b7aef" formatted="false">"Your Spotify Library"</string>
+    <string name="ui_your_spotify_playlists_ea794e" formatted="false">"Your Spotify Playlists"</string>
+    <string name="ui_your_top_artists_tracks_recaps_d01d70" formatted="false">"Your top artists, tracks &amp; recaps"</string>
+    <string name="ui_your_tracks_based_on_your_scrobbles_d8410e" formatted="false">"Your Tracks • Based on your scrobbles"</string>
+    <string name="ui_youtube_account_connection_9e2425" formatted="false">"YouTube Account Connection"</string>
+    <string name="ui_youtube_link_00a825" formatted="false">"YouTube Link"</string>
+    <string name="ui_youtube_music_account_70902a" formatted="false">"YouTube Music Account"</string>
+    <string name="ui_youtube_music_account_channels_history_24_7_sync_34972b" formatted="false">"YouTube Music account, channels, history &amp; 24/7 sync"</string>
+    <string name="ui_youtube_music_downloads_strictly_as_is_never_upg_53f2ab" formatted="false">"YouTube Music downloads strictly as-is (never upgrades). Dolby Atmos downloads only when selected — otherwise it never downloads. Atmos falls back to Hi-Res → CD → 320 kbps → YouTube. Hi-Res steps down to lower tiers, then YouTube last."</string>
+    <string name="ui_youtube_music_listening_history_b5295b" formatted="false">"YouTube Music Listening History"</string>
+    <string name="ui_youtube_music_playlist_ccc4ea" formatted="false">"YouTube Music playlist"</string>
+    <string name="ui_youtube_music_plays_strictly_as_is_never_upgrade_4295f2" formatted="false">"YouTube Music plays strictly as-is (never upgrades). Dolby Atmos plays only when selected — otherwise it never plays. Atmos falls back to Hi-Res → CD → 320 kbps → YouTube. Hi-Res steps down to lower lossless tiers, then YouTube last."</string>
+    <string name="ui_youtube_music_section_76acb0" formatted="false">"YouTube Music Section"</string>
+    <string name="ui_youtube_music_sign_in_isn_t_supported_by_this_ro_cda9eb" formatted="false">"YouTube Music sign-in isn\'t supported by this ROM."</string>
+    <string name="ui_youtube_playlist_0559a4" formatted="false">"YouTube playlist"</string>
+    <string name="ui_youtube_video_link_or_id_df191e" formatted="false">"YouTube video link or ID"</string>
+    <string name="ui_made_for_you">MADE FOR YOU</string>
+    <string name="ui_extra_bc0994d6c7">"My Mix"</string>
+    <string name="ui_extra_830877d1ed">"%1$sm"</string>
+    <string name="ui_extra_b521caa6e1">"ADMIN"</string>
+    <string name="ui_extra_f70ab04e71">"CO-HOST"</string>
+    <string name="ui_extra_e645477f66">"HOST"</string>
+    <string name="ui_extra_6990f01ad9">"LIVE"</string>
+    <string name="ui_extra_a204ac9b05">"PASTE"</string>
+    <string name="ui_extra_5497f42be1">"+10s"</string>
+    <string name="ui_extra_ca89903230">"-10s"</string>
+    <string name="ui_extra_643c518477">"%1$s folders"</string>
+    <string name="ui_extra_c93e6ff593">"%1$s songs • %2$s artists • %3$s"</string>
+    <string name="ui_extra_47369c14b2">"20s"</string>
+    <string name="ui_extra_790739d6ba">"30s"</string>
+    <string name="ui_extra_ada1ad5126">"Music player"</string>
+    <string name="ui_extra_0df3b0cedb">"Genre Mix • %1$s"</string>
+    <string name="ui_extra_5eccba604f">"Genre Mix"</string>
+    <string name="ui_extra_9817a18bb1">"Recent Tracks"</string>
+    <string name="ui_extra_a02eaabe46">"Top Tracks"</string>
+    <string name="ui_extra_e6f05b9c56">"Never-Heard Mix"</string>
+    <string name="ui_extra_fd1c6df309">"Track Mix • %1$s"</string>
+    <string name="ui_extra_3f8302dec6">"Track Mix"</string>
+    <string name="ui_extra_84986fd7d9">"Artist Mix • %1$s"</string>
+    <string name="ui_extra_d41ca6e21c">"Artist Mix"</string>
+    <string name="ui_extra_5a04520a88">"Discover Feed"</string>
+    <string name="ui_extra_f2071b8f29">"LASTWAVE  •  NOW PLAYING"</string>
+</resources>

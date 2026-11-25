@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -94,7 +96,7 @@ fun LyricsSourceDialog(
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Close,
-                        contentDescription = "Close",
+                        contentDescription = appText(com.lastwave.app.R.string.recognize_close),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.size(20.dp),
                     )
@@ -228,7 +230,7 @@ fun LyricsSourceDialog(
                                         color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
                                     )
                                     val statusText = if (provider == LyricsProvider.AUTO) {
-                                        "Auto"
+                                        appText(com.lastwave.app.R.string.autoeq_preamp_auto)
                                     } else {
                                         status?.label
                                     }

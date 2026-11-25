@@ -1,5 +1,7 @@
 package com.lastwave.app.widget.wave
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 import com.lastwave.app.playback.MusicPlayerState
 import com.lastwave.app.playback.PlayableTrack
@@ -68,9 +70,9 @@ data class WaveWidgetState(
         }
 
         fun defaultShortcuts(): List<WavePlaylistShortcut> = listOf(
-            WavePlaylistShortcut(WaveWidgetActions.PLAYLIST_LIKED, "Liked"),
-            WavePlaylistShortcut(WaveWidgetActions.PLAYLIST_RECENT, "Recent"),
-            WavePlaylistShortcut(WaveWidgetActions.PLAYLIST_MOST_PLAYED, "Most played"),
+            WavePlaylistShortcut(WaveWidgetActions.PLAYLIST_LIKED, appText(com.lastwave.app.R.string.wave_widget_playlist_liked)),
+            WavePlaylistShortcut(WaveWidgetActions.PLAYLIST_RECENT, appText(com.lastwave.app.R.string.fr_tab_recent)),
+            WavePlaylistShortcut(WaveWidgetActions.PLAYLIST_MOST_PLAYED, appText(com.lastwave.app.R.string.artist_sort_most_played)),
         )
 
         fun read(context: Context): WaveWidgetState = runCatching {

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import android.widget.Toast
 import androidx.compose.foundation.border
 import androidx.compose.material.icons.filled.Add
@@ -161,7 +163,7 @@ class StartMixMenuViewModel @Inject constructor(
         if (trackName.isBlank() || artistName.isBlank()) return
         viewModelScope.launch {
             runCatching {
-                android.widget.Toast.makeText(appContext, "Finding similar songs for $trackName…", android.widget.Toast.LENGTH_SHORT).show()
+                android.widget.Toast.makeText(appContext, appText(com.lastwave.app.R.string.ui_finding_similar_songs_for_1_s_8ac296, (trackName).toString()), android.widget.Toast.LENGTH_SHORT).show()
                 val similar = generateRepository.fetchSimilarTracks(
                     track = trackName,
                     artist = artistName,
@@ -171,9 +173,9 @@ class StartMixMenuViewModel @Inject constructor(
                 if (similar.isNotEmpty()) {
                     val playable = similar.map { it.toPlayableTrack() }
                     musicPlayer.replaceUpcoming(playable)
-                    android.widget.Toast.makeText(appContext, "Queue switched to a mix of ${playable.size} songs", android.widget.Toast.LENGTH_SHORT).show()
+                    android.widget.Toast.makeText(appContext, appText(com.lastwave.app.R.string.ui_queue_switched_to_a_mix_of_1_s_songs_3efa5e, (playable.size).toString()), android.widget.Toast.LENGTH_SHORT).show()
                 } else {
-                    android.widget.Toast.makeText(appContext, "Could not find related tracks", android.widget.Toast.LENGTH_SHORT).show()
+                    android.widget.Toast.makeText(appContext, appText(com.lastwave.app.R.string.ui_could_not_find_related_tracks_2249e5), android.widget.Toast.LENGTH_SHORT).show()
                 }
             }.onFailure { error ->
                 android.util.Log.e("StartMix", "Failed to append mix tracks", error)
@@ -331,7 +333,7 @@ class TrackLinkViewModel @Inject constructor(
 
     private fun copyToClipboard(link: String) {
         val clipboard = appContext.getSystemService(android.content.Context.CLIPBOARD_SERVICE) as? android.content.ClipboardManager
-        val clip = android.content.ClipData.newPlainText("YouTube Link", link)
+        val clip = android.content.ClipData.newPlainText(appText(com.lastwave.app.R.string.ui_youtube_link_00a825), link)
         clipboard?.setPrimaryClip(clip)
         android.widget.Toast.makeText(appContext, appContext.getString(R.string.link_copied), android.widget.Toast.LENGTH_SHORT).show()
     }
@@ -378,7 +380,7 @@ fun TrackContextMenuSheet(
     capabilities: TrackMenuCapabilities,
     playableTrack: PlayableTrack? = null,
     onDismiss: () -> Unit,
-    playbackSourceLabel: String = "LastWave",
+    playbackSourceLabel: String = appText(com.lastwave.app.R.string.set_about_title),
     onPlayInLastWave: (() -> Unit)? = null,
     onStartMix: ((trackName: String, artistName: String) -> Unit)? = null,
     onExploreGenre: ((genre: String) -> Unit)? = null,

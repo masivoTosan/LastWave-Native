@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -110,7 +112,7 @@ internal fun PlayerLikeButton(
             .size(size)
             .semantics {
                 selected = liked
-                contentDescription = if (liked) "Unlike song" else "Like song"
+                contentDescription = if (liked) appText(com.lastwave.app.R.string.ui_unlike_song_b50354) else appText(com.lastwave.app.R.string.ui_like_song_0d3fb3)
             }
             .graphicsLayer {
                 scaleX = pressScale

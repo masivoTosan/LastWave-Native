@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import androidx.activity.compose.BackHandler
 import com.lastwave.app.playback.toPlayableTrack
 import androidx.compose.animation.core.RepeatMode
@@ -409,9 +411,9 @@ fun FeedScreen(
                 Box(Modifier.padding(top = listTopInset)) {
                 FeedEmptyState(
                     message = if (state.error != null) {
-                        "We couldn't load your recommendations. Try again, or find something in search."
+                        appText(com.lastwave.app.R.string.ui_we_couldn_t_load_your_recommendations_try_again__8e72b7)
                     } else {
-                        "Search for a favorite or explore something new. Your music starts here."
+                        appText(com.lastwave.app.R.string.ui_search_for_a_favorite_or_explore_something_new_y_7b9f8e)
                     },
                     onRetry = viewModel::loadFeed,
                     onOpenSearch = onOpenSearch,
@@ -501,7 +503,7 @@ fun FeedScreen(
                         (t.contains("cover") || t.contains("remix"))
                     ) return true
 
-                    if (("podcast_shelf" in hiddenSections || "podcasts" in hiddenSections) &&
+                    if (("podcast_shelf" in hiddenSections || appText(com.lastwave.app.R.string.podcasts_title) in hiddenSections) &&
                         t.contains("podcast")
                     ) return true
 
@@ -595,7 +597,7 @@ fun FeedScreen(
                 val displayTags = remember(topGenres, state.feedData.tasteTags) {
                     topGenres.ifEmpty {
                         state.feedData.tasteTags.ifEmpty {
-                            listOf("Rock", "Indie", "Pop", "Electronic", "Hip-Hop", "R&B", "Synthwave", "Alternative")
+                            listOf(appText(com.lastwave.app.R.string.ui_rock_468d79), appText(com.lastwave.app.R.string.ui_indie_c43a74), appText(com.lastwave.app.R.string.ui_pop_267a64), appText(com.lastwave.app.R.string.ui_electronic_622585), appText(com.lastwave.app.R.string.ui_hip_hop_2c8b31), appText(com.lastwave.app.R.string.ui_r_b_fa9af5), appText(com.lastwave.app.R.string.ui_synthwave_9afb31), appText(com.lastwave.app.R.string.ui_alternative_3b74e9))
                         }
                     }
                 }
@@ -965,7 +967,7 @@ fun FeedScreen(
                                                 launching = state.launchingRadio,
                                                 onTagClick = { tag -> viewModel.playDiscoveryQuery(tag.displayName(), tag) },
                                                 onActionClick = onOpenGenres,
-                                                onLongClick = { sectionMenuTarget = "taste_strip" to "My genres" },
+                                                onLongClick = { sectionMenuTarget = "taste_strip" to appText(com.lastwave.app.R.string.feed_your_sound) },
                                             )
                                         }
                                     }
@@ -979,7 +981,7 @@ fun FeedScreen(
                                                 title = stringResource(R.string.feed_discover),
                                                 subtitle = stringResource(R.string.feed_discover_sub),
                                                 onActionClick = onOpenDiscover,
-                                                onLongClick = { sectionMenuTarget = "discover_new_music" to "Discover New Music" },
+                                                onLongClick = { sectionMenuTarget = "discover_new_music" to appText(com.lastwave.app.R.string.feed_discover) },
                                             )
                                             if (discoveryTracks.isEmpty()) {
                                                 Box(
@@ -998,7 +1000,7 @@ fun FeedScreen(
                                                             subtitle = ArtistHelper.primaryArtist(track.artist),
                                                             artworkUrl = track.artworkUrl,
                                                             fallbackIcon = Icons.Filled.Explore,
-                                                            badgeText = "DISCOVER",
+                                                            badgeText = appText(com.lastwave.app.R.string.ui_discover_4827ea),
                                                             onClick = {
                                                                 val queue = discoveryTracks.map { it.toPlayableTrack() }
                                                                 musicPlayer.playDiscoverQueue(queue, index)
@@ -1008,7 +1010,7 @@ fun FeedScreen(
                                                                     title = track.name,
                                                                     artist = track.artist,
                                                                     artworkUrl = track.artworkUrl,
-                                                                    sourceLabel = "Discover",
+                                                                    sourceLabel = appText(com.lastwave.app.R.string.ui_discover_4827ea),
                                                                     videoId = track.youtubeVideoIdOrNull(),
                                                                     onPlay = {
                                                                         val queue = discoveryTracks.map { it.toPlayableTrack() }
@@ -1033,9 +1035,9 @@ fun FeedScreen(
                                             shape = getContainerShape("preview_queues"),
                                         ) {
                                             FeedSectionHeader(
-                                                title = "Preview Queues",
-                                                subtitle = "Your recent listening sessions",
-                                                onLongClick = { sectionMenuTarget = "preview_queues" to "Preview Queues" },
+                                                title = appText(com.lastwave.app.R.string.ui_preview_queues_cffa81),
+                                                subtitle = appText(com.lastwave.app.R.string.ui_your_recent_listening_sessions_99d303),
+                                                onLongClick = { sectionMenuTarget = "preview_queues" to appText(com.lastwave.app.R.string.ui_preview_queues_cffa81) },
                                             )
                                             FeedMediaRow(
                                                 content = {
@@ -1046,7 +1048,7 @@ fun FeedScreen(
                                                     ) { pq ->
                                                         FeedMediaCard(
                                                             title = pq.title,
-                                                            subtitle = "${pq.tracks.size} songs",
+                                                            subtitle = appText(com.lastwave.app.R.string.ui_1_s_songs_9b614d, (pq.tracks.size).toString()),
                                                             artworkUrl = pq.artworkUrl,
                                                             fallbackIcon = Icons.AutoMirrored.Filled.QueueMusic,
                                                             badgeText = "QUEUE",
@@ -1072,8 +1074,8 @@ fun FeedScreen(
                                             FeedSectionHeader(
                                                 title = stringResource(R.string.feed_quick_picks),
                                                 subtitle = stringResource(R.string.feed_trending_worth),
-                                                onShuffleClick = { viewModel.shuffleTracksQueue(sectionTracks, "Quick Picks") },
-                                                onLongClick = { sectionMenuTarget = "quick_picks" to "Quick Picks" },
+                                                onShuffleClick = { viewModel.shuffleTracksQueue(sectionTracks, appText(com.lastwave.app.R.string.ui_quick_picks_d09a9b)) },
+                                                onLongClick = { sectionMenuTarget = "quick_picks" to appText(com.lastwave.app.R.string.ui_quick_picks_d09a9b) },
                                             )
                                             QuickPicksRows(
                                                 tracks = sectionTracks,
@@ -1082,9 +1084,9 @@ fun FeedScreen(
                                                 onTrackClick = { index ->
                                                     val track = sectionTracks.getOrNull(index)
                                                     if (track != null) {
-                                                        viewModel.playTrack(track, "Quick Picks")
+                                                        viewModel.playTrack(track, appText(com.lastwave.app.R.string.ui_quick_picks_d09a9b))
                                                     } else {
-                                                        viewModel.playTracksQueue(sectionTracks, index, "Quick Picks")
+                                                        viewModel.playTracksQueue(sectionTracks, index, appText(com.lastwave.app.R.string.ui_quick_picks_d09a9b))
                                                     }
                                                 },
                                                 onMenuClick = { menuTrack = it },
@@ -1095,8 +1097,8 @@ fun FeedScreen(
                                                         album = track.album,
                                                         artworkUrl = track.artworkUrl,
                                                         videoId = track.videoId.takeIf(String::isNotBlank),
-                                                        sourceLabel = "Home",
-                                                        onPlay = { viewModel.playTrack(track, "Quick Picks") },
+                                                        sourceLabel = appText(com.lastwave.app.R.string.feed_home),
+                                                        onPlay = { viewModel.playTrack(track, appText(com.lastwave.app.R.string.ui_quick_picks_d09a9b)) },
                                                     )
                                                 },
                                             )
@@ -1131,7 +1133,7 @@ fun FeedScreen(
                                                                         album = track.album,
                                                                         artworkUrl = track.artworkUrl,
                                                                         videoId = track.videoId.takeIf(String::isNotBlank),
-                                                                        sourceLabel = "Home",
+                                                                        sourceLabel = appText(com.lastwave.app.R.string.feed_home),
                                                                         onPlay = { viewModel.playTrack(track, section.title) },
                                                                     )
                                                                 },
@@ -1152,8 +1154,8 @@ fun FeedScreen(
                                             FeedSectionHeader(
                                                 title = stringResource(R.string.feed_fresh),
                                                 subtitle = stringResource(R.string.feed_fresh_sub),
-                                                onShuffleClick = { viewModel.shuffleTracksQueue(state.feedData.freshFinds, "Fresh Finds") },
-                                                onLongClick = { sectionMenuTarget = "fresh_finds" to "Fresh Finds" },
+                                                onShuffleClick = { viewModel.shuffleTracksQueue(state.feedData.freshFinds, appText(com.lastwave.app.R.string.ui_fresh_finds_2838d0)) },
+                                                onLongClick = { sectionMenuTarget = "fresh_finds" to appText(com.lastwave.app.R.string.ui_fresh_finds_2838d0) },
                                             )
                                             FeedMediaRow(
                                                 content = {
@@ -1171,12 +1173,12 @@ fun FeedScreen(
                                                                     album = track.album,
                                                                     artworkUrl = track.artworkUrl,
                                                                     videoId = track.videoId.takeIf(String::isNotBlank),
-                                                                    sourceLabel = "Home",
-                                                                    onPlay = { viewModel.playTrack(track, "Fresh Finds") },
+                                                                    sourceLabel = appText(com.lastwave.app.R.string.feed_home),
+                                                                    onPlay = { viewModel.playTrack(track, appText(com.lastwave.app.R.string.ui_fresh_finds_2838d0)) },
                                                                 )
                                                             },
-                                                            onClick = { viewModel.playTrack(track, "Fresh Finds") },
-                                                            onPlayClick = { viewModel.playTrack(track, "Fresh Finds") },
+                                                            onClick = { viewModel.playTrack(track, appText(com.lastwave.app.R.string.ui_fresh_finds_2838d0)) },
+                                                            onPlayClick = { viewModel.playTrack(track, appText(com.lastwave.app.R.string.ui_fresh_finds_2838d0)) },
                                                         )
                                                     }
                                                 },
@@ -1193,7 +1195,7 @@ fun FeedScreen(
                                                 title = stringResource(R.string.feed_jump),
                                                 subtitle = stringResource(R.string.feed_jump_sub),
                                                 onShuffleClick = { viewModel.playRecentQueue(state.feedData.jumpBackIn.shuffled(), 0) },
-                                                onLongClick = { sectionMenuTarget = "jump_back_in" to "Jump Back In" },
+                                                onLongClick = { sectionMenuTarget = "jump_back_in" to appText(com.lastwave.app.R.string.ui_jump_back_in_582e89) },
                                             )
                                             FeedMediaRow(
                                                 content = {
@@ -1206,7 +1208,7 @@ fun FeedScreen(
                                                                     title = track.name,
                                                                     artist = track.artist.displayName,
                                                                     artworkUrl = track.artworkUrl,
-                                                                    sourceLabel = "Home",
+                                                                    sourceLabel = appText(com.lastwave.app.R.string.feed_home),
                                                                     onPlay = { viewModel.playRecentQueue(state.feedData.jumpBackIn, index) },
                                                                 )
                                                             },
@@ -1228,7 +1230,7 @@ fun FeedScreen(
                                                 onShuffleClick = {
                                                     state.feedData.mixes.randomOrNull()?.let(viewModel::playMix)
                                                 },
-                                                onLongClick = { sectionMenuTarget = "mixed_for_you" to "Mixed For You" },
+                                                onLongClick = { sectionMenuTarget = "mixed_for_you" to appText(com.lastwave.app.R.string.ui_mixed_for_you_3f2315) },
                                             )
                                             FeedMediaRow(
                                                 content = {
@@ -1267,7 +1269,7 @@ fun FeedScreen(
                                                         onOpenArtist = {
                                                             artistAlbumNavigator.openArtist(ArtistHelper.primaryArtist(item.artistName), item.browseId ?: "")
                                                         },
-                                                        onLongClick = { sectionMenuTarget = "spotlight_hero" to "Artist Spotlight" },
+                                                        onLongClick = { sectionMenuTarget = "spotlight_hero" to appText(com.lastwave.app.R.string.ui_artist_spotlight_6a671f) },
                                                     )
                                                 }
                                             }
@@ -1282,7 +1284,7 @@ fun FeedScreen(
                                             FeedSectionHeader(
                                                 title = stringResource(R.string.feed_artists),
                                                 subtitle = stringResource(R.string.feed_artists_sub),
-                                                onLongClick = { sectionMenuTarget = "top_artists" to "Artists for you" },
+                                                onLongClick = { sectionMenuTarget = "top_artists" to appText(com.lastwave.app.R.string.feed_artists) },
                                             )
                                             LazyRow(
                                                 contentPadding = PaddingValues(horizontal = 16.dp),
@@ -1313,8 +1315,8 @@ fun FeedScreen(
                                             FeedSectionHeader(
                                                 title = stringResource(R.string.feed_favorites),
                                                 subtitle = stringResource(R.string.feed_favorites_sub),
-                                                onShuffleClick = { viewModel.playGeneratedQueue(state.feedData.heavyRotation.shuffled(), 0, "Heavy Rotation") },
-                                                onLongClick = { sectionMenuTarget = "heavy_rotation" to "Heavy Rotation" },
+                                                onShuffleClick = { viewModel.playGeneratedQueue(state.feedData.heavyRotation.shuffled(), 0, appText(com.lastwave.app.R.string.ui_heavy_rotation_1e493f)) },
+                                                onLongClick = { sectionMenuTarget = "heavy_rotation" to appText(com.lastwave.app.R.string.ui_heavy_rotation_1e493f) },
                                             )
                                             FeedMediaRow(
                                                 content = {
@@ -1324,17 +1326,17 @@ fun FeedScreen(
                                                             subtitle = ArtistHelper.primaryArtist(track.artist),
                                                             artworkUrl = track.artworkUrl,
                                                             fallbackIcon = Icons.Filled.MusicNote,
-                                                            onClick = { viewModel.playGeneratedQueue(state.feedData.heavyRotation, index, "Heavy Rotation") },
+                                                            onClick = { viewModel.playGeneratedQueue(state.feedData.heavyRotation, index, appText(com.lastwave.app.R.string.ui_heavy_rotation_1e493f)) },
                                                             onLongClick = {
                                                                 miniTrayTrack = TrackMiniTrayData(
                                                                     title = track.name,
                                                                     artist = track.artist,
                                                                     artworkUrl = track.artworkUrl,
-                                                                    sourceLabel = "Home",
-                                                                    onPlay = { viewModel.playGeneratedQueue(state.feedData.heavyRotation, index, "Heavy Rotation") },
+                                                                    sourceLabel = appText(com.lastwave.app.R.string.feed_home),
+                                                                    onPlay = { viewModel.playGeneratedQueue(state.feedData.heavyRotation, index, appText(com.lastwave.app.R.string.ui_heavy_rotation_1e493f)) },
                                                                 )
                                                             },
-                                                            onPlayClick = { viewModel.playGeneratedQueue(state.feedData.heavyRotation, index, "Heavy Rotation") },
+                                                            onPlayClick = { viewModel.playGeneratedQueue(state.feedData.heavyRotation, index, appText(com.lastwave.app.R.string.ui_heavy_rotation_1e493f)) },
                                                         )
                                                     }
                                                 },
@@ -1350,7 +1352,7 @@ fun FeedScreen(
                                             FeedSectionHeader(
                                                 title = stringResource(R.string.feed_albums),
                                                 subtitle = stringResource(R.string.feed_albums_sub),
-                                                onLongClick = { sectionMenuTarget = "albums_in_rotation" to "Albums in Rotation" },
+                                                onLongClick = { sectionMenuTarget = "albums_in_rotation" to appText(com.lastwave.app.R.string.ui_albums_in_rotation_4ebec8) },
                                             )
                                             FeedMediaRow(
                                                 content = {
@@ -1386,8 +1388,8 @@ fun FeedScreen(
                                             FeedSectionHeader(
                                                 title = stringResource(R.string.feed_trending),
                                                 subtitle = stringResource(R.string.feed_trending_sub),
-                                                onShuffleClick = { viewModel.shuffleTracksQueue(state.feedData.charts, "Top Charts") },
-                                                onLongClick = { sectionMenuTarget = "trending_charts" to "Trending Charts" },
+                                                onShuffleClick = { viewModel.shuffleTracksQueue(state.feedData.charts, appText(com.lastwave.app.R.string.ui_top_charts_a6764c)) },
+                                                onLongClick = { sectionMenuTarget = "trending_charts" to appText(com.lastwave.app.R.string.ui_trending_charts_1b54e7) },
                                             )
                                             LazyRow(
                                                 contentPadding = PaddingValues(horizontal = 16.dp),
@@ -1398,7 +1400,7 @@ fun FeedScreen(
                                                     ChartTrackCard(
                                                         rank = index + 1,
                                                         track = track,
-                                                        onClick = { viewModel.playTrack(track, "Top Charts") },
+                                                        onClick = { viewModel.playTrack(track, appText(com.lastwave.app.R.string.ui_top_charts_a6764c)) },
                                                         onLongClick = {
                                                             miniTrayTrack = TrackMiniTrayData(
                                                                 title = track.title,
@@ -1406,8 +1408,8 @@ fun FeedScreen(
                                                                 album = track.album,
                                                                 artworkUrl = track.artworkUrl,
                                                                 videoId = track.videoId.takeIf(String::isNotBlank),
-                                                                sourceLabel = "Home",
-                                                                onPlay = { viewModel.playTrack(track, "Top Charts") },
+                                                                sourceLabel = appText(com.lastwave.app.R.string.feed_home),
+                                                                onPlay = { viewModel.playTrack(track, appText(com.lastwave.app.R.string.ui_top_charts_a6764c)) },
                                                             )
                                                         },
                                                     )
@@ -1426,7 +1428,7 @@ fun FeedScreen(
                                                 title = stringResource(R.string.feed_releases),
                                                 subtitle = stringResource(R.string.feed_releases_sub),
                                                 onActionClick = onOpenNewReleases,
-                                                onLongClick = { sectionMenuTarget = "new_releases" to "New Releases" },
+                                                onLongClick = { sectionMenuTarget = "new_releases" to appText(com.lastwave.app.R.string.ui_new_releases_8b2fa9) },
                                             )
                                             FeedMediaRow(
                                                 content = {
@@ -1437,7 +1439,7 @@ fun FeedScreen(
                                                     ) { summary ->
                                                         FeedMediaCard(
                                                             title = summary.title,
-                                                            subtitle = summary.author?.let(ArtistHelper::primaryArtist) ?: "Album",
+                                                            subtitle = summary.author?.let(ArtistHelper::primaryArtist) ?: appText(com.lastwave.app.R.string.art_type_album),
                                                             artworkUrl = summary.artworkUrl,
                                                             fallbackIcon = Icons.Filled.NewReleases,
                                                             badgeText = "NEW",
@@ -1464,7 +1466,7 @@ fun FeedScreen(
                                                 title = stringResource(R.string.feed_friends),
                                                 subtitle = stringResource(R.string.feed_friends_sub),
                                                 onActionClick = onOpenFriends,
-                                                onLongClick = { sectionMenuTarget = "friends_activity" to "Friends Activity" },
+                                                onLongClick = { sectionMenuTarget = "friends_activity" to appText(com.lastwave.app.R.string.ui_friends_activity_415888) },
                                             )
                                             LazyRow(
                                                 contentPadding = PaddingValues(horizontal = 16.dp),
@@ -1498,10 +1500,10 @@ fun FeedScreen(
                                                     ?: stringResource(R.string.podcasts_title),
                                                 onActionClick = {
                                                     val chip = state.homeChips.firstOrNull { it.title.equals("Podcasts", ignoreCase = true) }
-                                                        ?: HomeChip(title = "Podcasts", params = "ggMPOg1mZWVkX3BvZGNhc3Rz")
+                                                        ?: HomeChip(title = appText(com.lastwave.app.R.string.podcasts_title), params = "ggMPOg1mZWVkX3BvZGNhc3Rz")
                                                     viewModel.onHomeChipSelected(chip)
                                                 },
-                                                onLongClick = { sectionMenuTarget = "podcast_shelf" to "Podcasts" },
+                                                onLongClick = { sectionMenuTarget = "podcast_shelf" to appText(com.lastwave.app.R.string.podcasts_title) },
                                             )
                                             Spacer(Modifier.height(8.dp))
                                             FeedMediaRow(
@@ -1593,13 +1595,13 @@ fun FeedScreen(
                                             }
                                         }
                                         Text(
-                                            text = "All home sections are hidden",
+                                            text = appText(com.lastwave.app.R.string.ui_all_home_sections_are_hidden_6de6e0),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onSurface,
                                         )
                                         Text(
-                                            text = "Customize and re-enable sections in Settings → Library & Content → Home sections.",
+                                            text = appText(com.lastwave.app.R.string.ui_customize_and_re_enable_sections_in_settings_lib_391186),
                                             style = MaterialTheme.typography.bodyMedium,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                                             textAlign = androidx.compose.ui.text.style.TextAlign.Center,
@@ -1646,7 +1648,7 @@ fun FeedScreen(
                 containerColor = if (isPodcastsActive) Color.Transparent else Color.Unspecified,
                 backdrop = if (useFeedGlass) feedBackdrop else null,
                 actions = {
-                    HeaderActionIcon(Icons.Filled.Search, "Search", onOpenSearch)
+                    HeaderActionIcon(Icons.Filled.Search, appText(com.lastwave.app.R.string.search_cd), onOpenSearch)
                     IconButton(onClick = onOpenSettings) {
                         com.lastwave.app.ui.home.ProfileAvatar(avatarUrl = state.avatarUrl, modifier = Modifier.size(38.dp))
                     }
@@ -1690,7 +1692,7 @@ fun FeedScreen(
                 artworkUrl = track.artworkUrl,
                 videoId = track.videoId.takeIf(String::isNotBlank),
             ),
-            playbackSourceLabel = "Home",
+            playbackSourceLabel = appText(com.lastwave.app.R.string.feed_home),
             onDismiss = { menuTrack = null },
         )
     }
@@ -1737,7 +1739,7 @@ fun FeedScreen(
                                 tint = MaterialTheme.colorScheme.primary,
                             )
                             Text(
-                                if (isPinned) "Unpin from top" else "Pin at the top",
+                                if (isPinned) appText(com.lastwave.app.R.string.ui_unpin_from_top_9427d8) else appText(com.lastwave.app.R.string.ui_pin_at_the_top_960e57),
                                 style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.Medium,
                             )
@@ -1763,7 +1765,7 @@ fun FeedScreen(
                                 tint = MaterialTheme.colorScheme.error,
                             )
                             Text(
-                                "Hide section",
+                                appText(com.lastwave.app.R.string.ui_hide_section_642f79),
                                 style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.Medium,
                                 color = MaterialTheme.colorScheme.error,
@@ -1774,7 +1776,7 @@ fun FeedScreen(
             },
             confirmButton = {
                 TextButton(onClick = { sectionMenuTarget = null }) {
-                    Text("Cancel")
+                    Text(appText(com.lastwave.app.R.string.recognize_cancel))
                 }
             },
         )

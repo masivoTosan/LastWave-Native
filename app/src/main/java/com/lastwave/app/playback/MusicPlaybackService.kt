@@ -1,5 +1,7 @@
 package com.lastwave.app.playback
 
+import com.lastwave.app.util.appText
+
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -482,7 +484,7 @@ class MusicPlaybackService : MediaBrowserServiceCompat() {
                                 .build(),
                             MediaBrowserCompat.MediaItem.FLAG_PLAYABLE,
                         )
-                    }.let { OriginOsMusicCard.singlePage(it, "Nothing playing", "Play something in LastWave") }
+                    }.let { OriginOsMusicCard.singlePage(it, appText(com.lastwave.app.R.string.wave_widget_nothing_playing), "Play something in LastWave") }
                     OriginOsMusicCard.LIST_FAVORITE -> OriginOsMusicCard.singlePage(
                         withContext(Dispatchers.IO) {
                             androidAutoLibrary.loadChildren(AndroidAutoMediaLibrary.PLAYLISTS_ID, state)
@@ -544,12 +546,12 @@ class MusicPlaybackService : MediaBrowserServiceCompat() {
         val album = track?.album.orEmpty()
         val extras = { intent: Intent ->
             intent
-                .putExtra("track", title)
-                .putExtra("artist", artist)
-                .putExtra("album", album)
-                .putExtra("playing", playing)
+                .putExtra(appText(com.lastwave.app.R.string.set_loud_track), title)
+                .putExtra(appText(com.lastwave.app.R.string.pd_sort_artist), artist)
+                .putExtra(appText(com.lastwave.app.R.string.art_type_album), album)
+                .putExtra(appText(com.lastwave.app.R.string.pd_playing), playing)
                 .putExtra("isPlaying", playing)
-                .putExtra("duration", state.durationMs)
+                .putExtra(appText(com.lastwave.app.R.string.details_duration), state.durationMs)
                 .putExtra("position", state.positionMs)
                 .putExtra("package", packageName)
         }
@@ -620,8 +622,8 @@ class MusicPlaybackService : MediaBrowserServiceCompat() {
             } else {
                 @Suppress("DEPRECATION") Notification.Builder(this)
             }.setSmallIcon(R.drawable.ic_launcher_logo)
-             .setContentTitle(musicPlayer.state.value.current?.title ?: "LastWave")
-             .setContentText(musicPlayer.state.value.current?.artist ?: "Music player")
+             .setContentTitle(musicPlayer.state.value.current?.title ?: appText(com.lastwave.app.R.string.set_about_title))
+             .setContentText(musicPlayer.state.value.current?.artist ?: appText(com.lastwave.app.R.string.ui_extra_ada1ad5126))
              .setOnlyAlertOnce(true)
              .build()
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

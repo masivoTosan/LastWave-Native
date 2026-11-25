@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.feed
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -254,11 +256,11 @@ class FeedViewModel @Inject constructor(
 
     fun loadTopGenres() {
         viewModelScope.launch(Dispatchers.IO) {
-            val stats = runCatching { genresRepository.fetchGenreStats("overall") }.getOrNull().orEmpty()
+            val stats = runCatching { genresRepository.fetchGenreStats(appText(com.lastwave.app.R.string.fr_period_all)) }.getOrNull().orEmpty()
             val list = if (stats.isNotEmpty()) {
                 stats.map { it.name.trim() }.filter { it.isNotBlank() }
             } else {
-                listOf("Pop", "Rock", "Hip-Hop", "Indie", "Electronic", "R&B", "Metal", "Jazz", "Classical", "Lo-Fi", "Country", "Alternative")
+                listOf(appText(com.lastwave.app.R.string.ui_pop_267a64), appText(com.lastwave.app.R.string.ui_rock_468d79), appText(com.lastwave.app.R.string.ui_hip_hop_2c8b31), appText(com.lastwave.app.R.string.ui_indie_c43a74), appText(com.lastwave.app.R.string.ui_electronic_622585), appText(com.lastwave.app.R.string.ui_r_b_fa9af5), appText(com.lastwave.app.R.string.ui_metal_90acb4), appText(com.lastwave.app.R.string.ui_jazz_0f940a), appText(com.lastwave.app.R.string.ui_classical_1dd412), appText(com.lastwave.app.R.string.ui_lo_fi_3c8354), appText(com.lastwave.app.R.string.ui_country_d523eb), appText(com.lastwave.app.R.string.ui_alternative_3b74e9))
             }
             _topGenres.value = list
         }
@@ -281,7 +283,7 @@ class FeedViewModel @Inject constructor(
         val excluded = recommendationExclusionKeys.replayCache.lastOrNull().orEmpty()
         (feedQuickPicks(feed) + feed.ytLikedSongs + feed.freshFinds)
             .filterNot { GeneratedTrack(it.title, it.artist).key in excluded }
-            .randomOrNull()?.let { playTrack(it, "Infinite Radio") }
+            .randomOrNull()?.let { playTrack(it, appText(com.lastwave.app.R.string.ui_infinite_radio_839559)) }
     }
 
     fun playMix(mix: FeedMix) = playTrack(mix.seed, mix.title)
@@ -547,7 +549,7 @@ class FeedViewModel @Inject constructor(
     fun playPodcastEpisode(
         episode: HomeShelfItem.PodcastEpisode,
         queue: List<HomeShelfItem.PodcastEpisode> = listOf(episode),
-        sourceLabel: String = "Podcasts",
+        sourceLabel: String = appText(com.lastwave.app.R.string.podcasts_title),
     ) {
         val tracks = queue.map { it.toPlayableTrack() }
         val index = queue.indexOfFirst { it.videoId == episode.videoId }.coerceAtLeast(0)
@@ -559,11 +561,11 @@ class FeedViewModel @Inject constructor(
         )
     }
 
-    fun playTrack(track: YouTubeMusicTrack, sourceLabel: String = "Feed") {
+    fun playTrack(track: YouTubeMusicTrack, sourceLabel: String = appText(com.lastwave.app.R.string.nav_feed)) {
         musicPlayer.play(track.toPlayableTrack(), sourceLabel = sourceLabel, startRadio = true)
     }
 
-    fun shuffleTracksQueue(tracks: List<YouTubeMusicTrack>, sourceLabel: String = "Feed") {
+    fun shuffleTracksQueue(tracks: List<YouTubeMusicTrack>, sourceLabel: String = appText(com.lastwave.app.R.string.nav_feed)) {
         if (tracks.isEmpty()) return
         val shuffled = tracks.shuffled()
         musicPlayer.playQueue(
@@ -574,7 +576,7 @@ class FeedViewModel @Inject constructor(
         )
     }
 
-    fun playTracksQueue(tracks: List<YouTubeMusicTrack>, startIndex: Int = 0, sourceLabel: String = "Feed") {
+    fun playTracksQueue(tracks: List<YouTubeMusicTrack>, startIndex: Int = 0, sourceLabel: String = appText(com.lastwave.app.R.string.nav_feed)) {
         if (tracks.isEmpty()) return
         val playable = tracks.map { it.toPlayableTrack() }
         musicPlayer.playQueue(
@@ -599,12 +601,12 @@ class FeedViewModel @Inject constructor(
         musicPlayer.playQueue(
             playable,
             startIndex = startIndex.coerceIn(0, playable.lastIndex.coerceAtLeast(0)),
-            sourceLabel = "Jump Back In",
+            sourceLabel = appText(com.lastwave.app.R.string.ui_jump_back_in_582e89),
             enableRadioContinuation = true,
         )
     }
 
-    fun playGeneratedQueue(tracks: List<GeneratedTrack>, startIndex: Int = 0, sourceLabel: String = "Heavy Rotation") {
+    fun playGeneratedQueue(tracks: List<GeneratedTrack>, startIndex: Int = 0, sourceLabel: String = appText(com.lastwave.app.R.string.ui_heavy_rotation_1e493f)) {
         if (tracks.isEmpty()) return
         val playable = tracks.map {
             PlayableTrack(
@@ -631,7 +633,7 @@ class FeedViewModel @Inject constructor(
     fun playArtistRadio(artist: FeedArtist) {
         viewModelScope.launch {
             val seeds = try {
-                innerTube.searchSongs("${artist.name} songs", limit = 5, prefetchStreams = false)
+                innerTube.searchSongs(appText(com.lastwave.app.R.string.ui_1_s_songs_9b614d, (artist.name).toString()), limit = 5, prefetchStreams = false)
             } catch (cancellation: CancellationException) {
                 throw cancellation
             } catch (_: Exception) {
@@ -687,7 +689,7 @@ class FeedViewModel @Inject constructor(
                 } else {
                     // Fallback to exact search query for this genre
                     val searchResults = try {
-                        innerTube.searchSongs("$query songs", limit = 25, prefetchStreams = false)
+                        innerTube.searchSongs(appText(com.lastwave.app.R.string.ui_1_s_songs_9b614d, (query).toString()), limit = 25, prefetchStreams = false)
                     } catch (cancellation: CancellationException) {
                         throw cancellation
                     } catch (_: Exception) {
@@ -742,7 +744,7 @@ class FeedViewModel @Inject constructor(
                 playlistId = mixes.firstOrNull { it.title.contains("Discover Mix", ignoreCase = true) }?.id
             }
             if (playlistId.isNullOrBlank()) {
-                val search = runCatching { innerTube.searchPlaylists("Discover Mix") }.getOrDefault(emptyList())
+                val search = runCatching { innerTube.searchPlaylists(appText(com.lastwave.app.R.string.ui_discover_mix_4c87f5)) }.getOrDefault(emptyList())
                 playlistId = search.firstOrNull { it.title.contains("Discover Mix", ignoreCase = true) }?.id
                     ?: search.firstOrNull()?.id
             }
@@ -765,12 +767,12 @@ class FeedViewModel @Inject constructor(
                 playlistId = mixes.firstOrNull { it.title.contains("Discover Mix", ignoreCase = true) }?.id
             }
             if (playlistId.isNullOrBlank()) {
-                val search = runCatching { innerTube.searchPlaylists("Discover Mix") }.getOrDefault(emptyList())
+                val search = runCatching { innerTube.searchPlaylists(appText(com.lastwave.app.R.string.ui_discover_mix_4c87f5)) }.getOrDefault(emptyList())
                 playlistId = search.firstOrNull { it.title.contains("Discover Mix", ignoreCase = true) }?.id
                     ?: search.firstOrNull()?.id
             }
             if (!playlistId.isNullOrBlank()) {
-                playPlaylistById(playlistId, "Discover Mix")
+                playPlaylistById(playlistId, appText(com.lastwave.app.R.string.ui_discover_mix_4c87f5))
             } else {
                 playInfiniteRadio()
             }
@@ -791,7 +793,7 @@ class FeedViewModel @Inject constructor(
             }
             if (queue.isNotEmpty()) {
                 val playable = queue.map { it.toPlayableTrack() }
-                musicPlayer.playQueue(playable, startIndex = 0, sourceLabel = "My Mix")
+                musicPlayer.playQueue(playable, startIndex = 0, sourceLabel = appText(com.lastwave.app.R.string.gen_mode_mix))
             }
         }
     }
@@ -805,7 +807,7 @@ class FeedViewModel @Inject constructor(
                 artworkUrl = tile.artworkUrl,
                 videoId = videoId.takeIf(String::isNotBlank),
             ),
-            sourceLabel = "Quick Picks",
+            sourceLabel = appText(com.lastwave.app.R.string.ui_quick_picks_d09a9b),
         )
     }
 

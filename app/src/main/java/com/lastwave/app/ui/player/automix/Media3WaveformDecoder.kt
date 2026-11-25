@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player.automix
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 import android.os.Handler
 import android.os.HandlerThread
@@ -103,7 +105,7 @@ internal suspend fun decodeWaveformPcm(
                 if (!continuation.isActive) return
                 val pcm = sink.window()
                 if (pcm != null) continuation.resume(pcm)
-                else continuation.resumeWithException(IllegalStateException("No cue-window PCM"))
+                else continuation.resumeWithException(IllegalStateException(appText(com.lastwave.app.R.string.ui_no_cue_window_pcm_c32446)))
             }
             sink.onFinished = { main.post { finish() } }
             preview.addListener(object : Player.Listener {

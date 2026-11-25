@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
 import com.lastwave.app.data.playlist.isLikedIn
@@ -723,7 +725,7 @@ class PlayerViewModel @Inject constructor(
                 } catch (error: CancellationException) {
                     throw error
                 } catch (error: Exception) {
-                    LyricsResult.Error(error.message ?: "Couldn't load lyrics")
+                    LyricsResult.Error(error.message ?: appText(com.lastwave.app.R.string.ui_couldn_t_load_lyrics_360572))
                 }
                 coroutineContext.ensureActive()
                 if (result is LyricsResult.Success || _lyricsState.value !is LyricsUiState.Success) {
@@ -847,10 +849,10 @@ class PlayerViewModel @Inject constructor(
                     ytMusicLibraryManager.refresh()
                     refreshCustomPlaylists()
                 }
-                _toastMessage.emit(if (anyAdded) "Added to playlist" else "Couldn't add to playlist")
+                _toastMessage.emit(if (anyAdded) appText(com.lastwave.app.R.string.ui_added_to_playlist_1edb4f) else appText(com.lastwave.app.R.string.ui_couldn_t_add_to_playlist_2d5b31))
             } catch (e: Exception) {
                 android.util.Log.e("PlayerViewModel", "Error adding track to playlists", e)
-                _toastMessage.emit("Couldn't add to playlist")
+                _toastMessage.emit(appText(com.lastwave.app.R.string.ui_couldn_t_add_to_playlist_2d5b31))
             }
         }
     }
@@ -883,7 +885,7 @@ class PlayerViewModel @Inject constructor(
             runCatching {
                 val playlist = playlistRepository.createCustom(title)
                 playlistRepository.addTrack(playlist.id, track.toGeneratedTrack())
-                _toastMessage.emit("Added to playlist")
+                _toastMessage.emit(appText(com.lastwave.app.R.string.ui_added_to_playlist_1edb4f))
             }
         }
     }
@@ -899,7 +901,7 @@ class PlayerViewModel @Inject constructor(
                         added = true
                     }
                 }
-                _toastMessage.emit(if (added) "Added to offline playlist" else "Already in offline playlist")
+                _toastMessage.emit(if (added) appText(com.lastwave.app.R.string.ui_added_to_offline_playlist_556f70) else appText(com.lastwave.app.R.string.ui_already_in_offline_playlist_7a3916))
             }
         }
     }
@@ -911,7 +913,7 @@ class PlayerViewModel @Inject constructor(
         viewModelScope.launch {
             runCatching {
                 localOfflineRepository.createPlaylist(clean, listOf(url))
-                _toastMessage.emit("Added to offline playlist")
+                _toastMessage.emit(appText(com.lastwave.app.R.string.ui_added_to_offline_playlist_556f70))
             }
         }
     }
@@ -920,13 +922,13 @@ class PlayerViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val liked = trackLikeController.toggle(track)
-                _toastMessage.emit(if (liked) "Added to Liked Songs" else "Removed from Liked Songs")
+                _toastMessage.emit(if (liked) appText(com.lastwave.app.R.string.ui_added_to_liked_songs_3ca337) else appText(com.lastwave.app.R.string.ui_removed_from_liked_songs_6950fe))
             } catch (cancellation: CancellationException) {
                 throw cancellation
             } catch (error: Exception) {
                 android.util.Log.e("PlayerViewModel", "Like toggle failed", error)
                 // emit, not tryEmit: this flow has no buffer, so tryEmit was always dropped.
-                _toastMessage.emit("Couldn't update Liked Songs")
+                _toastMessage.emit(appText(com.lastwave.app.R.string.ui_couldn_t_update_liked_songs_90ae54))
             }
         }
     }
@@ -939,7 +941,7 @@ class PlayerViewModel @Inject constructor(
                 throw cancellation
             } catch (error: Exception) {
                 android.util.Log.e("PlayerViewModel", "Like failed", error)
-                _toastMessage.emit("Couldn't update Liked Songs")
+                _toastMessage.emit(appText(com.lastwave.app.R.string.ui_couldn_t_update_liked_songs_90ae54))
             }
         }
     }

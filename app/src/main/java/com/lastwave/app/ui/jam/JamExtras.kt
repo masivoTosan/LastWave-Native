@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.jam
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -68,7 +70,7 @@ fun JamNoticeBanner(
         onDismiss()
     }
     val text = if (notice.retryAtMs > 0L) {
-        "One pause or change per minute. Try again at ${formatRetryClock(notice.retryAtMs)}."
+        appText(com.lastwave.app.R.string.ui_one_pause_or_change_per_minute_try_again_at_1_s_cce703, (formatRetryClock(notice.retryAtMs)).toString())
     } else {
         notice.message
     }
@@ -88,7 +90,7 @@ fun JamNoticeBanner(
                 modifier = Modifier.weight(1f),
             )
             TextButton(onClick = onDismiss) {
-                Text("OK", color = MaterialTheme.colorScheme.onErrorContainer, fontWeight = FontWeight.Bold)
+                Text(appText(com.lastwave.app.R.string.pl_scrobble_auth_ok), color = MaterialTheme.colorScheme.onErrorContainer, fontWeight = FontWeight.Bold)
             }
         }
     }
@@ -106,7 +108,7 @@ fun JamStationsList(
 ) {
     Column(modifier = modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(
-            text = "ALWAYS-ON ROOMS",
+            text = appText(com.lastwave.app.R.string.ui_always_on_rooms_70423e),
             fontSize = 11.sp,
             fontWeight = FontWeight.Bold,
             letterSpacing = 1.5.sp,
@@ -124,7 +126,7 @@ fun JamStationsList(
                 Column(modifier = Modifier.weight(1f)) {
                     Text(station.title, fontWeight = FontWeight.Bold, fontSize = 15.sp)
                     Text(
-                        text = counts[station.code]?.let { "$it listening · ${station.code}" }
+                        text = counts[station.code]?.let { appText(com.lastwave.app.R.string.ui_1_s_listening_2_s_0b08da, (it).toString(), (station.code).toString()) }
                             ?: "${station.blurb} · ${station.code}",
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -136,7 +138,7 @@ fun JamStationsList(
                     shape = RoundedCornerShape(10.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = accent, contentColor = onAccent),
                 ) {
-                    Text("Join", fontWeight = FontWeight.Bold)
+                    Text(appText(com.lastwave.app.R.string.ui_join_e0d731), fontWeight = FontWeight.Bold)
                 }
             }
         }
@@ -198,7 +200,7 @@ fun ReplyPreviewBar(
         )
         Column(modifier = Modifier.weight(1f).padding(horizontal = 10.dp, vertical = 4.dp)) {
             Text(
-                text = "Replying to ${message.userName}",
+                text = appText(com.lastwave.app.R.string.ui_replying_to_1_s_510012, (message.userName).toString()),
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
                 color = accent,
@@ -212,7 +214,7 @@ fun ReplyPreviewBar(
             )
         }
         IconButton(onClick = onCancel, modifier = Modifier.size(36.dp)) {
-            Icon(Icons.Filled.Close, contentDescription = "Cancel reply", modifier = Modifier.size(16.dp))
+            Icon(Icons.Filled.Close, contentDescription = appText(com.lastwave.app.R.string.ui_cancel_reply_bd62d2), modifier = Modifier.size(16.dp))
         }
     }
 }
@@ -239,23 +241,23 @@ fun HostActionButton(
     if (isRadio) {
         // Live stations have one admin and no co-hosts.
         TextButton(onClick = { onMakeAdmin(participant.userId) }, modifier = modifier) {
-            Text("Make admin", fontSize = 12.sp, color = accent, fontWeight = FontWeight.Bold)
+            Text(appText(com.lastwave.app.R.string.ui_make_admin_84ec1c), fontSize = 12.sp, color = accent, fontWeight = FontWeight.Bold)
         }
         return
     }
     when {
         participant.isCoHost -> TextButton(onClick = { onRevoke(participant.userId) }, modifier = modifier) {
-            Text("Remove host", fontSize = 12.sp, color = MaterialTheme.colorScheme.error)
+            Text(appText(com.lastwave.app.R.string.ui_remove_host_decfda), fontSize = 12.sp, color = MaterialTheme.colorScheme.error)
         }
         coHostId.isEmpty() -> TextButton(onClick = { onGrant(participant.userId) }, modifier = modifier) {
-            Text("Make host", fontSize = 12.sp, color = accent, fontWeight = FontWeight.Bold)
+            Text(appText(com.lastwave.app.R.string.ui_make_host_105c99), fontSize = 12.sp, color = accent, fontWeight = FontWeight.Bold)
         }
     }
 }
 
 /** Label for a participant's role badge. */
 fun roleBadge(p: ParticipantPayload, isRadio: Boolean = false): String =
-    if (isRadio) "ADMIN" else if (p.isCoHost) "CO-HOST" else "HOST"
+    if (isRadio) appText(com.lastwave.app.R.string.ui_extra_b521caa6e1) else if (p.isCoHost) appText(com.lastwave.app.R.string.ui_extra_f70ab04e71) else appText(com.lastwave.app.R.string.ui_extra_e645477f66)
 
 /** Read-only view of the admin's upcoming queue. */
 @Composable
@@ -268,14 +270,14 @@ fun JamUpNext(
 ) {
     Column(modifier = modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(
-            text = if (isAdmin) "UP NEXT · YOUR QUEUE IS SHARED" else "UP NEXT · ADMIN QUEUE",
+            text = if (isAdmin) appText(com.lastwave.app.R.string.ui_up_next_your_queue_is_shared_31c476) else appText(com.lastwave.app.R.string.ui_up_next_admin_queue_3b66a7),
             fontSize = 11.sp,
             fontWeight = FontWeight.Bold,
             letterSpacing = 1.5.sp,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         if (queue.isEmpty()) {
-            Text("Nothing queued.", fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(appText(com.lastwave.app.R.string.ui_nothing_queued_3ff488), fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
         } else {
             queue.take(maxItems).forEachIndexed { i, t ->
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -289,7 +291,7 @@ fun JamUpNext(
                 }
             }
             if (queue.size > maxItems) {
-                Text("+${queue.size - maxItems} more", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(appText(com.lastwave.app.R.string.ui_1_s_more_c7228e, (queue.size - maxItems).toString()), fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
     }
@@ -300,7 +302,7 @@ fun JamUpNext(
 fun JamCooldownHint(cooldownUntilMs: Long, modifier: Modifier = Modifier) {
     if (cooldownUntilMs <= 0L) return
     Text(
-        text = "Pause & skip locked until ${formatRetryClock(cooldownUntilMs)}",
+        text = appText(com.lastwave.app.R.string.ui_pause_skip_locked_until_1_s_f09c17, (formatRetryClock(cooldownUntilMs)).toString()),
         fontSize = 12.sp,
         color = MaterialTheme.colorScheme.onSurfaceVariant,
         modifier = modifier,

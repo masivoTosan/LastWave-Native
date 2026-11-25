@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -165,7 +167,7 @@ fun ExpressiveHeader(
                                 else MaterialTheme.colorScheme.onSurfaceVariant,
                             ),
                         ) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = appText(com.lastwave.app.R.string.lyshare_back_cd))
                         }
                         Spacer(Modifier.width(12.dp))
                     }

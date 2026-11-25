@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.discover
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
@@ -157,12 +159,12 @@ fun DiscoverScreen(onBack: () -> Unit = {}, viewModel: DiscoverViewModel = hiltV
             ExpressiveHeader(
                 modifier = headerModifier,
                 backdrop = headerBackdrop,
-            title = "Discover",
-            subtitle = "Discover fresh tracks",
+            title = appText(com.lastwave.app.R.string.ui_discover_4827ea),
+            subtitle = appText(com.lastwave.app.R.string.ui_discover_fresh_tracks_45e648),
             onBack = onBack,
             actions = {
-                HeaderActionIcon(Icons.Filled.BookmarkAdd, "Save as playlist", viewModel::saveAsPlaylist)
-                HeaderActionIcon(Icons.Filled.Shuffle, "Shuffle Recommendations", viewModel::surpriseMe)
+                HeaderActionIcon(Icons.Filled.BookmarkAdd, appText(com.lastwave.app.R.string.ui_save_as_playlist_995e4d), viewModel::saveAsPlaylist)
+                HeaderActionIcon(Icons.Filled.Shuffle, appText(com.lastwave.app.R.string.ui_shuffle_recommendations_d613c8), viewModel::surpriseMe)
             },
         )
             },
@@ -245,7 +247,7 @@ fun DiscoverScreen(onBack: () -> Unit = {}, viewModel: DiscoverViewModel = hiltV
                                         title = track.name,
                                         artist = track.artist,
                                         artworkUrl = track.artworkUrl,
-                                        sourceLabel = "Discover",
+                                        sourceLabel = appText(com.lastwave.app.R.string.ui_discover_4827ea),
                                         videoId = track.youtubeVideoIdOrNull(),
                                         durationMs = track.durationMs,
                                         onPlay = { playFromDiscover(track) },

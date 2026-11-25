@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.ui.graphics.Color
@@ -128,11 +130,11 @@ fun SignalPathDialog(
                         Text("♪", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
                     },
                     title = stringResource(R.string.sig_node_source),
-                    badge = if (report.bitPerfect) "LOSSLESS" else null,
+                    badge = if (report.bitPerfect) appText(com.lastwave.app.R.string.ui_lossless_f3b36f) else null,
                     isLast = false,
                 ) {
                     Text(report.sourceLabel, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
-                    Text("$srcKHz\n$srcBits bit", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                    Text(appText(com.lastwave.app.R.string.ui_1_s_2_s_bit_edd157, (srcKHz).toString(), (srcBits).toString()), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
                 }
 
                 // 2. DSP Stage
@@ -214,7 +216,7 @@ fun SignalPathDialog(
                         color = MaterialTheme.colorScheme.primary,
                     )
                     Text(outRateKHz, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
-                    Text("${report.outputBits} bit", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                    Text(appText(com.lastwave.app.R.string.ui_1_s_bit_f051aa, (report.outputBits).toString()), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
                     Spacer(Modifier.height(6.dp))
                     Text(stringResource(R.string.sig_flags), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline, fontWeight = FontWeight.SemiBold)
                     Text(
@@ -238,14 +240,14 @@ fun SignalPathDialog(
                     isLast = true,
                 ) {
                     Text(
-                        report.dacName ?: if (report.internalDirectActive) "Internal Hi-Res DAC" else "Android Default Output",
+                        report.dacName ?: if (report.internalDirectActive) appText(com.lastwave.app.R.string.ui_internal_hi_res_dac_79d302) else appText(com.lastwave.app.R.string.ui_android_default_output_f59518),
                         style = MaterialTheme.typography.bodyMedium.copy(
                             textDecoration = TextDecoration.Underline,
                         ),
                         fontWeight = FontWeight.Bold,
                     )
                     Text(outRateKHz, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
-                    Text("${report.outputBits} bit", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                    Text(appText(com.lastwave.app.R.string.ui_1_s_bit_f051aa, (report.outputBits).toString()), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
                 }
 
                 // Poweramp Fidelity & DSP Bottom Card
@@ -265,7 +267,7 @@ fun SignalPathDialog(
                         Column {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Text(
-                                    "Fidelity",
+                                    appText(com.lastwave.app.R.string.ui_fidelity_410d7d),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onSurface,
@@ -298,7 +300,7 @@ fun SignalPathDialog(
                         Column {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Text(
-                                    "DSP",
+                                    appText(com.lastwave.app.R.string.sig_node_dsp),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onSurface,

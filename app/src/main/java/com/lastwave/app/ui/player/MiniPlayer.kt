@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
 import com.lastwave.app.data.playlist.isLikedIn
@@ -555,7 +557,7 @@ internal fun MiniPlayer(
                         ) {
                             Icon(
                                 Icons.Filled.SkipNext,
-                                "Next",
+                                appText(com.lastwave.app.R.string.desc_next),
                                 tint = if (state.queueSize > 1) MaterialTheme.colorScheme.onSecondaryContainer
                                 else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f),
                             )
@@ -675,7 +677,7 @@ internal fun MiniPlayer(
                     ) {
                         Icon(
                             Icons.Filled.SkipNext,
-                            contentDescription = "Next",
+                            contentDescription = appText(com.lastwave.app.R.string.desc_next),
                             modifier = Modifier.size(22.dp),
                             tint = if (state.queueSize > 1) MaterialTheme.colorScheme.onSurfaceVariant
                             else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.38f),

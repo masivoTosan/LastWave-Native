@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -86,7 +88,7 @@ class ModulesViewModel @Inject constructor(
     fun saveAddon(id: String?, rawUrl: String) {
         val trimmed = com.lastwave.app.data.addon.AddonClient.normalizeBase(rawUrl)
         if (trimmed.isBlank()) {
-            _notice.value = "Addon URL cannot be empty"
+            _notice.value = appText(com.lastwave.app.R.string.ui_addon_url_cannot_be_empty_380f6c)
             return
         }
         viewModelScope.launch {
@@ -96,7 +98,7 @@ class ModulesViewModel @Inject constructor(
                 val client = com.lastwave.app.data.addon.AddonClient(trimmed, nativeSecrets = nativeSecrets)
                 val health = client.health()
                 val manifestRes = client.manifest()
-                val manifestName = manifestRes.getOrNull()?.displayName ?: "HTTP Addon"
+                val manifestName = manifestRes.getOrNull()?.displayName ?: appText(com.lastwave.app.R.string.ui_http_addon_b91a5b)
 
                 val current = httpAddons.value
                 val targetId = if (id.isNullOrBlank()) {
@@ -121,12 +123,12 @@ class ModulesViewModel @Inject constructor(
                 _addonHealthMap.value = _addonHealthMap.value + (targetId to health)
 
                 when (health) {
-                    is com.lastwave.app.data.addon.AddonHealth.Ok -> _notice.value = "Connected: $manifestName"
+                    is com.lastwave.app.data.addon.AddonHealth.Ok -> _notice.value = appText(com.lastwave.app.R.string.ui_connected_1_s_6c3de9, (manifestName).toString())
                     is com.lastwave.app.data.addon.AddonHealth.Unreachable -> _notice.value = "Saved, but connection failed: ${health.reason}"
-                    is com.lastwave.app.data.addon.AddonHealth.Rejected -> _notice.value = "Rejected: ${health.reason}"
+                    is com.lastwave.app.data.addon.AddonHealth.Rejected -> _notice.value = appText(com.lastwave.app.R.string.ui_rejected_1_s_a54c84, (health.reason).toString())
                 }
             } catch (e: Exception) {
-                _notice.value = "Error connecting: ${e.message}"
+                _notice.value = appText(com.lastwave.app.R.string.ui_error_connecting_1_s_86a4c8, (e.message).toString())
             } finally {
                 _busy.value = false
             }
@@ -138,7 +140,7 @@ class ModulesViewModel @Inject constructor(
             settingsPreferences.removeHttpAddon(id)
             _addonHealthMap.value = _addonHealthMap.value - id
             losslessMusicApi.invalidateCredentialsCache()
-            _notice.value = "Addon removed"
+            _notice.value = appText(com.lastwave.app.R.string.ui_addon_removed_262972)
         }
     }
 
@@ -153,7 +155,7 @@ class ModulesViewModel @Inject constructor(
                 settingsPreferences.setAddonEnabled(false)
                 _addonHealth.value = null
                 losslessMusicApi.invalidateCredentialsCache()
-                _notice.value = "Addon removed"
+                _notice.value = appText(com.lastwave.app.R.string.ui_addon_removed_262972)
             }
         }
     }
@@ -191,9 +193,9 @@ class ModulesViewModel @Inject constructor(
                     val health = com.lastwave.app.data.addon.AddonClient(current, nativeSecrets = nativeSecrets).health()
                     _addonHealth.value = health
                     _notice.value = when (health) {
-                        is com.lastwave.app.data.addon.AddonHealth.Ok -> "Addon is active and reachable"
-                        is com.lastwave.app.data.addon.AddonHealth.Unreachable -> "Addon unreachable: ${health.reason}"
-                        is com.lastwave.app.data.addon.AddonHealth.Rejected -> "Addon rejected: ${health.reason}"
+                        is com.lastwave.app.data.addon.AddonHealth.Ok -> appText(com.lastwave.app.R.string.ui_addon_is_active_and_reachable_7e4df1)
+                        is com.lastwave.app.data.addon.AddonHealth.Unreachable -> appText(com.lastwave.app.R.string.ui_addon_unreachable_1_s_d675ae, (health.reason).toString())
+                        is com.lastwave.app.data.addon.AddonHealth.Rejected -> appText(com.lastwave.app.R.string.ui_addon_rejected_1_s_2cfdce, (health.reason).toString())
                     }
                 } finally {
                     _busy.value = false
@@ -210,7 +212,7 @@ class ModulesViewModel @Inject constructor(
             try {
                 when (val result = moduleManager.install(uri)) {
                     is ModuleInstallResult.Installed ->
-                        _notice.value = "Installed ${result.module.manifest.name}"
+                        _notice.value = appText(com.lastwave.app.R.string.ui_installed_1_s_56a2b8, (result.module.manifest.name).toString())
                     is ModuleInstallResult.Rejected ->
                         _notice.value = result.reason
                 }
@@ -231,7 +233,7 @@ class ModulesViewModel @Inject constructor(
     fun remove(id: String) {
         viewModelScope.launch {
             val ok = runCatching { moduleManager.remove(id) }.getOrDefault(false)
-            _notice.value = if (ok) "Module removed" else "Remove failed"
+            _notice.value = if (ok) appText(com.lastwave.app.R.string.ui_module_removed_a52241) else appText(com.lastwave.app.R.string.ui_remove_failed_debe01)
             refreshTick.value += 1
         }
     }

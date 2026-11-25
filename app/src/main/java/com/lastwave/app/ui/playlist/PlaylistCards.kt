@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.playlist
 
+import com.lastwave.app.util.appText
+
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -243,7 +245,7 @@ internal fun PlaylistCard(
             Column(Modifier.weight(1f)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
-                        playlist.title,
+                        if (playlist.mode == LIKED_SONGS_MODE) stringResource(R.string.spotify_liked_songs_title) else playlist.title,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         maxLines = 1,
@@ -433,7 +435,7 @@ internal fun DownloadsHeroCard(
 
             Column(Modifier.weight(1f)) {
                 Text(
-                    text = "Downloads",
+                    text = appText(com.lastwave.app.R.string.ui_downloads_a862c2),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = contentColor,
@@ -445,7 +447,7 @@ internal fun DownloadsHeroCard(
                     text = if (downloadedCount > 0) {
                         stringResource(R.string.pd_track_count, downloadedCount)
                     } else {
-                        "0 tracks"
+                        appText(com.lastwave.app.R.string.ui_0_tracks_5ab8a8)
                     },
                     style = MaterialTheme.typography.bodySmall,
                     color = contentColor.copy(alpha = 0.78f),
@@ -545,7 +547,7 @@ internal fun LocalSongsHeroCard(
 
             Column(Modifier.weight(1f)) {
                 Text(
-                    text = "Local songs",
+                    text = appText(com.lastwave.app.R.string.ui_local_songs_350153),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = contentColor,
@@ -678,7 +680,7 @@ internal fun SpotifyPlaylistCard(
                     text = when {
                         isLiked -> "Spotify • ${trackCount?.let { stringResource(R.string.pl_yt_tracks, it) } ?: stringResource(R.string.spotify_liked_songs_sub)}"
                         trackCount != null -> "Spotify • ${stringResource(R.string.pl_yt_tracks, trackCount)}"
-                        else -> "Spotify"
+                        else -> appText(com.lastwave.app.R.string.spotify_playlists_section_title)
                     },
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,

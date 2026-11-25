@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player.automix
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -104,7 +106,7 @@ internal fun AutoMixDeckView(
                     // Own layer: the playhead redraws every frame without re-recording the waveforms.
                     Canvas(
                         Modifier.fillMaxSize().graphicsLayer().semantics {
-                            contentDescription = "Transition waveform: ${view.outgoing.title} into ${view.incoming.title}"
+                            contentDescription = appText(com.lastwave.app.R.string.ui_transition_waveform_1_s_into_2_s_eb9507, (view.outgoing.title).toString(), (view.incoming.title).toString())
                         },
                     ) {
                         drawMix(view)
@@ -120,11 +122,11 @@ internal fun AutoMixDeckView(
                     Modifier.fillMaxWidth().padding(bottom = 8.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    SpectrumLabel("Bass", BassColor)
+                    SpectrumLabel(appText(com.lastwave.app.R.string.autoeq_bass), BassColor)
                     Spacer(Modifier.width(12.dp))
-                    SpectrumLabel("Mid", MidColor)
+                    SpectrumLabel(appText(com.lastwave.app.R.string.ui_mid_9a6af7), MidColor)
                     Spacer(Modifier.width(12.dp))
-                    SpectrumLabel("Air", AirColor)
+                    SpectrumLabel(appText(com.lastwave.app.R.string.ui_air_ddd068), AirColor)
                     Spacer(Modifier.weight(1f))
                     Text(
                         view.bars?.let { "$it bars · " }.orEmpty() + "${(view.overlapMs / 1_000.0).roundToInt()} s",
@@ -204,7 +206,7 @@ private fun WaveformNotice(status: WaveformPreviewStatus, modifier: Modifier) {
     Box(modifier, contentAlignment = Alignment.Center) {
         if (status == WaveformPreviewStatus.LOADING) {
             Text(
-                "Preparing waveform…",
+                appText(com.lastwave.app.R.string.ui_preparing_waveform_d78864),
                 style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp, fontWeight = FontWeight.Normal),
                 color = StudioContent.copy(alpha = 0.55f),
                 modifier = Modifier.background(StudioPlot.copy(alpha = 0.9f), RoundedCornerShape(4.dp)).padding(8.dp),

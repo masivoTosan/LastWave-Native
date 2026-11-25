@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.Spring
@@ -33,7 +35,7 @@ import androidx.compose.ui.unit.dp
 fun ExpressiveRefreshButton(
     isRefreshing: Boolean,
     onClick: () -> Unit,
-    contentDescription: String = "Refresh",
+    contentDescription: String = appText(com.lastwave.app.R.string.ytimp_refresh),
     modifier: Modifier = Modifier,
     iconSize: Dp = 20.dp,
 ) {

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.stats
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -272,7 +274,7 @@ fun DonutConcentrationChart(
                 color = MaterialTheme.colorScheme.onSurface,
             )
             Text(
-                text = "Top 3 share",
+                text = appText(com.lastwave.app.R.string.ui_top_3_share_c44458),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -471,7 +473,7 @@ fun RankedTrackCard(
                     )
                     Spacer(Modifier.height(2.dp))
                     Text(
-                        text = "${track.playCount} plays \u2022 ${track.artist}",
+                        text = appText(com.lastwave.app.R.string.ui_1_s_plays_2_s_e5ff95, (track.playCount).toString(), (track.artist).toString()),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 1,
@@ -518,7 +520,7 @@ fun PersonalRecordsCard(records: PersonalRecordsData) {
     ) {
         Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
             Text(
-                text = "Personal records",
+                text = appText(com.lastwave.app.R.string.ui_personal_records_05223a),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface,
@@ -527,30 +529,30 @@ fun PersonalRecordsCard(records: PersonalRecordsData) {
                 icon = Icons.Filled.Star,
                 iconContainer = MaterialTheme.colorScheme.primaryContainer,
                 iconTint = MaterialTheme.colorScheme.onPrimaryContainer,
-                title = "Best day",
-                value = if (records.bestDayPlays > 0) "${records.bestDayPlays} plays (${records.bestDayDurationLabel})" else "0 plays",
+                title = appText(com.lastwave.app.R.string.ui_best_day_d62946),
+                value = if (records.bestDayPlays > 0) "${records.bestDayPlays} plays (${records.bestDayDurationLabel})" else appText(com.lastwave.app.R.string.details_zero_plays),
                 subtitle = records.bestDayDate,
             )
             PersonalRecordRow(
                 icon = Icons.Filled.AutoAwesome,
                 iconContainer = MaterialTheme.colorScheme.tertiaryContainer,
                 iconTint = MaterialTheme.colorScheme.onTertiaryContainer,
-                title = "Best week",
-                value = if (records.bestWeekPlays > 0) "${records.bestWeekPlays} plays (${records.bestWeekDurationLabel})" else "0 plays",
+                title = appText(com.lastwave.app.R.string.ui_best_week_d74574),
+                value = if (records.bestWeekPlays > 0) "${records.bestWeekPlays} plays (${records.bestWeekDurationLabel})" else appText(com.lastwave.app.R.string.details_zero_plays),
             )
             PersonalRecordRow(
                 icon = Icons.Filled.CalendarMonth,
                 iconContainer = MaterialTheme.colorScheme.secondaryContainer,
                 iconTint = MaterialTheme.colorScheme.onSecondaryContainer,
-                title = "Best month",
-                value = if (records.bestMonthPlays > 0) "${records.bestMonthPlays} plays (${records.bestMonthDurationLabel})" else "0 plays",
+                title = appText(com.lastwave.app.R.string.ui_best_month_54673a),
+                value = if (records.bestMonthPlays > 0) "${records.bestMonthPlays} plays (${records.bestMonthDurationLabel})" else appText(com.lastwave.app.R.string.details_zero_plays),
             )
             PersonalRecordRow(
                 icon = Icons.Filled.Bolt,
                 iconContainer = MaterialTheme.colorScheme.errorContainer,
                 iconTint = MaterialTheme.colorScheme.onErrorContainer,
-                title = "Longest streak",
-                value = "${records.longestStreakDays} days",
+                title = appText(com.lastwave.app.R.string.ui_longest_streak_5800ff),
+                value = appText(com.lastwave.app.R.string.ui_1_s_days_b2de92, (records.longestStreakDays).toString()),
             )
         }
     }
@@ -617,7 +619,7 @@ fun WeeklyRhythmCard(rhythm: WeeklyRhythmData) {
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
             Text(
-                text = "Weekly rhythm",
+                text = appText(com.lastwave.app.R.string.ui_weekly_rhythm_344c21),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface,
@@ -633,7 +635,7 @@ fun WeeklyRhythmCard(rhythm: WeeklyRhythmData) {
                     )
                     Spacer(Modifier.height(4.dp))
                     Text(
-                        text = "Weekday average",
+                        text = appText(com.lastwave.app.R.string.ui_weekday_average_34b54c),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -647,7 +649,7 @@ fun WeeklyRhythmCard(rhythm: WeeklyRhythmData) {
                     )
                     Spacer(Modifier.height(4.dp))
                     Text(
-                        text = "Weekend average",
+                        text = appText(com.lastwave.app.R.string.ui_weekend_average_15af3a),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -666,7 +668,7 @@ fun MonthComparisonCard(comparison: MonthComparisonData) {
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
             Text(
-                text = "This month vs last",
+                text = appText(com.lastwave.app.R.string.ui_this_month_vs_last_6b0f1d),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface,
@@ -678,7 +680,7 @@ fun MonthComparisonCard(comparison: MonthComparisonData) {
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "This month",
+                    text = appText(com.lastwave.app.R.string.ui_this_month_1b4785),
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -713,7 +715,7 @@ fun MonthComparisonCard(comparison: MonthComparisonData) {
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "Last month",
+                    text = appText(com.lastwave.app.R.string.ui_last_month_9cce45),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -736,13 +738,13 @@ fun HourlyRhythmChart(bars: List<HourlyRhythmBar>) {
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
             Text(
-                text = "Hourly rhythm",
+                text = appText(com.lastwave.app.R.string.ui_hourly_rhythm_2020b2),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface,
             )
             Text(
-                text = "Listening frequency by hour across all recorded sessions.",
+                text = appText(com.lastwave.app.R.string.ui_listening_frequency_by_hour_across_all_recorded__e1a93b),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -795,13 +797,13 @@ fun ActivityHeatmapGrid(days: List<HeatmapDay>) {
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
             Text(
-                text = "Last 12 weeks",
+                text = appText(com.lastwave.app.R.string.ui_last_12_weeks_bded67),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface,
             )
             Text(
-                text = "Daily listening activity across the past 3 months.",
+                text = appText(com.lastwave.app.R.string.ui_daily_listening_activity_across_the_past_3_month_54f929),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
@@ -841,7 +843,7 @@ fun ActivityHeatmapGrid(days: List<HeatmapDay>) {
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "Less",
+                    text = appText(com.lastwave.app.R.string.ui_less_526cb7),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -864,7 +866,7 @@ fun ActivityHeatmapGrid(days: List<HeatmapDay>) {
                 }
                 Spacer(Modifier.width(6.dp))
                 Text(
-                    text = "More",
+                    text = appText(com.lastwave.app.R.string.ui_more_4bab2d),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -905,13 +907,13 @@ fun ConsistencyScoreCard(
             ) {
                 Column {
                     Text(
-                        text = "Rhythm & Consistency",
+                        text = appText(com.lastwave.app.R.string.ui_rhythm_consistency_c6492e),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
-                        text = "Sleep tracker inspired flow analysis",
+                        text = appText(com.lastwave.app.R.string.ui_sleep_tracker_inspired_flow_analysis_e10c92),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -977,7 +979,7 @@ fun ConsistencyScoreCard(
                             color = MaterialTheme.colorScheme.onSurface,
                         )
                         Text(
-                            text = "Score",
+                            text = appText(com.lastwave.app.R.string.ui_score_489f48),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -999,8 +1001,8 @@ fun ConsistencyScoreCard(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
-                            Text("Avg. Session", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text("${data.avgSessionMinutes}m", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
+                            Text(appText(com.lastwave.app.R.string.ui_avg_session_48116e), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.ui_extra_830877d1ed, (data.avgSessionMinutes).toString()), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
                         }
                     }
                     Surface(
@@ -1013,8 +1015,8 @@ fun ConsistencyScoreCard(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
-                            Text("Streak", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text("${data.streakDays} days", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
+                            Text(appText(com.lastwave.app.R.string.ui_streak_ac4792), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.ui_1_s_days_b2de92, (data.streakDays).toString()), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
                         }
                     }
                     Surface(
@@ -1027,7 +1029,7 @@ fun ConsistencyScoreCard(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween,
                         ) {
-                            Text("Active Days", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(appText(com.lastwave.app.R.string.ui_active_days_0ebfff), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                             Text("${data.activeDaysThisWeek} / 7", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
                         }
                     }
@@ -1061,13 +1063,13 @@ fun ListeningStagesCard(
         ) {
             Column {
                 Text(
-                    text = "Listening Stages",
+                    text = appText(com.lastwave.app.R.string.ui_listening_stages_871a29),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
                 )
                 Text(
-                    text = "Deep focus vs. daily flow vs. discovery",
+                    text = appText(com.lastwave.app.R.string.ui_deep_focus_vs_daily_flow_vs_discovery_fe9ed7),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

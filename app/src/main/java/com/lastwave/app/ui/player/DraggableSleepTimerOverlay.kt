@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
@@ -210,7 +212,7 @@ fun DraggableSleepTimerOverlay(
                         ) {
                             Icon(
                                 imageVector = Icons.Filled.Timer,
-                                contentDescription = "Sleep Timer",
+                                contentDescription = appText(com.lastwave.app.R.string.ui_sleep_timer_ef2998),
                                 tint = MaterialTheme.colorScheme.primary,
                                 modifier = Modifier.size(if (hours > 0) 12.dp else 14.dp),
                             )
@@ -274,7 +276,7 @@ fun DraggableSleepTimerOverlay(
                         ) {
                             Icon(
                                 imageVector = Icons.Filled.Close,
-                                contentDescription = "Cancel sleep timer",
+                                contentDescription = appText(com.lastwave.app.R.string.ui_cancel_sleep_timer_44e2c7),
                                 tint = if (hoveringClose) MaterialTheme.colorScheme.onErrorContainer
                                 else MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.size(26.dp),

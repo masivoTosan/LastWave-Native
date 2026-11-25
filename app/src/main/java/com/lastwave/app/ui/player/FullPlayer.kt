@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.data.local.SeekbarStyle
 import androidx.compose.material.icons.outlined.AddCircleOutline
 import androidx.compose.material.icons.filled.CheckCircle
@@ -1150,7 +1152,7 @@ internal fun FullPlayer(
                             ) {
                                 Icon(
                                     if (currentTab != FullPlayerTab.NOW_PLAYING) Icons.Filled.ArrowBack else Icons.Filled.ExpandMore,
-                                    if (currentTab != FullPlayerTab.NOW_PLAYING) "Back to player" else "Minimize player",
+                                    if (currentTab != FullPlayerTab.NOW_PLAYING) appText(com.lastwave.app.R.string.ui_back_to_player_a153c9) else appText(com.lastwave.app.R.string.ui_minimize_player_a5a19f),
                                     modifier = Modifier.size(26.dp),
                                 )
                             }
@@ -1177,8 +1179,8 @@ internal fun FullPlayer(
                             ) {
                                 Text(
                                     when (currentTab) {
-                                        FullPlayerTab.NOW_PLAYING -> "NOW PLAYING"
-                                        FullPlayerTab.LYRICS -> "LYRICS"
+                                        FullPlayerTab.NOW_PLAYING -> appText(com.lastwave.app.R.string.ui_now_playing_084473)
+                                        FullPlayerTab.LYRICS -> appText(com.lastwave.app.R.string.lyshare_mode_lyrics)
                                         FullPlayerTab.QUEUE -> "PLAYING QUEUE"
                                     },
                                     style = MaterialTheme.typography.labelMedium,
@@ -1188,9 +1190,9 @@ internal fun FullPlayer(
                                 )
                                 Text(
                                     if (currentTab == FullPlayerTab.LYRICS) {
-                                        "${track.title} • ${track.artist}"
+                                        appText(com.lastwave.app.R.string.ly_sync_badge, (track.title).toString(), (track.artist).toString())
                                     } else {
-                                        state.sourceLabel.takeIf { it.isNotBlank() } ?: "LastWave"
+                                        state.sourceLabel.takeIf { it.isNotBlank() } ?: appText(com.lastwave.app.R.string.set_about_title)
                                     },
                                     style = MaterialTheme.typography.bodySmall,
                                     color = if (isThemeLight) Color(0xFF444448) else Color.White.copy(alpha = 0.70f),
@@ -1243,7 +1245,7 @@ internal fun FullPlayer(
                                     ) {
                                         Icon(
                                             imageVector = if (isQueueLockedState) Icons.Filled.Lock else Icons.Filled.LockOpen,
-                                            contentDescription = if (isQueueLockedState) "Unlock queue" else "Lock queue",
+                                            contentDescription = if (isQueueLockedState) appText(com.lastwave.app.R.string.ui_unlock_queue_7da814) else appText(com.lastwave.app.R.string.ui_lock_queue_f20e02),
                                             modifier = Modifier.size(22.dp),
                                         )
                                     }
@@ -1262,7 +1264,7 @@ internal fun FullPlayer(
                                 ) {
                                     Icon(
                                         Icons.Filled.MoreVert,
-                                        "Song options",
+                                        appText(com.lastwave.app.R.string.dl_song_options_cd),
                                         modifier = Modifier.size(22.dp),
                                     )
                                 }
@@ -2042,7 +2044,7 @@ internal fun FullPlayer(
                                     overflow = TextOverflow.Ellipsis,
                                 )
                                 Text(
-                                    "Tap to retry",
+                                    appText(com.lastwave.app.R.string.ui_tap_to_retry_4f95ef),
                                     style = MaterialTheme.typography.labelSmall,
                                     color = MaterialTheme.colorScheme.onErrorContainer.copy(alpha = 0.8f),
                                 )
@@ -2051,7 +2053,7 @@ internal fun FullPlayer(
                                 onClick = hapticClick(action = player::clearError),
                                 modifier = Modifier.size(28.dp),
                             ) {
-                                Icon(Icons.Filled.Close, "Dismiss error", modifier = Modifier.size(18.dp))
+                                Icon(Icons.Filled.Close, appText(com.lastwave.app.R.string.ui_dismiss_error_347aaa), modifier = Modifier.size(18.dp))
                             }
                         }
                     }

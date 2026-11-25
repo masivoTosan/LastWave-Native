@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.navigation
 
+import com.lastwave.app.util.appText
+
 /**
  * Route constants for the whole app. Declaring the full set up front — even
  * though only [Login] has a screen behind it yet — means NavGraph.kt's
@@ -12,21 +14,21 @@ sealed class Screen(val route: String) {
     data object MainShell : Screen("main_shell")
 
     // Bottom-nav swipeable tabs (Home module wires these + the pager together)
-    data object Home : Screen("home")
-    data object Create : Screen("create")
-    data object Playlist : Screen("playlist")
+    data object Home : Screen(appText(com.lastwave.app.R.string.feed_home))
+    data object Create : Screen(appText(com.lastwave.app.R.string.common_create))
+    data object Playlist : Screen(appText(com.lastwave.app.R.string.ui_playlist_cd95b4))
 
     // Pushed screens, slide-in from the right (matches PAGE_TRANSITIONS in nav.js)
-    data object Discover : Screen("discover")
-    data object Genres : Screen("genres")
+    data object Discover : Screen(appText(com.lastwave.app.R.string.ui_discover_4827ea))
+    data object Genres : Screen(appText(com.lastwave.app.R.string.ui_genres_96817a))
     data object ListeningStats : Screen("listening_stats")
     data object Search : Screen("search?q={q}") {
-        fun createRoute(query: String = "") = if (query.isBlank()) "search" else "search?q=${encodeArg(query)}"
+        fun createRoute(query: String = "") = if (query.isBlank()) appText(com.lastwave.app.R.string.search_cd) else "search?q=${encodeArg(query)}"
     }
-    data object Settings : Screen("settings")
-    data object Storage : Screen("storage")
-    data object Friends : Screen("friends")
-    data object Downloads : Screen("downloads")
+    data object Settings : Screen(appText(com.lastwave.app.R.string.settings))
+    data object Storage : Screen(appText(com.lastwave.app.R.string.settings_storage_title))
+    data object Friends : Screen(appText(com.lastwave.app.R.string.ui_friends_c11d5e))
+    data object Downloads : Screen(appText(com.lastwave.app.R.string.ui_downloads_a862c2))
     data object ProviderModules : Screen("provider_modules")
     data object HomeSections : Screen("home_sections")
     data object ExcludedSongs : Screen("excluded_songs")
@@ -37,11 +39,11 @@ sealed class Screen(val route: String) {
     /** The session cookie pasted in by hand, without the browser sign-in. */
     data object SpotifyTokenImport : Screen("spotify_token_import")
     data object Jam : Screen("jam?code={code}") {
-        fun createRoute(code: String? = null) = if (code.isNullOrBlank()) "jam" else "jam?code=${encodeArg(code)}"
+        fun createRoute(code: String? = null) = if (code.isNullOrBlank()) appText(com.lastwave.app.R.string.menu_quick_jam) else "jam?code=${encodeArg(code)}"
     }
     data object ExternalPlaylistImport : Screen("external_playlist_import")
     data object NewReleases : Screen("new_releases")
-    data object Podcasts : Screen("podcasts")
+    data object Podcasts : Screen(appText(com.lastwave.app.R.string.podcasts_title))
     data object PodcastShow : Screen("podcast_show/{showId}") {
         fun createRoute(showId: String) = "podcast_show/${encodeArg(showId)}"
     }

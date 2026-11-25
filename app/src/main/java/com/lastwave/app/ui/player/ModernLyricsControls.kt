@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.data.local.SeekbarStyle
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -422,7 +424,7 @@ internal fun ModernLyricsControls(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Text(
-                            text = "Lyrics size: ${(currentDisplayScale * 100).roundToInt()}%",
+                            text = appText(com.lastwave.app.R.string.ui_lyrics_size_1_s_a1cb8a, ((currentDisplayScale * 100).roundToInt()).toString()),
                             style = MaterialTheme.typography.labelMedium,
                             fontWeight = FontWeight.SemiBold,
                             color = Color.White.copy(alpha = 0.90f),
@@ -439,7 +441,7 @@ internal fun ModernLyricsControls(
                                 modifier = Modifier.height(26.dp),
                             ) {
                                 Text(
-                                    "Reset",
+                                    appText(com.lastwave.app.R.string.set_eq_reset),
                                     style = MaterialTheme.typography.labelSmall,
                                     color = MaterialTheme.colorScheme.primary,
                                 )
@@ -518,7 +520,7 @@ internal fun ModernLyricsControls(
                 ) {
                     Icon(
                         if (isFullscreen) Icons.Filled.FullscreenExit else Icons.Filled.Fullscreen,
-                        contentDescription = if (isFullscreen) "Exit fullscreen lyrics" else "Fullscreen lyrics",
+                        contentDescription = if (isFullscreen) appText(com.lastwave.app.R.string.ui_exit_fullscreen_lyrics_d2e82d) else appText(com.lastwave.app.R.string.ui_fullscreen_lyrics_2f35af),
                         modifier = Modifier.size(24.dp),
                         tint = Color.White.copy(alpha = 0.90f),
                     )
@@ -553,7 +555,7 @@ internal fun ModernLyricsControls(
             ) {
                 Icon(
                     Icons.Filled.MoreVert,
-                    contentDescription = "Lyrics options",
+                    contentDescription = appText(com.lastwave.app.R.string.ui_lyrics_options_5fa2b6),
                     modifier = Modifier.size(24.dp),
                     tint = Color.White.copy(alpha = 0.90f),
                 )
@@ -686,7 +688,7 @@ internal fun ModernLyricsControls(
                 ) {
                     Icon(
                         Icons.Filled.SkipPrevious,
-                        "Previous",
+                        appText(com.lastwave.app.R.string.desc_previous),
                         Modifier.size(24.dp),
                         tint = Color.White.copy(alpha = 0.94f),
                     )
@@ -725,7 +727,7 @@ internal fun ModernLyricsControls(
                 ) {
                     Icon(
                         Icons.Filled.SkipNext,
-                        "Next",
+                        appText(com.lastwave.app.R.string.desc_next),
                         Modifier.size(24.dp),
                         tint = Color.White.copy(alpha = 0.94f),
                     )
@@ -805,7 +807,7 @@ internal fun LyricsOptionsMenuDialog(
                         }
                     }
                     Text(
-                        text = "Lyrics options",
+                        text = appText(com.lastwave.app.R.string.ui_lyrics_options_5fa2b6),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -819,7 +821,7 @@ internal fun LyricsOptionsMenuDialog(
                     ) {
                         Icon(
                             Icons.Filled.Close,
-                            contentDescription = "Close",
+                            contentDescription = appText(com.lastwave.app.R.string.recognize_close),
                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.size(20.dp),
                         )
@@ -828,8 +830,8 @@ internal fun LyricsOptionsMenuDialog(
 
                 // Provider and Share sit side by side as one connected pair.
                 val actions = listOfNotNull(
-                    onOpenLyricsSource?.let { Triple(Icons.Filled.Lyrics, "Provider", it) },
-                    if (canShareLyrics) Triple(Icons.Filled.Share, "Share lyrics", onShareLyrics) else null,
+                    onOpenLyricsSource?.let { Triple(Icons.Filled.Lyrics, appText(com.lastwave.app.R.string.details_provider), it) },
+                    if (canShareLyrics) Triple(Icons.Filled.Share, appText(com.lastwave.app.R.string.lyshare_button_cd), onShareLyrics) else null,
                 )
                 if (actions.isNotEmpty()) {
                     Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -860,7 +862,7 @@ internal fun LyricsOptionsMenuDialog(
                 var localScale by remember(lyricsFontScale) { mutableFloatStateOf(lyricsFontScale) }
                 Column {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text("Text size", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurface)
+                        Text(appText(com.lastwave.app.R.string.ui_text_size_3cc6e1), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurface)
                         Text(
                             "${(localScale * 100).roundToInt()}%",
                             style = MaterialTheme.typography.titleMedium,
@@ -880,7 +882,7 @@ internal fun LyricsOptionsMenuDialog(
                                 contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp),
                                 modifier = Modifier.height(32.dp),
                             ) {
-                                Text("Reset", style = MaterialTheme.typography.labelLarge)
+                                Text(appText(com.lastwave.app.R.string.set_eq_reset), style = MaterialTheme.typography.labelLarge)
                             }
                         }
                     }
@@ -909,9 +911,9 @@ internal fun LyricsOptionsMenuDialog(
                 val onCenteredChange = alignment.onCenteredChange
                 if (onCenteredChange != null) {
                     Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        Text("Alignment", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurface)
+                        Text(appText(com.lastwave.app.R.string.ui_alignment_7f8c51), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurface)
                         Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                            listOf(false to "Auto", true to "Center").forEachIndexed { index, (centered, label) ->
+                            listOf(false to appText(com.lastwave.app.R.string.autoeq_preamp_auto), true to appText(com.lastwave.app.R.string.ui_center_a23911)).forEachIndexed { index, (centered, label) ->
                                 val selected = alignment.centered == centered
                                 LyricsOptionsPill(
                                     selected = selected,
@@ -934,7 +936,7 @@ internal fun LyricsOptionsMenuDialog(
 
                 LyricsOptionsRow(
                     Icons.Filled.Palette,
-                    "Lyrics style",
+                    appText(com.lastwave.app.R.string.ui_lyrics_style_635601),
                     onClick = { showStyleDialog = true },
                 ) {
                     Text(
@@ -963,13 +965,13 @@ internal fun LyricsOptionsMenuDialog(
                 }
 
                 if (translationAvailable) {
-                    LyricsOptionsRow(Icons.Filled.Translate, "Translate lyrics", onToggleTranslation) {
+                    LyricsOptionsRow(Icons.Filled.Translate, appText(com.lastwave.app.R.string.ly_translate_cd), onToggleTranslation) {
                         androidx.compose.material3.Switch(
                             checked = displayMode == LyricsDisplayMode.Translated,
                             onCheckedChange = { onToggleTranslation() },
                         )
                     }
-                    LyricsOptionsRow(Icons.Filled.Language, "Romanize lyrics", onToggleRomanization) {
+                    LyricsOptionsRow(Icons.Filled.Language, appText(com.lastwave.app.R.string.ly_romanize_cd), onToggleRomanization) {
                         androidx.compose.material3.Switch(
                             checked = displayMode == LyricsDisplayMode.Romanized,
                             onCheckedChange = { onToggleRomanization() },
@@ -980,7 +982,7 @@ internal fun LyricsOptionsMenuDialog(
                 if (onOpenLyricsOffset != null) {
                     LyricsOptionsRow(
                         Icons.Filled.Timer,
-                        "Sync offset",
+                        appText(com.lastwave.app.R.string.ui_sync_offset_dd9f6f),
                         onClick = {
                             onDismiss()
                             onOpenLyricsOffset()
@@ -1008,7 +1010,7 @@ internal fun LyricsOptionsMenuDialog(
                         .fillMaxWidth()
                         .height(38.dp),
                 ) {
-                    Text("Done", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold)
+                    Text(appText(com.lastwave.app.R.string.common_done), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold)
                 }
             }
         }

@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.common
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -75,7 +77,7 @@ data class TrackMiniTrayData(
     val album: String? = null,
     val artworkUrl: String? = null,
     val videoId: String? = null,
-    val sourceLabel: String = "LastWave",
+    val sourceLabel: String = appText(com.lastwave.app.R.string.set_about_title),
     val onPlay: (() -> Unit)? = null,
     val durationMs: Long? = null,
 ) {
@@ -196,17 +198,17 @@ fun TrackMiniTraySheet(
 
             val rows = buildList<@Composable (GroupPosition) -> Unit> {
                 // 1. Play
-                add { pos -> MiniTrayRow(Icons.Filled.PlayArrow, "Play", position = pos, onClick = ::play) }
+                add { pos -> MiniTrayRow(Icons.Filled.PlayArrow, appText(com.lastwave.app.R.string.dl_play_cd), position = pos, onClick = ::play) }
                 // 2. Play next — inserts right after current, current song keeps playing
                 add { pos ->
-                    MiniTrayRow(Icons.Filled.QueuePlayNext, "Play next", position = pos) {
+                    MiniTrayRow(Icons.Filled.QueuePlayNext, appText(com.lastwave.app.R.string.menu_quick_play_next), position = pos) {
                         musicPlayer.playNext(playable)
                         onDismiss()
                     }
                 }
                 // 3. Add to queue
                 add { pos ->
-                    MiniTrayRow(Icons.Filled.QueueMusic, "Add to queue", position = pos) {
+                    MiniTrayRow(Icons.Filled.QueueMusic, appText(com.lastwave.app.R.string.menu_add_queue), position = pos) {
                         musicPlayer.addToQueue(playable)
                         onDismiss()
                     }
@@ -215,20 +217,20 @@ fun TrackMiniTraySheet(
                 add { pos ->
                     when {
                         isDownloaded -> {
-                            MiniTrayRow(Icons.Filled.CheckCircle, "Downloaded", position = pos) {
+                            MiniTrayRow(Icons.Filled.CheckCircle, appText(com.lastwave.app.R.string.menu_downloaded), position = pos) {
                                 android.widget.Toast.makeText(
                                     context,
-                                    "Track is already downloaded",
+                                    appText(com.lastwave.app.R.string.menu_already_downloaded),
                                     android.widget.Toast.LENGTH_SHORT,
                                 ).show()
                                 onDismiss()
                             }
                         }
                         isDownloading -> {
-                            MiniTrayRow(Icons.Filled.Download, "Downloading…", position = pos) {
+                            MiniTrayRow(Icons.Filled.Download, appText(com.lastwave.app.R.string.menu_downloading), position = pos) {
                                 android.widget.Toast.makeText(
                                     context,
-                                    "Download is in progress",
+                                    appText(com.lastwave.app.R.string.menu_download_progress),
                                     android.widget.Toast.LENGTH_SHORT,
                                 ).show()
                                 onDismiss()
@@ -247,7 +249,7 @@ fun TrackMiniTraySheet(
                 }
                 // 5. Add to playlist
                 add { pos ->
-                    MiniTrayRow(Icons.Filled.PlaylistAdd, "Add to playlist", position = pos) {
+                    MiniTrayRow(Icons.Filled.PlaylistAdd, appText(com.lastwave.app.R.string.menu_quick_add_playlist), position = pos) {
                         addToPlaylist(playable)
                         onDismiss()
                     }
@@ -256,7 +258,7 @@ fun TrackMiniTraySheet(
                 if (!data.album.isNullOrBlank()) {
                     add { pos ->
                         val album = data.album
-                        MiniTrayRow(Icons.Filled.Album, "Go to album", position = pos) {
+                        MiniTrayRow(Icons.Filled.Album, appText(com.lastwave.app.R.string.ui_go_to_album_e2d3b3), position = pos) {
                             artistAlbumViewModel.openAlbum(album, data.artist)
                             onDismiss()
                         }
@@ -265,7 +267,7 @@ fun TrackMiniTraySheet(
                 // 7. Go to artist (one row per artist, like the full sheet)
                 for (art in splitArtists) {
                     add { pos ->
-                        MiniTrayRow(Icons.Filled.Person, "Go to artist ($art)", position = pos) {
+                        MiniTrayRow(Icons.Filled.Person, appText(com.lastwave.app.R.string.ui_go_to_artist_1_s_130128, (art).toString()), position = pos) {
                             artistAlbumViewModel.openArtist(art)
                             onDismiss()
                         }
@@ -273,7 +275,7 @@ fun TrackMiniTraySheet(
                 }
                 // 8. Don't recommend again
                 add { pos ->
-                    MiniTrayRow(Icons.Filled.Block, "Don't recommend again", position = pos) {
+                    MiniTrayRow(Icons.Filled.Block, appText(com.lastwave.app.R.string.menu_dont_recommend), position = pos) {
                         exclusionViewModel.exclude(playable)
                         onDismiss()
                     }

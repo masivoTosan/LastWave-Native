@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.home
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -45,7 +47,7 @@ data class FriendProfileUiState(
     val topTracks30Days: List<HomeTrack> = emptyList(),
     val topArtists: List<HomeArtistItem> = emptyList(),
     val selectedTab: FriendProfileTab = FriendProfileTab.RECENT,
-    val selectedPeriod: String = "overall", // "7day", "1month", "overall"
+    val selectedPeriod: String = appText(com.lastwave.app.R.string.fr_period_all), // "7day", "1month", "overall"
     val error: String? = null,
 )
 
@@ -144,7 +146,7 @@ class FriendProfileViewModel @Inject constructor(
                 }
             }
             launch {
-                homeRepository.fetchTopArtistsForPeriod("overall", 30, username = username).onSuccess { artists ->
+                homeRepository.fetchTopArtistsForPeriod(appText(com.lastwave.app.R.string.fr_period_all), 30, username = username).onSuccess { artists ->
                     _uiState.update { it.copy(topArtists = artists) }
                 }
             }

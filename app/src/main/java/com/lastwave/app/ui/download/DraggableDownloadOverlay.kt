@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.download
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
@@ -199,7 +201,7 @@ fun DraggableDownloadOverlay(
                         // Animated Download Icon
                         Icon(
                             imageVector = Icons.Filled.Download,
-                            contentDescription = "Downloads in progress",
+                            contentDescription = appText(com.lastwave.app.R.string.ui_downloads_in_progress_0ff031),
                             tint = MaterialTheme.colorScheme.primary,
                             modifier = Modifier
                                 .size(24.dp)

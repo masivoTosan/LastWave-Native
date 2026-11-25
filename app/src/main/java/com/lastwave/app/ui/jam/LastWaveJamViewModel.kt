@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.jam
 
+import com.lastwave.app.util.appText
+
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModel
@@ -67,7 +69,7 @@ class LastWaveJamViewModel @Inject constructor(
     private val _pendingRoomCode = MutableStateFlow("")
     val pendingRoomCode: StateFlow<String> = _pendingRoomCode.asStateFlow()
 
-    private val _pendingDisplayName = MutableStateFlow("Listener")
+    private val _pendingDisplayName = MutableStateFlow(appText(com.lastwave.app.R.string.ui_listener_37ea46))
     val pendingDisplayName: StateFlow<String> = _pendingDisplayName.asStateFlow()
 
     private val _pendingRoomMode = MutableStateFlow(JamProtocolConstants.MODE_COLLABORATIVE)
@@ -281,14 +283,14 @@ class LastWaveJamViewModel @Inject constructor(
     }
 
     fun startJamSession(roomMode: String? = null) {
-        val name = _pendingDisplayName.value.ifBlank { "Host" }
+        val name = _pendingDisplayName.value.ifBlank { appText(com.lastwave.app.R.string.ui_host_3960ec) }
         val mode = roomMode ?: _pendingRoomMode.value
         jamRepository.createRoom(displayName = name, roomMode = mode)
     }
 
     fun joinJamSession(code: String? = null) {
         val targetCode = (code ?: _pendingRoomCode.value).trim().uppercase()
-        val name = _pendingDisplayName.value.ifBlank { "Listener" }
+        val name = _pendingDisplayName.value.ifBlank { appText(com.lastwave.app.R.string.ui_listener_37ea46) }
         jamRepository.joinRoom(roomCode = targetCode, displayName = name)
     }
 
@@ -304,11 +306,11 @@ class LastWaveJamViewModel @Inject constructor(
         val inviteLink = jamRepository.inviteLink(roomCode)
         val shareIntent = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
-            putExtra(Intent.EXTRA_SUBJECT, "Join my LastWave Jam session")
-            putExtra(Intent.EXTRA_TEXT, "Join my LastWave Jam session! Room code: $roomCode\n$inviteLink")
+            putExtra(Intent.EXTRA_SUBJECT, appText(com.lastwave.app.R.string.ui_join_my_lastwave_jam_session_a7f2c1))
+            putExtra(Intent.EXTRA_TEXT, appText(com.lastwave.app.R.string.ui_join_my_lastwave_jam_session_room_code_1_s_2_s_875df2, (roomCode).toString(), (inviteLink).toString()))
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
-        val chooser = Intent.createChooser(shareIntent, "Share LastWave Jam Invite").apply {
+        val chooser = Intent.createChooser(shareIntent, appText(com.lastwave.app.R.string.ui_share_lastwave_jam_invite_c515a0)).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         context.startActivity(chooser)

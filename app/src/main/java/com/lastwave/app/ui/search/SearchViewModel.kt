@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.search
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -61,7 +63,7 @@ class SearchViewModel @Inject constructor(
 
     init {
         // Opened with a ready-made query (e.g. from music recognition).
-        savedStateHandle.get<String>("q")?.takeIf { it.isNotBlank() }?.let(::executeSearch)
+        savedStateHandle.get<String>(appText(com.lastwave.app.R.string.autoeq_q_label))?.takeIf { it.isNotBlank() }?.let(::executeSearch)
         viewModelScope.launch {
             historyRepository.history.collect { history ->
                 _uiState.update { it.copy(recentSearches = history) }
@@ -172,7 +174,7 @@ class SearchViewModel @Inject constructor(
             SearchTab.TRACKS -> {
                 val selected = item.toPlayableTrack()
                 // Start immediately. Similar song radio queue loads and extends infinitely.
-                musicPlayer.play(selected, sourceLabel = "Search", startRadio = true)
+                musicPlayer.play(selected, sourceLabel = appText(com.lastwave.app.R.string.search_cd), startRadio = true)
             }
             SearchTab.LOCAL -> {
                 val id = item.entityId
@@ -207,7 +209,7 @@ class SearchViewModel @Inject constructor(
                     musicPlayer.playQueue(
                         tracks = queue.map { it.toPlayableTrack() },
                         startIndex = targetIdx,
-                        sourceLabel = "Local Search",
+                        sourceLabel = appText(com.lastwave.app.R.string.ui_local_search_6a4c6c),
                         enableRadioContinuation = false,
                     )
                 }
@@ -224,12 +226,12 @@ class SearchViewModel @Inject constructor(
                             videoId = track.videoId,
                             durationMs = track.durationSeconds?.takeIf { it > 0 }?.times(1_000L),
                         )
-                    }, sourceLabel = "Search")
+                    }, sourceLabel = appText(com.lastwave.app.R.string.search_cd))
                 }
             }
             SearchTab.PODCASTS -> {
                 val selected = item.toPlayableTrack(podcast = true)
-                musicPlayer.playPodcastQueue(listOf(selected), startIndex = 0, sourceLabel = "Search")
+                musicPlayer.playPodcastQueue(listOf(selected), startIndex = 0, sourceLabel = appText(com.lastwave.app.R.string.search_cd))
             }
             SearchTab.PLAYLISTS, SearchTab.USERS -> Unit
         }
@@ -287,7 +289,7 @@ internal fun SearchResultItem.toPlayableTrack(podcast: Boolean = false): Playabl
     val isLocal = isLocalAudioPath(url)
     return PlayableTrack(
         title = name,
-        artist = artist.orEmpty().ifBlank { if (podcast) "Podcast" else "" },
+        artist = artist.orEmpty().ifBlank { if (podcast) appText(com.lastwave.app.R.string.ui_podcast_bafb6e) else "" },
         album = if (podcast) null else subtitle,
         artworkUrl = artworkUrl,
         videoId = videoId,

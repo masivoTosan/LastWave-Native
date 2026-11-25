@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player.automix
 
+import com.lastwave.app.util.appText
+
 import android.os.SystemClock
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.updateTransition
@@ -280,7 +282,7 @@ internal fun AutoMixPopupHost(
                                 clipPath(mask) { this@drawWithContent.drawContent() }
                             }
                             .pointerInput(Unit) { detectTapGestures { } }
-                            .semantics { paneTitle = "AutoMix" },
+                            .semantics { paneTitle = appText(com.lastwave.app.R.string.ui_automix_b42afb) },
                         shape = RoundedCornerShape(24.dp),
                         color = StudioSurface,
                     ) {
@@ -290,7 +292,7 @@ internal fun AutoMixPopupHost(
                                 verticalAlignment = Alignment.CenterVertically,
                             ) {
                                 Text(
-                                    "AUTOMIX",
+                                    appText(com.lastwave.app.R.string.ui_automix_b42afb),
                                     style = MaterialTheme.typography.labelSmall.copy(
                                         fontSize = 14.sp,
                                         fontWeight = FontWeight.Black,
@@ -303,7 +305,7 @@ internal fun AutoMixPopupHost(
                                 IconButton(onClick = ui::dismiss) {
                                     Icon(
                                         Icons.Filled.Close,
-                                        contentDescription = "Close AutoMix",
+                                        contentDescription = appText(com.lastwave.app.R.string.ui_close_automix_716393),
                                         tint = StudioContent.copy(alpha = 0.7f),
                                         modifier = Modifier.size(20.dp),
                                     )
@@ -349,14 +351,14 @@ private fun AutoMixPopupContent(
         else -> progress.positionMs.toDouble()
     }
     val kind = when (view.style) {
-        TransitionStyle.HARMONIC_BEATMIX -> "Beat blend"
-        TransitionStyle.SPECTRAL_SWEEP -> "Bass exchange"
-        TransitionStyle.PERCEPTUAL_FADE -> "Smooth fade"
+        TransitionStyle.HARMONIC_BEATMIX -> appText(com.lastwave.app.R.string.ui_beat_blend_3dab2f)
+        TransitionStyle.SPECTRAL_SWEEP -> appText(com.lastwave.app.R.string.ui_bass_exchange_7e906b)
+        TransitionStyle.PERCEPTUAL_FADE -> appText(com.lastwave.app.R.string.ui_smooth_fade_5c3aaa)
     }
     val seconds = ((view.cueOutMs - progress.positionMs) / 1_000L).coerceAtLeast(0L)
     val status = when (telemetry.phase) {
-        BlendPhase.BLENDING -> "Live \u2022 $kind"
-        BlendPhase.MIX_COMPLETED -> "Mix complete"
+        BlendPhase.BLENDING -> appText(com.lastwave.app.R.string.ui_live_1_s_3e2723, (kind).toString())
+        BlendPhase.MIX_COMPLETED -> appText(com.lastwave.app.R.string.ui_mix_complete_f03488)
         else -> "$kind in ${seconds / 60}:${"%02d".format(seconds % 60)}"
     }
     AutoMixDeckView(

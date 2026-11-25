@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
@@ -414,13 +416,13 @@ internal fun AudioControlsSheet(
                     }
                     Column {
                         Text(
-                            text = "Audio & Playback",
+                            text = appText(com.lastwave.app.R.string.set_cat_audio),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
                             color = MaterialTheme.colorScheme.onSurface,
                         )
                         Text(
-                            text = "Volume, seamless transitions & speed",
+                            text = appText(com.lastwave.app.R.string.ui_volume_seamless_transitions_speed_5c1e43),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
@@ -432,7 +434,7 @@ internal fun AudioControlsSheet(
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Close,
-                        contentDescription = "Close",
+                        contentDescription = appText(com.lastwave.app.R.string.recognize_close),
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.size(20.dp),
                     )
@@ -467,7 +469,7 @@ internal fun AudioControlsSheet(
                                 modifier = Modifier.size(18.dp),
                             )
                             Text(
-                                text = "In-App Volume",
+                                text = appText(com.lastwave.app.R.string.ui_in_app_volume_26ff7f),
                                 style = MaterialTheme.typography.titleSmall,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onSurface,
@@ -478,7 +480,7 @@ internal fun AudioControlsSheet(
                             color = MaterialTheme.colorScheme.surfaceContainerHighest,
                         ) {
                             Text(
-                                text = if (state.appVolume <= 0.001f) "Muted" else "${(state.appVolume * 100).roundToInt()}%",
+                                text = if (state.appVolume <= 0.001f) appText(com.lastwave.app.R.string.lyshare_color_muted) else "${(state.appVolume * 100).roundToInt()}%",
                                 style = MaterialTheme.typography.labelMedium,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.primary,
@@ -514,13 +516,13 @@ internal fun AudioControlsSheet(
                     ) {
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "Speed & Pitch",
+                                text = appText(com.lastwave.app.R.string.ui_speed_pitch_bdf451),
                                 style = MaterialTheme.typography.titleSmall,
                                 fontWeight = FontWeight.SemiBold,
                                 color = MaterialTheme.colorScheme.onSurface,
                             )
                             Text(
-                                text = if (isLocked) "Tempo & pitch linked" else "Independent tempo and pitch stretch",
+                                text = if (isLocked) appText(com.lastwave.app.R.string.ui_tempo_pitch_linked_b69fb2) else appText(com.lastwave.app.R.string.ui_independent_tempo_and_pitch_stretch_ef2ec6),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -542,7 +544,7 @@ internal fun AudioControlsSheet(
                                 },
                                 label = {
                                     Text(
-                                        if (isLocked) "Linked" else "Free",
+                                        if (isLocked) appText(com.lastwave.app.R.string.ui_linked_a089f6) else appText(com.lastwave.app.R.string.ui_free_75f527),
                                         style = MaterialTheme.typography.labelSmall,
                                         fontWeight = FontWeight.SemiBold,
                                     )
@@ -580,7 +582,7 @@ internal fun AudioControlsSheet(
                             ) {
                                 Icon(
                                     imageVector = Icons.Filled.RestartAlt,
-                                    contentDescription = "Reset speed and pitch",
+                                    contentDescription = appText(com.lastwave.app.R.string.ui_reset_speed_and_pitch_ab05ae),
                                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                                     modifier = Modifier.size(18.dp),
                                 )
@@ -596,7 +598,7 @@ internal fun AudioControlsSheet(
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
                             Text(
-                                text = "Playback Speed",
+                                text = appText(com.lastwave.app.R.string.ui_playback_speed_3c0668),
                                 style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.Medium,
                                 color = MaterialTheme.colorScheme.onSurface,
@@ -643,7 +645,7 @@ internal fun AudioControlsSheet(
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
                             Text(
-                                text = "Pitch",
+                                text = appText(com.lastwave.app.R.string.ui_pitch_a6c2d0),
                                 style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.Medium,
                                 color = MaterialTheme.colorScheme.onSurface,
@@ -719,13 +721,13 @@ internal fun AudioControlsSheet(
                             }
                             Column {
                                 Text(
-                                    text = "Acoustic Tuning & EQ",
+                                    text = appText(com.lastwave.app.R.string.ui_acoustic_tuning_eq_f71aba),
                                     style = MaterialTheme.typography.titleSmall,
                                     fontWeight = FontWeight.SemiBold,
                                     color = MaterialTheme.colorScheme.onSurface,
                                 )
                                 Text(
-                                    text = "AutoEQ correction, target curves & PEQ",
+                                    text = appText(com.lastwave.app.R.string.ui_autoeq_correction_target_curves_peq_954c36),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
@@ -751,7 +753,7 @@ internal fun AudioControlsSheet(
                             )
                             Spacer(Modifier.width(8.dp))
                             Text(
-                                text = "Open AutoEQ / Parametric EQ",
+                                text = appText(com.lastwave.app.R.string.ui_open_autoeq_parametric_eq_e14c26),
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.SemiBold,
                             )
@@ -802,14 +804,14 @@ internal fun AudioControlsSheet(
                             }
                             Column(Modifier.weight(1f)) {
                                 Text(
-                                    text = "Music Haptics",
+                                    text = appText(com.lastwave.app.R.string.ui_music_haptics_8787ab),
                                     style = MaterialTheme.typography.titleLarge,
                                     fontWeight = FontWeight.SemiBold,
                                 )
                                 Text(
-                                    text = if (isUsbActive && hapticsConfig.enabled) "Paused (USB DAC Exclusive active)"
-                                    else if (hapticsConfig.enabled) "${hapticsConfig.mode.label} \u2022 ${hapticsConfig.intensity.label}"
-                                    else "Physical rhythm synchronization via haptic motor",
+                                    text = if (isUsbActive && hapticsConfig.enabled) appText(com.lastwave.app.R.string.ui_paused_usb_dac_exclusive_active_0c7410)
+                                    else if (hapticsConfig.enabled) appText(com.lastwave.app.R.string.ly_sync_badge, (hapticsConfig.mode.label).toString(), (hapticsConfig.intensity.label).toString())
+                                    else appText(com.lastwave.app.R.string.ui_physical_rhythm_synchronization_via_haptic_motor_7d6725),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = if (isUsbActive && hapticsConfig.enabled) MaterialTheme.colorScheme.error
                                     else MaterialTheme.colorScheme.onSurfaceVariant,
@@ -828,7 +830,7 @@ internal fun AudioControlsSheet(
                             thumbContent = if (hapticsConfig.enabled) {
                                 { Icon(Icons.Filled.Check, contentDescription = null, modifier = Modifier.size(SwitchDefaults.IconSize)) }
                             } else null,
-                            modifier = Modifier.semantics { contentDescription = "Music Haptics" },
+                            modifier = Modifier.semantics { contentDescription = appText(com.lastwave.app.R.string.ui_music_haptics_8787ab) },
                         )
                     }
 
@@ -847,7 +849,7 @@ internal fun AudioControlsSheet(
                                 ) {
                                     Icon(Icons.Filled.Info, contentDescription = null, modifier = Modifier.size(16.dp))
                                     Text(
-                                        text = "Haptics suspended while Bit-Perfect USB DAC bypass is active",
+                                        text = appText(com.lastwave.app.R.string.ui_haptics_suspended_while_bit_perfect_usb_dac_bypa_a9594c),
                                         style = MaterialTheme.typography.bodySmall,
                                     )
                                 }
@@ -856,7 +858,7 @@ internal fun AudioControlsSheet(
 
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text(
-                                text = "Focus mode",
+                                text = appText(com.lastwave.app.R.string.ui_focus_mode_9a2af5),
                                 style = MaterialTheme.typography.labelLarge,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -904,9 +906,9 @@ internal fun AudioControlsSheet(
                                             ) {
                                                 Text(
                                                     text = when (mode) {
-                                                        MusicHapticsMode.WHOLE_SONG -> "Whole song"
-                                                        MusicHapticsMode.BASS_AND_BEATS -> "Bass & Beats"
-                                                        MusicHapticsMode.VOCALS_ONLY -> "Vocals only"
+                                                        MusicHapticsMode.WHOLE_SONG -> appText(com.lastwave.app.R.string.ui_whole_song_c43a9a)
+                                                        MusicHapticsMode.BASS_AND_BEATS -> appText(com.lastwave.app.R.string.ui_bass_beats_bdd901)
+                                                        MusicHapticsMode.VOCALS_ONLY -> appText(com.lastwave.app.R.string.ui_vocals_only_337845)
                                                     },
                                                     style = MaterialTheme.typography.bodyLarge,
                                                     fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Medium,
@@ -914,9 +916,9 @@ internal fun AudioControlsSheet(
                                                 if (isSelected) {
                                                     Text(
                                                         text = when (mode) {
-                                                            MusicHapticsMode.WHOLE_SONG -> "Full-range taps and rhythmic textures"
-                                                            MusicHapticsMode.BASS_AND_BEATS -> "Deep bass & drum hits · 40–130 Hz"
-                                                            MusicHapticsMode.VOCALS_ONLY -> "Lead vocal phrasing · 300–3,200 Hz"
+                                                            MusicHapticsMode.WHOLE_SONG -> appText(com.lastwave.app.R.string.ui_full_range_taps_and_rhythmic_textures_5d149f)
+                                                            MusicHapticsMode.BASS_AND_BEATS -> appText(com.lastwave.app.R.string.ui_deep_bass_drum_hits_40_130_hz_95e5be)
+                                                            MusicHapticsMode.VOCALS_ONLY -> appText(com.lastwave.app.R.string.ui_lead_vocal_phrasing_300_3_200_hz_453af1)
                                                         },
                                                         style = MaterialTheme.typography.bodySmall,
                                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -932,7 +934,7 @@ internal fun AudioControlsSheet(
 
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text(
-                                text = "Intensity",
+                                text = appText(com.lastwave.app.R.string.ui_intensity_0ad6e4),
                                 style = MaterialTheme.typography.labelLarge,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -984,9 +986,9 @@ internal fun AudioControlsSheet(
                             }
                             Text(
                                 text = when (hapticsConfig.intensity) {
-                                    MusicHapticsIntensity.LIGHT -> "Subtle pulses for relaxed listening."
-                                    MusicHapticsIntensity.MEDIUM -> "Balanced pulses for everyday listening."
-                                    MusicHapticsIntensity.STRONG -> "Full-strength pulses for bass drops."
+                                    MusicHapticsIntensity.LIGHT -> appText(com.lastwave.app.R.string.ui_subtle_pulses_for_relaxed_listening_558b38)
+                                    MusicHapticsIntensity.MEDIUM -> appText(com.lastwave.app.R.string.ui_balanced_pulses_for_everyday_listening_c5a27d)
+                                    MusicHapticsIntensity.STRONG -> appText(com.lastwave.app.R.string.ui_full_strength_pulses_for_bass_drops_cf4d9c)
                                 },
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -1012,12 +1014,12 @@ internal fun AudioControlsSheet(
                                     modifier = Modifier.padding(start = 12.dp).size(24.dp),
                                 )
                                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                                    Text("Engine routing", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                                    Text(appText(com.lastwave.app.R.string.ui_engine_routing_ec62b3), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
                                     Text(
                                         text = when (hapticsConfig.engineMode) {
-                                            MusicHapticsEngineMode.AUTO -> if (isHardwareAvailable) "Native for whole song; DSP for filters" else "Precision DSP active"
-                                            MusicHapticsEngineMode.DSP_PRECISION -> "Precision DSP active"
-                                            MusicHapticsEngineMode.HARDWARE_NATIVE -> if (isHardwareAvailable) "Android native haptics" else "Hardware unavailable · using DSP"
+                                            MusicHapticsEngineMode.AUTO -> if (isHardwareAvailable) appText(com.lastwave.app.R.string.ui_native_for_whole_song_dsp_for_filters_c3b5b8) else appText(com.lastwave.app.R.string.ui_precision_dsp_active_38660c)
+                                            MusicHapticsEngineMode.DSP_PRECISION -> appText(com.lastwave.app.R.string.ui_precision_dsp_active_38660c)
+                                            MusicHapticsEngineMode.HARDWARE_NATIVE -> if (isHardwareAvailable) appText(com.lastwave.app.R.string.ui_android_native_haptics_b16753) else appText(com.lastwave.app.R.string.ui_hardware_unavailable_using_dsp_0f6f6d)
                                         },
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -1062,12 +1064,12 @@ internal fun AudioControlsSheet(
                             )
                             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                                 Text(
-                                    "Pause on battery saver",
+                                    appText(com.lastwave.app.R.string.ui_pause_on_battery_saver_7a7b95),
                                     style = MaterialTheme.typography.bodyMedium,
                                     fontWeight = FontWeight.Medium,
                                 )
                                 Text(
-                                    "Suspend haptics to save power",
+                                    appText(com.lastwave.app.R.string.ui_suspend_haptics_to_save_power_c6d508),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
@@ -1080,7 +1082,7 @@ internal fun AudioControlsSheet(
                                 thumbContent = if (hapticsConfig.pauseOnBatterySaver) {
                                     { Icon(Icons.Filled.Check, contentDescription = null, modifier = Modifier.size(SwitchDefaults.IconSize)) }
                                 } else null,
-                                modifier = Modifier.semantics { contentDescription = "Pause on battery saver" },
+                                modifier = Modifier.semantics { contentDescription = appText(com.lastwave.app.R.string.ui_pause_on_battery_saver_7a7b95) },
                             )
                         }
                     }
@@ -1092,7 +1094,7 @@ internal fun AudioControlsSheet(
 }
 
 private fun MusicHapticsEngineMode.displayLabel(): String = when (this) {
-    MusicHapticsEngineMode.AUTO -> "Auto"
-    MusicHapticsEngineMode.DSP_PRECISION -> "DSP"
-    MusicHapticsEngineMode.HARDWARE_NATIVE -> "Hardware"
+    MusicHapticsEngineMode.AUTO -> appText(com.lastwave.app.R.string.autoeq_preamp_auto)
+    MusicHapticsEngineMode.DSP_PRECISION -> appText(com.lastwave.app.R.string.sig_node_dsp)
+    MusicHapticsEngineMode.HARDWARE_NATIVE -> appText(com.lastwave.app.R.string.ui_hardware_b76ab6)
 }

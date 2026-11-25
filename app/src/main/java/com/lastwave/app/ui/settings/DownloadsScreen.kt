@@ -2,6 +2,8 @@
 
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import com.lastwave.app.ui.common.PredictiveBackScreen
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -121,10 +123,11 @@ import java.util.Date
 import java.util.Locale
 
 
-enum class DownloadTab(val label: String) {
-    SONGS("Songs"),
-    ARTISTS("Artists"),
-    ALBUMS("Albums"),
+enum class DownloadTab(private val labelProvider: () -> String) {
+    SONGS({ appText(com.lastwave.app.R.string.local_tab_songs) }),
+    ARTISTS({ appText(com.lastwave.app.R.string.search_tab_artists) }),
+    ALBUMS({ appText(com.lastwave.app.R.string.art_albums) });
+    val label: String get() = labelProvider()
 }
 
 sealed interface DownloadSubView {
@@ -265,13 +268,13 @@ fun DownloadsScreen(
             }
 
             val headerTitle = when (currentSubView) {
-                is DownloadSubView.Root -> "Downloads"
+                is DownloadSubView.Root -> appText(com.lastwave.app.R.string.ui_downloads_a862c2)
                 is DownloadSubView.ArtistDetail -> currentSubView.artistName
                 is DownloadSubView.AlbumDetail -> currentSubView.albumTitle
             }
 
             val headerSubtitle = when (currentSubView) {
-                is DownloadSubView.Root -> "${tracks.size} songs \u2022 ${artists.size} artists \u2022 $totalSizeText"
+                is DownloadSubView.Root -> appText(com.lastwave.app.R.string.ui_extra_c93e6ff593, (tracks.size).toString(), (artists.size).toString(), (totalSizeText).toString())
                 is DownloadSubView.ArtistDetail -> {
                     val aTracks = tracks.filter {
                         it.artist.equals(currentSubView.artistName, ignoreCase = true) ||

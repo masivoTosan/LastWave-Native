@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.settings
 
+import com.lastwave.app.util.appText
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -117,34 +119,34 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 val DEFAULT_YT_MUSIC_SECTIONS = listOf(
-    "Fresh finds, old favorites",
-    "Listen again",
-    "Forgotten favorites",
-    "Listen together",
-    "Mixes to explore",
-    "Favourite to revisit",
-    "Album for you",
-    "Cover and remixes",
-    "Recaps",
-    "Albums for you",
-    "From the community",
-    "Heard in shorts",
-    "From your library",
-    "Your daily discover",
-    "Featured playlist for you",
-    "Live performances",
-    "Similar to",
-    "Recommended music videos",
+    appText(com.lastwave.app.R.string.ui_fresh_finds_old_favorites_5b3330),
+    appText(com.lastwave.app.R.string.ui_listen_again_31d30b),
+    appText(com.lastwave.app.R.string.ui_forgotten_favorites_02761d),
+    appText(com.lastwave.app.R.string.ui_listen_together_7c4268),
+    appText(com.lastwave.app.R.string.feed_mixes),
+    appText(com.lastwave.app.R.string.ui_favourite_to_revisit_90100b),
+    appText(com.lastwave.app.R.string.ui_album_for_you_38dc4c),
+    appText(com.lastwave.app.R.string.ui_cover_and_remixes_69c61e),
+    appText(com.lastwave.app.R.string.ui_recaps_9b52ab),
+    appText(com.lastwave.app.R.string.feed_albums),
+    appText(com.lastwave.app.R.string.ui_from_the_community_168a46),
+    appText(com.lastwave.app.R.string.ui_heard_in_shorts_cf2967),
+    appText(com.lastwave.app.R.string.ui_from_your_library_5dd0dc),
+    appText(com.lastwave.app.R.string.ui_your_daily_discover_95e4a0),
+    appText(com.lastwave.app.R.string.ui_featured_playlist_for_you_04d50b),
+    appText(com.lastwave.app.R.string.ui_live_performances_1dccf6),
+    appText(com.lastwave.app.R.string.ui_similar_to_0939c3),
+    appText(com.lastwave.app.R.string.ui_recommended_music_videos_8a4469),
     "COMMUNITY PLAYLISTS",
-    "Energy boosters",
-    "Feel good",
-    "Workout",
-    "Relax",
-    "Focus",
-    "Commute",
-    "Party",
-    "Romance",
-    "Sleep",
+    appText(com.lastwave.app.R.string.ui_energy_boosters_b65d22),
+    appText(com.lastwave.app.R.string.ui_feel_good_9c073f),
+    appText(com.lastwave.app.R.string.ui_workout_39463a),
+    appText(com.lastwave.app.R.string.ui_relax_9704b9),
+    appText(com.lastwave.app.R.string.ui_focus_fe7f55),
+    appText(com.lastwave.app.R.string.ui_commute_136980),
+    appText(com.lastwave.app.R.string.ui_party_60b18f),
+    appText(com.lastwave.app.R.string.ui_romance_c6c050),
+    appText(com.lastwave.app.R.string.ui_sleep_3cac34),
 )
 
 data class UniversalSectionItem(
@@ -165,47 +167,47 @@ val ALL_DEFAULT_UNIVERSAL_SECTIONS: List<UniversalSectionItem> = listOf(
     UniversalSectionItem("quick_picks", titleRes = R.string.home_section_quick_picks_title, subtitleRes = R.string.home_section_quick_picks_sub, isYouTube = false, icon = Icons.Filled.Bolt),
     UniversalSectionItem("because_you_listen_to", titleRes = R.string.home_section_because_title, subtitleRes = R.string.home_section_because_sub, isYouTube = false, icon = Icons.Filled.History),
     UniversalSectionItem("fresh_finds", titleRes = R.string.home_section_fresh_title, subtitleRes = R.string.home_section_fresh_sub, isYouTube = false, icon = Icons.Filled.Whatshot),
-    UniversalSectionItem("yt:Fresh finds, old favorites", rawTitle = "Fresh finds, old & favorites", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Whatshot),
-    UniversalSectionItem("yt:Listen again", rawTitle = "Listen again", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Replay),
+    UniversalSectionItem("yt:Fresh finds, old favorites", rawTitle = appText(com.lastwave.app.R.string.ui_fresh_finds_old_favorites_f6996c), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Whatshot),
+    UniversalSectionItem("yt:Listen again", rawTitle = appText(com.lastwave.app.R.string.ui_listen_again_31d30b), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Replay),
     UniversalSectionItem("jump_back_in", titleRes = R.string.home_section_jump_title, subtitleRes = R.string.home_section_jump_sub, isYouTube = false, icon = Icons.Filled.Replay),
-    UniversalSectionItem("yt:Forgotten favorites", rawTitle = "Forgotten favorites", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Favorite),
-    UniversalSectionItem("yt:Listen together", rawTitle = "Listen together", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Group),
-    UniversalSectionItem("yt:Mixes to explore", rawTitle = "Mixes to explore", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Shuffle),
+    UniversalSectionItem("yt:Forgotten favorites", rawTitle = appText(com.lastwave.app.R.string.ui_forgotten_favorites_02761d), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Favorite),
+    UniversalSectionItem("yt:Listen together", rawTitle = appText(com.lastwave.app.R.string.ui_listen_together_7c4268), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Group),
+    UniversalSectionItem("yt:Mixes to explore", rawTitle = appText(com.lastwave.app.R.string.feed_mixes), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Shuffle),
     UniversalSectionItem("spotlight_hero", titleRes = R.string.home_section_spotlight_title, subtitleRes = R.string.home_section_spotlight_sub, isYouTube = false, icon = Icons.Filled.Star),
     UniversalSectionItem("top_artists", titleRes = R.string.home_section_artists_title, subtitleRes = R.string.home_section_artists_sub, isYouTube = false, icon = Icons.Filled.People),
-    UniversalSectionItem("yt:Favourite to revisit", rawTitle = "Favourite to revisit", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Favorite),
+    UniversalSectionItem("yt:Favourite to revisit", rawTitle = appText(com.lastwave.app.R.string.ui_favourite_to_revisit_90100b), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Favorite),
     UniversalSectionItem("heavy_rotation", titleRes = R.string.home_section_heavy_title, subtitleRes = R.string.home_section_heavy_sub, isYouTube = false, icon = Icons.Filled.Favorite),
     UniversalSectionItem("albums_in_rotation", titleRes = R.string.home_section_albums_title, subtitleRes = R.string.home_section_albums_sub, isYouTube = false, icon = Icons.Filled.Album),
-    UniversalSectionItem("yt:Album for you", rawTitle = "Album for you", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Album),
+    UniversalSectionItem("yt:Album for you", rawTitle = appText(com.lastwave.app.R.string.ui_album_for_you_38dc4c), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Album),
     UniversalSectionItem("new_releases", titleRes = R.string.home_section_releases_title, subtitleRes = R.string.home_section_releases_sub, isYouTube = false, icon = Icons.Filled.NewReleases),
-    UniversalSectionItem("yt:Cover and remixes", rawTitle = "Cover and remixes", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.GraphicEq),
-    UniversalSectionItem("yt:Recaps", rawTitle = "Recaps", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.BarChart),
-    UniversalSectionItem("yt:Albums for you", rawTitle = "Albums for you", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Album),
+    UniversalSectionItem("yt:Cover and remixes", rawTitle = appText(com.lastwave.app.R.string.ui_cover_and_remixes_69c61e), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.GraphicEq),
+    UniversalSectionItem("yt:Recaps", rawTitle = appText(com.lastwave.app.R.string.ui_recaps_9b52ab), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.BarChart),
+    UniversalSectionItem("yt:Albums for you", rawTitle = appText(com.lastwave.app.R.string.feed_albums), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Album),
     UniversalSectionItem("trending_charts", titleRes = R.string.home_section_charts_title, subtitleRes = R.string.home_section_charts_sub, isYouTube = false, icon = Icons.Filled.TrendingUp),
-    UniversalSectionItem("yt:From the community", rawTitle = "From the community", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Group),
-    UniversalSectionItem("yt:Heard in shorts", rawTitle = "Heard in shorts", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.SmartDisplay),
-    UniversalSectionItem("yt:From your library", rawTitle = "From your library", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.LibraryMusic),
+    UniversalSectionItem("yt:From the community", rawTitle = appText(com.lastwave.app.R.string.ui_from_the_community_168a46), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Group),
+    UniversalSectionItem("yt:Heard in shorts", rawTitle = appText(com.lastwave.app.R.string.ui_heard_in_shorts_cf2967), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.SmartDisplay),
+    UniversalSectionItem("yt:From your library", rawTitle = appText(com.lastwave.app.R.string.ui_from_your_library_5dd0dc), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.LibraryMusic),
     UniversalSectionItem("mixed_for_you", titleRes = R.string.home_section_mixes_title, subtitleRes = R.string.home_section_mixes_sub, isYouTube = false, icon = Icons.Filled.Shuffle),
-    UniversalSectionItem("yt:Your daily discover", rawTitle = "Your daily discover", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.AutoAwesome),
-    UniversalSectionItem("yt:Featured playlist for you", rawTitle = "Featured playlist for you", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.QueueMusic),
-    UniversalSectionItem("yt:Live performances", rawTitle = "Live performances", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Headphones),
+    UniversalSectionItem("yt:Your daily discover", rawTitle = appText(com.lastwave.app.R.string.ui_your_daily_discover_95e4a0), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.AutoAwesome),
+    UniversalSectionItem("yt:Featured playlist for you", rawTitle = appText(com.lastwave.app.R.string.ui_featured_playlist_for_you_04d50b), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.QueueMusic),
+    UniversalSectionItem("yt:Live performances", rawTitle = appText(com.lastwave.app.R.string.ui_live_performances_1dccf6), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Headphones),
     UniversalSectionItem("friends_activity", titleRes = R.string.home_section_friends_title, subtitleRes = R.string.home_section_friends_sub, isYouTube = false, icon = Icons.Filled.Group),
-    UniversalSectionItem("podcast_shelf", rawTitle = "Podcasts", rawSubtitle = "Popular podcast shows", isYouTube = false, icon = Icons.Filled.Mic),
-    UniversalSectionItem("moods_and_genres", titleRes = R.string.moods_title, rawSubtitle = "Browse by mood and genre", isYouTube = false, icon = Icons.Filled.Category),
+    UniversalSectionItem("podcast_shelf", rawTitle = appText(com.lastwave.app.R.string.podcasts_title), rawSubtitle = appText(com.lastwave.app.R.string.home_section_podcasts_sub), isYouTube = false, icon = Icons.Filled.Mic),
+    UniversalSectionItem("moods_and_genres", titleRes = R.string.moods_title, rawSubtitle = appText(com.lastwave.app.R.string.ui_browse_by_mood_and_genre_a1f5ac), isYouTube = false, icon = Icons.Filled.Category),
     // Extra default YTM sections
-    UniversalSectionItem("yt:Similar to", rawTitle = "Similar to", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Subscriptions),
-    UniversalSectionItem("yt:Music video for you", rawTitle = "Music video for you", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.SmartDisplay),
-    UniversalSectionItem("yt:Trending songs for you", rawTitle = "Trending songs for you", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.TrendingUp),
-    UniversalSectionItem("yt:Recommended music videos", rawTitle = "Recommended music videos", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.SmartDisplay),
-    UniversalSectionItem("yt:Energy boosters", rawTitle = "Energy boosters", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Bolt),
-    UniversalSectionItem("yt:Feel good", rawTitle = "Feel good", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Favorite),
-    UniversalSectionItem("yt:Workout", rawTitle = "Workout", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Whatshot),
-    UniversalSectionItem("yt:Relax", rawTitle = "Relax", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Headphones),
-    UniversalSectionItem("yt:Focus", rawTitle = "Focus", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.GraphicEq),
-    UniversalSectionItem("yt:Commute", rawTitle = "Commute", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Radio),
-    UniversalSectionItem("yt:Party", rawTitle = "Party", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.AutoAwesome),
-    UniversalSectionItem("yt:Romance", rawTitle = "Romance", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Favorite),
-    UniversalSectionItem("yt:Sleep", rawTitle = "Sleep", rawSubtitle = "YouTube Music Section", isYouTube = true, icon = Icons.Filled.Headphones),
+    UniversalSectionItem("yt:Similar to", rawTitle = appText(com.lastwave.app.R.string.ui_similar_to_0939c3), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Subscriptions),
+    UniversalSectionItem("yt:Music video for you", rawTitle = appText(com.lastwave.app.R.string.ui_music_video_for_you_41ef5e), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.SmartDisplay),
+    UniversalSectionItem("yt:Trending songs for you", rawTitle = appText(com.lastwave.app.R.string.ui_trending_songs_for_you_2e0b8f), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.TrendingUp),
+    UniversalSectionItem("yt:Recommended music videos", rawTitle = appText(com.lastwave.app.R.string.ui_recommended_music_videos_8a4469), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.SmartDisplay),
+    UniversalSectionItem("yt:Energy boosters", rawTitle = appText(com.lastwave.app.R.string.ui_energy_boosters_b65d22), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Bolt),
+    UniversalSectionItem("yt:Feel good", rawTitle = appText(com.lastwave.app.R.string.ui_feel_good_9c073f), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Favorite),
+    UniversalSectionItem("yt:Workout", rawTitle = appText(com.lastwave.app.R.string.ui_workout_39463a), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Whatshot),
+    UniversalSectionItem("yt:Relax", rawTitle = appText(com.lastwave.app.R.string.ui_relax_9704b9), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Headphones),
+    UniversalSectionItem("yt:Focus", rawTitle = appText(com.lastwave.app.R.string.ui_focus_fe7f55), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.GraphicEq),
+    UniversalSectionItem("yt:Commute", rawTitle = appText(com.lastwave.app.R.string.ui_commute_136980), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Radio),
+    UniversalSectionItem("yt:Party", rawTitle = appText(com.lastwave.app.R.string.ui_party_60b18f), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.AutoAwesome),
+    UniversalSectionItem("yt:Romance", rawTitle = appText(com.lastwave.app.R.string.ui_romance_c6c050), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Favorite),
+    UniversalSectionItem("yt:Sleep", rawTitle = appText(com.lastwave.app.R.string.ui_sleep_3cac34), rawSubtitle = appText(com.lastwave.app.R.string.ui_youtube_music_section_76acb0), isYouTube = true, icon = Icons.Filled.Headphones),
 )
 
 @HiltViewModel
@@ -376,14 +378,14 @@ fun HomeSectionsScreen(
                     }, enabled = uiState.isLoaded && uiState.hiddenSections.isNotEmpty()) {
                         Icon(Icons.Filled.Check, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(4.dp))
-                        Text("Show all")
+                        Text(appText(com.lastwave.app.R.string.home_sections_show_all))
                     }
                     TextButton(onClick = {
                         viewModel.resetAll()
                     }, enabled = uiState.isLoaded) {
                         Icon(Icons.Filled.RestartAlt, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(4.dp))
-                        Text("Reset")
+                        Text(appText(com.lastwave.app.R.string.set_eq_reset))
                     }
                 },
             )
@@ -449,7 +451,7 @@ fun HomeSectionsScreen(
                             // Drag Handle (Queue Style Reorder Button)
                             Icon(
                                 imageVector = Icons.Filled.DragHandle,
-                                contentDescription = "Reorder",
+                                contentDescription = appText(com.lastwave.app.R.string.ui_reorder_33d997),
                                 tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = if (isDragging) 1f else 0.7f),
                                 modifier = Modifier
                                     .padding(end = 8.dp)
@@ -573,7 +575,7 @@ fun HomeSectionsScreen(
                             ) {
                                 Icon(
                                     imageVector = if (isItemPinned) Icons.Filled.PushPin else Icons.Outlined.PushPin,
-                                    contentDescription = if (isItemPinned) "Unpin" else "Pin to top",
+                                    contentDescription = if (isItemPinned) appText(com.lastwave.app.R.string.pl_unpin) else appText(com.lastwave.app.R.string.pd_pin_top),
                                     tint = if (isItemPinned) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
                                     modifier = Modifier.size(18.dp),
                                 )

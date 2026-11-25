@@ -1,5 +1,7 @@
 package com.lastwave.app.ui.player
 
+import com.lastwave.app.util.appText
+
 import android.app.ActivityManager
 import android.content.Context
 import android.graphics.Bitmap
@@ -272,7 +274,7 @@ private class AgslFluidRenderer {
         shader.setFloatUniform("twistB", width * 0.75f, 0f)
         shader.setFloatUniform("twistRadius", (maxOf(width, height) + minOf(width, height)) / 2f * TWIST_REACH)
         shader.setFloatUniform("twistAngle", TWIST_ANGLE)
-        shader.setFloatUniform("saturation", SATURATION)
+        shader.setFloatUniform(appText(com.lastwave.app.R.string.set_sat), SATURATION)
         shader.setFloatUniform("brightness", if (extraBlur) LYRICS_BRIGHTNESS else BRIGHTNESS)
         shader.setFloatUniform("contrast", CONTRAST)
         paint.shader = shader
