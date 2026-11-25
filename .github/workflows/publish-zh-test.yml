@@ -33,7 +33,7 @@ jobs:
           cp audio/decent-usb-audio-driver/LICENSE release-assets/USB-driver-LICENSE.txt
           cp THIRD_PARTY_NOTICES.md release-assets/
           cp README.md release-assets/FORK-README.md
-      - name: Collect dependency metadata and licenses
+      - name: Collect external dependency metadata and licenses
         run: |
           chmod +x gradlew
           ./gradlew :app:collectDistributionMetadata -I .github/release/metadata.gradle --no-configuration-cache -PtargetAbis=arm64-v8a --max-workers=2 --stacktrace
