@@ -3,7 +3,7 @@
 <img src="assets/LastWave_banner_v2_1440p.png" alt="LastWave Banner" width="100%" style="border-radius: 16px;" />
 
 <h1>LastWave</h1>
-
+这个仓库只是为了本地化简体中文，所有代码来源于上游仓库，本代码仅用来个人测试。
 **Simple Android YouTube Music client with Material UI, Liquid Glass, Bit-Perfect playback, Automix, Lossless addons & advanced audiophile features.**
 
 <br/>
