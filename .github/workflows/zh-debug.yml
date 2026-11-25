@@ -2,6 +2,11 @@ name: Chinese Debug APK comparison
 on:
   push:
     branches: ['test/zh-debug-apk-20261125']
+    paths-ignore:
+      - '**/*.md'
+      - '.github/release/**'
+      - '.github/workflows/publish-zh-test.yml'
+      - '.github/workflows/zh-debug.yml'
   workflow_dispatch:
 permissions:
   contents: read

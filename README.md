@@ -1,3 +1,26 @@
+# LastWave 非官方简体中文测试版
+
+> 本 Fork 由 masivoTosan 维护，用于中文界面测试。原作者为 [Clash-Projects/LastWave-Native](https://github.com/Clash-Projects/LastWave-Native) 及其贡献者；本版本不是官方发行。
+
+**[下载：LastWave 5.2.1 非官方简体中文测试版](https://github.com/masivoTosan/LastWave-Native/releases/tag/5.2.1-zh-test-20261125)**
+
+修改日期：2026-11-25。包含 PR #747 的翻译，并将界面代码中遗漏的英文接入语言资源，新增 1,134 条翻译资源，覆盖弹窗、统计、资料库、设置、小组件和通知。品牌、歌曲、艺人及用户自定义歌单名称保留原文。
+
+| 安装包 | 包名 | 说明 |
+| --- | --- | --- |
+| 标准汉化测试版 | com.lastwave.app.zhdebug | 推荐，可与正式版共存 |
+| vivo-origin 对比版 | com.tencent.qqmusic | 与 QQ音乐冲突；真我 GT6 的额外效果尚未确认 |
+
+两版均为 Android 10+ / ARM64 Debug，APK 内部版本为 5.2.1（33）。已通过语言切换、时间格式测试、编译和签名验证，尚未实机逐页验收。如覆盖旧测试版时签名冲突，请先备份数据后再卸载旧测试版。
+
+本版本继续使用 [GPLv3](LICENSE)，保留上游版权、原始致谢、免责声明和第三方许可。详见 [第三方声明](THIRD_PARTY_NOTICES.md)。源码和构建步骤随 Release 一起提供；APK 对应源码为 [8dea539](https://github.com/masivoTosan/LastWave-Native/tree/8dea5398796363c3f89137a721b0ddf0c10b4381)。标准版独立包名由该提交中的 GitHub Actions 工作流在编译时调整。
+
+发布名称、说明和附件可以在 GitHub Releases 中编辑；修改 APK 内部版本号或程序内容需要重新编译。
+
+---
+
+## 上游项目原始 README
+
 <div align="center">
 
 <img src="assets/LastWave_banner_v2_1440p.png" alt="LastWave Banner" width="100%" style="border-radius: 16px;" />

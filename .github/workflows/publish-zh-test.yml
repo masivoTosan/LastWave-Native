@@ -1,0 +1,45 @@
+name: Publish Chinese test release
+on:
+  push:
+    branches: ['test/zh-debug-apk-20261125']
+    paths: ['.github/workflows/publish-zh-test.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880
+        with:
+          java-version: '17'
+          distribution: temurin
+          cache: gradle
+      - name: Verify exact successful APK source and download existing build
+        run: |
+          test "$(gh api repos/$GH_REPO/actions/runs/45609893772 --jq .conclusion)" = success
+          test "$(gh api repos/$GH_REPO/actions/runs/45609893772 --jq .head_sha)" = 8dea5398796363c3f89137a721b0ddf0c10b4381
+          gh run download 45609893772 --name LastWave-zh-debug-comparison-arm64 --dir release-assets
+          (cd release-assets && sha256sum -c SHA256SUMS.txt)
+          git archive --format=zip --output=release-assets/LastWave-source-8dea539.zip 8dea5398796363c3f89137a721b0ddf0c10b4381
+          cp LICENSE release-assets/LICENSE
+          cp audio/decent-usb-audio-driver/LICENSE release-assets/USB-driver-LICENSE.txt
+          cp THIRD_PARTY_NOTICES.md release-assets/
+          cp README.md release-assets/FORK-README.md
+      - name: Collect dependency metadata and licenses
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:collectDistributionMetadata -I .github/release/metadata.gradle -PtargetAbis=arm64-v8a --max-workers=2 --stacktrace
+      - name: Bundle corresponding dependency sources and notices
+        run: python3 .github/release/collect_sources.py
+      - name: Publish complete prerelease
+        run: |
+          (cd release-assets && sha256sum *.apk *.zip LICENSE USB-driver-LICENSE.txt THIRD_PARTY_NOTICES.md FORK-README.md > SHA256SUMS.txt)
+          gh release create 5.2.1-zh-test-20261125 release-assets/* --target "$GITHUB_SHA" --title "LastWave 5.2.1 非官方简体中文测试版" --notes-file .github/release/notes.md --prerelease
