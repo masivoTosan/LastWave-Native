@@ -1,3 +1,5 @@
+> 本分支已同步上游 main 至 4d26ed9e14aa48f4011358eb797c03ef8768223d（本次新增 11 个上游提交），并保留现有本地化。应用版本仍为 5.3.0 / 34。本次仅同步上游；已记录的内部路由、存储键名误本地化问题尚未修复，不代表已完成实机验收。下方历史发布链接对应原先构建。
+
 > 当前分支已合入官方 5.3.0（上游提交 78a6b40），并保留现有中文本地化及用户在 main 中添加的 README 说明。应用版本为 5.3.0 / 34。下方 5.2.1 Release 链接是历史构建；新 APK 请从本分支的 Chinese 5.3.0 Debug APK comparison 构建获取。本次只同步上游，尚未整理或提交新的本地化 PR。
 
 # LastWave 非官方简体中文测试版
@@ -61,6 +63,10 @@
   &nbsp;
   <a href="https://trendshift.io/repositories/197973?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-197973" target="_blank" rel="noopener noreferrer">
     <img src="https://trendshift.io/api/badge/trendshift/repositories/197973/weekly?language=Kotlin" alt="Clash-Projects%2FLastWave-Native | Trendshift" width="250" height="55" />
+  </a>
+  &nbsp;
+  <a href="https://fmhy.net/mobile#youtube-music" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn.jsdelivr.net/gh/JMcrafter26/badges@main/src/assets/available/fmhy/cozy.svg" alt="Clash-Projects%2FLastWave-Native | FMHY" height="55" />
   </a>
 </p>
 </div>

@@ -43,7 +43,7 @@ jobs:
           p.write_text(s.replace(old, old.replace('else "com.lastwave.app"', 'else "com.lastwave.app.zhdebug"')))
           PY
       - name: Verify Chinese localization
-        run: ./gradlew :app:testDebugUnitTest --tests com.lastwave.app.util.AppTextTest --tests com.lastwave.app.playback.FfmpegCompatTest -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
+        run: ./gradlew :app:testDebugUnitTest --tests com.lastwave.app.util.AppTextTest --tests com.lastwave.app.playback.FfmpegCompatTest --tests com.lastwave.app.data.local.db.SavedPlaylistDaoTest --tests com.lastwave.app.data.lossless.AddonLanguageMismatchTest --tests com.lastwave.app.data.lossless.AddonVariantMismatchTest --tests com.lastwave.app.data.lyrics.LyricsTranslationTest --tests com.lastwave.app.playback.NativeProcessingAudioSinkFallbackTest --tests com.lastwave.app.playback.UacFeatureVolumeTest -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
       - name: Build standard Debug (arm64 for GT6)
         run: ./gradlew :app:assembleDebug -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
       - name: Stage standard APK
