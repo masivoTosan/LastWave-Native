@@ -1,7 +1,7 @@
-name: Chinese Debug APK comparison
+name: Chinese 5.3.0 Debug APK comparison
 on:
   push:
-    branches: ['test/zh-debug-apk-20261125']
+    branches: ['test/zh-debug-5.3.0-20261125']
     paths-ignore:
       - '**/*.md'
       - '.github/release/**'
@@ -43,25 +43,25 @@ jobs:
           p.write_text(s.replace(old, old.replace('else "com.lastwave.app"', 'else "com.lastwave.app.zhdebug"')))
           PY
       - name: Verify Chinese localization
-        run: ./gradlew :app:testDebugUnitTest --tests com.lastwave.app.util.AppTextTest -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
+        run: ./gradlew :app:testDebugUnitTest --tests com.lastwave.app.util.AppTextTest --tests com.lastwave.app.playback.FfmpegCompatTest -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
       - name: Build standard Debug (arm64 for GT6)
         run: ./gradlew :app:assembleDebug -PtargetAbis=arm64-v8a --stacktrace --max-workers=2
       - name: Stage standard APK
         run: |
           mkdir -p final_apk
-          cp app/build/outputs/apk/debug/app-debug.apk final_apk/LastWave-zh-standard-debug-arm64.apk
+          cp app/build/outputs/apk/debug/app-debug.apk final_apk/LastWave-v5.3.0-zh-standard-debug-arm64.apk
       - name: Upload standard APK immediately
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: LastWave-zh-standard-debug-arm64
-          path: final_apk/LastWave-zh-standard-debug-arm64.apk
+          name: LastWave-v5.3.0-zh-standard-debug-arm64
+          path: final_apk/LastWave-v5.3.0-zh-standard-debug-arm64.apk
           if-no-files-found: error
           retention-days: 14
       - name: Build vivo-origin Debug (original package)
         run: ./gradlew :app:assembleDebug -PtargetAbis=arm64-v8a -PvivoOrigin=true --stacktrace --max-workers=2
       - name: Stage and verify both APKs
         run: |
-          cp app/build/outputs/apk/debug/app-debug.apk final_apk/LastWave-zh-vivo-origin-debug-arm64.apk
+          cp app/build/outputs/apk/debug/app-debug.apk final_apk/LastWave-v5.3.0-zh-vivo-origin-debug-arm64.apk
           TOOLS=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1)
           AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt | sort -V | tail -1)
           for apk in final_apk/*.apk; do
@@ -74,7 +74,7 @@ jobs:
       - name: Upload comparison APKs and checksums
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: LastWave-zh-debug-comparison-arm64
+          name: LastWave-v5.3.0-zh-debug-comparison-arm64
           path: final_apk/*
           if-no-files-found: error
           retention-days: 14

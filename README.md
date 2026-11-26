@@ -1,3 +1,5 @@
+> 当前分支已合入官方 5.3.0（上游提交 78a6b40），并保留现有中文本地化及用户在 main 中添加的 README 说明。应用版本为 5.3.0 / 34。下方 5.2.1 Release 链接是历史构建；新 APK 请从本分支的 Chinese 5.3.0 Debug APK comparison 构建获取。本次只同步上游，尚未整理或提交新的本地化 PR。
+
 # LastWave 非官方简体中文测试版
 
 > 本 Fork 由 masivoTosan 维护，用于中文界面测试。原作者为 [Clash-Projects/LastWave-Native](https://github.com/Clash-Projects/LastWave-Native) 及其贡献者；本版本不是官方发行。
@@ -41,7 +43,7 @@
 <img src="assets/LastWave_banner_v2_1440p.png" alt="LastWave Banner" width="100%" style="border-radius: 16px;" />
 
 <h1>LastWave</h1>
-
+这个仓库只是为了本地化简体中文，所有代码来源于上游仓库，本代码仅用来个人测试。
 **Simple Android YouTube Music client with Material UI, Liquid Glass, Bit-Perfect playback, Automix, Lossless addons & advanced audiophile features.**
 
 <br/>
